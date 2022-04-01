@@ -1,0 +1,68 @@
+Schermata LOGIN
+-nome app
+-logo app
+-username
+-password
+
+-pulsante "accedi"
+-pulsante "registrati"
+
+
+
+Schermata REGISTRAZIONE
+-immagine profilo selezionabile
+-username 5-30 permessi caratteri alfa-numerici maiuscoli e minuscoli
+-password 5-30 - " ' . , - + * ; : < > / \ | = % & ( ) ! ? ] [ { } 
+
+-nome profilo 5-16  - " ' . , - + * ; : < > / \ | = % & ( ) ! ? ] [ { } @ 
+
+-descrizione del venditore 0-100 qualsiasi carattere
+
+-pulsante "registrati"
+-pulsante "annulla"
+
+
+
+Schermata HOME
+-header
+	.immagine profilo con menù a tendina
+						.profilo
+						.collezione
+						.notifiche
+						.pulsante "esci"
+	
+	.nome app
+	.icona carrello con link
+	
+-vetrina
+	.6 opere -più recenti con 	-immagine
+								-nome opera
+								-prezzo
+-pulsante "shop"
+-piè di pagina con nome sviluppatori
+
+
+
+Schermata "Profilo"
+-header .icona home
+		.nome profilo
+		
+-immagine profilo
+-info profilo
+-spazio sezione privato/pubblico .privato
+						  .pubblico
+						  .sezione
+						  
+SEZIONE privato 
+-ultimi aquisti -opera	.immagine		cliccabile -> dettaglio opera
+						.nome opera
+						.prezzo
+-ultimi vendite -opera	.immagine		cliccabile -> dettaglio opera
+						.nome opera
+						.prezzo					  
+						  
+-pulsante "i miei ordini" cliccabile -> storico vendite aquisti				
+
+
+
+	
