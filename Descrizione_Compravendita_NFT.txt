@@ -54,7 +54,9 @@ Schermata "Profilo"
 						  .sezione
 						  
 SEZIONE privato 
--ultimi aquisti -opera	.immagine		cliccabile -> dettaglio opera
+-ultimi aquisti -opera	.immagine
+      
+		   cliccabile -> dettaglio opera
 						.nome opera
 						.prezzo
 -ultimi vendite -opera	.immagine		cliccabile -> dettaglio opera
@@ -63,6 +65,11 @@ SEZIONE privato
 						  
 -pulsante "i miei ordini" cliccabile -> storico vendite aquisti				
 
+SEZIONE pubblico/venditore
 
+-collezione pubblica 
+-pulsante "intera collezione pubblica" -> collezione pubblica venditore
 
+-ultime opere messe in vendita
+-pulsante "mercato interno del venditore" -> mercato interno del venditore con tutte le sue opere in vendita
 	
