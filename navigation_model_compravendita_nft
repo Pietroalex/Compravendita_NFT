@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-25T18:14:18.452Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="wUwLupFQsfFs7HFbu5pV" version="17.4.6" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-25T18:18:29.660Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="pht7N4-1LNDfHYa82CDZ" version="17.4.6" type="github">
   <diagram id="Z2TU2c-2T0n1FLxadTOU" name="Page-1">
-    <mxGraphModel dx="3671" dy="1596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2500" dy="939" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -296,7 +296,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Cx_jULwe1VmiX4zmNKpX-68" value="NFT Item" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="Cx_jULwe1VmiX4zmNKpX-68" value="On Sale&lt;br&gt;NFT Item" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-390" y="910" width="80" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Cx_jULwe1VmiX4zmNKpX-102" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;elbow=vertical;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.825;entryY=0.003;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="Cx_jULwe1VmiX4zmNKpX-73" target="Cx_jULwe1VmiX4zmNKpX-79">
@@ -348,7 +348,7 @@
         <mxCell id="Cx_jULwe1VmiX4zmNKpX-95" value="All Products" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-150" y="1500" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="Cx_jULwe1VmiX4zmNKpX-96" value="NFT Item" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="Cx_jULwe1VmiX4zmNKpX-96" value="Not On Sale&lt;br&gt;NFT Item" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="345.63" y="1804" width="80" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Cx_jULwe1VmiX4zmNKpX-105" value="Last &lt;br&gt;Items&lt;br&gt;Bought" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -363,7 +363,7 @@
         <mxCell id="Cx_jULwe1VmiX4zmNKpX-113" value="Sales&lt;br&gt;History&lt;br&gt;Register" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="710" y="1760" width="120" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="Cx_jULwe1VmiX4zmNKpX-118" value="NFT Item" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="Cx_jULwe1VmiX4zmNKpX-118" value="Not On Sale&lt;br&gt;NFT Item&lt;br&gt;Description" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="650" y="2020" width="80" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Cx_jULwe1VmiX4zmNKpX-125" value="Notification" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
@@ -372,7 +372,7 @@
         <mxCell id="Cx_jULwe1VmiX4zmNKpX-136" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;elbow=vertical;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="Cx_jULwe1VmiX4zmNKpX-130" target="Cx_jULwe1VmiX4zmNKpX-135">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Cx_jULwe1VmiX4zmNKpX-130" value="NFT Item" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="Cx_jULwe1VmiX4zmNKpX-130" value="Not On Sale&lt;br&gt;NFT Item" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1080" y="1340" width="80" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Cx_jULwe1VmiX4zmNKpX-134" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;elbow=vertical;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Cx_jULwe1VmiX4zmNKpX-132" target="Cx_jULwe1VmiX4zmNKpX-130">
