@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-27T13:39:32.366Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="PSDy6OcmryuaG-4iu5_7" version="17.4.6" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-27T13:41:30.778Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="q1XbHRSjya0AuCB3Hv2t" version="17.4.6" type="github">
   <diagram id="Z2TU2c-2T0n1FLxadTOU" name="Page-1">
     <mxGraphModel dx="3076" dy="1967" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -360,10 +360,10 @@
         <mxCell id="-KidEKKH0Vs8Ba_nfo0k-85" value="Last &lt;br&gt;Items&lt;br&gt;Sold" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;" parent="1" vertex="1">
           <mxGeometry x="612.1800000000001" y="1817.5" width="280" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="-KidEKKH0Vs8Ba_nfo0k-86" value="Purchase &lt;br&gt;NFT items&lt;br&gt;Register" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;" parent="1" vertex="1">
+        <mxCell id="-KidEKKH0Vs8Ba_nfo0k-86" value="Purchase &lt;br&gt;NFT items&lt;br&gt;History" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;" parent="1" vertex="1">
           <mxGeometry x="370" y="2453" width="280" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="-KidEKKH0Vs8Ba_nfo0k-87" value="Sales&lt;br&gt;NFT Items&lt;br&gt;Register" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;" parent="1" vertex="1">
+        <mxCell id="-KidEKKH0Vs8Ba_nfo0k-87" value="Sales&lt;br&gt;NFT Items&lt;br&gt;History" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;" parent="1" vertex="1">
           <mxGeometry x="752.1800000000001" y="2453" width="280" height="370" as="geometry" />
         </mxCell>
         <mxCell id="-KidEKKH0Vs8Ba_nfo0k-88" value="Not On Sale&lt;br&gt;NFT Item&lt;br&gt;Description" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;shape=note;" parent="1" vertex="1">
