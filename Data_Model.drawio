@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-27T20:19:31.343Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="Z6wJ7wCHcRSXTLtZUsJ_" version="17.4.6" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-27T20:41:28.688Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="oUkverlB9KBVwx2iop9Q" version="17.4.6" type="github">
   <diagram id="K9mG_RED5zR1RW_hAbLD" name="Page-1">
     <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -42,15 +42,6 @@
         </mxCell>
         <mxCell id="_QlOosYH2mttHdngYGc2-23" value="- nft_sold&lt;&gt; : NFTSold" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;labelPosition=center;verticalLabelPosition=middle;swimlaneLine=1;glass=0;rounded=0;shadow=0;sketch=0;spacing=2;" parent="_QlOosYH2mttHdngYGc2-9" vertex="1">
           <mxGeometry y="332" width="380" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="_QlOosYH2mttHdngYGc2-13" value="Shop" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=21;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="10" y="544" width="310" height="82" as="geometry" />
-        </mxCell>
-        <mxCell id="_QlOosYH2mttHdngYGc2-86" value="- shop_id : int" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;" parent="_QlOosYH2mttHdngYGc2-13" vertex="1">
-          <mxGeometry y="26" width="310" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="_QlOosYH2mttHdngYGc2-14" value="- nft_onsale_list&lt;&gt; : NFTOnSale" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=21;labelPosition=center;verticalLabelPosition=middle;" parent="_QlOosYH2mttHdngYGc2-13" vertex="1">
-          <mxGeometry y="56" width="310" height="26" as="geometry" />
         </mxCell>
         <mxCell id="_QlOosYH2mttHdngYGc2-39" value="NFT" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontSize=21;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="810" y="120" width="250" height="186" as="geometry" />
@@ -142,28 +133,8 @@
         <mxCell id="_QlOosYH2mttHdngYGc2-85" value="owns" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=21;labelPosition=center;verticalLabelPosition=middle;" parent="1" vertex="1">
           <mxGeometry x="444" y="90" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="_QlOosYH2mttHdngYGc2-87" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=none;fontSize=21;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="_QlOosYH2mttHdngYGc2-13" target="_QlOosYH2mttHdngYGc2-45" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="440" y="560" as="sourcePoint" />
-            <mxPoint x="530" y="560" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="_QlOosYH2mttHdngYGc2-88" value="N" style="resizable=0;html=1;align=center;verticalAlign=middle;fontSize=21;labelPosition=center;verticalLabelPosition=middle;" parent="_QlOosYH2mttHdngYGc2-87" connectable="0" vertex="1">
-          <mxGeometry x="1" relative="1" as="geometry">
-            <mxPoint x="-26" y="-14" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c4JM7ylSqcCvMtFFDTr7-7" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=21;" parent="1" vertex="1">
-          <mxGeometry x="320" y="530" width="30" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="c4JM7ylSqcCvMtFFDTr7-8" value="parent" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;fontSize=21;labelPosition=center;verticalLabelPosition=middle;" parent="1" connectable="0" vertex="1">
           <mxGeometry x="1020" y="330" as="geometry" />
-        </mxCell>
-        <mxCell id="c4JM7ylSqcCvMtFFDTr7-9" value="Contains" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=21;" parent="1" vertex="1">
-          <mxGeometry x="349" y="530" width="100" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="c4JM7ylSqcCvMtFFDTr7-10" value="Contained" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=21;" parent="1" vertex="1">
-          <mxGeometry x="640" y="570" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="c4JM7ylSqcCvMtFFDTr7-11" value="owned" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=21;" parent="1" vertex="1">
           <mxGeometry x="700" y="130" width="80" height="30" as="geometry" />
