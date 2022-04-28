@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-28T16:07:45.845Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="yvigjWb9-lKwhHXZuEYt" version="17.4.6" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-28T16:20:37.763Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="SslYMb3KrsC5KPUzzfpg" version="17.4.6" type="github">
   <diagram name="Page-1" id="03018318-947c-dd8e-b7a3-06fadd420f32">
-    <mxGraphModel dx="2337" dy="638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2597" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1244,44 +1244,113 @@
             <mxPoint x="-7" y="-7" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="NtmgafUmDSAZVBFkPAuM-472" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=14;" edge="1" parent="NtmgafUmDSAZVBFkPAuM-449" source="NtmgafUmDSAZVBFkPAuM-457" target="NtmgafUmDSAZVBFkPAuM-458">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-457" value="NFT-Code&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;(Auto-compiled)" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="41.99798882681565" y="249.9952647975078" width="288.26815642458104" height="21.806853582554517" as="geometry" />
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-458" value="Nick-1020" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
-          <mxGeometry x="41.99798882681565" y="271.8021183800623" width="348.32402234636874" height="35.981308411214954" as="geometry" />
+          <mxGeometry x="42" y="271.8" width="348.32" height="18.2" as="geometry" />
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-461" value="Cancel" style="rounded=1;fillColor=#F1F2F4;strokeColor=none;html=1;fontColor=#596780;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="28.826815642458104" y="588.785046728972" width="103.29608938547486" height="35.981308411214954" as="geometry" />
         </mxCell>
-        <mxCell id="NtmgafUmDSAZVBFkPAuM-462" value="Register" style="rounded=1;fillColor=#0057D8;align=center;strokeColor=none;html=1;fontColor=#ffffff;fontSize=12;sketch=0;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-462" value="Load" style="rounded=1;fillColor=#0057D8;align=center;strokeColor=none;html=1;fontColor=#ffffff;fontSize=12;sketch=0;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="305.08379888268155" y="588.785046728972" width="96.08938547486035" height="35.981308411214954" as="geometry" />
         </mxCell>
-        <mxCell id="NtmgafUmDSAZVBFkPAuM-465" value="" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
-          <mxGeometry x="41.99798882681565" y="329.5915264797508" width="348.32402234636874" height="35.981308411214954" as="geometry" />
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-465" value="Nick" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
+          <mxGeometry x="42" y="311.79999999999995" width="348.32" height="20.41" as="geometry" />
         </mxCell>
-        <mxCell id="NtmgafUmDSAZVBFkPAuM-468" value="Description" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-468" value="Description&lt;span style=&quot;color: rgb(255 , 0 , 0) ; font-size: 9.16667px&quot;&gt;*&lt;/span&gt;" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="41.99798882681565" y="457.7828348909657" width="288.26815642458104" height="21.806853582554517" as="geometry" />
         </mxCell>
-        <mxCell id="NtmgafUmDSAZVBFkPAuM-469" value="" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-469" value="....." style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#CC6600;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="41.99798882681565" y="479.5896884735203" width="348.32402234636874" height="69.78193146417445" as="geometry" />
         </mxCell>
-        <mxCell id="NtmgafUmDSAZVBFkPAuM-470" value="Register" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-470" value="New NFT" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="156.08333333333303" y="19.997196261682177" width="119.44444444444444" height="43.613707165109034" as="geometry" />
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-471" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.container_registry_image;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="146.80290502793287" y="99.99797507788162" width="138" height="138" as="geometry" />
         </mxCell>
-        <mxCell id="NtmgafUmDSAZVBFkPAuM-460" value="Messina Cake" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-460" value="PorqupineFT" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#CC6600;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="40.83798882681572" y="421.8039563862929" width="348.32402234636874" height="35.981308411214954" as="geometry" />
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-459" value="&lt;sup&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;Name&lt;/span&gt;&lt;font color=&quot;#ff0000&quot;&gt;*&lt;/font&gt;&lt;/sup&gt;" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
           <mxGeometry x="40.83798882681572" y="399.9971028037383" width="288.26815642458104" height="21.806853582554517" as="geometry" />
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-473" value="Author&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;(Auto-compiled)" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
-          <mxGeometry x="41.997988826815714" y="307.78526479750786" width="288.26815642458104" height="21.806853582554517" as="geometry" />
+          <mxGeometry x="41.997988826815714" y="289.99526479750784" width="288.26815642458104" height="21.806853582554517" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-475" value="Nick" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
+          <mxGeometry x="42" y="354.01" width="348.32" height="22.62" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-476" value="Date&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;	&lt;/span&gt;(Auto-compiled)" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-449">
+          <mxGeometry x="41.997988826815686" y="332.20526479750777" width="288.26815642458104" height="21.806853582554517" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-477" value="" style="dashed=0;align=center;fontSize=12;shape=rect;fillColor=#ffffff;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="2600" width="430" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-478" value="12:30" style="dashed=0;align=center;fontSize=12;shape=rect;align=right;fillColor=#0973AE;strokeColor=none;fontColor=#FFFFFF;spacingRight=4;spacingTop=1;fontStyle=0;fontSize=13;resizeWidth=1;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry width="430.0000000000001" height="24" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-479" value="" style="dashed=0;html=1;shape=mxgraph.gmdl.top_bar;fillColor=#0973AE;strokeColor=none;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-478">
+          <mxGeometry x="1" y="0.5" width="46" height="14" relative="1" as="geometry">
+            <mxPoint x="-92" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-480" value="" style="dashed=0;align=center;fontSize=12;shape=rect;strokeColor=none;fillColor=#098DCA;resizeWidth=1;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry width="430.0000000000001" height="40" relative="1" as="geometry">
+            <mxPoint y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-481" value="" style="dashed=0;align=center;fontSize=12;shape=rect;strokeColor=none;fillColor=#000000;resizeWidth=1;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry y="1" width="430.0000000000001" height="48" relative="1" as="geometry">
+            <mxPoint y="-48" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-482" value="" style="dashed=0;html=1;shape=mxgraph.gmdl.back;strokeColor=#ffffff;fillColor=#000000;strokeWidth=2;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-481">
+          <mxGeometry x="0.25" y="0.5" width="14" height="14" relative="1" as="geometry">
+            <mxPoint x="-7" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-483" value="" style="shape=ellipse;strokeColor=#ffffff;fillColor=#000000;strokeWidth=2;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-481">
+          <mxGeometry x="0.5" y="0.5" width="14" height="14" relative="1" as="geometry">
+            <mxPoint x="-7" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-484" value="" style="shape=rect;strokeColor=#ffffff;fillColor=#000000;strokeWidth=2;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-481">
+          <mxGeometry x="0.75" y="0.5" width="14" height="14" relative="1" as="geometry">
+            <mxPoint x="-7" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-485" value="NFT-Code" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="126" y="249.99" width="50" height="21.81" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-486" value="Nick-1020" style="rounded=1;arcSize=9;align=center;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="126" y="271.8" width="184" height="18.2" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-487" value="Cancel" style="rounded=1;fillColor=#F1F2F4;strokeColor=none;html=1;fontColor=#596780;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;sketch=0;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="28.826815642458104" y="588.785046728972" width="103.29608938547486" height="35.981308411214954" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-488" value="Sell" style="rounded=1;fillColor=#0057D8;align=center;strokeColor=none;html=1;fontColor=#ffffff;fontSize=12;sketch=0;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="305.08379888268155" y="588.785046728972" width="96.08938547486035" height="35.981308411214954" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-489" value="&lt;span style=&quot;text-align: left&quot;&gt;PorqupineFT&lt;/span&gt;" style="rounded=1;arcSize=9;align=center;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="126" y="311.8" width="184" height="20.41" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-492" value="Sell NFT" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="156.08333333333303" y="19.997196261682177" width="119.44444444444444" height="43.613707165109034" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-493" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.container_registry_image;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="146.80290502793287" y="99.99797507788162" width="138" height="138" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-494" value="1000" style="rounded=1;arcSize=9;align=center;spacingLeft=5;strokeColor=#CC6600;html=1;strokeWidth=2;fontSize=12;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="125.83000000000001" y="411.8" width="178.35" height="35.98" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-495" value="&lt;sup&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;Price&lt;/span&gt;&lt;font color=&quot;#ff0000&quot;&gt;*&lt;/font&gt;&lt;/sup&gt;" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=center;fontColor=#596780;fontStyle=1;fontSize=11;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="128.83" y="389.99" width="178.35" height="21.81" as="geometry" />
+        </mxCell>
+        <mxCell id="NtmgafUmDSAZVBFkPAuM-496" value="Name" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-477">
+          <mxGeometry x="126" y="290" width="48" height="21.81" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
