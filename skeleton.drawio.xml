@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-29T16:01:46.662Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="IObREH0ZT2_UfewOIyoC" version="17.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-29T16:31:02.679Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="4X9kmU5snyXl5aO8RsrI" version="17.5.0" type="github">
   <diagram name="Page-1" id="03018318-947c-dd8e-b7a3-06fadd420f32">
-    <mxGraphModel dx="8040" dy="-4140" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="7363" dy="-4703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -45,7 +45,7 @@
           <mxGeometry y="20" width="430" height="40" as="geometry" />
         </mxCell>
         <mxCell id="bsHtGkAG1uyYWepguyDH-647" value="NFT SHOP" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="bsHtGkAG1uyYWepguyDH-8" vertex="1">
-          <mxGeometry x="155.2733333333331" y="16.387196261682163" width="119.44444444444444" height="43.613707165109034" as="geometry" />
+          <mxGeometry x="155.2733333333331" y="319.66719626168214" width="119.44444444444444" height="43.613707165109034" as="geometry" />
         </mxCell>
         <mxCell id="bsHtGkAG1uyYWepguyDH-277" value="" style="dashed=0;align=center;fontSize=12;shape=rect;fillColor=#ffffff;strokeColor=none;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="-1038.96" y="8090.33" width="430" height="700" as="geometry" />
