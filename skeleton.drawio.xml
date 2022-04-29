@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-04-29T16:31:02.679Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="4X9kmU5snyXl5aO8RsrI" version="17.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-29T18:24:10.807Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="kLZ_vWZwCiK1iGsz_82Y" version="17.5.0" type="github">
   <diagram name="Page-1" id="03018318-947c-dd8e-b7a3-06fadd420f32">
-    <mxGraphModel dx="7363" dy="-4703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="10410" dy="-3130" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="NtmgafUmDSAZVBFkPAuM-2299" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=none;dashed=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="-3270" y="7990" width="5450" height="3773.62" as="geometry" />
+          <mxGeometry x="-3280" y="7930" width="5444" height="3773.62" as="geometry" />
         </mxCell>
         <mxCell id="bsHtGkAG1uyYWepguyDH-8" value="" style="dashed=0;align=center;fontSize=12;shape=rect;fillColor=#ffffff;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="-1553.96" y="7210.33" width="430" height="700" as="geometry" />
@@ -1090,9 +1090,6 @@
         <mxCell id="NtmgafUmDSAZVBFkPAuM-2009" value="1000" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#E6E6E6;align=center;strokeColor=#B3B3B3;fontColor=#333333;spacingLeft=17;aspect=fixed;" parent="NtmgafUmDSAZVBFkPAuM-1984" vertex="1">
           <mxGeometry x="334.44444444444434" y="24.13339563862928" width="83.61111111111111" height="29.919003115264797" as="geometry" />
         </mxCell>
-        <mxCell id="NtmgafUmDSAZVBFkPAuM-2010" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-currency-dollar-128.png" parent="NtmgafUmDSAZVBFkPAuM-1984" vertex="1">
-          <mxGeometry x="334.44444444444434" y="23.712928348909372" width="30.76947040498442" height="30.76947040498442" as="geometry" />
-        </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-2011" value="NFT Info" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="NtmgafUmDSAZVBFkPAuM-1984" vertex="1">
           <mxGeometry x="154.623333333333" y="16.38719626168222" width="119.44444444444444" height="43.613707165109034" as="geometry" />
         </mxCell>
@@ -1104,6 +1101,9 @@
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-2014" value="Andreasio98" style="rounded=1;arcSize=9;align=center;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;" parent="NtmgafUmDSAZVBFkPAuM-1984" vertex="1">
           <mxGeometry x="118.97999999999996" y="496.81999999999994" width="185.2" height="18.2" as="geometry" />
+        </mxCell>
+        <mxCell id="4P8coC4D4EUsE0ndHtcw-958" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_copyright_48px-128.png;rounded=1;fontSize=13;fontColor=#3333FF;strokeColor=default;strokeWidth=3;fillColor=default;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-1984">
+          <mxGeometry x="334.44000000000005" y="25.290000000000873" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-978" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1270" y="10600" width="431" height="700" as="geometry" />
@@ -2673,9 +2673,6 @@
         <mxCell id="4P8coC4D4EUsE0ndHtcw-842" value="1000" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=10;fillColor=#f5f5f5;align=center;strokeColor=#666666;fontColor=#333333;spacingLeft=17;sketch=0;aspect=fixed;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-2130">
           <mxGeometry x="277.47000000000025" y="23.899999999998727" width="95" height="27.44" as="geometry" />
         </mxCell>
-        <mxCell id="4P8coC4D4EUsE0ndHtcw-843" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-currency-dollar-128.png;sketch=0;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-2130">
-          <mxGeometry x="277.47000000000025" y="23.899999999998727" width="28.22" height="28.22" as="geometry" />
-        </mxCell>
         <mxCell id="4P8coC4D4EUsE0ndHtcw-852" value="" style="shape=rect;fillColor=#eeeeee;strokeColor=none;sketch=0;rounded=1;container=0;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-2130">
           <mxGeometry x="117.39999999999975" y="279" width="95.23" height="160" as="geometry" />
         </mxCell>
@@ -2896,6 +2893,9 @@
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-2203" value="Price: Decreasing " style="fillColor=none;strokeColor=none;align=left;spacing=20;fontSize=14;rounded=1;fontFamily=Helvetica;fontColor=default;" parent="NtmgafUmDSAZVBFkPAuM-2199" vertex="1">
           <mxGeometry y="91.61111111111111" width="160" height="28.333333333333332" as="geometry" />
+        </mxCell>
+        <mxCell id="4P8coC4D4EUsE0ndHtcw-957" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_copyright_48px-128.png;rounded=1;fontSize=13;fontColor=#3333FF;strokeColor=default;strokeWidth=3;fillColor=default;" vertex="1" parent="NtmgafUmDSAZVBFkPAuM-2130">
+          <mxGeometry x="279.78" y="22.899999999999636" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-2214" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="-1759.96" y="9140.33" width="432.96347031963484" height="700" as="geometry" />
@@ -5063,6 +5063,21 @@
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-1748" value="Author" style="text;strokeColor=none;fillColor=none;html=1;fontSize=14;fontStyle=0;verticalAlign=middle;align=center;sketch=0;aspect=fixed;spacingLeft=-19;labelPosition=center;verticalLabelPosition=middle;container=0;" parent="1" vertex="1">
           <mxGeometry x="-213.1637566582047" y="9462.390661635274" width="57.95058551946628" height="10.431105393503927" as="geometry" />
+        </mxCell>
+        <mxCell id="4P8coC4D4EUsE0ndHtcw-978" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-2580" y="7300" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4P8coC4D4EUsE0ndHtcw-979" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_copyright_48px-128.png;rounded=1;fontSize=13;fontColor=#3333FF;strokeColor=default;strokeWidth=3;fillColor=default;" vertex="1" parent="4P8coC4D4EUsE0ndHtcw-978">
+          <mxGeometry width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4P8coC4D4EUsE0ndHtcw-980" value="" style="line;strokeWidth=2;direction=west;html=1;rounded=1;fontSize=13;fontColor=#3333FF;fillColor=default;rotation=118;flipV=1;flipH=1;" vertex="1" parent="4P8coC4D4EUsE0ndHtcw-978">
+          <mxGeometry x="0.7000000000000455" y="8" width="17" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="4P8coC4D4EUsE0ndHtcw-981" value="" style="line;strokeWidth=2;direction=east;html=1;rounded=1;fontSize=13;fontColor=#3333FF;fillColor=default;" vertex="1" parent="4P8coC4D4EUsE0ndHtcw-978">
+          <mxGeometry x="14" y="10.5" width="8" height="9" as="geometry" />
+        </mxCell>
+        <mxCell id="4P8coC4D4EUsE0ndHtcw-982" value="" style="line;strokeWidth=2;direction=north;html=1;rounded=1;fontSize=13;fontColor=#3333FF;fillColor=default;rotation=332;" vertex="1" parent="4P8coC4D4EUsE0ndHtcw-978">
+          <mxGeometry x="17" y="2.5" width="8" height="19" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
