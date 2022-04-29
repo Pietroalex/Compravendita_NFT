@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-29T20:02:43.762Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="JG2whlxM_Qhh2lfF3TyM" version="17.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-29T20:03:15.674Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" etag="_LCNsBczjIp7xxyDrNN2" version="17.5.0" type="github">
   <diagram name="Page-1" id="03018318-947c-dd8e-b7a3-06fadd420f32">
     <mxGraphModel dx="5822" dy="-4302" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -508,6 +508,9 @@
         </mxCell>
         <mxCell id="bsHtGkAG1uyYWepguyDH-643" value="NFT SHOP" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="bsHtGkAG1uyYWepguyDH-277" vertex="1">
           <mxGeometry x="154.62333333333302" y="16.387196261682167" width="119.44444444444444" height="43.613707165109034" as="geometry" />
+        </mxCell>
+        <mxCell id="E-DxKAYJilZcYwS00YQ8-1" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-currency-dollar-128.png;sketch=0;" vertex="1" parent="bsHtGkAG1uyYWepguyDH-277">
+          <mxGeometry x="35.059999999999945" y="250.61000000000058" width="28.22" height="28.22" as="geometry" />
         </mxCell>
         <mxCell id="NtmgafUmDSAZVBFkPAuM-179" value="" style="group" parent="J_2JKavKJSzn1v8JG-El-88" vertex="1" connectable="0">
           <mxGeometry x="4466.04" y="220" width="430" height="700" as="geometry" />
