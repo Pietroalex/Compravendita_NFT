@@ -1,0 +1,58 @@
+{
+  "BACK_BUTTON_TEXT": "Back",
+
+  "LOGIN_BUTTON": "Enter",
+  "DONE_BUTTON": "Done",
+  "SAVE_BUTTON": "Save",
+  "CANCEL_BUTTON": "Cancel",
+  "DELETE_BUTTON": "Delete",
+
+  "LOGIN_TITLE": "Login",
+  "LOGIN_ERROR_TITLE": "Login error",
+  "LOGIN_ERROR_SUB_TITLE": "Username and/or password Wrong!",
+
+  "PAGINA_COSTRUZIONE": "Page under construction!!!!!",
+
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "USERNAME_REQUIRED": "Username required",
+  "PASSWORD_REQUIRED": "Password required",
+
+  "PIANO_STUDI_MENU": "Piano di Studi",
+  "TASSE_MENU": "Taxes",
+  "LIBRETTO_MENU": "Libretto",
+  "MIE_NOTIZIE_MENU": "My News",
+
+  "APPROVAZIONE_PIANI_MENU": "Plan approvement",
+  "DIARIO_MENU": "Agenda",
+  "QUESTIONARIO_MENU": "Questionnaire",
+
+  "PROFILO_MENU": "Profile",
+  "LOGOUT_MENU": "Logout",
+  "NOTIZIE_TAB": "News",
+  "ORARIO_TAB": "Calendar",
+  "APPELLI_TAB": "Exam sessions",
+  "ESAMI_TAB": "Exams",
+  "LEZIONI_TAB": "Lectures",
+
+  "PROFILO_TITOLO": "Profile",
+  "MATRICOLA": "Matricola",
+  "EMAIL": "Email",
+  "LANGUAGE": "Language",
+  "EMAIL_REQUIRED": "Email mandatory",
+
+  "DETTAGLIO_NOTIZIA_TITOLO": "News Detail",
+
+  "INSEGNAMENTI_TITOLO": "Courses",
+  "DETTAGLIO_INSEGNAMENTO_TITOLO": "Detail",
+  "APPELLI_TITOLO": "Exam sessions",
+  "APPELLO_TITOLO": "Exam session",
+  "APPELLO_DESCRIZIONE": "Description",
+  "APPELLO_DESCRIZIONE_REQUIRED": "Description mandatory",
+  "APPELLO_DATA": "Date",
+  "APPELLO_DATA_REQUIRED": "Date mandatory",
+  "APPELLO_TIPOLOGIA_ESAME": "Type",
+  "APPELLO_TIPOLOGIA_ESAME_REQUIRED": "Exam Type mandatory",
+  "APPELLO_DELETE_TITLE": "Exam session",
+  "APPELLO_DELETE_MESSAGE": "Do you want to delete the exam session?"
+}
