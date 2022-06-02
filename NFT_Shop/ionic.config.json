@@ -1,0 +1,7 @@
+{
+  "name": "NFT_Shop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
