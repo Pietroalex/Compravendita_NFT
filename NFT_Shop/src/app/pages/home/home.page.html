@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Nome Pagina</ion-title>
+    <ion-title>Home</ion-title>
 
     <p id="currency">currency</p>
   </ion-toolbar>
@@ -17,23 +17,26 @@
 
     <ion-item-divider><strong class="capitalize">Vetrina</strong></ion-item-divider>
 
+ <ion-grid id="vetrina">
+   <ion-row>
+     <ion-col><div id="p"><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome1">Nome1</p><br><p id="prezzo1">Prezzo1</p></div></ion-col>
+     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome2">Nome1</p><br><p id="prezzo2">Prezzo1</p></ion-col>
+     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome3">Nome1</p><br><p id="prezzo3">Prezzo1</p></ion-col>
+   </ion-row>
+   <ion-row>
+     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome4">Nome1</p><br><p id="prezzo4">Prezzo1</p></ion-col>
+     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome5">Nome1</p><br><p id="prezzo5">Prezzo1</p></ion-col>
+     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome6">Nome1</p><br><p id="prezzo6">Prezzo1</p></ion-col>
+   </ion-row>
 
-    <div id="vetrina">
-      <ion-button>item</ion-button><ion-button>item</ion-button><ion-button>item</ion-button>
-      <br>
-      <ion-button>item</ion-button><ion-button>item</ion-button><ion-button>item</ion-button>
-      <br>
-      <ion-button>item</ion-button><ion-button>item</ion-button><ion-button>item</ion-button>
-      <br>
-    </div>
-
+ </ion-grid>
 
     <br>
 
     <ion-button [routerLink]="['/shop']">SHOP</ion-button>
     <br>
 
-    <p>Copiright by PietroAlex & Alexdib_creator</p>
+    <p1>Copiright by PietroAlex & Alexdib_creator</p1>
   </div>
 
 </ion-content>

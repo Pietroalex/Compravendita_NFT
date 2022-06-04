@@ -7,7 +7,7 @@ ion-menu-button {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
 }
 
@@ -27,10 +27,25 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
-currency{
+#currency{
   font-size: 8px;
   line-height: 10px;
   color: #8c8c8c;
 
   alignment: right;
+}
+#vetrina p{
+  font-size: 13px;
+  line-height: 8px;
+  color: green;
+  margin-top: -5%;
+
+}
+
+p1{
+  font-size: 14px;
+  line-height: 12px;
+  color: #8c8c8c;
+  margin-bottom: -80%;
+
 }
