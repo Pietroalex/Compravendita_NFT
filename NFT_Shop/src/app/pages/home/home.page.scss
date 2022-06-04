@@ -17,12 +17,20 @@ ion-menu-button {
 }
 
 #container p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   color: #8c8c8c;
   margin: 0;
+  align-content: baseline;
 }
 
 #container a {
   text-decoration: none;
+}
+currency{
+  font-size: 8px;
+  line-height: 10px;
+  color: #8c8c8c;
+
+  alignment: right;
 }

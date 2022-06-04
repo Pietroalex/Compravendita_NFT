@@ -1,21 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Home</ion-title>
+    <ion-title>Nome Pagina</ion-title>
+
+    <p id="currency">currency</p>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">bbb</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <div id="container">
-    <strong class="capitalize">aaa</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-item-divider><strong class="capitalize">Vetrina</strong></ion-item-divider>
+
+
+    <div id="vetrina">
+      <ion-button>item</ion-button><ion-button>item</ion-button><ion-button>item</ion-button>
+      <br>
+      <ion-button>item</ion-button><ion-button>item</ion-button><ion-button>item</ion-button>
+      <br>
+      <ion-button>item</ion-button><ion-button>item</ion-button><ion-button>item</ion-button>
+      <br>
+    </div>
+
+
+    <br>
+
+    <ion-button [routerLink]="['/shop']">SHOP</ion-button>
+    <br>
+
+    <p>Copiright by PietroAlex & Alexdib_creator</p>
   </div>
+
 </ion-content>
