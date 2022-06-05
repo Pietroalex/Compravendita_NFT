@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
+
   <ion-toolbar>
 
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Home</ion-title>
+    <ion-row><ion-col><ion-title>Home</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">currency</ion-text></ion-col></ion-row>
 
-    <p id="currency">currency</p>
   </ion-toolbar>
 
 </ion-header>
@@ -19,14 +19,14 @@
 
  <ion-grid id="vetrina">
    <ion-row>
-     <ion-col><div id="p"><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome1">Nome1</p><br><p id="prezzo1">Prezzo1</p></div></ion-col>
-     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome2">Nome1</p><br><p id="prezzo2">Prezzo1</p></ion-col>
-     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome3">Nome1</p><br><p id="prezzo3">Prezzo1</p></ion-col>
+     <ion-col (click)="navigateFromCode(1)"><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome1">Nome1</p><br><p id="prezzo1">Prezzo1</p></ion-col>
+     <ion-col  (click)="getLast6Items()"><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome2">Nome2</p><br><p id="prezzo2">Prezzo2</p></ion-col>
+     <ion-col (click)="navigateWithState(3)"><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome3">Nome3</p><br><p id="prezzo3">Prezzo3</p></ion-col>
    </ion-row>
    <ion-row>
-     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome4">Nome1</p><br><p id="prezzo4">Prezzo1</p></ion-col>
-     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome5">Nome1</p><br><p id="prezzo5">Prezzo1</p></ion-col>
-     <ion-col><ion-img src="./assets/images/icon.png">item</ion-img><br><p id="nome6">Nome1</p><br><p id="prezzo6">Prezzo1</p></ion-col>
+     <ion-col (click)="navigateWithState(4)"><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome4">Nome4</p><br><p id="prezzo4">Prezzo4</p></ion-col>
+     <ion-col (click)="navigateWithState(5)"><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome5">Nome5</p><br><p id="prezzo5">Prezzo5</p></ion-col>
+     <ion-col (click)="navigateWithState(6)"><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome6">Nome6</p><br><p id="prezzo6">Prezzo6</p></ion-col>
    </ion-row>
 
  </ion-grid>
