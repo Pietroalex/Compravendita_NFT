@@ -13,8 +13,8 @@ export class ShopDetailPage implements OnInit {
   ngOnInit() {
 
     //const routerState = this.router.getCurrentNavigation().extras.state;
-    this.data = this.route.snapshot.paramMap.get('nft')
-     alert(this.data.toString());
+   // this.data = this.route.snapshot.paramMap.get('nft')
+    // alert(this.data.toString());
 
   }
 

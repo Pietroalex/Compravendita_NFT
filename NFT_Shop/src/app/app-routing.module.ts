@@ -40,14 +40,14 @@ const routes: Routes = [
     path: 'gallery',
     loadChildren: () => import('./pages/galleryall/gallery/gallery.module').then( m => m.GalleryPageModule)
   },
-  /*
+
   {
     path: 'shop-detail',
     loadChildren: () => import('./pages/shopall/shop-detail/shop-detail.module').then( m => m.ShopDetailPageModule)
   },
 
 
-   */
+
 
   {
     path: 'shop-detail/:nft',
