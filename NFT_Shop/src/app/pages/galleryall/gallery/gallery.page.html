@@ -12,5 +12,40 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div id="container">
+    <div id="list">
+      <ion-list id="gallery">
 
+        <ion-item id="gallery_item" [routerLink]="['/gallery-detail']">
+          <ion-img src="./assets/images/icon.png"></ion-img>
+          <span><ion-label>Nome</ion-label></span>
+        </ion-item>
+
+        <ion-item [routerLink]="['/gallery-detail']">
+          <ion-img src="./assets/images/icon.png"></ion-img>
+          <span><ion-label>Nomeee</ion-label></span>
+        </ion-item>
+
+        <ion-item [routerLink]="['/gallery-detail']">
+          <ion-img src="./assets/images/icon.png"></ion-img>
+          <span><ion-label>Nomeeeee</ion-label></span>
+        </ion-item>
+
+        <ion-item [routerLink]="['/gallery-detail']">
+          <ion-img src="./assets/images/icon.png"></ion-img>
+          <span><ion-label>Nomeeeeeee</ion-label></span>
+        </ion-item>
+
+        <ion-item [routerLink]="['/gallery-detail']">
+          <ion-img src="./assets/images/icon.png"></ion-img>
+          <span><ion-label>Nomeeeeeeeee</ion-label></span>
+        </ion-item>
+
+      </ion-list>
+
+    </div>
+
+    <ion-button [routerLink]="['/login']">login</ion-button>
+
+  </div>
 </ion-content>
