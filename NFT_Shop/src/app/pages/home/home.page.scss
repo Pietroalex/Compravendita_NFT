@@ -46,12 +46,21 @@ ion-menu-button {
   height: 30px;
   alignment: right;
 }
+
+
+
+
+
+
+
+/*
 #vetrina {
   background-color : #ffff00;
   display: flex;
-  justify-content: flex-start; /* center if you want to the center */
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 ion-item {
@@ -68,54 +77,54 @@ ion-card {
   background-color: white;
 }
 
-#carta ion-img {
+*/
 
-}
-/*
-#vetrina p{
-  font-size: 13px;
-  line-height: 8px;
-  color: green;
-  margin-top: -5%;
 
-}
 
-p1{
-  font-size: 14px;
-  line-height: 12px;
-  color: #8c8c8c;
-  margin-bottom: -80%;
-
-}
-
- */
-/*
-#container ion-card {
-  padding: 1px;
-}
-/*
-#vetrina  {
-  background-color : white;
+#vetrina {
   display: flex;
-  justify-content: flex-start; /* center if you want to the center *
+  justify-content: flex-start; /* center if you want to the center */
   align-items: center;
   flex-wrap: wrap;
-  height: auto;
+
 }
 
-#pippo{
-  width : 32%;
-  height : 50px;
-  background-color : #ff9999;
-  margin : 3px;
-  display: flex;
-  justify-content: center; /* center inside flex items *
-  align-items: center; /* center inside flex items *
-  flex-direction: column;
+ion-item {
+  width : 33%;
+  margin : 0.5px;
+  text-aligh: left;
+  font-size: smaller;
 }
 
 #vetrina ion-img{
-  height: 60px;
-  width: 40px;
+  height: 100px;
+  width: auto;
+  margin-top: 5px;
+
+}
+
+/*
+
+
+
+#vetrina {
+  background-color : #ffff00;
+  display: flex;
+  justify-content: flex-start;
+  position:relative;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+
+}
+
+ion-item {
+  width : 32%;
+ position: relative;
+
+  margin : 2px;
+
+
+
 }
 */

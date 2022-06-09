@@ -3,36 +3,16 @@ ion-menu-button {
 }
 
 #container {
+  height: auto;
+  width: auto;
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 45%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 14px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
-  align-content: baseline;
-}
-
-#container a {
-  text-decoration: none;
 }
 
 #publicsection p, #privatesection p{
   font-size: 13px;
   line-height: 8px;
   color: green;
-  margin-top: -5%;
+  margin-top: 5px;
 
 }
 
@@ -59,7 +39,7 @@ p3{
 }
 #profileimg{
   height: 150px;
-  margin-top: 20%;
+  margin-top: 5%;
 }
 #publicsection{
   display: none;
@@ -69,7 +49,6 @@ p3{
 }
 #currency{
   font-size: 8px;
-  
   color: #8c8c8c;
   width: 10%;
   alignment: right;
@@ -78,4 +57,26 @@ p3{
 {
   height: 40px;
   alignment: right;
+}
+#pbgallery,#pbshop,#purchased,#sold {
+  height:auto;
+  display: flex;
+  justify-content: flex-start; /* center if you want to the center */
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+ion-item {
+  width : 33%;
+  margin : 0.5px;
+  text-aligh: left;
+  font-size: smaller;
+}
+
+#pbgallery,#pbshop ion-img{
+  height: 100px;
+  width: auto;
+  margin-top: 1px;
+
 }
