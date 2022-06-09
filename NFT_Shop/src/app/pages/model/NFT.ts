@@ -6,8 +6,5 @@ export class NFT {
     name: string;
     description: string;
     author: User;
-
-
-
 }
 

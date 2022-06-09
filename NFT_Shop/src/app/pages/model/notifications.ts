@@ -6,5 +6,4 @@ export class Notifications {
     sender: User;
     recipient: User;
     nft: NFTSold;
-
 }

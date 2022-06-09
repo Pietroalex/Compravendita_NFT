@@ -42,7 +42,7 @@
     -->
 
 
-    <div >
+
         <ion-list id="vetrina">
           <!--
           <ion-item *ngFor="let notizia of notizie$ | async" [routerLink]="['/notizie', notizia.id]" routerDirection="forward" detail="true">
@@ -50,69 +50,65 @@
             <span>{{notizia.nome | slice:0:20}}</span>
           </ion-item>
           -->
-          <ion-item id="pippo"[routerLink]="['/shop-detail']">
-            <ion-img src="./assets/images/icon.png"></ion-img>
-            <ion-label>Nome1</ion-label><span>Prezzo1</span>
-          </ion-item>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <ion-item id="pippo" [routerLink]="['/shop-detail']">
+              <ion-card id="carta">
+                <ion-img src="./assets/images/icon.png"></ion-img>
+                  <h6>Nome1</h6>
+                  <h6>Prezzo1</h6>
+              </ion-card>
+            </ion-item>
 
           <ion-item [routerLink]="['/shop-detail']">
-            <ion-img src="./assets/images/icon.png"></ion-img>
-            <br><ion-label>Nome1</ion-label><span>Prezzo1</span>
+            <ion-card>
+
+              <ion-img src="./assets/images/icon.png"></ion-img>
+
+              <h6>Nome1</h6>
+              <h6>Prezzo1</h6>
+
+            </ion-card>
           </ion-item>
-
-
-
-
-
-
-
-
-
-
-
 
           <ion-item [routerLink]="['/shop-detail']">
-            <ion-img src="./assets/images/icon.png"></ion-img>
-            <br><ion-label>Nome1</ion-label><span>Prezzo1</span>
+            <ion-card>
+
+              <ion-img src="./assets/images/icon.png"></ion-img>
+
+              <h6>Nome1</h6>
+              <h6>Prezzo1</h6>
+
+            </ion-card>
           </ion-item>
 
+          <ion-item [routerLink]="['/shop-detail']">
+            <ion-card>
+              <ion-img src="./assets/images/icon.png"></ion-img>
+              <h6>Nome1</h6>
+              <h6>Prezzo1</h6>
+            </ion-card>
+          </ion-item>
 
+          <ion-item [routerLink]="['/shop-detail']">
+            <ion-card>
+              <ion-img src="./assets/images/icon.png"></ion-img>
+              <h6>Nome1</h6>
+              <h6>Prezzo1</h6>
+            </ion-card>
+          </ion-item>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <ion-item [routerLink]="['/shop-detail']">
+            <ion-card>
+              <ion-img src="./assets/images/icon.png"></ion-img>
+              <h6>Nome1</h6>
+              <h6>Prezzo1</h6>
+            </ion-card>
+          </ion-item>
 
         </ion-list>
-      </div>
+
     <!--
         <ion-grid id="vetrina">
           <ion-row>
@@ -142,7 +138,7 @@
     <ion-button [routerLink]="['/shop']">SHOP</ion-button>
     <br>
 
-    <p>Copiright by PietroAlex & Alexdib_creator</p>
+    <p style="font-size: 10px">Copiright by PietroAlex & alexdib-creator</p>
   </div>
 
 </ion-content>

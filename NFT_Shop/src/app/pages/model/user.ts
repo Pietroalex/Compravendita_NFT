@@ -1,7 +1,6 @@
 import {NFT} from "./NFT";
 
 export class User {
-
     username: string;
     password: string;
     image: string;
@@ -11,6 +10,4 @@ export class User {
     nft_created_count: number;
     gallery: NFT[];
     public_gallery: NFT[];
-
-
 }
