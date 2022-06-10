@@ -13,7 +13,6 @@
 
 ion-item {
   width : 33%;
-  margin : 0.5px;
   text-aligh: left;
   font-size: smaller;
 }
@@ -22,5 +21,9 @@ ion-item {
   height: 100px;
   width: auto;
   margin-top: 5px;
+}
 
+#container p {
+  margin-top: -10px;
+  line-height: 10px;
 }

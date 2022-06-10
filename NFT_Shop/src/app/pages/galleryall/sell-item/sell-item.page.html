@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>sell_item</ion-title>
+    <ion-title>SELL-NFT</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
+  <div id="container">
+    <ion-img src="./assets/images/icon.png"></ion-img>
+    <div id="box">
+      <ion-label>NFT-Code</ion-label><br>
+      <p id="nft_code">NFTcode</p>
+      <ion-label>Name</ion-label>
+      <p id="name">NFTname</p>
+      <form>
+        <ion-label position="fixed">Price</ion-label>
 
+          <ion-input id="price" type="text" required></ion-input>
+
+        <ion-button [routerLink]="['/home']" type="submit" color="secondary" expand="block">Sell</ion-button>
+        <ion-button [routerLink]="['/gallery-detail']" expand="block" color="danger" >Cancel</ion-button>
+      </form>
+    </div>
+  </div>
 </ion-content>

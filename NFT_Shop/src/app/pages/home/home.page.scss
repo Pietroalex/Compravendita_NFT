@@ -1,22 +1,13 @@
 ion-menu-button {
   color: var(--ion-color-primary);
 }
-/*
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 45%;
-  transform: translateY(-50%);
-}
-*/
+
 #container {
   height: auto;
   width: auto;
   text-align: center;
 }
-/*
+
 #container strong {
   font-size: 20px;
   line-height: 26px;
@@ -30,61 +21,23 @@ ion-menu-button {
   align-content: baseline;
 }
 
-#container a {
-  text-decoration: none;
-}
-*/
 #currency{
   font-size: 8px;
-
   color: #8c8c8c;
   width: 10%;
   alignment: right;
 }
-#cashart
-{
+#cashart {
   height: 30px;
   alignment: right;
 }
-
-
-
-
-
-/*
-#vetrina {
-  background-color : #ffff00;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-ion-item {
-  width: 48%;
-  background-color : white;
-  margin : 2px;
-}
-
-ion-card {
-  text-align: center;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  background-color: white;
-}
-
-*/
-
-
 
 #vetrina {
   display: flex;
   justify-content: flex-start; /* center if you want to the center */
   align-items: center;
   flex-wrap: wrap;
-width:available;
+  width:available;
 }
 ion-list{
   width:available;
@@ -108,31 +61,7 @@ ion-item {
 
 }
 
-.nftitem{
-
+#footer {
+  text-align: center;
+  font-size: 10px;
 }
-/*
-
-
-
-#vetrina {
-  background-color : #ffff00;
-  display: flex;
-  justify-content: flex-start;
-  position:relative;
-  flex-wrap: wrap;
-  flex-direction: row;
-
-
-}
-
-ion-item {
-  width : 32%;
- position: relative;
-
-  margin : 2px;
-
-
-
-}
-*/
