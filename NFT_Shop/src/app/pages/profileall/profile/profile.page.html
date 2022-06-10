@@ -15,11 +15,15 @@
   <div id="container">
 
     <ion-img id="profileimg" src="./assets/images/icon.png"></ion-img>
-    <p1>Nickname</p1>
-    <br>
-    <p2>Email</p2>
-    <br>
-    <p3>Bio</p3>
+    <div id="info">
+
+
+    <ion-label>Username</ion-label><br>
+    <p id="username">Username</p>
+
+    <ion-label>Bio</ion-label>
+    <p id="bio">bio</p>
+    </div>
     <ion-segment value="private">
       <ion-segment-button value="private" (click)="hide_show('private')">Private</ion-segment-button>
       <ion-segment-button value="public" (click)="hide_show('public')">Public</ion-segment-button>
