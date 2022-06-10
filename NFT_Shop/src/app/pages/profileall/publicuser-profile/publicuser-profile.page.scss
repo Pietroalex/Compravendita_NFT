@@ -1,0 +1,83 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+#container {
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+#info{
+  text-align:left;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#info bio{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#info p{
+  text-align: center;
+  border-style: solid;
+  border-color: #62ceff;
+  border-radius: 10%;
+  line-height: 22px;
+  margin:0px 0px 5px;
+}
+#publicsection p, #privatesection p{
+  font-size: 13px;
+  line-height: 8px;
+  color: green;
+  margin-top: 5px;
+
+}
+
+#profileimg{
+  width: 28%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 8px;
+}
+
+#currency{
+  font-size: 8px;
+  color: #8c8c8c;
+  width: 10%;
+  alignment: right;
+}
+#cashart {
+  height: 30px;
+  alignment: right;
+}
+#pbgallery,#pbshop,#purchased,#sold {
+  height:auto;
+  display: flex;
+  justify-content: flex-start; /* center if you want to the center */
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+ion-item {
+  width : 33%;
+  text-aligh: left;
+  font-size: smaller;
+}
+
+#pbgallery,#pbshop ion-img{
+  height: 100px;
+  width: auto;
+  margin-top: 1px;
+
+}
+ion-button{
+  height: 20px;
+}
+#modifica{
+  margin-right: -100px;
+  margin-left: 190px;
+  margin-top: 5px;
+
+}

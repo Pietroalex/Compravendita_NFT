@@ -1,15 +1,42 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
+
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Nft Sold</ion-title>
-    <ion-buttons slot="end">
-    <ion-menu-button></ion-menu-button>
-  </ion-buttons>
+    <ion-title>Sold Nft</ion-title>
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
-
+<ion-content id="container">
+  <ion-list id="shop">
+    <ion-item [routerLink]="['/purchase-detail']">
+      <div class="nftitem">
+        <ion-img src="./assets/images/icon.png"></ion-img>
+        <div class="nftp">
+          <p>Nome1</p>
+          <p>Prezzo1</p>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item [routerLink]="['/purchase-detail']">
+      <div class="nftitem">
+        <ion-img src="./assets/images/icon.png"></ion-img>
+        <div class="nftp">
+          <p>Nome2</p>
+          <p>Prezzo2</p>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item [routerLink]="['/purchase-detail']">
+      <div class="nftitem">
+        <ion-img src="./assets/images/icon.png"></ion-img>
+        <div class="nftp">
+          <p>Nome3</p>
+          <p>Prezzo3</p>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

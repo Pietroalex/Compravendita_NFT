@@ -13,8 +13,9 @@
 <ion-content [fullscreen]="true">
 
   <div id="container">
-
+    <ion-icon id="modifica" name="settings"></ion-icon>
     <ion-img id="profileimg" src="./assets/images/icon.png"></ion-img>
+
     <div id="info">
 
 
@@ -28,70 +29,7 @@
       <ion-segment-button value="private" (click)="hide_show('private')">Private</ion-segment-button>
       <ion-segment-button value="public" (click)="hide_show('public')">Public</ion-segment-button>
     </ion-segment>
-    <!--
-   <ion-grid id="privatesection">
-     <ion-row >
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome1pvt">Nome1pvt</p><br><p id="prezzo1pvt">Prezzo1pvt</p></ion-col>
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome2pvt">Nome2pvt</p><br><p id="prezzo2pvt">Prezzo2pvt</p></ion-col>
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome3pvt">Nome3pvt</p><br><p id="prezzo3pvt">Prezzo3pvt</p></ion-col>
-     </ion-row>
-     <ion-row id="purchased">
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome4pvt">Nome4pvt</p><br><p id="prezzo4pvt">Prezzo4pvt</p></ion-col>
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome5pvt">Nome5pvt</p><br><p id="prezzo5pvt">Prezzo5pvt</p></ion-col>
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome6pvt">Nome6pvt</p><br><p id="prezzo6pvt">Prezzo6pvt</p></ion-col>
-     </ion-row>
 
-   </ion-grid>
-   <ion-grid id="publicsection">
-     <ion-row id="pbgallery">
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome1pbl">Nome1pbl</p><br><p id="prezzo1pbl">Prezzo1pbl</p></ion-col>
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome2pbl">Nome2pbl</p><br><p id="prezzo2pbl">Prezzo2pbl</p></ion-col>
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome3pbl">Nome3pbl</p><br><p id="prezzo3pbl">Prezzo3pbl</p></ion-col>
-     </ion-row>
-     <ion-row id="pbshop">
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome4pbl">Nome4pbl</p><br><p id="prezzo4pbl">Prezzo4pbl</p></ion-col>
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome5pbl">Nome5pbl</p><br><p id="prezzo5pbl">Prezzo5pbl</p></ion-col>
-       <ion-col><ion-img src="./assets/images/icon.png"></ion-img><br><p id="nome6pbl">Nome6pbl</p><br><p id="prezzo6pbl">Prezzo6pbl</p></ion-col>
-     </ion-row>
-
-   </ion-grid>
- </div>
-
-
-   <ion-item *ngFor="let notizia of notizie$ | async" [routerLink]="['/notizie', notizia.id]" routerDirection="forward" detail="true">
-     <ion-label>{{notizia.dataPubblicazione | date:'dd/MM/yyyy'}}</ion-label>
-     <span>{{notizia.nome | slice:0:20}}</span>
-   </ion-item>
-   -->
-
-    <!--
-
-                                 <ion-item [routerLink]="['/shop-detail']">
-                                   <ion-card>
-                                     <ion-img src="./assets/images/icon.png"></ion-img>
-                                     <h6>Nome1</h6>
-                                     <h6>Prezzo1</h6>
-                                   </ion-card>
-                                 </ion-item>
-
-                                 <ion-item [routerLink]="['/shop-detail']">
-                                   <ion-card>
-                                     <ion-img src="./assets/images/icon.png"></ion-img>
-                                     <h6>Nome1</h6>
-                                     <h6>Prezzo1</h6>
-                                   </ion-card>
-                                 </ion-item>
-
-                                 <ion-item [routerLink]="['/shop-detail']">
-                                   <ion-card>
-                                     <ion-img src="./assets/images/icon.png"></ion-img>
-                                <h6>Nome1</h6>
-                                     <h6>Prezzo1</h6>
-                                   </ion-card>
-                                 </ion-item>
-
-                               </ion-list>
-    -->
     <div id="privatesection">
 
     <ion-list id="sold">

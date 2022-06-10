@@ -9,6 +9,13 @@ ion-menu-button {
 }
 #info{
   text-align:left;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#info bio{
+  margin-top: auto;
+  margin-bottom: auto;
 }
 #info p{
   text-align: center;
@@ -72,4 +79,10 @@ ion-item {
 }
 ion-button{
   height: 20px;
+}
+#modifica{
+  margin-right: -100px;
+  margin-left: 190px;
+  margin-top: 5px;
+
 }

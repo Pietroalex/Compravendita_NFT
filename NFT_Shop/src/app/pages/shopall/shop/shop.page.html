@@ -4,13 +4,31 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-row><ion-col><ion-title>Shop</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">currency</ion-text></ion-col></ion-row>
+    <ion-row><ion-col><ion-title>Shop</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">currency</ion-text></ion-col><ion-col><ion-icon name="search"[routerLink]="['/search']"></ion-icon></ion-col></ion-row>
 
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content id="container">
+  <ion-select position="flow" value="newest">
+    <ion-select-option value="newest">
+      Newest
+    </ion-select-option>
+
+    <ion-select-option value="oldest">
+      Oldest
+    </ion-select-option>
+
+    <ion-select-option value="rising">
+      Price: Rising
+    </ion-select-option>
+
+    <ion-select-option value="decreasing">
+      Price: Decreasing
+    </ion-select-option>
+
+  </ion-select>
   <ion-list id="shop">
   <ion-item [routerLink]="['/shop-detail']">
     <div class="nftitem">
