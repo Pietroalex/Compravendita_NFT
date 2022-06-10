@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-10T09:36:10.887Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.99 Safari/537.36" etag="7o8gIqxfmeH59vkKHM7X" version="19.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-10T09:36:53.709Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.99 Safari/537.36" etag="ywgwh4zzyIlm7RRZ1Cug" version="19.0.1" type="github">
   <diagram id="K9mG_RED5zR1RW_hAbLD" name="Page-1">
     <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -82,8 +82,8 @@
         <mxCell id="EJx-HE8bt6CjaeDZ0_VL-32" value="stato = in vendita (true), in galleria (false)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=23;" parent="1" vertex="1">
           <mxGeometry x="1180" y="305" width="430" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="EJx-HE8bt6CjaeDZ0_VL-33" value="Lo shop è una query su lo stato true delle NFT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=23;" parent="1" vertex="1">
-          <mxGeometry x="560" y="470" width="490" height="30" as="geometry" />
+        <mxCell id="EJx-HE8bt6CjaeDZ0_VL-33" value="Lo shop è una query sullo stato true delle NFT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=23;" parent="1" vertex="1">
+          <mxGeometry x="585" y="470" width="440" height="30" as="geometry" />
         </mxCell>
         <mxCell id="EJx-HE8bt6CjaeDZ0_VL-34" value="L&#39;id user serve per rintracciare il proprietario attuale o il venditore" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=23;" parent="1" vertex="1">
           <mxGeometry x="1180" y="275" width="680" height="30" as="geometry" />
