@@ -10,7 +10,7 @@ export class AppComponent {
     { title: 'Profile', url: '/profile', icon: 'person' },
     { title: 'Gallery', url: '/gallery', icon: 'images' },
     { title: 'Notifications', url: '/notification', icon: 'notifications' },
-    { title: 'Log Out', url: '/logout', icon: 'log-out' },
+    { title: 'Log Out', url: '/login', icon: 'log-out' },
 
   ];
 

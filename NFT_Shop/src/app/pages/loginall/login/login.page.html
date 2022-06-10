@@ -9,6 +9,8 @@
 
 <ion-content>
   <form>
+    <ion-img src="./assets/images/icon.png"></ion-img>
+
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
       <ion-input type="text" required></ion-input>
@@ -22,6 +24,7 @@
     <ion-row>
       <ion-col>
         <ion-button [routerLink]="['/home']" type="submit" color="danger" expand="block">Sign In</ion-button>
+        <ion-button [routerLink]="['/registration']" expand="block">New User</ion-button>
         <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
       </ion-col>
     </ion-row>

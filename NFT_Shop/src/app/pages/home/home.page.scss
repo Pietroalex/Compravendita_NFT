@@ -51,8 +51,6 @@ ion-menu-button {
 
 
 
-
-
 /*
 #vetrina {
   background-color : #ffff00;
@@ -86,23 +84,33 @@ ion-card {
   justify-content: flex-start; /* center if you want to the center */
   align-items: center;
   flex-wrap: wrap;
-
+width:available;
 }
-
+ion-list{
+  width:available;
+  display: flex;
+  justify-content: flex-start; /* center if you want to the center */
+  align-items: center;
+  flex-wrap: wrap;
+}
 ion-item {
   width : 33%;
-  margin : 0.5px;
   text-aligh: left;
   font-size: smaller;
 }
 
 #vetrina ion-img{
-  height: 100px;
-  width: auto;
-  margin-top: 5px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 2px;
 
 }
 
+.nftitem{
+
+}
 /*
 
 

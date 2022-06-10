@@ -19,8 +19,8 @@
 
 
 
-
-        <ion-list id="vetrina">
+    <div id="vetrina">
+        <ion-list >
           <!--
           <ion-item *ngFor="let notizia of notizie$ | async" [routerLink]="['/notizie', notizia.id]" routerDirection="forward" detail="true">
             <ion-label>{{notizia.dataPubblicazione | date:'dd/MM/yyyy'}}</ion-label>
@@ -85,7 +85,7 @@
                  </div>
                </ion-item>
          </ion-list>
-
+    </div>
     <br>
 
     <ion-button [routerLink]="['/shop']">SHOP</ion-button>

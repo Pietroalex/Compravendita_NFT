@@ -1,3 +1,16 @@
+ion-item {
+  width : 33%;
+  margin : 0.5px;
+  text-aligh: left;
+  font-size: smaller;
+}
+
+#shop ion-img{
+  height: 100px;
+  width: auto;
+  margin-top: 5px;
+
+}
 #currency{
   font-size: 8px;
 
@@ -7,6 +20,20 @@
 }
 #cashart
 {
-  height: 40px;
+  height: 30px;
   alignment: right;
+}
+#container {
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+
+#shop {
+  display: flex;
+  justify-content: flex-start; /* center if you want to the center */
+  align-items: center;
+  flex-wrap: wrap;
+
 }

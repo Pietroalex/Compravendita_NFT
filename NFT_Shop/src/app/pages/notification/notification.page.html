@@ -11,5 +11,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+<ion-list>
+  <ion-item *ngFor="let notifications of notifications$ | async" [routerLink]="['/notifications', notifications.id]" routerDirection="forward" detail="true">
+    <p>{{notifications.nft.nftcode }}</p>
+    <p>{{notifications.nft.image }}</p>
+    <p>{{notifications.nft.name }}</p>
+    <p>{{notifications.nft.purchase_date | date:'dd/MM/yyyy'}}</p><p>{{notifications.nft.buyer }}</p><p>{{notifications.nft.price }}</p>
+  </ion-item>
+</ion-list>
 </ion-content>
