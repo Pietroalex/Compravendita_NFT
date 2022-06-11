@@ -8,25 +8,28 @@
 </ion-header>
 
 <ion-content>
-  <form>
+  <div id="container">
     <ion-img src="./assets/images/icon.png"></ion-img>
 
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
+    <form>
+      <ion-label>Email</ion-label>
+      <ion-item-divider>
+        <ion-input id="item" type="text" required></ion-input>
+      </ion-item-divider>
 
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
-    <ion-row><a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a></ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button [routerLink]="['/home']" type="submit" color="danger" expand="block">Sign In</ion-button>
-        <ion-button [routerLink]="['/registration']" expand="block">New User</ion-button>
+      <ion-label>Password</ion-label>
+      <ion-item-divider>
+        <ion-input type="password" required></ion-input>
+      </ion-item-divider>
 
-      </ion-col>
-    </ion-row>
-  </form>
+      <ion-row><a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a></ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button [routerLink]="['/home']" type="submit" color="danger" expand="block">Sign In</ion-button>
+          <ion-button [routerLink]="['/registration']" expand="block">New User</ion-button>
+
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
 </ion-content>
