@@ -1,4 +1,5 @@
 <ion-header [translucent]="true">
+
   <ion-toolbar>
 
     <ion-buttons slot="start">
@@ -10,24 +11,40 @@
 </ion-header>
 
 <ion-content id="container">
-  <ion-select position="flow"  value="profile" id="select">
-    <ion-select-option value="profile" (change)="selecttype('profile')">
-      User Profiles
-    </ion-select-option>
+  <ion-button id="trigger-button">Search By</ion-button>
+  <ion-popover trigger="trigger-button">
+    <ng-template>
+      <ion-content>
 
-    <ion-select-option value="salenft" (change)="selecttype('salenft')">
-      On sale Nft
-    </ion-select-option>
+        <ion-list>
+          <ion-radio-group value="biff">
+            <ion-list-header>
+              <ion-label>Name</ion-label>
+            </ion-list-header>
 
-    <ion-select-option value="publicnft" (change)="selecttype('publicnft')">
-      Public Nft
-    </ion-select-option>
+            <ion-item>
+              <ion-label>Biff</ion-label>
+              <ion-radio slot="start" value="biff"></ion-radio>
+            </ion-item>
 
-    <ion-select-option value="sellershop" (change)="selecttype('sellershop')">
-      Seller Shop
-    </ion-select-option>
+            <ion-item>
+              <ion-label>Griff</ion-label>
+              <ion-radio slot="start" value="griff"></ion-radio>
+            </ion-item>
 
-  </ion-select>
+            <ion-item>
+              <ion-label>Buford</ion-label>
+              <ion-radio slot="start" value="buford"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+
+      </ion-content>
+    </ng-template>
+
+  </ion-popover>
+
+
   <ion-list id="search">
     <ion-item [routerLink]="[dest]">
       <div>

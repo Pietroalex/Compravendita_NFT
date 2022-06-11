@@ -9,6 +9,7 @@ import {ValueAccessor} from "@ionic/angular/directives/control-value-accessors/v
 export class SearchPage implements OnInit {
   dest: string;
   value: string;
+  isPopoverOpen: any;
 
 
 
@@ -19,7 +20,8 @@ export class SearchPage implements OnInit {
   }
 
   selecttype(value: string) {
-    switch (document.getElementById('select').toString()) {
+
+    switch (value) {
       case "profile":
         this.dest= "/publicuser-profile";
         break;
@@ -32,6 +34,7 @@ export class SearchPage implements OnInit {
       case "sellershop":
         this.dest= "/shop";
         break;
+
     }
 
   }
