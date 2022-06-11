@@ -1,47 +1,57 @@
 <ion-header [translucent]="true">
-
   <ion-toolbar>
 
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
+
+
+
     <ion-searchbar></ion-searchbar>
+
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content id="container">
-  <ion-button id="trigger-button">Search By</ion-button>
+  <ion-row>
+    <ion-col id="value"><ion-label>Search By: {{valuee}}</ion-label></ion-col>
+    <ion-col id="icon"><ion-icon name="filter" id="trigger-button"></ion-icon></ion-col>
+
+  </ion-row>
+  <!--<ion-button id="trigger-button">Click to open popover</ion-button> -->
+
+
   <ion-popover trigger="trigger-button">
     <ng-template>
-      <ion-content>
+      <ion-content>  <ion-list>
+        <ion-radio-group value="profile">
+          <ion-list-header>
+            <ion-label>Search By</ion-label>
+          </ion-list-header>
 
-        <ion-list>
-          <ion-radio-group value="biff">
-            <ion-list-header>
-              <ion-label>Name</ion-label>
-            </ion-list-header>
+          <ion-item (click)="selecttype('profile')">
+            <ion-label>profile</ion-label>
+            <ion-radio slot="start" value="profile"></ion-radio>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Biff</ion-label>
-              <ion-radio slot="start" value="biff"></ion-radio>
-            </ion-item>
+          <ion-item (click)="selecttype('salenft')">
+            <ion-label>salenft</ion-label>
+            <ion-radio slot="start" value="salenft"></ion-radio>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Griff</ion-label>
-              <ion-radio slot="start" value="griff"></ion-radio>
-            </ion-item>
+          <ion-item (click)="selecttype('publicnft')">
+            <ion-label>publicnft</ion-label>
+            <ion-radio slot="start" value="publicnft"></ion-radio>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Buford</ion-label>
-              <ion-radio slot="start" value="buford"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
-        </ion-list>
-
-      </ion-content>
+          <ion-item (click)="selecttype('sellershop')">
+            <ion-label>sellershop</ion-label>
+            <ion-radio slot="start" value="sellershop"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list></ion-content>
     </ng-template>
-
   </ion-popover>
 
 
