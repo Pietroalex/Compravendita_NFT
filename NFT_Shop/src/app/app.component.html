@@ -6,8 +6,8 @@
           <ion-list-header id="user-username">Username</ion-list-header>
           <ion-note id="user-email">Email</ion-note>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]"  routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
@@ -16,6 +16,7 @@
 
 
       </ion-content>
+      <ion-button (click)="logout()"><ion-icon name="log-out"></ion-icon><ion-label>Log Out</ion-label></ion-button>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>

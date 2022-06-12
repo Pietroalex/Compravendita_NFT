@@ -11,22 +11,24 @@
   <div id="container">
     <ion-img src="./assets/images/icon.png"></ion-img>
 
-    <form>
+    <form [formGroup]="credentials"(ngSubmit)="login()">
       <ion-label>Email</ion-label>
       <ion-item-divider>
-        <ion-input id="item" type="text" required></ion-input>
+        <ion-input id="item" type="email" required placeholder="Email" formControlName="email"></ion-input>
+        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors"></ion-note>
       </ion-item-divider>
 
       <ion-label>Password</ion-label>
       <ion-item-divider>
-        <ion-input type="password" required></ion-input>
+        <ion-input type="password" required placeholder="Password" formControlName="password"></ion-input>
+        <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"></ion-note>
       </ion-item-divider>
 
       <ion-row><a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a></ion-row>
       <ion-row>
         <ion-col>
-          <ion-button [routerLink]="['/home']" type="submit" color="danger" expand="block">Sign In</ion-button>
-          <ion-button [routerLink]="['/registration']" expand="block">New User</ion-button>
+          <ion-button type="submit" color="danger" expand="block" [disabled]="!credentials.valid">Sign In</ion-button>
+          <ion-button (click)="register()" expand="block">New User</ion-button>
 
         </ion-col>
       </ion-row>

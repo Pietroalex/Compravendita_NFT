@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyByhsBaIKcA2iifHCGqs0DUV_fzvh9zpYw",
+    authDomain: "nft-shop-c77dd.firebaseapp.com",
+    projectId: "nft-shop-c77dd",
+    storageBucket: "nft-shop-c77dd.appspot.com",
+    messagingSenderId: "1065721897934",
+    appId: "1:1065721897934:web:a2bb4a69378d284c5b019f",
+    measurementId: "G-TTF5GHMETY"
+  }
+
 };
 
 /*
