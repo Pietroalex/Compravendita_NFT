@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
     if (user) {
       this.router.navigateByUrl('/home', {replaceUrl: true});
     } else {
-      this.showAlert('Registration failed', 'Please check if you have typed a valid email (ex: example@email.com) and/or a valid password (it requires a minimum length of 6) and try again.');
+      this.showAlert('Registration failed', 'Please check if you have typed a <b>valid email</b> (ex: <b>example@email.com</b>) and/or a <b>valid password</b> (<b>it requires a minimum length of 6</b>) and try again!');
     }
   }
 
@@ -60,7 +60,7 @@ export class LoginPage implements OnInit {
     if (user) {
       this.router.navigateByUrl('/home', {replaceUrl: true});
     } else {
-        this.showAlert('Login failed', 'Email or Password must be wrong, please try again or create a new account if you\'re not registered yet!');
+        this.showAlert('Login failed', '<b>Email</b> or <b>Password</b> must be wrong, please try again or <b>create a new account</b> if you\'re not registered yet!');
     }
   }
 
