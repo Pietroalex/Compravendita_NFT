@@ -10,9 +10,32 @@
 <ion-content>
   <div id="container">
     <form>
-
-      <ion-img src="./assets/images/icon.png"></ion-img>
-
+<!--
+      <div class="preview">
+        <ion-avatar (click)="changeImage()">
+        <img *ngIf="profile?.imageUrl; else placeholder_avatar;" [src]="profile.imageUrl"/>
+        <ng-template #placeholder_avatar>
+          <div class="fallback">
+            <p>Select avatar</p>
+          </div>
+        </ng-template>
+        </ion-avatar>
+      </div>
+      -->
+      <ion-grid>
+        <ion-row class="ion-align-self-center">
+          <ion-col size="6">
+            <ion-button (click)="takePhoto(1)">Show Camera</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button (click)="takePhoto(0)">Show Album</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div *ngIf="base64Image">
+        <img [src]="base64Image">
+        <ion-button (click)="upload()">Upload to Firebase!</ion-button>
+      </div>
       <ion-label>Username</ion-label>
       <ion-item-divider>
         <ion-input type="text" required></ion-input>

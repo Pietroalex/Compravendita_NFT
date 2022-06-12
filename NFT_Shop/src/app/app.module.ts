@@ -8,14 +8,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment} from "../environments/environment";
 
+
 import { provideAuth, getAuth} from "@angular/fire/auth";
 import { provideStorage, getStorage} from "@angular/fire/storage";
 import { provideFirebaseApp, initializeApp} from "@angular/fire/app";
 import { getFirestore, provideFirestore} from "@angular/fire/firestore";
 import { ReactiveFormsModule } from "@angular/forms";
-
-
-
+import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 
 
 @NgModule({
@@ -30,7 +29,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     provideStorage(() => getStorage()),
     provideAuth(() => getAuth()),
     ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Camera],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
