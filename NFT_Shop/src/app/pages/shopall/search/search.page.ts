@@ -9,7 +9,7 @@ import {ValueAccessor} from "@ionic/angular/directives/control-value-accessors/v
 export class SearchPage implements OnInit {
   dest: string;
   valuee: string;
-
+  tipo: string;
 
 
   constructor() { }
@@ -17,6 +17,7 @@ export class SearchPage implements OnInit {
   ngOnInit() {
     this.dest= "/publicuser-profile";
     this.valuee= 'profile';
+    this.tipo= 'profile';
   }
 
   selecttype(value: string) {
@@ -25,20 +26,23 @@ export class SearchPage implements OnInit {
       case "profile":
         this.valuee= 'Profile';
         this.dest= "/publicuser-profile";
+        this.tipo=value;
         break;
       case "salenft":
         this.valuee= 'On Sale NFT';
         this.dest= "/shop-detail";
+        this.tipo=value;
         break;
       case "publicnft":
         this.valuee= 'Public NFT';
         this.dest= "/publicuseritem-detail";
+        this.tipo=value;
         break;
       case "sellershop":
         this.valuee= 'Sellershop';
         this.dest= "/shop";
+        this.tipo=value;
         break;
-
     }
 
   }
