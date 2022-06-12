@@ -54,7 +54,7 @@ const routes: Routes = [
   {
     path: 'shop-detail',
     loadChildren: () => import('./pages/shopall/shop-detail/shop-detail.module').then( m => m.ShopDetailPageModule),
-
+    ...canActivate(redirectNotLogged)
   },
   {
     path: 'shop-detail/:nft',
