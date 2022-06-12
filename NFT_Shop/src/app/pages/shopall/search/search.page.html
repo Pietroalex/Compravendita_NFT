@@ -24,33 +24,35 @@
 
   <ion-popover trigger="trigger-button">
     <ng-template>
-      <ion-content>  <ion-list>
-        <ion-radio-group value="profile">
-          <ion-list-header>
-            <ion-label>Search By</ion-label>
-          </ion-list-header>
+      <ion-content>
+        <ion-list>
+          <ion-radio-group value="profile">
+            <ion-list-header>
+              <ion-label>Search By</ion-label>
+            </ion-list-header>
 
-          <ion-item (click)="selecttype('profile')">
-            <ion-label>profile</ion-label>
-            <ion-radio slot="start" value="profile"></ion-radio>
-          </ion-item>
+            <ion-item (click)="selecttype('profile')">
+              <ion-label>profile</ion-label>
+              <ion-radio slot="start" value="profile"></ion-radio>
+            </ion-item>
 
-          <ion-item (click)="selecttype('salenft')">
-            <ion-label>salenft</ion-label>
-            <ion-radio slot="start" value="salenft"></ion-radio>
-          </ion-item>
+            <ion-item (click)="selecttype('salenft')">
+              <ion-label>salenft</ion-label>
+              <ion-radio slot="start" value="salenft"></ion-radio>
+            </ion-item>
 
-          <ion-item (click)="selecttype('publicnft')">
-            <ion-label>publicnft</ion-label>
-            <ion-radio slot="start" value="publicnft"></ion-radio>
-          </ion-item>
+            <ion-item (click)="selecttype('publicnft')">
+              <ion-label>publicnft</ion-label>
+              <ion-radio slot="start" value="publicnft"></ion-radio>
+            </ion-item>
 
-          <ion-item (click)="selecttype('sellershop')">
-            <ion-label>sellershop</ion-label>
-            <ion-radio slot="start" value="sellershop"></ion-radio>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list></ion-content>
+            <ion-item (click)="selecttype('sellershop')">
+              <ion-label>sellershop</ion-label>
+              <ion-radio slot="start" value="sellershop"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-content>
     </ng-template>
   </ion-popover>
 
