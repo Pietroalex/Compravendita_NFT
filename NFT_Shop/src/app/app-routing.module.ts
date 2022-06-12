@@ -28,7 +28,6 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     loadChildren: () => import('./pages/loginall/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule),
-    ...canActivate(redirectNotLogged)
   },
   {
     path: 'shop',
