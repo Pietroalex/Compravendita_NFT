@@ -14,12 +14,7 @@ export class RegistrationPage implements OnInit {
 
   constructor() { }
 
-  get email(){
-    return this.credentials.get('email');
-  }
-  get password() {
-    return this.credentials.get('password');
-  }
+
 
   ngOnInit() {
 

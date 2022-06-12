@@ -12,6 +12,7 @@ import { provideAuth, getAuth} from "@angular/fire/auth";
 import { provideStorage, getStorage} from "@angular/fire/storage";
 import { provideFirebaseApp, initializeApp} from "@angular/fire/app";
 import { getFirestore, provideFirestore} from "@angular/fire/firestore";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 
@@ -23,6 +24,7 @@ import { getFirestore, provideFirestore} from "@angular/fire/firestore";
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),

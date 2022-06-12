@@ -22,9 +22,11 @@ export class AppComponent {
     private router: Router
   ) {}
 
-async logout(){
+  async logout(){
 
-  await this.authService.logout();
-  this.router.navigateByUrl('/', { replaceUrl: true});
-}
+    await this.authService.logout();
+    this.router.navigateByUrl('/', { replaceUrl: true});
+
+  }
+
 }

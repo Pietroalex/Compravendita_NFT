@@ -17,7 +17,7 @@ const routes: Routes = [
     ...canActivate(redirectNotLogged)
   },
   {
-    path: '**',
+    path: '',
     redirectTo: '',
     pathMatch: 'full'
   },
@@ -27,7 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./pages/loginall/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./pages/loginall/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule),
+    ...canActivate(redirectNotLogged)
   },
   {
     path: 'shop',
@@ -53,7 +54,7 @@ const routes: Routes = [
   {
     path: 'shop-detail',
     loadChildren: () => import('./pages/shopall/shop-detail/shop-detail.module').then( m => m.ShopDetailPageModule),
-    ...canActivate(redirectNotLogged)
+
   },
   {
     path: 'shop-detail/:nft',
