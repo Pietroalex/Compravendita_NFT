@@ -19,7 +19,7 @@ export class AvatarService {
 
   getUserProfile(){
     const user = this.auth.currentUser;
-    const userDocRef = doc(this.firestore, 'users/${user.uid}');
+    const userDocRef = doc(this.firestore, `users/${user.uid}`);
     return docData(userDocRef);
 }
 
@@ -27,7 +27,7 @@ export class AvatarService {
 
   async uploadImage(cameraFile: Photo){
     const user = this.auth.currentUser;
-    const path = 'uploads/${user.uid}/profile.png';
+    const path = `uploads/${user.uid}/profile.png`;
     const storageRef = ref(this.storage, path);
 
     try {
@@ -35,7 +35,7 @@ export class AvatarService {
 
       const imageUrl = await getDownloadURL(storageRef);
 
-      const userDocRef = doc(this.firestore, 'users/${user.uid}');
+      const userDocRef = doc(this.firestore, `users/${user.uid}`);
       await setDoc(userDocRef, {
         imageUrl,
       });
