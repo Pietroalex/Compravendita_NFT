@@ -5,17 +5,19 @@ import {Router} from "@angular/router";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
 import {NftService} from "../../../services/DBop/nfts/nft.service";
-import {doc, Firestore, getDoc} from "@angular/fire/firestore";
+import {doc, Firestore, getDoc, updateDoc} from "@angular/fire/firestore";
 import {Auth} from "@angular/fire/auth";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.page.html',
-  styleUrls: ['./registration.page.scss'],
+  selector: 'app-edit_profile',
+  templateUrl: './edit_profile.html',
+  styleUrls: ['./edit_profile.page.scss'],
 })
-export class RegistrationPage implements OnInit {
+export class Edit_profilePage implements OnInit {
 profile = null;
+  infos: FormGroup;
 
   constructor(
   private avatarService: AvatarService,
@@ -25,12 +27,20 @@ profile = null;
   private alertController: AlertController,
   private firestore: Firestore,
   private auth: Auth,
+  private fb: FormBuilder
   ) {
-  //this.avatarService.getUserProfile().subscribe((data) => { this.profile = data; });
+  this.avatarService.getUserProfile().subscribe((data) => { this.profile = data; });      //ritirare i dati già presenti sul database
   }
-  ngOnInit() {}
 
-  async changeImage(){
+
+  ngOnInit() {
+    this.infos = this.fb.group({      //preparare i campi da richiedere nel formGroup
+      username: [''],
+      bio: ['']
+    });
+  }
+
+  async changeImage(){                                                      //cambiare immagine
       const image = await Camera.getPhoto({
         quality: 90,
         allowEditing: false,
@@ -69,6 +79,34 @@ profile = null;
       console.log("No such document!");
     }
 
+  }
+
+  async updateInfo() {
+
+    const profileRef = doc(this.firestore, "Users", this.auth.currentUser.uid);
+                                                                          //caricare sul database i dati cambiati
+     await updateDoc(profileRef, {
+      username: this.infos.controls['username'].value,
+      bio: this.infos.controls['bio'].value
+    });
+    const result = this.profile.username == this.infos.controls['username'].value &&
+    this.profile.bio ==  this.infos.controls['bio'].value;
+
+    if(!result){
+      const alert = await this.alertController.create({
+        header: 'Update failed',
+        message: 'There was a problem uploading your infos.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+    }else{
+      const alert = await this.alertController.create({
+        header: 'Great!',
+        message: 'Profile info successfully updated.',
+        buttons: ['OK']
+      });
+      await alert.present();
+    }
   }
 }
 

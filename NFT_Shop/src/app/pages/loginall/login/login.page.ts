@@ -97,9 +97,4 @@ export class LoginPage implements OnInit {
 
 
 
-    async createProfile(){
-
-    }
-
-
 }

@@ -3,13 +3,13 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Register</ion-title>
+    <ion-title>Profile Edit</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div id="container">
-    <form>
+    <form [formGroup]="infos"(ngSubmit)="updateInfo()">
 
     <div class="preview">
       <ion-avatar (click)="changeImage()">
@@ -25,28 +25,18 @@
 
       <ion-label>Username</ion-label>
       <ion-item-divider>
-        <ion-input type="text" required value="pippo"></ion-input>
-      </ion-item-divider>
-
-      <ion-label>Password</ion-label>
-      <ion-item-divider>
-        <ion-input type="password" required></ion-input>
-      </ion-item-divider>
-
-      <ion-label position="floating">Email</ion-label>
-      <ion-item-divider>
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" required value="{{profile?.username}}" formControlName="username"></ion-input>
       </ion-item-divider>
 
       <ion-label position="floating">Bio</ion-label>
       <ion-item-divider>
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" required value="{{profile?.bio}}" formControlName="bio"></ion-input>
       </ion-item-divider>
 
       <ion-row>
         <ion-col>
-          <ion-button  type="submit" color="danger" expand="block">Aggiorna( non funzionante)</ion-button>
-          <ion-button (click)="getUser()" type="submit" color="danger" expand="block">Controlla User</ion-button>
+          <ion-button  type="submit" color="danger" expand="block">Update Info</ion-button>
+          <ion-button (click)="getUser()" type="button" color="secondary" expand="block">Solo per controllo</ion-button>
 
         </ion-col>
       </ion-row>

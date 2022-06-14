@@ -22,8 +22,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'registration',
-    loadChildren: () => import('./pages/loginall/registration/registration.module').then(m => m.RegistrationPageModule)
+    path: 'edit_profile',
+    loadChildren: () => import('./pages/profileall/edit_profile/edit_profile.module').then(m => m.RegistrationPageModule)
   },
   {
     path: 'forgot-password',
@@ -82,22 +82,22 @@ const routes: Routes = [
   },
   {
     path: 'nft-sold',
-    loadChildren: () => import('./pages/profileall/nft-sold/nft-sold.module').then( m => m.NftSoldPageModule),
+    loadChildren: () => import('./pages/profileall/nft_based/nft-sold/nft-sold.module').then(m => m.NftSoldPageModule),
     ...canActivate(redirectNotLogged)
   },
   {
     path: 'nft-purchased',
-    loadChildren: () => import('./pages/profileall/nft-purchased/nft-purchased.module').then( m => m.NftPurchasedPageModule),
+    loadChildren: () => import('./pages/profileall/nft_based/nft-purchased/nft-purchased.module').then(m => m.NftPurchasedPageModule),
     ...canActivate(redirectNotLogged)
   },
   {
     path: 'purchase-detail',
-    loadChildren: () => import('./pages/profileall/purchase-detail/purchase-detail.module').then( m => m.PurchaseDetailPageModule),
+    loadChildren: () => import('./pages/profileall/nft_based/purchase-detail/purchase-detail.module').then(m => m.PurchaseDetailPageModule),
     ...canActivate(redirectNotLogged)
   },
   {
     path: 'publicuser-gallery',
-    loadChildren: () => import('./pages/profileall/publicuser-gallery/publicuser-gallery.module').then( m => m.PublicuserGalleryPageModule),
+    loadChildren: () => import('./pages/profileall/nft_based/publicuser-gallery/publicuser-gallery.module').then(m => m.PublicuserGalleryPageModule),
     ...canActivate(redirectNotLogged)
   },
   {
@@ -107,7 +107,7 @@ const routes: Routes = [
   },
   {
     path: 'publicuseritem-detail',
-    loadChildren: () => import('./pages/profileall/publicuseritem-detail/publicuseritem-detail.module').then( m => m.PublicuseritemDetailPageModule),
+    loadChildren: () => import('./pages/profileall/nft_based/publicuseritem-detail/publicuseritem-detail.module').then(m => m.PublicuseritemDetailPageModule),
     ...canActivate(redirectNotLogged)
   }
 ];
