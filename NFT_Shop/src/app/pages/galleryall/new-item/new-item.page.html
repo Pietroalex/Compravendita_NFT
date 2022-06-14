@@ -9,15 +9,28 @@
 
   <ion-img src="./assets/images/icon.png"></ion-img>
 
-  <ion-item lines="full">
-    <ion-label position="floating">Name</ion-label>
-    <ion-input type="text" required></ion-input>
-  </ion-item>
+  <form [formGroup]="nftInfo"(ngSubmit)="createNFT()">
+    <ion-label>Email</ion-label>
+    <ion-item-divider>
+      <ion-input id="item" type="text" required placeholder="Name" formControlName="name"></ion-input>
+      <ion-note slot="error" *ngIf="(name.dirty || name.touched) && name.errors"></ion-note>
+    </ion-item-divider>
 
-  <ion-item lines="full">
-    <ion-label position="stacked">Description</ion-label>
-    <ion-textarea placeholder="Enter the item description"></ion-textarea>
-  </ion-item>
+    <ion-label>Password</ion-label>
+    <ion-item-divider>
+      <ion-input type="text" required placeholder="Description" formControlName="desc"></ion-input>
+      <ion-note slot="error" *ngIf="(name.dirty || name.touched) && name.errors"></ion-note>
+    </ion-item-divider>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" >Create</ion-button>
+        <ion-button type="reset" expand="block">Cancel</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </form>
+
   <ion-button [routerLink]="['/gallery']" type="submit" color="secondary" expand="block">Create</ion-button>
   <ion-button [routerLink]="['/gallery']" expand="block" color="danger" >Cancel</ion-button>
 </form>

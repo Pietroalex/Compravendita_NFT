@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {NFT} from "../../model/NFT";
+import {AvatarService} from "../../../services/avatar.service";
+import {NftService} from "../../../services/DBop/nfts/nft.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AlertController, LoadingController} from "@ionic/angular";
+import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
 
 @Component({
   selector: 'app-new-item',
@@ -6,10 +12,87 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-item.page.scss'],
 })
 export class NewItemPage implements OnInit {
+  item: NFT = {
+    nftcode: '',
+    image: '',
+    name: '',
+    description: '',
+    author: '',
+  }
+  author = null;
+  itemcount = null;
+  nftInfo: FormGroup;
+  nftcode: null;
 
-  constructor() { }
-
-  ngOnInit() {
+  get name() {
+    return this.nftInfo.get('name');
   }
 
+  get desc() {
+    return this.nftInfo.get('desc');
+  }
+
+
+  constructor(
+    private fb: FormBuilder,
+    private nftService: NftService,
+    private loadingController: LoadingController,
+    private alertController: AlertController
+  ) {
+   // this.author = nftService.getUserName();
+    //this.itemcount = nftService.getUserCount();
+    this.nftcode = this.author+this.itemcount;
+  }
+
+  ngOnInit() {
+    this.nftInfo = this.fb.group({
+      name: ['', [Validators.required], Validators.minLength(3), Validators.maxLength(30)],
+      desc: ['', [Validators.required], Validators.minLength(6), Validators.maxLength(100)]
+    });
+  }
+
+
+  async createNFT() {
+    const loading = await this.loadingController.create();
+    await loading.present();
+
+    const result = 0; //= await this.avatarService.uploadImage(image);
+    loading.dismiss();
+
+    if (!result) {
+      const alert = await this.alertController.create({
+        header: 'Upload failed',
+        message: 'There was a problem uploading your avatar.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      this.loadImage();
+    }
+  }
+  async loadImage(){
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Base64,
+      source: CameraSource.Photos,
+    });
+    console.log(image);
+
+    if(image){
+      const loading = await this.loadingController.create();
+      await loading.present();
+
+      const result = 0 // await this.nftService.uploadImage(image);
+      loading.dismiss();
+
+      if(!result){
+        const alert = await this.alertController.create({
+          header: 'Upload failed',
+          message: 'There was a problem uploading your avatar.',
+          buttons: ['OK'],
+        });
+        await alert.present();
+      }
+    }
+  }
 }

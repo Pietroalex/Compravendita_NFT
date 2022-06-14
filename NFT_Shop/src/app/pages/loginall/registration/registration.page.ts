@@ -4,6 +4,9 @@ import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
+import {NftService} from "../../../services/DBop/nfts/nft.service";
+import {doc, Firestore, getDoc} from "@angular/fire/firestore";
+import {Auth} from "@angular/fire/auth";
 
 
 @Component({
@@ -19,9 +22,11 @@ profile = null;
   private authService: AuthService,
   private router: Router,
   private loadingController: LoadingController,
-  private alertController: AlertController
+  private alertController: AlertController,
+  private firestore: Firestore,
+  private auth: Auth,
   ) {
-  this.avatarService.getUserProfile().subscribe((data) => { this.profile = data; });
+  //this.avatarService.getUserProfile().subscribe((data) => { this.profile = data; });
   }
   ngOnInit() {}
 
@@ -53,7 +58,18 @@ profile = null;
   }
 
 
+  async getUser() {
+    const userUid = this.auth.currentUser.uid;
+    const docRef = doc(this.firestore, `Users/${userUid}`);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
 
+  }
 }
 
 

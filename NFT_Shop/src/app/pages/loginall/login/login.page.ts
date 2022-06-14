@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
+import {doc, Firestore, setDoc} from "@angular/fire/firestore";
+import {User} from "../../model/user";
 
 
 @Component({
@@ -13,12 +15,14 @@ import {Router} from "@angular/router";
 export class LoginPage implements OnInit {
   credentials: FormGroup;
 
+
   constructor(
     private fb: FormBuilder,
     private loadingController: LoadingController,
     private alertController: AlertController,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private db: Firestore,
   ) { }
 
   get email(){
@@ -37,6 +41,7 @@ export class LoginPage implements OnInit {
   }
 
   async register(){
+    let uid = null;
     const loading = await this.loadingController.create();
     await loading.present();
 
@@ -45,6 +50,20 @@ export class LoginPage implements OnInit {
 
     if (user) {
       this.router.navigateByUrl('/home', {replaceUrl: true});
+
+      uid = this.authService.getUserId();
+
+        await setDoc(doc(this.db, "Users", uid), {
+          uid: uid,
+          username: "user",
+          image: `uploads/icon.png`,
+          email: "email@example.com",
+          bio: "user bio",
+          cashart: 5000,
+          nft_created_count: 0,
+        });
+
+
     } else {
       this.showAlert('Registration failed', 'Please check if you have typed a <b>valid email</b> (ex: <b>example@email.com</b>) and/or a <b>valid password</b> (<b>it requires a minimum length of 6</b>) and try again!');
     }
@@ -62,6 +81,7 @@ export class LoginPage implements OnInit {
     } else {
         this.showAlert('Login failed', '<b>Email</b> or <b>Password</b> must be wrong, please try again or <b>create a new account</b> if you\'re not registered yet!');
     }
+
   }
 
 
@@ -77,7 +97,9 @@ export class LoginPage implements OnInit {
 
 
 
+    async createProfile(){
 
+    }
 
 
 }

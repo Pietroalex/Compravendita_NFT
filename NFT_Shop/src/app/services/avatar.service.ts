@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 
 import { Auth } from "@angular/fire/auth";
-import {doc, docData, Firestore, setDoc} from "@angular/fire/firestore";
-import {getDownloadURL, ref, Storage, uploadString} from "@angular/fire/storage";
+import {doc, docData, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
+import { getDownloadURL, ref, Storage, uploadString} from "@angular/fire/storage";
 import { Photo } from "@capacitor/camera";
+import {User} from "../pages/model/user";
+
+
+
+
 
 
 @Injectable({
@@ -19,15 +24,18 @@ export class AvatarService {
 
   getUserProfile(){
     const user = this.auth.currentUser;
-    const userDocRef = doc(this.firestore, `users/${user.uid}`);
-    return docData(userDocRef);
+// Firestore data converter
+
+
 }
 
 
 
+
+
   async uploadImage(cameraFile: Photo){
-    const user = this.auth.currentUser;
-    const path = `uploads/${user.uid}/profile.png`;
+    const user = this.auth.currentUser.uid;
+    const path = `uploads/${user}/profilee.png`;
     const storageRef = ref(this.storage, path);
 
     try {
@@ -35,9 +43,10 @@ export class AvatarService {
 
       const imageUrl = await getDownloadURL(storageRef);
 
-      const userDocRef = doc(this.firestore, `users/${user.uid}`);
-      await setDoc(userDocRef, {
-        imageUrl,
+      const docRef = doc(this.firestore, `Users/${user}`);
+
+      await updateDoc(docRef, {
+        image: imageUrl,
       });
       return true;
     }catch (e) {
@@ -49,3 +58,8 @@ export class AvatarService {
 
 
 }
+
+
+
+
+

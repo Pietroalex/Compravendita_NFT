@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "@angular/fire/auth";
 import {tryCatch} from "rxjs/internal-compatibility";
+import { User } from "../pages/model/user";
+import {AngularFireDatabase, AngularFireList, AngularFireObject} from "@angular/fire/compat/database";
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +10,9 @@ import {tryCatch} from "rxjs/internal-compatibility";
 export class AuthService {
 
   constructor(private auth: Auth) { }
+
+
+
 
 
   async register({ email, password}){
@@ -39,10 +44,13 @@ export class AuthService {
     }
   }
 logout(){
-    return signOut(this.auth)
+    return signOut(this.auth);
 }
 
-
+  getUserId() {
+    const user = this.auth.currentUser;
+    return user.uid;
+  }
 
 
 

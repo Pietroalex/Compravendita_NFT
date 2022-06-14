@@ -13,7 +13,7 @@
 
     <div class="preview">
       <ion-avatar (click)="changeImage()">
-        <img *ngIf="profile?.imageUrl; else placeholder_avatar;" [src]="profile.imageUrl"/>
+        <img *ngIf="profile?.image; else placeholder_avatar;" [src]="profile.image"/>
         <ng-template #placeholder_avatar>
           <div class="fallback">
             <p>Select Progile Image</p>
@@ -25,7 +25,7 @@
 
       <ion-label>Username</ion-label>
       <ion-item-divider>
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" required value="pippo"></ion-input>
       </ion-item-divider>
 
       <ion-label>Password</ion-label>
@@ -45,7 +45,9 @@
 
       <ion-row>
         <ion-col>
-          <ion-button [routerLink]="['/login']" type="submit" color="danger" expand="block">Sign Up</ion-button>
+          <ion-button  type="submit" color="danger" expand="block">Aggiorna( non funzionante)</ion-button>
+          <ion-button (click)="getUser()" type="submit" color="danger" expand="block">Controlla User</ion-button>
+
         </ion-col>
       </ion-row>
     </form>
