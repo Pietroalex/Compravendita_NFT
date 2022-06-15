@@ -81,11 +81,9 @@ ion-button{
 
 }
 #profileimg {
-  width: 50%;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  margin-top: 8px;
 }
 #container {
   height: auto;
@@ -96,10 +94,11 @@ ion-button{
 ion-avatar{
   width: 128px;
   height: 128px;
+  justify-content: center;
 }
 
 .preview {
-  margin-top: 50px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
