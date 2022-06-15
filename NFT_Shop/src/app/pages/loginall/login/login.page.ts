@@ -56,7 +56,7 @@ export class LoginPage implements OnInit {
         await setDoc(doc(this.db, "Users", uid), {
           uid: uid,
           username: "user",
-          image: `uploads/icon.png`,
+          image: `https://firebasestorage.googleapis.com/v0/b/nft-shop-c77dd.appspot.com/o/uploads%2Ficon.png?alt=media&token=0c5b1aa1-f887-404c-a0b4-cd2ad8c6fa64`,
           email: "email@example.com",
           bio: "user bio",
           cashart: 5000,

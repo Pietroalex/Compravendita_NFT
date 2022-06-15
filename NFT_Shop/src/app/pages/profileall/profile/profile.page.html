@@ -13,17 +13,19 @@
 <ion-content [fullscreen]="true">
 
   <div id="container">
-    <ion-icon id="modifica" name="settings"></ion-icon>
-    <ion-img id="profileimg" src="./assets/images/icon.png"></ion-img>
+    <div class="preview">
+      <ion-avatar>
+    <ion-img id="profileimg" src="{{profile?.image}}" [routerLink]="['/edit_profile']"></ion-img>
+      </ion-avatar>
+    </div>
+
 
     <div id="info">
-
-
     <ion-label>Username</ion-label><br>
-    <p id="username">Username</p>
+    <p id="username" [routerLink]="['/edit_profile']">{{profile?.username}}</p>
 
     <ion-label>Bio</ion-label>
-    <p id="bio">bio</p>
+    <p id="bio" [routerLink]="['/edit_profile']">{{profile?.bio}}</p>
     </div>
     <ion-segment value="private">
       <ion-segment-button value="private" (click)="hide_show('private')">Private</ion-segment-button>

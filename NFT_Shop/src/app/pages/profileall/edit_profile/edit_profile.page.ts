@@ -67,7 +67,6 @@ profile = null;
       }
   }
 
-
   async getUser() {
     const userUid = this.auth.currentUser.uid;
     const docRef = doc(this.firestore, `Users/${userUid}`);

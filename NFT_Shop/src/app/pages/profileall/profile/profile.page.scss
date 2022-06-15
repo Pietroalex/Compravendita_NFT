@@ -33,13 +33,7 @@ ion-menu-button {
 
 }
 
-#profileimg{
-  width: 28%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  margin-top: 8px;
-}
+
 #publicsection{
   display: none;
 }
@@ -85,4 +79,27 @@ ion-button{
   margin-left: 190px;
   margin-top: 5px;
 
+}
+#profileimg {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 8px;
+}
+#container {
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+ion-avatar{
+  width: 128px;
+  height: 128px;
+}
+
+.preview {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }

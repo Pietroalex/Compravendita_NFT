@@ -10,10 +10,7 @@ ion-img {
   width: auto;
   text-align: center;
 }
-form {
-  margin: 10px 20px 0px 20px;
-  text-align: left;
-}
+
 ion-avatar{
   width: 128px;
   height: 128px;
@@ -35,4 +32,8 @@ ion-avatar{
   justify-content: center;
   align-items: center;
   font-weight: 500;
+}
+form {
+  margin: 10px 20px 0px 20px;
+  text-align: left;
 }
