@@ -48,20 +48,21 @@ export class LoginPage implements OnInit {
     const user = await this.authService.register(this.credentials.value);
     await loading.dismiss();
 
+
     if (user) {
-      this.router.navigateByUrl('/menu', {replaceUrl: true});
+      this.router.navigateByUrl('/menu/home', {replaceUrl: true});
 
       uid = this.authService.getUserId();
-
-        await setDoc(doc(this.db, "Users", uid), {
-          uid: uid,
-          username: "user",
-          image: `https://firebasestorage.googleapis.com/v0/b/nft-shop-c77dd.appspot.com/o/uploads%2Ficon.png?alt=media&token=0c5b1aa1-f887-404c-a0b4-cd2ad8c6fa64`,
-          email: "email@example.com",
-          bio: "user bio",
-          cashart: 5000,
-          nft_created_count: 0,
-        });
+      let email = this.credentials.controls['email'].value;
+      await setDoc(doc(this.db, "Users", uid), {
+        uid: uid,
+        username: "user",
+        image: `https://firebasestorage.googleapis.com/v0/b/nft-shop-c77dd.appspot.com/o/uploads%2Ficon.png?alt=media&token=0c5b1aa1-f887-404c-a0b4-cd2ad8c6fa64`,
+        email: email,
+        bio: "user bio",
+        cashart: 5000,
+        nft_created_count: 0,
+      });
 
 
     } else {
