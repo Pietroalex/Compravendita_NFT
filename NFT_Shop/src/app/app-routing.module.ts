@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from "@angular/fire/auth-guard";
 
+
 const redirectNotLogged = () => redirectUnauthorizedTo(['']);
 const redirectLogged = () => redirectLoggedInTo(['menu']);
+
 
 const routes: Routes = [
 
@@ -19,6 +21,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/loginall/login/login.module').then(m => m.LoginPageModule),
     ...canActivate(redirectLogged)
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/loginall/register/register.module').then( m => m.RegisterPageModule),
+    ...canActivate(redirectLogged)
+  },
+
 ];
 
 @NgModule({

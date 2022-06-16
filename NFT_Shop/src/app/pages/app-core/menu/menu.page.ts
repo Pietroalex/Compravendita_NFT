@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AlertController} from "@ionic/angular";
-import {AuthService} from "../../../services/auth.service";
+import {AuthService} from "../../../services/user_related/login/auth.service";
 import {Router, RouterEvent} from "@angular/router";
-import {AvatarService} from "../../../services/avatar.service";
+import {AvatarService} from "../../../services/user_related/profile_image/avatar.service";
 
 @Component({
   selector: 'app-menu',
@@ -22,16 +22,16 @@ export class MenuPage   {
     private alertController: AlertController,
     private authService: AuthService,
     private router: Router,
-    private avatarService: AvatarService,
+
   ) {
-    this.avatarService.getUserProfile().subscribe((data) => { this.profile = data; });
+    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
     this.router.events.subscribe((event: RouterEvent) => this.selectedPath = event.url);
   }
 
   async logout(){
 
     await this.authService.logout();
-    this.router.navigateByUrl('', { replaceUrl: true});
+    await this.router.navigateByUrl('', { replaceUrl: true});
 
   }
 

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Log In</ion-title>
+    <ion-title>Registation</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,18 @@
   <div id="container">
     <ion-img src="./assets/images/icon.png"></ion-img>
 
-    <form [formGroup]="credentials"(ngSubmit)="login()">
+    <form [formGroup]="registers" (ngSubmit)="register()">
+      <ion-label>Username</ion-label>
+      <ion-item-divider>
+        <ion-input type="text" required placeholder="Username" formControlName="username"></ion-input>
+        <ion-note slot="error" *ngIf="(username.dirty || username.touched) && username.errors"></ion-note>
+      </ion-item-divider>
+
+      <ion-label position="floating">Bio</ion-label>
+      <ion-item-divider>
+        <ion-input type="text"  formControlName="bio"></ion-input>
+      </ion-item-divider>
+
       <ion-label>Email</ion-label>
       <ion-item-divider>
         <ion-input id="item" type="email" required placeholder="Email" formControlName="email"></ion-input>
@@ -24,11 +35,9 @@
         <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"></ion-note>
       </ion-item-divider>
 
-      <ion-row><a [routerLink]="['./forgot-password']" class="small-text">Forgot Password?</a></ion-row>
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" expand="block" [disabled]="!credentials.valid">Sign In</ion-button>
-          <ion-button [routerLink]="['./register']"  expand="block">New User</ion-button>
+          <ion-button type="submit" color="danger" expand="block" [disabled]="!registers.valid">Sign Up</ion-button>
 
         </ion-col>
       </ion-row>

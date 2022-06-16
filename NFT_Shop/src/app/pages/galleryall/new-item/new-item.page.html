@@ -1,37 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>new_item</ion-title>
+    <ion-title>New NFT</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<form>
-
-  <ion-img src="./assets/images/icon.png"></ion-img>
-
-  <form [formGroup]="nftInfo"(ngSubmit)="createNFT()">
-    <ion-label>Email</ion-label>
+<div id="container">
+<!--
+  <div class="preview">
+    <ion-avatar (click)="pickNFTImage()">
+      <img *ngIf="  placeholder_avatar;" src="this.image"/>
+      <ng-template #placeholder_avatar>
+        <div class="fallback">
+          <p>Select Profile Image</p>
+        </div>
+      </ng-template>
+    </ion-avatar>
+  </div>
+-->
+  <form [formGroup]="nftInfo" (ngSubmit)="createNFT()">
+    <ion-label>Name</ion-label>
     <ion-item-divider>
       <ion-input id="item" type="text" required placeholder="Name" formControlName="name"></ion-input>
       <ion-note slot="error" *ngIf="(name.dirty || name.touched) && name.errors"></ion-note>
     </ion-item-divider>
 
-    <ion-label>Password</ion-label>
+    <ion-label>Description</ion-label>
     <ion-item-divider>
       <ion-input type="text" required placeholder="Description" formControlName="desc"></ion-input>
-      <ion-note slot="error" *ngIf="(name.dirty || name.touched) && name.errors"></ion-note>
+      <ion-note slot="error" *ngIf="(name.dirty || desc.touched) && desc.errors"></ion-note>
     </ion-item-divider>
 
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block" >Create</ion-button>
-        <ion-button type="reset" expand="block">Cancel</ion-button>
 
-      </ion-col>
-    </ion-row>
+
+  <p>{{profile?.name}}</p>
+  <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">Create</ion-button>
+  <ion-button type="cancel" [routerLink]="['/gallery']" expand="block" color="danger" >Cancel</ion-button>
   </form>
-
-  <ion-button [routerLink]="['/gallery']" type="submit" color="secondary" expand="block">Create</ion-button>
-  <ion-button [routerLink]="['/gallery']" expand="block" color="danger" >Cancel</ion-button>
-</form>
+</div>
 </ion-content>

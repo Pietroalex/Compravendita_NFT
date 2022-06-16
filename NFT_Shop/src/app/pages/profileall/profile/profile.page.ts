@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AvatarService} from "../../../services/avatar.service";
+import {AvatarService} from "../../../services/user_related/profile_image/avatar.service";
+import {AuthService} from "../../../services/user_related/login/auth.service";
 
 @Component({
   selector: 'app-profile',
@@ -9,9 +10,9 @@ import {AvatarService} from "../../../services/avatar.service";
 export class ProfilePage implements OnInit {
   profile = null;
   constructor(
-    private avatarService: AvatarService,
+    private authService: AuthService,
   ) {
-    this.avatarService.getUserProfile().subscribe((data) => { this.profile = data; });
+    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
   }
 
   ngOnInit() {

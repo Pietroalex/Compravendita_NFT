@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../../services/user_related/login/auth.service";
 
-
-import {AuthService} from "../../../services/auth.service";
-
-import {AlertController} from "@ionic/angular";
-import {Router} from "@angular/router";
+import { AlertController } from "@ionic/angular";
+import { Router } from "@angular/router";
 import { AppComponent } from "../../../app.component";
-import firebase from "firebase/compat";
-import {AvatarService} from "../../../services/avatar.service";
+import { AvatarService } from "../../../services/user_related/profile_image/avatar.service";
 
 @Component({
   selector: 'app-home',
@@ -24,7 +21,7 @@ export class HomePage  implements OnInit {
     private app: AppComponent,
     private avatarService: AvatarService
   ) {
-    this.avatarService.getUserProfile().subscribe((data) => { this.profile = data; });
+    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
   }
 
 

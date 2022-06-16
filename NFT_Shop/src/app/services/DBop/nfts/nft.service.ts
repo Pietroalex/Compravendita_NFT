@@ -5,7 +5,7 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { NFT } from "../../../pages/model/NFT";
-import {AuthService} from "../../auth.service";
+import {AuthService} from "../../user_related/login/auth.service";
 import {Auth} from "@angular/fire/auth";
 import {Photo} from "@capacitor/camera";
 import {getDownloadURL, ref, uploadString, Storage} from "@angular/fire/storage";
@@ -26,41 +26,14 @@ export class NftService {
     private storage: Storage,
     private authService: AuthService
   ) {
-    //this.author = this.getUserName();
-    //this.itemcount = this.getUserCount();
-    //this.nftcode = this.author+this.itemcount;
-  }
-
-  createNFT(item: NFT) {
-    const nftRef = collection(this.firestore, 'NFTS');
-    return addDoc(nftRef, item);
-  }
-  async getUser() {
-    const uid = this.authService.getUserId();
-    const docRef = doc(this.firestore, "Users", uid);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
-    } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
 
   }
-  /*
-  getUserName(){
-    const user = this.auth.currentUser.uid;
-    const author = user.username;
-    return author;
-  }
-  getUserCount(){
-    const user = this.auth.currentUser.uid;
-    const itemcount = user.nft_created_count;
-    return itemcount;
-}
-  async uploadImage(cameraFile: Photo){
-    const nft = this.auth.currentUser;
-    const path = `uploads/${nft.nftcode}/image.png`;
+
+
+
+  async uploadNFTImage(cameraFile: Photo, nftcode: string){
+
+    const path = `uploads/nft_images/${nftcode}/nftimage.png`;
     const storageRef = ref(this.storage, path);
 
     try {
@@ -68,19 +41,16 @@ export class NftService {
 
       const imageUrl = await getDownloadURL(storageRef);
 
-      const nftDocRef = doc(this.firestore, `nfts/${nft.nftcode}`);
-      await setDoc(nftDocRef, {
-        imageUrl,
+      const docRef = doc(this.firestore, `NFTs/${nftcode}`);
+
+      await updateDoc(docRef, {
+        image: imageUrl,
       });
       return true;
     }catch (e) {
       return null;
     }
   }
-
-
-
-   */
 
 
 }

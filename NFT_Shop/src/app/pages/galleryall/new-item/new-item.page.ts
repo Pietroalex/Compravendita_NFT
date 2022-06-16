@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {NFT} from "../../model/NFT";
-import {AvatarService} from "../../../services/avatar.service";
+import {AvatarService} from "../../../services/user_related/profile_image/avatar.service";
 import {NftService} from "../../../services/DBop/nfts/nft.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
+import {doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
+import {AuthService} from "../../../services/user_related/login/auth.service";
+import {getDownloadURL, uploadString} from "@angular/fire/storage";
+import {Auth} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-new-item',
@@ -12,17 +16,14 @@ import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
   styleUrls: ['./new-item.page.scss'],
 })
 export class NewItemPage implements OnInit {
-  item: NFT = {
-    nftcode: '',
-    image: '',
-    name: '',
-    description: '',
-    author: '',
-  }
-  author = null;
-  itemcount = null;
+
   nftInfo: FormGroup;
-  nftcode: null;
+
+  profile = null;
+
+  author: string;
+  itemcount: string;
+  nftcode: string;
 
   get name() {
     return this.nftInfo.get('name');
@@ -37,39 +38,31 @@ export class NewItemPage implements OnInit {
     private fb: FormBuilder,
     private nftService: NftService,
     private loadingController: LoadingController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private authService: AuthService,
+    private firestore: Firestore,
+
   ) {
-   // this.author = nftService.getUserName();
-    //this.itemcount = nftService.getUserCount();
-    this.nftcode = this.author+this.itemcount;
+
+    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
+    this.author = this.profile?.username;
+    this.itemcount = this.profile?.nft_created_count;
+    this.nftcode = this.author + this.itemcount;
+    alert(this.itemcount);
+    alert(this.nftcode);
   }
 
   ngOnInit() {
     this.nftInfo = this.fb.group({
-      name: ['', [Validators.required], Validators.minLength(3), Validators.maxLength(30)],
-      desc: ['', [Validators.required], Validators.minLength(6), Validators.maxLength(100)]
+      name: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30)]],
+      desc: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
     });
   }
 
 
-  async createNFT() {
-    const loading = await this.loadingController.create();
-    await loading.present();
 
-    const result = 0; //= await this.avatarService.uploadImage(image);
-    loading.dismiss();
+  async pickNFTImage(){
 
-    if (!result) {
-      const alert = await this.alertController.create({
-        header: 'Upload failed',
-        message: 'There was a problem uploading your avatar.',
-        buttons: ['OK'],
-      });
-      await alert.present();
-      this.loadImage();
-    }
-  }
-  async loadImage(){
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: false,
@@ -82,7 +75,7 @@ export class NewItemPage implements OnInit {
       const loading = await this.loadingController.create();
       await loading.present();
 
-      const result = 0 // await this.nftService.uploadImage(image);
+      const result = await this.nftService.uploadNFTImage(image, this.nftcode);
       loading.dismiss();
 
       if(!result){
@@ -95,4 +88,33 @@ export class NewItemPage implements OnInit {
       }
     }
   }
+
+  async createNFT(){
+
+    let name = this.nftInfo.controls['name'].value;
+    let desc = this.nftInfo.controls['desc'].value;
+
+    await setDoc(doc(this.firestore, "NFTs", this.nftcode), {
+      nftcode: this.nftcode,
+      image: "img",
+      name: name,
+      description: desc,
+      author: this.authService.getUserId(),
+     });
+
+    try {
+      const user = this.profile.uid;
+      const docRef = doc(this.firestore, `Users/${user}`);
+
+      await updateDoc(docRef, {
+        nft_created_count: this.itemcount+1,
+      });
+      await this.pickNFTImage();
+      return true;
+    }catch (e) {
+      return null;
+    }
+}
+
+
 }

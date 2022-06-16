@@ -4,12 +4,6 @@ import { Auth } from "@angular/fire/auth";
 import {doc, docData, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
 import { getDownloadURL, ref, Storage, uploadString} from "@angular/fire/storage";
 import { Photo } from "@capacitor/camera";
-import {User} from "../pages/model/user";
-
-
-
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -21,16 +15,6 @@ export class AvatarService {
     private storage: Storage,
 
   ) { }
-
-  getUserProfile(){
-    const user = this.auth.currentUser.uid;
-    const userDocRef = doc(this.firestore, `Users/${user}`);
-    return docData(userDocRef);
-
-
-}
-
-
 
 
 
@@ -54,8 +38,6 @@ export class AvatarService {
       return null;
     }
   }
-
-
 
 
 }

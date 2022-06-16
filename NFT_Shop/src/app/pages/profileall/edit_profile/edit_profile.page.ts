@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AvatarService} from "../../../services/avatar.service";
-import {AuthService} from "../../../services/auth.service";
+import {AvatarService} from "../../../services/user_related/profile_image/avatar.service";
+import {AuthService} from "../../../services/user_related/login/auth.service";
 import {Router} from "@angular/router";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
@@ -29,13 +29,12 @@ profile = null;
   private auth: Auth,
   private fb: FormBuilder
   ) {
-  this.avatarService.getUserProfile().subscribe((data) => { this.profile = data; });      //ritirare i dati già presenti sul database
+  this.authService.getUserProfile().subscribe((data) => { this.profile = data; });      //ritirare i dati già presenti sul database
   }
 
 
   ngOnInit() {
     this.infos = this.fb.group({      //preparare i campi da richiedere nel formGroup
-      username: [''],
       bio: ['']
     });
   }
@@ -68,7 +67,7 @@ profile = null;
   }
 
   async getUser() {
-    const userUid = this.auth.currentUser.uid;
+    const userUid = this.profile.uid;
     const docRef = doc(this.firestore, `Users/${userUid}`);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
@@ -85,11 +84,9 @@ profile = null;
     const profileRef = doc(this.firestore, "Users", this.auth.currentUser.uid);
                                                                           //caricare sul database i dati cambiati
      await updateDoc(profileRef, {
-      username: this.infos.controls['username'].value,
       bio: this.infos.controls['bio'].value
     });
-    const result = this.profile.username == this.infos.controls['username'].value &&
-    this.profile.bio ==  this.infos.controls['bio'].value;
+    const result = this.profile.bio ==  this.infos.controls['bio'].value;
 
     if(!result){
       const alert = await this.alertController.create({
