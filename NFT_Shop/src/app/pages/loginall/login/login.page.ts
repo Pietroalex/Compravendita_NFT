@@ -49,7 +49,7 @@ export class LoginPage implements OnInit {
     await loading.dismiss();
 
     if (user) {
-      this.router.navigateByUrl('/home', {replaceUrl: true});
+      this.router.navigateByUrl('/menu', {replaceUrl: true});
 
       uid = this.authService.getUserId();
 
@@ -77,7 +77,7 @@ export class LoginPage implements OnInit {
     await loading.dismiss();
 
     if (user) {
-      this.router.navigateByUrl('/home', {replaceUrl: true});
+      this.router.navigateByUrl('/menu/home', {replaceUrl: true});
     } else {
         this.showAlert('Login failed', '<b>Email</b> or <b>Password</b> must be wrong, please try again or <b>create a new account</b> if you\'re not registered yet!');
     }

@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment} from "../environments/environment";
 
 
+import { MenuPageModule } from "./pages/app-core/menu/menu.module";
 import { provideAuth, getAuth} from "@angular/fire/auth";
 import { provideStorage, getStorage} from "@angular/fire/storage";
 import { provideFirebaseApp, initializeApp} from "@angular/fire/app";
@@ -23,7 +24,9 @@ import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    MenuPageModule,
     ReactiveFormsModule,
+
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
