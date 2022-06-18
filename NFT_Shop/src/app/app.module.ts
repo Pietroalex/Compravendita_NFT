@@ -18,6 +18,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 
 
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,7 +28,6 @@ import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
     AppRoutingModule,
     MenuPageModule,
     ReactiveFormsModule,
-
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 import {AuthGuard} from "@angular/fire/auth-guard";
+import {Auth, getAuth, sendPasswordResetEmail} from "@angular/fire/auth";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-forgot-password',
@@ -10,19 +12,35 @@ import {AuthGuard} from "@angular/fire/auth-guard";
   styleUrls: ['./forgot-password.page.scss'],
 })
 export class ForgotPasswordPage implements OnInit {
-
-  frmPasswordReset: FormGroup = this.fb.group({
-    email: [null, [Validators.required, Validators.email]]
-  });
-
-  constructor( private fb: FormBuilder, private auth: AuthGuard) {
-    const email = this.frmPasswordReset.controls['email'].value;
+  credentials: FormGroup;
 
 
+  constructor( private fb: FormBuilder,
+               private auth: Auth,
+               private router: Router) {
+    this.credentials = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+
+    });
 }
+  get email(){
+    return this.credentials.get('email');
+  }
 
   ngOnInit() {
   }
+  async reset() {
+    const auth = getAuth();
+    sendPasswordResetEmail(auth, this.credentials.controls['email'].value)
+      .then(() => {
+        // Password reset email sent!
 
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
 
+  }
 }

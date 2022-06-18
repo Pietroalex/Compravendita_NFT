@@ -24,7 +24,7 @@
         <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"></ion-note>
       </ion-item-divider>
 
-      <ion-row><a [routerLink]="['./forgot-password']" class="small-text">Forgot Password?</a></ion-row>
+      <ion-row><ion-button [routerLink]="['./forgot']" class="small-text">Forgot Password?</ion-button></ion-row>
       <ion-row>
         <ion-col>
           <ion-button type="submit" color="danger" expand="block" [disabled]="!credentials.valid">Sign In</ion-button>

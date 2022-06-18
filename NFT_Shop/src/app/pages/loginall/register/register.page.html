@@ -9,13 +9,13 @@
 
 <ion-content>
   <div id="container">
-    <ion-img src="./assets/images/icon.png"></ion-img>
+    <ion-img id ="img" src="./assets/images/icon.png"></ion-img>
 
     <form [formGroup]="registers" (ngSubmit)="register()">
       <ion-label>Username</ion-label>
       <ion-item-divider>
         <ion-input type="text" required placeholder="Username" formControlName="username"></ion-input>
-        <ion-note slot="error" *ngIf="(username.dirty || username.touched) && username.errors"></ion-note>
+
       </ion-item-divider>
 
       <ion-label position="floating">Bio</ion-label>
@@ -26,13 +26,13 @@
       <ion-label>Email</ion-label>
       <ion-item-divider>
         <ion-input id="item" type="email" required placeholder="Email" formControlName="email"></ion-input>
-        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors"></ion-note>
+
       </ion-item-divider>
 
       <ion-label>Password</ion-label>
       <ion-item-divider>
         <ion-input type="password" required placeholder="Password" formControlName="password"></ion-input>
-        <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"></ion-note>
+
       </ion-item-divider>
 
       <ion-row>

@@ -3,7 +3,7 @@ import {AlertController} from "@ionic/angular";
 import {AuthService} from "../../../services/user_related/login/auth.service";
 import {Router, RouterEvent} from "@angular/router";
 import {AvatarService} from "../../../services/user_related/profile_image/avatar.service";
-
+import { getAuth, signOut } from "firebase/auth";
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
@@ -28,11 +28,13 @@ export class MenuPage   {
     this.router.events.subscribe((event: RouterEvent) => this.selectedPath = event.url);
   }
 
-  async logout(){
+  async logout() {
 
-    await this.authService.logout();
-    await this.router.navigateByUrl('', { replaceUrl: true});
-
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      this.router.navigateByUrl('/', { replaceUrl: true});
+    }).catch((error) => {
+      // An error happened.
+    });
   }
-
 }

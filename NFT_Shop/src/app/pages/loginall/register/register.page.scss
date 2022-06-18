@@ -1,0 +1,39 @@
+#img {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 8px;
+}
+#container {
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+ion-avatar{
+  width: 128px;
+  height: 128px;
+}
+
+.preview {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.fallback {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: grey;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+form {
+  margin: 10px 20px 0 20px;
+  text-align: left;
+}

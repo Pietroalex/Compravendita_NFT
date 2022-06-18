@@ -3,13 +3,10 @@ import {
   Firestore, addDoc, collection, collectionData,
   doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc, getDoc
 } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { NFT } from "../../../pages/model/NFT";
-import {AuthService} from "../../user_related/login/auth.service";
+
 import {Auth} from "@angular/fire/auth";
 import {Photo} from "@capacitor/camera";
 import {getDownloadURL, ref, uploadString, Storage} from "@angular/fire/storage";
-import {FormGroup} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +21,7 @@ export class NftService {
     private firestore: Firestore,
     private auth: Auth,
     private storage: Storage,
-    private authService: AuthService
+
   ) {
 
   }
