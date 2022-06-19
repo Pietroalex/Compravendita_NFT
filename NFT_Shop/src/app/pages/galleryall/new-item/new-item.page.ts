@@ -21,10 +21,6 @@ export class NewItemPage implements OnInit {
 
   profile = null;
 
-  author = "aa";
-  itemcount: string;
-  nftcode: string;
-
   get name() {
     return this.nftInfo.get('name');
   }

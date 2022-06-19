@@ -44,6 +44,6 @@ export class NftService {
       return null;
     }
   }
-
+//inserire metodo di riconoscimento nft e passaggio documento singolo e multiplo
 
 }

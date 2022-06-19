@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {NftService} from "../../../services/DBop/nfts/nft.service";
+import {AuthService} from "../../../services/user_related/login/auth.service";
 
 @Component({
   selector: 'app-sell-item',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellItemPage implements OnInit {
 
-  constructor() { }
+  nftInfo: FormGroup;
+  profile = null;
 
-  ngOnInit() {
+  get price() {
+    return this.nftInfo.get('price');
   }
 
+  constructor(
+    private fb: FormBuilder,
+    private nftService: NftService,
+    private authService: AuthService,
+  )
+  {
+    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
+  }
+
+  ngOnInit() {
+    this.nftInfo = this.fb.group({
+      price: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],//aggiungere il controllo sull'input per inserire solo numeri che non inizino per 0
+    });
+  }
+
+
+    async sellItem(){
+    //prendere informazioni nft con passaggio da gallery
+      //creare il documento nftOnSale
+    //cancellare profilo nft
+    }
 }
