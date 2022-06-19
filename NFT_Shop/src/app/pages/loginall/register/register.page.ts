@@ -38,6 +38,7 @@ export class RegisterPage implements OnInit {
       username: ['', [Validators.required, Validators.minLength(6)]],
       bio: [''],
     });
+
   }
 
   async register() {
