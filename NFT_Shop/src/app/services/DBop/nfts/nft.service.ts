@@ -12,10 +12,6 @@ import {getDownloadURL, ref, uploadString, Storage} from "@angular/fire/storage"
   providedIn: 'root'
 })
 export class NftService {
-  author = null;
-  itemcount = null;
-  nftcode: null;
-
 
   constructor(
     private firestore: Firestore,

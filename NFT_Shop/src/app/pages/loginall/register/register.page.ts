@@ -39,6 +39,7 @@ export class RegisterPage implements OnInit {
       bio: [''],
     });
   }
+
   async register() {
     let uid = null;
     const auth = getAuth();

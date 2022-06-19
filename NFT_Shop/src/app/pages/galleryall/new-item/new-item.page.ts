@@ -21,7 +21,7 @@ export class NewItemPage implements OnInit {
 
   profile = null;
 
-  author: string;
+  author = "aa";
   itemcount: string;
   nftcode: string;
 
@@ -43,25 +43,24 @@ export class NewItemPage implements OnInit {
     private firestore: Firestore,
 
   ) {
-
     this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
-    this.author = this.profile?.username;
-    this.itemcount = this.profile?.nft_created_count;
-    this.nftcode = this.author + this.itemcount;
-    alert(this.itemcount);
-    alert(this.nftcode);
+
   }
 
-  ngOnInit() {
+   ngOnInit() {
     this.nftInfo = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30)]],
       desc: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
+      username: [''],
+      count: [''],
     });
+
+
   }
 
 
 
-  async pickNFTImage(){
+  async pickNFTImage(nftcode : string){
 
     const image = await Camera.getPhoto({
       quality: 90,
@@ -75,7 +74,7 @@ export class NewItemPage implements OnInit {
       const loading = await this.loadingController.create();
       await loading.present();
 
-      const result = await this.nftService.uploadNFTImage(image, this.nftcode);
+      const result = await this.nftService.uploadNFTImage(image, nftcode);
       loading.dismiss();
 
       if(!result){
@@ -93,9 +92,11 @@ export class NewItemPage implements OnInit {
 
     let name = this.nftInfo.controls['name'].value;
     let desc = this.nftInfo.controls['desc'].value;
-
-    await setDoc(doc(this.firestore, "NFTs", this.nftcode), {
-      nftcode: this.nftcode,
+    let author = this.profile?.username;
+    let itemcount = this.profile?.nft_created_count;
+    let nftcode = author +"-"+ itemcount;
+    await setDoc(doc(this.firestore, "NFTs", nftcode), {
+      nftcode: nftcode,
       image: "img",
       name: name,
       description: desc,
@@ -107,9 +108,9 @@ export class NewItemPage implements OnInit {
       const docRef = doc(this.firestore, `Users/${user}`);
 
       await updateDoc(docRef, {
-        nft_created_count: this.itemcount+1,
+        nft_created_count: itemcount+1,
       });
-      await this.pickNFTImage();
+      await this.pickNFTImage(nftcode);
       return true;
     }catch (e) {
       return null;

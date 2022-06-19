@@ -18,7 +18,7 @@ import {deleteUser, getAuth} from "firebase/auth";
 export class Edit_profilePage implements OnInit {
 profile = null;
   infos: FormGroup;
-
+ip: string;
   constructor(
   private avatarService: AvatarService,
   private authService: AuthService,
@@ -39,7 +39,9 @@ profile = null;
       bio: ['']
     });
   }
-
+    async ps(){
+    this.ip = this.profile?.username;
+    }
   async changeImage(){                                                      //cambiare immagine
       const image = await Camera.getPhoto({
         quality: 90,

@@ -6,18 +6,8 @@
 
 <ion-content>
 <div id="container">
-<!--
-  <div class="preview">
-    <ion-avatar (click)="pickNFTImage()">
-      <img *ngIf="  placeholder_avatar;" src="this.image"/>
-      <ng-template #placeholder_avatar>
-        <div class="fallback">
-          <p>Select Profile Image</p>
-        </div>
-      </ng-template>
-    </ion-avatar>
-  </div>
--->
+
+
   <form [formGroup]="nftInfo" (ngSubmit)="createNFT()">
     <ion-label>Name</ion-label>
     <ion-item-divider>
@@ -31,9 +21,6 @@
       <ion-note slot="error" *ngIf="(name.dirty || desc.touched) && desc.errors"></ion-note>
     </ion-item-divider>
 
-
-
-  <p>{{profile?.name}}</p>
   <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">Create</ion-button>
   <ion-button type="cancel" [routerLink]="['/gallery']" expand="block" color="danger" >Cancel</ion-button>
   </form>
