@@ -29,7 +29,6 @@ export class MenuPage   {
   }
 
   async logout() {
-
     const auth = getAuth();
     signOut(auth).then(() => {
       this.router.navigateByUrl('/', { replaceUrl: true});

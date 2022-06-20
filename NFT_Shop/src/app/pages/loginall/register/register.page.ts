@@ -42,39 +42,46 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
-    let uid = null;
+    let isUsernameOk = true;
     const auth = getAuth();
     let email = this.registers.controls['email'].value;
     let password = this.registers.controls['password'].value;
     let username = this.registers.controls['username'].value;
     let bio = this.registers.controls['bio'].value;
-    const result = await this.checkUsername(username);
-    if (result) {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(async (userCredential) => {
-        // Signed in
-        const user = userCredential.user.uid;
+
+    if(/^[A-Za-z0-9]*$/.test(username)) {
+      const result = await this.checkUsername(username);
+      if (result) {
+        createUserWithEmailAndPassword(auth, email, password)
+          .then(async (userCredential) => {
+            // Signed in
+            const user = userCredential.user.uid;
             await setDoc(doc(this.db, "Users", user), {
-              uid: uid,
+              uid: user,
               username: username,
               image: `https://firebasestorage.googleapis.com/v0/b/nft-shop-c77dd.appspot.com/o/uploads%2Ficon.png?alt=media&token=0c5b1aa1-f887-404c-a0b4-cd2ad8c6fa64`,
               email: email,
               bio: bio,
               cashart: 5000,
               nft_created_count: 0,
+              privateGallery: [],
+              publicGallery: []
             });
-        this.router.navigateByUrl('/menu/home', {replaceUrl: true});
+            this.router.navigateByUrl('/menu/home', {replaceUrl: true});
 
 
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        this.showAlert('Registration failed', 'Please check if you have typed a <b>valid email</b> (ex: <b>example@email.com</b>) and/or a <b>valid password</b> (<b>it requires a minimum length of 6</b>) and try again!');
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            this.showAlert('Registration failed', 'Please check if you have typed a <b>valid email</b> (ex: <b>example@email.com</b>) and/or a <b>valid password</b> (<b>it requires a minimum length of 6</b>) and try again!');
 
-      });
+          });
+      } else {
+        this.showAlert('Registration failed', 'The username you typed in is already taken, please pick one different')
+      }
     } else {
-      this.showAlert('Registration failed', 'The username you typed in is already taken, please pick one different')
+      this.showAlert('Registration failed', 'The username field cannot accept any other characters other than digits and uppercase and lowercase letters')
     }
   }
 

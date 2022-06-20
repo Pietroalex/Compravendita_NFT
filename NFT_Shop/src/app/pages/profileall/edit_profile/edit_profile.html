@@ -37,7 +37,7 @@
 
       <ion-row>
         <ion-col>
-          <ion-button  type="submit" color="danger" expand="block">Update Info</ion-button>
+          <ion-button  type="submit" color="danger" expand="block" [disabled]="!infos.valid">Update Info</ion-button>
           <ion-button (click)="getUser()" type="button" color="secondary" expand="block">Solo per controllo</ion-button>
 
         </ion-col>

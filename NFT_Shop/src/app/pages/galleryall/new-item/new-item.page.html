@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar><ion-buttons slot="start"><ion-back-button></ion-back-button></ion-buttons>
     <ion-title>New NFT</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -22,7 +22,6 @@
     </ion-item-divider>
 
   <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">Create</ion-button>
-  <ion-button type="cancel" [routerLink]="['/gallery']" expand="block" color="danger" >Cancel</ion-button>
   </form>
 </div>
 </ion-content>

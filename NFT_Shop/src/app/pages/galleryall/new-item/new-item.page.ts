@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {NFT} from "../../model/NFT";
-import {AvatarService} from "../../../services/user_related/profile_image/avatar.service";
+
 import {NftService} from "../../../services/DBop/nfts/nft.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
-import {doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
+import {arrayUnion, doc, Firestore, increment, serverTimestamp, setDoc, updateDoc} from "@angular/fire/firestore";
 import {AuthService} from "../../../services/user_related/login/auth.service";
-import {getDownloadURL, uploadString} from "@angular/fire/storage";
-import {Auth} from "@angular/fire/auth";
+
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-item',
@@ -37,6 +36,7 @@ export class NewItemPage implements OnInit {
     private alertController: AlertController,
     private authService: AuthService,
     private firestore: Firestore,
+    private router: Router
 
   ) {
     this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
@@ -47,8 +47,7 @@ export class NewItemPage implements OnInit {
     this.nftInfo = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30)]],
       desc: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
-      username: [''],
-      count: [''],
+
     });
 
 
@@ -64,7 +63,6 @@ export class NewItemPage implements OnInit {
       resultType: CameraResultType.Base64,
       source: CameraSource.Photos,
     });
-    console.log(image);
 
     if(image){
       const loading = await this.loadingController.create();
@@ -80,8 +78,11 @@ export class NewItemPage implements OnInit {
           buttons: ['OK'],
         });
         await alert.present();
+      }else{
+        await this.router.navigateByUrl('/gallery', {replaceUrl: true});
       }
     }
+
   }
 
   async createNFT(){
@@ -89,9 +90,9 @@ export class NewItemPage implements OnInit {
     let name = this.nftInfo.controls['name'].value;
     let desc = this.nftInfo.controls['desc'].value;
     let author = this.profile?.username;
-    let itemcount = this.profile?.nft_created_count;
+    let itemcount = 1+this.profile?.nft_created_count;
     let nftcode = author +"-"+ itemcount;
-    await setDoc(doc(this.firestore, "NFTs", nftcode), {
+    await setDoc(doc(this.firestore, "NFTs", nftcode), {                                  //crea il documento del NFT
       nftcode: nftcode,
       image: "img",
       name: name,
@@ -104,13 +105,16 @@ export class NewItemPage implements OnInit {
       const docRef = doc(this.firestore, `Users/${user}`);
 
       await updateDoc(docRef, {
-        nft_created_count: itemcount+1,
+        nft_created_count: increment(1),
+        privateGallery: arrayUnion(nftcode)               //aggiunge l'nftcode all'array privateGallery dentro il profilo utente corrente
       });
       await this.pickNFTImage(nftcode);
+
       return true;
     }catch (e) {
       return null;
     }
+
 }
 
 

@@ -36,7 +36,7 @@ ip: string;
 
   ngOnInit() {
     this.infos = this.fb.group({      //preparare i campi da richiedere nel formGroup
-      bio: ['']
+      bio: ['', [Validators.maxLength(60)]]
     });
   }
     async ps(){
