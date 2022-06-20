@@ -30,8 +30,8 @@ export class MenuPage   {
 
   async logout() {
     const auth = getAuth();
-    signOut(auth).then(() => {
-      this.router.navigateByUrl('/', { replaceUrl: true});
+    signOut(auth).then(async () => {
+      await this.router.navigateByUrl('/', {replaceUrl: true});
     }).catch((error) => {
       // An error happened.
     });

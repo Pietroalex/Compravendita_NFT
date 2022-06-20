@@ -4,7 +4,7 @@ import {AuthService} from "../../../services/user_related/login/auth.service";
 import {Router} from "@angular/router";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
-import {doc, Firestore, getDoc, updateDoc} from "@angular/fire/firestore";
+import {deleteDoc, doc, Firestore, getDoc, updateDoc} from "@angular/fire/firestore";
 import {Auth} from "@angular/fire/auth";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {deleteUser, getAuth} from "firebase/auth";
@@ -156,12 +156,16 @@ ip: string;
   async deleteUser(){
     const auth = getAuth();
     const user = auth.currentUser;
+    let privateGallery = this.profile?.privateGallery;
+    let count = this.profile?.nft_created_count;
+    let cashart = this.profile?.cashart;
     deleteUser(user).then(() => {
       this.router.navigateByUrl('/', {replaceUrl: true});
       alert("Succesfully deleted");
 
-    }).catch((error) => {
-     alert("Not deleted")
+      if ((privateGallery.length() == 0) && count == 0 && cashart == 5000){
+        deleteDoc(doc(this.firestore, "Users", user.uid));
+    }
     });
   }
 }
