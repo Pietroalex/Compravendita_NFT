@@ -8,7 +8,7 @@
         <ion-title>NFT Info</ion-title>
       </ion-col>
       <ion-col>
-        <ion-button id="sell" [routerLink]="['/sell-item']">
+        <ion-button id="sell" (click)="tosell()">
           <ion-img id="cashart" src="./assets/images/cashart.png"></ion-img>
         </ion-button>
       </ion-col>
@@ -18,16 +18,20 @@
 
 <ion-content>
   <div id="container">
-    <ion-img src="./assets/images/icon.png"></ion-img>
-    <div id="text">
-      <ion-label>NFT-Code</ion-label><br>
-        <p id="nft_code">NFTcode</p>
-      <ion-label>Name</ion-label>
-        <p id="name">NFTname</p>
-      <ion-label>Author</ion-label>
-        <p [routerLink]="['/publicuser-profile']" id="author">NFTauthor</p>
-      <ion-label>Description</ion-label>
-        <p id="descr">NFTdescription</p>
+
+
+        <ion-img [src]="this.image"></ion-img>
+        <div id="text">
+          <ion-label>NFT-Code</ion-label><br>
+            <p id="nft_code">{{this.nftcode}}</p>
+          <ion-label>Name</ion-label>
+            <p id="name">{{this.name}}</p>
+          <ion-label>Author</ion-label>
+            <p [routerLink]="['/','publicuser-profile', this.author]" id="author">{{this.nameauthor}}</p>
+          <ion-label>Description</ion-label>
+            <p id="descr">{{this.description}}</p>
+
     </div>
+
   </div>
 </ion-content>

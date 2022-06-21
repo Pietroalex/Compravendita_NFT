@@ -4,6 +4,7 @@ import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from "@angula
 import {MenuPage} from "./menu.page";
 
 
+
 const redirectNotLogged = () => redirectUnauthorizedTo(['']);
 
 const menuRoutes: Routes = [
@@ -69,6 +70,11 @@ const menuRoutes: Routes = [
     loadChildren: () => import('../../galleryall/gallery-detail/gallery-detail.module').then( m => m.GalleryDetailPageModule),
 
   },
+    {
+      path: 'gallery-detail:nftcode',
+      loadChildren: () => import('../../galleryall/gallery-detail/gallery-detail.module').then( m => m.GalleryDetailPageModule),
+
+    },
   {
     path: 'new-item',
     loadChildren: () => import('../../galleryall/new-item/new-item.module').then( m => m.NewItemPageModule),
@@ -104,6 +110,11 @@ const menuRoutes: Routes = [
     loadChildren: () => import('../../profileall/publicuser-profile/publicuser-profile.module').then( m => m.PublicuserProfilePageModule),
 
   },
+    {
+      path: 'publicuser-profile/:author',
+      loadChildren: () => import('../../profileall/publicuser-profile/publicuser-profile.module').then( m => m.PublicuserProfilePageModule),
+
+    },
     {
       path: 'publicuseritem-detail',
       loadChildren: () => import('../../profileall/nft_based/publicuseritem-detail/publicuseritem-detail.module').then(m => m.PublicuseritemDetailPageModule),

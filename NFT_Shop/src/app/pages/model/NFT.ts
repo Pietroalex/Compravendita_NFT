@@ -2,7 +2,7 @@ import {User} from "./user";
 
 export class NFT {
 
-    nftcode: string;
+    nftcode?: string;
     image: string;
     name: string;
     description: string;
