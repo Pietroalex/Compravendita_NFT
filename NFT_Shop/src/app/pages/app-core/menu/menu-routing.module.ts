@@ -85,6 +85,11 @@ const menuRoutes: Routes = [
     loadChildren: () => import('../../galleryall/sell-item/sell-item.module').then( m => m.SellItemPageModule),
 
   },
+    {
+      path: 'sell-item:nftcode',
+      loadChildren: () => import('../../galleryall/sell-item/sell-item.module').then( m => m.SellItemPageModule),
+
+    },
   {
     path: 'nft-sold',
     loadChildren: () => import('../../profileall/nft_based/nft-sold/nft-sold.module').then(m => m.NftSoldPageModule),
@@ -100,11 +105,21 @@ const menuRoutes: Routes = [
     loadChildren: () => import('../../profileall/nft_based/purchase-detail/purchase-detail.module').then(m => m.PurchaseDetailPageModule),
 
   },
+    {
+      path: 'purchase-detail/:nftcode',
+      loadChildren: () => import('../../profileall/nft_based/purchase-detail/purchase-detail.module').then(m => m.PurchaseDetailPageModule),
+
+    },
   {
     path: 'publicuser-gallery',
     loadChildren: () => import('../../profileall/nft_based/publicuser-gallery/publicuser-gallery.module').then(m => m.PublicuserGalleryPageModule),
 
   },
+    {
+      path: 'publicuser-gallery/:author',
+      loadChildren: () => import('../../profileall/nft_based/publicuser-gallery/publicuser-gallery.module').then(m => m.PublicuserGalleryPageModule),
+
+    },
   {
     path: 'publicuser-profile',
     loadChildren: () => import('../../profileall/publicuser-profile/publicuser-profile.module').then( m => m.PublicuserProfilePageModule),
@@ -117,6 +132,11 @@ const menuRoutes: Routes = [
     },
     {
       path: 'publicuseritem-detail',
+      loadChildren: () => import('../../profileall/nft_based/publicuseritem-detail/publicuseritem-detail.module').then(m => m.PublicuseritemDetailPageModule),
+
+    },
+    {
+      path: 'publicuseritem-detail/:nftcode',
       loadChildren: () => import('../../profileall/nft_based/publicuseritem-detail/publicuseritem-detail.module').then(m => m.PublicuseritemDetailPageModule),
 
     },

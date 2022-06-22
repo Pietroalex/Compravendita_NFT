@@ -8,8 +8,8 @@
         <ion-title>NFT Info</ion-title>
       </ion-col>
       <ion-col>
-        <ion-button id="sell" (click)="tosell()">
-          <ion-img id="cashart" src="./assets/images/cashart.png"></ion-img>
+        <ion-button id="sell" [routerLink]="['/', 'sell-item',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author } ]">
+          Wanna Sell?
         </ion-button>
       </ion-col>
     </ion-row>

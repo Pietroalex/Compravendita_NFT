@@ -11,7 +11,7 @@
         <ion-img id="cashart" src="./assets/images/cashart.png"></ion-img>
       </ion-col>
       <ion-col>
-        <ion-text id="currency">currency</ion-text>
+        <ion-text id="currency">{{profile?.cashart}}</ion-text>
       </ion-col>
     </ion-row>
 
@@ -32,9 +32,13 @@
       <p [routerLink]="['/','publicuser-profile', this.author]" id="author">{{this.nameauthor}}</p>
       <ion-label>Description</ion-label>
       <p id="descr">{{this.description}}</p>
+      <ion-label>Seller</ion-label>
+      <p id="seller" [routerLink]="['/','publicuser-profile', this.uidseller]">{{this.nameseller}}</p>
+      <ion-label>Price</ion-label>
+      <p id="price">{{this.price}}</p>
     </div>
 
   </div>
-  <ion-button id="buy" [routerLink]="['/purchase-detail']">Buy</ion-button>
+  <ion-button id="buy" (click)="buynft()">Buy</ion-button>
   </div>
 </ion-content>

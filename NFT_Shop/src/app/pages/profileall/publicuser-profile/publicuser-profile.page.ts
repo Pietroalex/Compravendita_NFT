@@ -8,9 +8,12 @@ import {InformationService} from "../../../services/user_related/check_user/info
   styleUrls: ['./publicuser-profile.page.scss'],
 })
 export class PublicuserProfilePage implements OnInit {
+
   author: string;
   profile = null;
-  constructor(    private router: Router,
+
+  constructor(
+    private router: Router,
                   private route: ActivatedRoute,
                   private infoService: InformationService,
   ) {

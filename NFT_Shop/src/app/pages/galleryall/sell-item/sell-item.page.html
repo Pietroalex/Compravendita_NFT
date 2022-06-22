@@ -6,12 +6,23 @@
 
 <ion-content >
   <div id="container">
-    <ion-img src="./assets/images/icon.png"></ion-img>
-    <div id="box">
-      <ion-label>NFT-Code</ion-label><br>
-      <p id="nft_code">{{nft?.nftcode}}</p>
-      <ion-label>Name</ion-label>
-      <p id="name">{{nft?.name}}</p>
+
+
+
+      <ion-img [src]="this.image"></ion-img>
+      <div id="text">
+        <ion-label>NFT-Code</ion-label><br>
+        <p id="nft_code">{{this.nftcode}}</p>
+        <ion-label>Name</ion-label>
+        <p id="name">{{this.name}}</p>
+        <ion-label>Author</ion-label>
+        <p id="author">{{this.nameauthor}}</p>
+        <ion-label>Description</ion-label>
+        <p id="descr">{{this.description}}</p>
+
+      </div>
+
+
       <form [formGroup]="nftInfo" (ngSubmit)="sellItem()">
         <ion-label>Price</ion-label>
         <ion-item-divider>
@@ -19,9 +30,9 @@
           <ion-note slot="error" *ngIf="(price.dirty || price.touched) && price.errors"></ion-note>
         </ion-item-divider>
 
-        <ion-button type="submit" color="secondary" expand="block">Sell</ion-button>
-        <ion-button [routerLink]="['/gallery-detail']" expand="block" color="danger" >Cancel</ion-button>
+        <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">Sell</ion-button>
+        <ion-button [routerLink]="['/', 'gallery-detail',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author }]" expand="block" color="danger" >Cancel</ion-button>
       </form>
     </div>
-  </div>
+
 </ion-content>

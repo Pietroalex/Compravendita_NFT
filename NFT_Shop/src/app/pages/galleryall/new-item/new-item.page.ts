@@ -45,7 +45,7 @@ export class NewItemPage implements OnInit {
 
    ngOnInit() {
     this.nftInfo = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       desc: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
 
     });
