@@ -13,6 +13,7 @@ import {
 } from "@angular/fire/firestore";
 import {InformationService} from "../../../services/user_related/check_user/information.service";
 import {AlertController} from "@ionic/angular";
+import {NftPurchaseService} from "../../../services/DBop/nft_purchase/nft-purchase.service";
 
 @Component({
   selector: 'app-shop-detail',
@@ -37,7 +38,7 @@ export class ShopDetailPage implements OnInit {
 
   money: number;
   Sellerprofile = null;
-
+  param
 
   constructor(
     private router: Router,
@@ -45,14 +46,14 @@ export class ShopDetailPage implements OnInit {
     private route: ActivatedRoute,
     private firestore: Firestore,
     private infoService: InformationService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private nftpurchaseService: NftPurchaseService,
   ) {
     this.authService.getUserProfile().subscribe((data) => { this.profile = data ;});
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      console.log(params);
       this.nftcode = params.get('nftcode');
       this.image = params.get('image');
       this.name = params.get('name');
@@ -64,9 +65,8 @@ export class ShopDetailPage implements OnInit {
       this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
       this.onsale_date = new Date(params.get('onsale_date'));
       this.price = Number(params.get('price'));
-      this.infoService.getUserProfile(this.uidseller).subscribe((data) => {
-        this.Sellerprofile = data;});
-
+      this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
+      this.param = params;
     });
 
   }
@@ -113,6 +113,8 @@ export class ShopDetailPage implements OnInit {
         this.showAlert('Item successfully purchased', 'Your item is being added to your gallery')
         await deleteDoc(doc(this.firestore, "OnSaleNFTs", this.nftcode));
         await this.router.navigateByUrl('/gallery', {replaceUrl: true});
+
+        this.nftpurchaseService.createHistory(this.profile, this.Sellerprofile, this.param);
 
         return true;
       } catch (e) {

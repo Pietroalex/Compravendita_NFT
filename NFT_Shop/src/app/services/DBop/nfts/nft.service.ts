@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
   Firestore, addDoc, collection, collectionData,
-  doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc, getDoc
+  doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc, getDoc, query, where, getDocs
 } from '@angular/fire/firestore';
 
 import {Auth} from "@angular/fire/auth";
@@ -27,7 +27,6 @@ export interface OnSaleNFT{
   seller: string;
   onsale_date: Date;
   price: number;
-
 }
 @Injectable({
   providedIn: 'root'
@@ -35,6 +34,9 @@ export interface OnSaleNFT{
 
 export class NftService {
   profile = null;
+
+  nfts = [];
+  tempo = [];
 
   constructor(
     private firestore: Firestore,
@@ -70,7 +72,30 @@ export class NftService {
   }
 
 
-   loadAllNFTs(nftcode): Observable<NFT> {
+   async loadAllNFTs(nftcode)//: Observable<NFT>
+   {
+
+/*
+     const docRef = doc(this.firestore, `NFTs/${nftcode}`);
+     return docData(docRef, {idField: 'nftcode'});// as Observable<NFT>;
+
+
+ */
+
+     const collRef = collection(this.firestore, "NFTs");
+     const q = query(collRef, where('nftcode', '==', nftcode));
+     const querySnapshot = await getDocs(q);
+     querySnapshot.forEach((doc) => {
+       this.tempo.push(doc.data());
+     })
+
+     this.nfts = this.tempo;
+     this.tempo = [];
+     return this.nfts;
+
+   }
+  async loadAllOnSaleNFTs()//: Observable<OnSaleNFT[]>
+  {
     /*
     const q = query(collection(this.db, "NFTs"), where('nftcode', '>=', this.profile?.username), where('nftcode', '<=',  '-'));
 
@@ -79,27 +104,22 @@ export class NftService {
       // doc.data() is never undefined for query doc snapshots
       console.log(doc.id, " => ", doc.data());
     });
-     */
 
-
-
-      const docRef = doc(this.firestore, `NFTs/${nftcode}`);
-      return docData(docRef, {idField: 'nftcode'}) as Observable<NFT>;
-
-
-  }
-  loadAllOnSaleNFTs(): Observable<OnSaleNFT[]> {
-    /*
-    const q = query(collection(this.db, "NFTs"), where('nftcode', '>=', this.profile?.username), where('nftcode', '<=',  '-'));
-
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-    });
-     */
     const collRef = collection(this.firestore, `OnSaleNFTs`);
     return collectionData(collRef, {idField: 'nftcode'}) as Observable<OnSaleNFT[]>;
+  */
+    const collRef = collection(this.firestore, "sold_NFTs");
+    const q = query(collRef);
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {                                       // per trovare documenti con username uguale a quello inserito
+      this.tempo.push(doc.data());
+      console.log(doc.id, " => ", doc.data());
+    });
+
+    this.nfts = this.tempo;
+    this.tempo = [];
+    return this.nfts;
   }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../../../services/user_related/login/auth.service";
 import {getDoc, Firestore, doc, docData} from "@angular/fire/firestore";
 import {Observable} from "rxjs";
@@ -11,12 +11,12 @@ import {Router} from "@angular/router";
   templateUrl: './gallery.page.html',
   styleUrls: ['./gallery.page.scss'],
 })
-export class GalleryPage implements OnInit {
+export class GalleryPage implements OnInit, OnDestroy {
 
   nfts = [];
   profile = null;
   num = 0;
-
+  tempo = [];
 
 
   constructor(
@@ -26,7 +26,6 @@ export class GalleryPage implements OnInit {
     private router: Router,
   ) {
     this.authService.getUserProfile().subscribe((data) => { this.profile = data ; this.loadAllNFTs();});
-
 
   }
 
@@ -38,11 +37,19 @@ export class GalleryPage implements OnInit {
 
     let privateGallery = this.profile?.privateGallery;
     for (const nftcode of privateGallery) {
+     /*
       this.nftService.loadAllNFTs(nftcode).subscribe(res => {
         this.nfts.push(res) ;
       });
 
+      */
+      this.tempo = await this.nftService.loadAllNFTs(nftcode);
+      this.nfts.push(this.tempo[0]);
+      this.tempo = [];
     }
   }
+    ngOnDestroy() {
+
+    }
 
 }

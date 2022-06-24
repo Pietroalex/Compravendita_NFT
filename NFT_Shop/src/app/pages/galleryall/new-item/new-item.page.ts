@@ -4,7 +4,16 @@ import {NftService} from "../../../services/DBop/nfts/nft.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
-import {arrayUnion, doc, Firestore, increment, serverTimestamp, setDoc, updateDoc} from "@angular/fire/firestore";
+import {
+  arrayUnion,
+  deleteDoc,
+  doc,
+  Firestore,
+  increment,
+  serverTimestamp,
+  setDoc,
+  updateDoc
+} from "@angular/fire/firestore";
 import {AuthService} from "../../../services/user_related/login/auth.service";
 
 import {Router} from "@angular/router";
@@ -78,6 +87,7 @@ export class NewItemPage implements OnInit {
           buttons: ['OK'],
         });
         await alert.present();
+        await deleteDoc(doc(this.firestore, "NFTs", nftcode));
       }else{
         await this.router.navigateByUrl('/gallery', {replaceUrl: true});
       }

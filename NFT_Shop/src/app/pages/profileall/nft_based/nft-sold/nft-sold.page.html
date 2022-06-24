@@ -10,33 +10,20 @@
 </ion-header>
 
 <ion-content id="container">
-  <ion-list id="shop">
-    <ion-item [routerLink]="['/purchase-detail']">
+
+  <ion-list id="gallery">
+    <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'purchase-detail', nft ]" >
       <div class="nftitem">
-        <ion-img src="./assets/images/icon.png"></ion-img>
-        <div class="nftp">
-          <p>Nome1</p>
-          <p>Prezzo1</p>
-        </div>
+        <ion-avatar>
+          <img [src]="nft.image" alt=""/>
+        </ion-avatar>
+        <p>{{nft.name}}</p>
+        <p>{{nft.price}}</p>
+        <p>{{nft.buyer}}</p>
+        <p>{{nft.purchase_date}}</p>
       </div>
     </ion-item>
-    <ion-item [routerLink]="['/purchase-detail']">
-      <div class="nftitem">
-        <ion-img src="./assets/images/icon.png"></ion-img>
-        <div class="nftp">
-          <p>Nome2</p>
-          <p>Prezzo2</p>
-        </div>
-      </div>
-    </ion-item>
-    <ion-item [routerLink]="['/purchase-detail']">
-      <div class="nftitem">
-        <ion-img src="./assets/images/icon.png"></ion-img>
-        <div class="nftp">
-          <p>Nome3</p>
-          <p>Prezzo3</p>
-        </div>
-      </div>
-    </ion-item>
+
   </ion-list>
+
 </ion-content>

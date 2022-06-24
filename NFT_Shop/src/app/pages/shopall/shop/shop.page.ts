@@ -14,16 +14,26 @@ import {NftService} from "../../../services/DBop/nfts/nft.service";
 })
 export class ShopPage implements OnInit {
   nfts = [];
-  constructor(
+  profile = null;
+   constructor(
     private router: Router,
     private firestore: Firestore,
-    private nftService: NftService
+    private nftService: NftService,
+    private authService: AuthService
   ) {
-    this.nftService.loadAllOnSaleNFTs().subscribe(res => {
-      this.nfts = res;
-      console.log(res)
-    })
+    /* this.nftService.loadAllOnSaleNFTs().subscribe(res => {
+       this.nfts = res;
+       console.log(res)
+     })
+     */
+     this.authService.getUserProfile().subscribe(async (data) => {
+       this.profile = data;
+
+       this.nfts = await this.nftService.loadAllOnSaleNFTs();
+     });
   }
+
+
 
   ngOnInit() {
 
