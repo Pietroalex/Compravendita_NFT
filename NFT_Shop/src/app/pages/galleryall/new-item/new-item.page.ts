@@ -26,7 +26,7 @@ import {NavigationExtras, Router} from "@angular/router";
 export class NewItemPage implements OnInit {
 
   nftInfo: FormGroup;
-  profilestring: string;
+
   profile = null;
 
   get name() {
@@ -51,7 +51,7 @@ export class NewItemPage implements OnInit {
 
   ) {
 
-    this.profilestring=JSON.stringify(this.profile);
+
   }
 
    ngOnInit() {
@@ -92,7 +92,7 @@ export class NewItemPage implements OnInit {
         await deleteDoc(doc(this.firestore, "NFTs", nftcode));
       }else{
 
-        await this.router.navigateByUrl('/gallery', {replaceUrl: true});
+
       }
     }
 

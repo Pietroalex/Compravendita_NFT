@@ -32,14 +32,16 @@ export class GalleryPage implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.result = JSON.parse(this.route.snapshot.paramMap.get('profile'));
-    console.log(this.result);
-    console.log(this.result);
-    if(this.result == "null"){
-      this.authService.getUserProfile().subscribe((data) => { this.profile = data; this.loadAllNFTs() });
-    }else{
-      this.profile = this.result;
+    console.log("result: "+this.result)
+    this.route.paramMap.subscribe(params => {
+      this.profile = params.get('profile');
+    })
+    console.log("profile: "+ this.profile)
+
+      //this.authService.getUserProfile().subscribe((data) => { this.profile = data; this.loadAllNFTs() });
+
       this.loadAllNFTs()
-    }
+
 
 
   }
@@ -50,6 +52,10 @@ export class GalleryPage implements OnInit, OnDestroy {
   async loadAllNFTs() {
 
     let privateGallery = this.profile?.privateGallery;
+    console.log(privateGallery)
+    if(privateGallery == undefined){
+      privateGallery = this.result.privateGallery
+    }
     console.log(privateGallery)
     for (const nftcode of privateGallery) {
 

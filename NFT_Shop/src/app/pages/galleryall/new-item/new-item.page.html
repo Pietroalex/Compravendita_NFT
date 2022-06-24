@@ -21,7 +21,7 @@
       <ion-note slot="error" *ngIf="(name.dirty || desc.touched) && desc.errors"></ion-note>
     </ion-item-divider>
 
-  <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">Create</ion-button>
+  <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid" [routerLink]="['/', 'gallery',{ profile: this.profile}]">Create</ion-button>
   </form>
 </div>
 </ion-content>
