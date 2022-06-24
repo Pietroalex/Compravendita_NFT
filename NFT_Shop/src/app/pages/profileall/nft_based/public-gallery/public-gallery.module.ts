@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PublicuserGalleryPageRoutingModule } from './publicuser-gallery-routing.module';
+import { PublicuserGalleryPageRoutingModule } from './public-gallery-routing.module';
 
-import { PublicuserGalleryPage } from './publicuser-gallery.page';
+import { PublicGalleryPage } from './public-gallery.page';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { PublicuserGalleryPage } from './publicuser-gallery.page';
     IonicModule,
     PublicuserGalleryPageRoutingModule
   ],
-  declarations: [PublicuserGalleryPage]
+  declarations: [PublicGalleryPage]
 })
 export class PublicuserGalleryPageModule {}

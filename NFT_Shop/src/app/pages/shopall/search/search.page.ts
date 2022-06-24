@@ -35,7 +35,7 @@ export class SearchPage implements OnInit {
         break;
       case "publicnft":
         this.valuee= 'Public NFT';
-        this.dest= "/publicuseritem-detail";
+        this.dest= "/public-gallery-detail";
         this.tipo=value;
         break;
       case "sellershop":

@@ -34,74 +34,64 @@
 
     <div id="privatesection">
 
-    <ion-list id="sold">
-    <ion-item [routerLink]="['/purchase-detail']">
-      <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome1pvt">Nome1pvt</p><p id="prezzo1pvt">Prezzo1pvt</p></div>
-    </ion-item>
 
-      <ion-item [routerLink]="['/purchase-detail']">
-      <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome2pvt">Nome2pvt</p><p id="prezzo2pvt">Prezzo2pvt</p></div>
-    </ion-item>
+        <ion-list id="sold">
+          <ion-item *ngFor="let soldnft of soldnfts "  [routerLink]="['/', 'purchase-detail', soldnft ]" >
+            <div class="nftitem">
+              <ion-avatar>
+                <img [src]="soldnft.image" alt=""/>
+              </ion-avatar>
+              <p>{{soldnft.name}}</p>
+              <p>{{soldnft.price}}</p>
+            </div>
+          </ion-item>
+        </ion-list>
 
-      <ion-item [routerLink]="['/purchase-detail']">
-      <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome3pvt">Nome3pvt</p><p id="prezzo3pvt">Prezzo3pvt</p></div>
-    </ion-item>
+      <ion-button [routerLink]="['/','nft-sold', this.profilestring]">All Sold</ion-button>
 
-  </ion-list>
-      <ion-button [routerLink]="['/nft-sold']">All Sold</ion-button>
-      <ion-list id="purchased">
+        <ion-list id="purchased">
+          <ion-item *ngFor="let purchasednft of purchasednfts "  [routerLink]="['/', 'purchase-detail', purchasednft ]" >
+            <div class="nftitem">
+              <ion-avatar>
+                <img [src]="purchasednft.image" alt=""/>
+              </ion-avatar>
+              <p>{{purchasednft.name}}</p>
+              <p>{{purchasednft.price}}</p>
+            </div>
+          </ion-item>
+        </ion-list>
 
-        <ion-item [routerLink]="['/purchase-detail']">
-        <div class="nftitem"> <ion-img src="./assets/images/icon.png"></ion-img><p id="nome4pvt">Nome4pvt</p><p id="prezzo4pvt">Prezzo4pvt</p></div>
-        </ion-item>
-
-        <ion-item [routerLink]="['/purchase-detail']">
-          <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome5pvt">Nome5pvt</p><p id="prezzo5pvt">Prezzo5pvt</p></div>
-        </ion-item>
-        <ion-item [routerLink]="['/purchase-detail']">
-            <div class="nftitem"> <ion-img src="./assets/images/icon.png"></ion-img><p id="nome6pvt">Nome6pvt</p><p id="prezzo6pvt">Prezzo6pvt</p></div>
-        </ion-item>
-
-      </ion-list>
-      <ion-button [routerLink]="['/nft-purchased']">All Purchased</ion-button>
+      <ion-button [routerLink]="['/','nft-purchased', this.profilestring]">All Purchased</ion-button>
     </div>
 
 <div id="publicsection">
 
-    <ion-list id="pbgallery">
-
-      <ion-item [routerLink]="['/publicuseritem-detail']">
-      <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome1pbl">Nome1pbl</p></div>
-      </ion-item>
-
-      <ion-item [routerLink]="['/publicuseritem-detail']">
-      <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome2pbl">Nome2pbl</p></div>
-      </ion-item>
-
-      <ion-item [routerLink]="['/publicuseritem-detail']">
-      <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome3pbl">Nome3pbl</p></div>
-      </ion-item>
-
-    </ion-list>
-  <ion-button [routerLink]="['/publicuser-gallery']">Pb-Gallery</ion-button>
-
-
-  <ion-list id="pbshop">
-
-    <ion-item [routerLink]="['/shop-detail']">
-    <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome4pbl">Nome4pbl</p><p id="prezzo4pbl">Prezzo4pbl</p></div>
-    </ion-item>
-
-    <ion-item [routerLink]="['/shop-detail']">
-    <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome5pbl">Nome5pbl</p><p id="prezzo5pbl">Prezzo5pbl</p></div>
-    </ion-item>
-
-    <ion-item [routerLink]="['/shop-detail']">
-    <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome6pbl">Nome6pbl</p><p id="prezzo6pbl">Prezzo6pbl</p></div>
+  <ion-list id="gallery">
+    <ion-item *ngFor="let gallerynft of gallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
+      <div class="nftitem">
+        <ion-avatar>
+          <img [src]="gallerynft.image" alt=""/>
+        </ion-avatar>
+        <p>{{gallerynft.name}}</p>
+      </div>
     </ion-item>
 
   </ion-list>
-  <ion-button [routerLink]="['/shop']">Pvt SHOP</ion-button>
+  <ion-button [routerLink]="['/','public-gallery', this.profilestring]">Pb-Gallery</ion-button>
+
+
+  <ion-list id="shop">
+    <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
+      <div class="nftitem">
+        <ion-avatar>
+          <img [src]="onsalenft.image" alt=""/>
+        </ion-avatar>
+        <p>{{onsalenft.name}}</p>
+        <p>{{onsalenft.price}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-button [routerLink]="['/','shop', this.profile?.uid]">Pvt SHOP</ion-button>
     </div>
 
   </div>

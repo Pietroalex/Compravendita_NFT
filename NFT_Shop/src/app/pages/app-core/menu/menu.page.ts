@@ -11,11 +11,13 @@ import { getAuth, signOut } from "firebase/auth";
 })
 export class MenuPage   {
   profile = null;
+  profilestring: any;
+
   public appPages = [
-    { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Profile', url: '/profile', icon: 'person' },
-    { title: 'Gallery', url: '/gallery', icon: 'images' },
-    { title: 'Notifications', url: '/notification', icon: 'notifications' }
+    { title: 'Home', url: 'home', icon: 'home' },
+    { title: 'Profile', url: 'profile', icon: 'person' },
+    { title: 'Gallery', url: 'gallery', icon: 'images' },
+    { title: 'Notifications', url: 'notification', icon: 'notifications' }
   ];
   selectedPath= '';
   constructor(
@@ -24,14 +26,14 @@ export class MenuPage   {
     private router: Router,
 
   ) {
-    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
+    this.authService.getUserProfile().subscribe((data) => { this.profile = data; this.profilestring=JSON.stringify(this.profile);});
     this.router.events.subscribe((event: RouterEvent) => this.selectedPath = event.url);
   }
 
   async logout() {
     const auth = getAuth();
-    signOut(auth).then(async () => {
-      await this.router.navigateByUrl('/', {replaceUrl: true});
+    signOut(auth).then( () => {
+       this.router.navigateByUrl('/', {replaceUrl: true});
     }).catch((error) => {
       // An error happened.
     });

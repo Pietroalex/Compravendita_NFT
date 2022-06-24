@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PublicuserGalleryPage } from './publicuser-gallery.page';
+import { PublicgalleryDetailPage } from './publicgallery-detail.page';
 
-describe('PublicuserGalleryPage', () => {
-  let component: PublicuserGalleryPage;
-  let fixture: ComponentFixture<PublicuserGalleryPage>;
+describe('PublicuseritemDetailPage', () => {
+  let component: PublicgalleryDetailPage;
+  let fixture: ComponentFixture<PublicgalleryDetailPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PublicuserGalleryPage ],
+      declarations: [ PublicgalleryDetailPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PublicuserGalleryPage);
+    fixture = TestBed.createComponent(PublicgalleryDetailPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

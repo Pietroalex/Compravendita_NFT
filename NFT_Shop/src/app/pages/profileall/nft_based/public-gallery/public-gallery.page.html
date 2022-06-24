@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Public Gallery</ion-title>
+
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-list id="gallery">
+      <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'publicgallery-detail', nft ]" >
+        <div class="nftitem">
+          <ion-avatar>
+            <img [src]="nft.image" alt=""/>
+          </ion-avatar>
+          <p>{{nft.name}}</p>
+        </div>
+      </ion-item>
+
+    </ion-list>
+
+
+  </div>
+</ion-content>

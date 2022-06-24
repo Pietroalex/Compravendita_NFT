@@ -35,6 +35,7 @@ export class SellItemPage implements OnInit {
   author: string;
   nameauthor: string;
 
+
   get price() {
     return this.nftInfo.get('price');
   }
@@ -64,6 +65,7 @@ export class SellItemPage implements OnInit {
       this.description = params.get('description');
       this.author = params.get('author');
      this.nameauthor = this.nftcode.substring(0, this.nftcode.indexOf("-"));
+
     });
 
   }

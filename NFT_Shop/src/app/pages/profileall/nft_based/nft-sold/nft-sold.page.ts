@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Firestore} from "@angular/fire/firestore";
 import {NftService} from "../../../../services/DBop/nfts/nft.service";
 import {AuthService} from "../../../../services/user_related/login/auth.service";
@@ -20,15 +20,16 @@ export class NftSoldPage implements OnInit {
     private firestore: Firestore,
     private authService: AuthService,
     private nftHistory: NftPurchaseService,
+    private route: ActivatedRoute
   ) {
-    this.authService.getUserProfile().subscribe(async (data) => {
-      this.profile = data;
-      this.search = this.profile.username + "-" + this.profile.uid;
-      this.nfts = await this.nftHistory.loadHistory("seller", this.search)
-    });
+
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.profile = JSON.parse(this.route.snapshot.paramMap.get('profile'));
+    console.log(this.profile);
+    this.search = this.profile.username + "-" + this.profile.uid;
+    this.nfts = await this.nftHistory.loadHistory("seller", this.search)
   }
 
 }

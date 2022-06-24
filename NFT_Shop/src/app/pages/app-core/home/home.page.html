@@ -17,48 +17,19 @@
 
     <ion-item-divider><strong class="capitalize">Vetrina</strong></ion-item-divider>
 
-
-
-    <div id="vetrina">
-        <ion-list >
-          <!--
-          <ion-item *ngFor="let notizia of notizie$ | async" [routerLink]="['/notizie', notizia.id]" routerDirection="forward" detail="true">
-            <ion-label>{{notizia.dataPubblicazione | date:'dd/MM/yyyy'}}</ion-label>
-            <span>{{notizia.nome | slice:0:20}}</span>
-          </ion-item>
-          -->
-
-
-          <ion-item [routerLink]="['/shop-detail']">
-             <div class="nftitem">
-               <ion-img src="./assets/images/icon.png"></ion-img>
-               <div class="nftp">
-               <p>Nome1</p>
-               <p>Prezzo1</p>
-               </div>
-             </div>
-           </ion-item>
-          <ion-item [routerLink]="['/shop-detail']">
-                 <div class="nftitem">
-                   <ion-img src="./assets/images/icon.png"></ion-img>
-                   <div class="nftp">
-                   <p>Nome2</p>
-                   <p>Prezzo2</p>
-                 </div>
-                 </div>
-               </ion-item>
-          <ion-item [routerLink]="['/shop-detail']">
-                 <div class="nftitem">
-                   <ion-img src="./assets/images/icon.png"></ion-img>
-                   <div class="nftp">
-                   <p>Nome3</p>
-                   <p>Prezzo3</p>
-                 </div>
-                 </div>
-               </ion-item>
-         </ion-list>
+    <div id="vetrinae">
+      <ion-list id="shop">
+        <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'shop-detail', nft ]" >
+          <div class="nftitem">
+            <ion-avatar>
+              <img [src]="nft.image" alt=""/>
+            </ion-avatar>
+            <p>{{nft.name}}</p>
+            <p>{{nft.price}}</p>
+          </div>
+        </ion-item>
+      </ion-list>
     </div>
-
     <ion-button [routerLink]="['/shop']">SHOP</ion-button>
 
   </div>

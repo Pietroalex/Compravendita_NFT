@@ -17,6 +17,7 @@ export class GalleryDetailPage implements OnInit {
   description: string;
   author: string;
   nameauthor: string;
+  profilestring: string;
 
 
   constructor(

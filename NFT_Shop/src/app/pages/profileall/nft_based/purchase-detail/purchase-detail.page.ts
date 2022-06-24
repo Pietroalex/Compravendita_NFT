@@ -31,6 +31,7 @@ export class PurchaseDetailPage implements OnInit {
 
   money: number;
   Sellerprofile = null;
+
   constructor(
     private router: Router,
     private authService: AuthService,

@@ -4,7 +4,7 @@ import {
   doc,
   docData,
   Firestore,
-  getDocs,
+  getDocs, limit, orderBy,
   query,
   serverTimestamp,
   setDoc,
@@ -95,4 +95,19 @@ export class NftPurchaseService {
     this.tempo = [];
      return this.nfts;
   }
+
+  async get6lastSoldNFTs(type: string, user: string){
+    const nftHistoryRef = collection(this.firestore, "sold_NFTs");
+    const q = query(nftHistoryRef, where(type, "==", user), orderBy("purchase_date", "desc"), limit(6));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      this.tempo.push(doc.data());
+    })
+
+    this.nfts = this.tempo;
+    this.tempo = [];
+    return this.nfts;
+
+  }
 }
+

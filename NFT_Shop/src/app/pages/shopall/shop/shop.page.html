@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-row><ion-col><ion-title>Shop</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">{{this.profile?.cashart}}</ion-text></ion-col><ion-col><ion-icon name="search"[routerLink]="['/search']"></ion-icon></ion-col></ion-row>
+    <ion-row><ion-col><ion-title>Shop</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">{{this.userprofile?.cashart}}</ion-text></ion-col><ion-col><ion-icon name="search"[routerLink]="['/search']"></ion-icon></ion-col></ion-row>
 
   </ion-toolbar>
 
@@ -29,7 +29,8 @@
     </ion-select-option>
 
   </ion-select>
-  <ion-list id="gallery">
+  <div id="containe">
+  <ion-list id="shop">
     <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'shop-detail', nft ]" >
       <div class="nftitem">
         <ion-avatar>
@@ -39,6 +40,6 @@
         <p>{{nft.price}}</p>
       </div>
     </ion-item>
-
   </ion-list>
+  </div>
 </ion-content>

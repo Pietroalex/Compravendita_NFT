@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {NftService} from "../../../services/DBop/nfts/nft.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AlertController, LoadingController} from "@ionic/angular";
+import {AlertController, LoadingController, NavParams} from "@ionic/angular";
 import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
 import {
   arrayUnion,
@@ -16,7 +16,7 @@ import {
 } from "@angular/fire/firestore";
 import {AuthService} from "../../../services/user_related/login/auth.service";
 
-import {Router} from "@angular/router";
+import {NavigationExtras, Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-item',
@@ -26,7 +26,7 @@ import {Router} from "@angular/router";
 export class NewItemPage implements OnInit {
 
   nftInfo: FormGroup;
-
+  profilestring: string;
   profile = null;
 
   get name() {
@@ -45,11 +45,13 @@ export class NewItemPage implements OnInit {
     private alertController: AlertController,
     private authService: AuthService,
     private firestore: Firestore,
-    private router: Router
+    private router: Router,
+
+
 
   ) {
-    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
 
+    this.profilestring=JSON.stringify(this.profile);
   }
 
    ngOnInit() {
@@ -89,6 +91,7 @@ export class NewItemPage implements OnInit {
         await alert.present();
         await deleteDoc(doc(this.firestore, "NFTs", nftcode));
       }else{
+
         await this.router.navigateByUrl('/gallery', {replaceUrl: true});
       }
     }

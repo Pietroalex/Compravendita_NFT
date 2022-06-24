@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../../services/user_related/login/auth.service";
-
 import { AlertController } from "@ionic/angular";
-import { Router } from "@angular/router";
-import { AppComponent } from "../../../app.component";
-import { AvatarService } from "../../../services/user_related/profile_image/avatar.service";
-import { collection, Firestore, getDocs, limit, orderBy, query, where} from "@angular/fire/firestore";
+import {NftService} from "../../../services/DBop/nfts/nft.service";
 
 @Component({
   selector: 'app-home',
@@ -13,17 +9,20 @@ import { collection, Firestore, getDocs, limit, orderBy, query, where} from "@an
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage  implements OnInit {
+
   profile = null;
+  nfts = [];
 
   constructor(
     private alertController: AlertController,
     private authService: AuthService,
-    private router: Router,
-    private app: AppComponent,
-    private avatarService: AvatarService,
-    private firestore: Firestore
+    private nftService: NftService,
   ) {
-    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
+    this.authService.getUserProfile().subscribe(async (data) => {
+      this.profile = data;
+      this.nfts = await this.nftService.get6lastonsaleNFTs();
+    });
+
   }
 
 
@@ -31,12 +30,7 @@ export class HomePage  implements OnInit {
 
 
   }
-  async get6lastonsaleNFTs(){
-    const onsalesRef = collection(this.firestore, "OnSaleNFTs");
-    const q = query(onsalesRef, orderBy("onSale_date", "desc"), limit(6));
-    const querySnapshot = await getDocs(q);
-   // querySnapshot.forEach();
 
-  }
+
 }
 

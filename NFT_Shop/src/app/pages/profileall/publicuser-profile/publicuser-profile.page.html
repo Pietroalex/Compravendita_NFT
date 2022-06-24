@@ -4,7 +4,8 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Public Profile</ion-title>
+    <ion-title>Profile</ion-title>
+
   </ion-toolbar>
 
 </ion-header>
@@ -12,54 +13,50 @@
 <ion-content [fullscreen]="true">
 
   <div id="container">
-    <ion-img id="profileimg" src="./assets/images/icon.png"></ion-img>
+    <div class="preview">
+      <ion-avatar>
+        <ion-img id="profileimg" src="{{profile?.image}}" ></ion-img>
+      </ion-avatar>
+    </div>
+
 
     <div id="info">
-
-
       <ion-label>Username</ion-label><br>
-      <p id="username">{{profile?.username}}</p>
+      <p id="username" >{{profile?.username}}</p>
 
       <ion-label>Bio</ion-label>
-      <p id="bio">{{profile?.bio}}</p>
+      <p id="bio" >{{profile?.bio}}</p>
     </div>
+
 
     <div id="publicsection">
 
-      <ion-list id="pbgallery">
-
-        <ion-item [routerLink]="['/publicuseritem-detail']">
-          <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome1pbl">Nome1pbl</p></div>
-        </ion-item>
-
-        <ion-item [routerLink]="['/publicuseritem-detail']">
-          <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome2pbl">Nome2pbl</p></div>
-        </ion-item>
-
-        <ion-item [routerLink]="['/publicuseritem-detail']">
-          <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome3pbl">Nome3pbl</p></div>
+      <ion-list id="gallery">
+        <ion-item *ngFor="let gallerynft of gallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
+          <div class="nftitem">
+            <ion-avatar>
+              <img [src]="gallerynft.image" alt=""/>
+            </ion-avatar>
+            <p>{{gallerynft.name}}</p>
+          </div>
         </ion-item>
 
       </ion-list>
-      <ion-button [routerLink]="['/publicuser-gallery']">Pb-Gallery</ion-button>
+      <ion-button [routerLink]="['/','public-gallery', this.profilestring]">Pb-Gallery</ion-button>
 
 
-      <ion-list id="pbshop">
-
-        <ion-item [routerLink]="['/shop-detail']">
-          <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome4pbl">Nome4pbl</p><p id="prezzo4pbl">Prezzo4pbl</p></div>
+      <ion-list id="shop">
+        <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
+          <div class="nftitem">
+            <ion-avatar>
+              <img [src]="onsalenft.image" alt=""/>
+            </ion-avatar>
+            <p>{{onsalenft.name}}</p>
+            <p>{{onsalenft.price}}</p>
+          </div>
         </ion-item>
-
-        <ion-item [routerLink]="['/shop-detail']">
-          <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome5pbl">Nome5pbl</p><p id="prezzo5pbl">Prezzo5pbl</p></div>
-        </ion-item>
-
-        <ion-item [routerLink]="['/shop-detail']">
-          <div class="nftitem"><ion-img src="./assets/images/icon.png"></ion-img><p id="nome6pbl">Nome6pbl</p><p id="prezzo6pbl">Prezzo6pbl</p></div>
-        </ion-item>
-
       </ion-list>
-      <ion-button [routerLink]="['/shop']">Pvt SHOP</ion-button>
+      <ion-button [routerLink]="['/','shop', this.profile?.uid]">Pvt SHOP</ion-button>
     </div>
 
   </div>

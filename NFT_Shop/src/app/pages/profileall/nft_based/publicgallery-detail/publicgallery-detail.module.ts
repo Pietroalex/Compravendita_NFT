@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PublicuseritemDetailPageRoutingModule } from './publicuseritem-detail-routing.module';
+import { PublicuseritemDetailPageRoutingModule } from './publicgallery-detail-routing.module';
 
-import { PublicuseritemDetailPage } from './publicuseritem-detail.page';
+import { PublicgalleryDetailPage } from './publicgallery-detail.page';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { PublicuseritemDetailPage } from './publicuseritem-detail.page';
     IonicModule,
     PublicuseritemDetailPageRoutingModule
   ],
-  declarations: [PublicuseritemDetailPage]
+  declarations: [PublicgalleryDetailPage]
 })
 export class PublicuseritemDetailPageModule {}
