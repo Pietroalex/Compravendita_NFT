@@ -31,7 +31,7 @@
         </ion-item-divider>
 
         <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">Sell</ion-button>
-        <ion-button [routerLink]="['/', 'gallery-detail',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author }]" expand="block" color="danger" >Cancel</ion-button>
+        <ion-button type="reset" [routerLink]="['/', 'gallery-detail',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author }]" expand="block" color="danger" >Cancel</ion-button>
       </form>
     </div>
 

@@ -63,6 +63,8 @@ export class ShopDetailPage implements OnInit {
       this.seller = params.get('seller');
       this.nameseller = this.seller.substring(0, this.seller.indexOf("-"));
       this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
+      localStorage.setItem('seller',this.seller);
+
       this.onsale_date = new Date(params.get('onsale_date'));
       this.price = Number(params.get('price'));
       this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});

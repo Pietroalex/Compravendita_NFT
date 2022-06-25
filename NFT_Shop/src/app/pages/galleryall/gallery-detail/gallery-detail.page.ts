@@ -17,21 +17,20 @@ export class GalleryDetailPage implements OnInit {
   description: string;
   author: string;
   nameauthor: string;
-  profilestring: string;
+
 
 
   constructor(
 
     private router: Router,
     private route: ActivatedRoute,
-    private crl: ModalController
+
 
   ) { }
 
   ngOnInit() {
 
     this.route.paramMap.subscribe(params => {
-      console.log(params);
          this.nftcode = params.get('nftcode');
          this.image = params.get('image');
          this.name = params.get('name');
@@ -42,5 +41,7 @@ export class GalleryDetailPage implements OnInit {
     });
 
 }
-
+  async back() {
+    await this.router.navigateByUrl('/gallery', { replaceUrl: true });
+  }
 }

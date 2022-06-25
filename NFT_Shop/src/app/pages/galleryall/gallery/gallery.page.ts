@@ -20,29 +20,23 @@ export class GalleryPage implements OnInit, OnDestroy {
   num = 0;
   tempo = [];
 
+
   constructor(
     private db: Firestore,
     private authService: AuthService,
     private nftService: NftService,
     private route: ActivatedRoute,
+    private router: Router
   ) {
-
+    console.log("appena avviato")
+    const result = JSON.parse(localStorage.getItem('profile'));
+    console.log(result)
+    this.profile = result;
   }
 
-  ngOnInit() {
+  async ngOnInit() {
 
-    this.result = JSON.parse(this.route.snapshot.paramMap.get('profile'));
-    console.log("result: "+this.result)
-    this.route.paramMap.subscribe(params => {
-      this.profile = params.get('profile');
-    })
-    console.log("profile: "+ this.profile)
-
-      //this.authService.getUserProfile().subscribe((data) => { this.profile = data; this.loadAllNFTs() });
-
-      this.loadAllNFTs()
-
-
+    this.loadAllNFTs()
 
   }
 
@@ -52,20 +46,23 @@ export class GalleryPage implements OnInit, OnDestroy {
   async loadAllNFTs() {
 
     let privateGallery = this.profile?.privateGallery;
-    console.log(privateGallery)
-    if(privateGallery == undefined){
-      privateGallery = this.result.privateGallery
-    }
-    console.log(privateGallery)
+
     for (const nftcode of privateGallery) {
 
       this.tempo = await this.nftService.loadAllGalleryNFTs(nftcode);
       this.nfts.push(this.tempo[0]);
       this.tempo = [];
     }
+
+
   }
     ngOnDestroy() {
       this.nfts = [];
+      this.profile = null;
+      console.log("uscendo")
     }
 
+  async create() {
+    await this.router.navigateByUrl('/new-item', { replaceUrl: true });
+  }
 }

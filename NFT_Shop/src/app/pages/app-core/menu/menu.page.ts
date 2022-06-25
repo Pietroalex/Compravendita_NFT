@@ -26,7 +26,10 @@ export class MenuPage   {
     private router: Router,
 
   ) {
-    this.authService.getUserProfile().subscribe((data) => { this.profile = data; this.profilestring=JSON.stringify(this.profile);});
+    this.authService.getUserProfile().subscribe((data) => {
+        this.profile = data;
+        localStorage.setItem('profile', JSON.stringify(this.profile));
+      });
     this.router.events.subscribe((event: RouterEvent) => this.selectedPath = event.url);
   }
 
@@ -38,4 +41,4 @@ export class MenuPage   {
       // An error happened.
     });
   }
-}
+}//this.profile = JSON.parse(localStorage.getItem('profile'));

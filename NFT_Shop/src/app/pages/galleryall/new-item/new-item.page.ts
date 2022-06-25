@@ -16,7 +16,7 @@ import {
 } from "@angular/fire/firestore";
 import {AuthService} from "../../../services/user_related/login/auth.service";
 
-import {NavigationExtras, Router} from "@angular/router";
+import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-item',
@@ -26,7 +26,6 @@ import {NavigationExtras, Router} from "@angular/router";
 export class NewItemPage implements OnInit {
 
   nftInfo: FormGroup;
-
   profile = null;
 
   get name() {
@@ -46,18 +45,22 @@ export class NewItemPage implements OnInit {
     private authService: AuthService,
     private firestore: Firestore,
     private router: Router,
+    private route: ActivatedRoute
 
 
 
   ) {
-
+    //this.profile = JSON.parse(this.route.snapshot.paramMap.get('profile'));
+    const result = JSON.parse(localStorage.getItem('profile'));
+    console.log(result)
+    this.profile = result;
 
   }
 
    ngOnInit() {
     this.nftInfo = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      desc: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+      desc: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
 
     });
 
@@ -91,7 +94,7 @@ export class NewItemPage implements OnInit {
         await alert.present();
         await deleteDoc(doc(this.firestore, "NFTs", nftcode));
       }else{
-
+        this.authService.getUserProfile().subscribe((data) => { this.profile = data; localStorage.setItem('profile', JSON.stringify(this.profile)); });
 
       }
     }
@@ -123,6 +126,8 @@ export class NewItemPage implements OnInit {
       });
       await this.pickNFTImage(nftcode);
 
+       await this.router.navigateByUrl('/gallery', { replaceUrl: true });
+
       return true;
     }catch (e) {
       return null;
@@ -131,4 +136,7 @@ export class NewItemPage implements OnInit {
 }
 
 
+  async back() {
+    await this.router.navigateByUrl('/gallery', { replaceUrl: true });
+  }
 }

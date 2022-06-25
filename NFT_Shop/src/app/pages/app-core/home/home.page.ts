@@ -21,6 +21,8 @@ export class HomePage  implements OnInit {
     this.authService.getUserProfile().subscribe(async (data) => {
       this.profile = data;
       this.nfts = await this.nftService.get6lastonsaleNFTs();
+      localStorage.setItem('profile', JSON.stringify(this.profile));
+      localStorage.setItem('seller', "null");
     });
 
   }

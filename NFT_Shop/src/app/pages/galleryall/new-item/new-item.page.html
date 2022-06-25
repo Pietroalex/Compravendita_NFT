@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar><ion-buttons slot="start"><ion-back-button [routerLink]="['/gallery' ]"></ion-back-button></ion-buttons>
+  <ion-toolbar>
     <ion-title>New NFT</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,7 +21,9 @@
       <ion-note slot="error" *ngIf="(name.dirty || desc.touched) && desc.errors"></ion-note>
     </ion-item-divider>
 
-  <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid" [routerLink]="['/', 'gallery',{ profile: this.profile}]">Create</ion-button>
+    <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">Create</ion-button>
+    <ion-button (click)="back()" type="reset" expand="block" color="danger">Cancel</ion-button>
+
   </form>
 </div>
 </ion-content>

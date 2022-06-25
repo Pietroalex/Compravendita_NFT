@@ -14,9 +14,9 @@ import {NftService} from "../../../services/DBop/nfts/nft.service";
 })
 export class ShopPage implements OnInit {
   nfts = [];
-  userprofile = null;
   seller: string;
-
+  profile = null;
+  check:boolean;
    constructor(
     private router: Router,
     private firestore: Firestore,
@@ -24,23 +24,56 @@ export class ShopPage implements OnInit {
     private authService: AuthService,
     private route: ActivatedRoute,
   ) {
+     this.seller = localStorage.getItem('seller');
+     this.start().then(res => this.continue());
+  }
 
-     this.authService.getUserProfile().subscribe(async (data) => {
-       this.userprofile = data;
-       this.seller = this.route.snapshot.paramMap.get('seller');
-       if(this.seller == "null"){
-         this.nfts = await this.nftService.loadAllSellerOnSaleNFTs(this.seller);
-       }else {
-         this.nfts = await this.nftService.loadAllOnSaleNFTs();
-       }
+
+
+  async ngOnInit() {
+  }
+
+  async gotosearch() {
+    await this.router.navigateByUrl('/search', {replaceUrl: true});
+  }
+
+   async start() {
+    return new Promise<void>((resolve, reject) => {
+      const result = JSON.parse(localStorage.getItem('profile'));
+      this.profile = result;
+      resolve();
+    });
+  }
+
+   async continue() {
+     //this.seller = this.route.snapshot.paramMap.get('seller');
+
+     this.startt().then(res => this.continuee());
+
+
+   }
+
+
+   startt() {
+     return new Promise<void>((resolve, reject) => {
+       console.log(this.seller)
+       if (this.seller === "null") {
+         this.check = true;
+       }else { this.check = false }
+       console.log(this.check)
+       resolve();
      });
 
-  }
 
+}
 
+   async continuee() {
+     console.log(this.seller)
+     if (this.check) {
+       this.nfts = await this.nftService.loadAllOnSaleNFTs();
+     } else {
+       this.nfts = await this.nftService.loadAllSellerOnSaleNFTs();
+     }
 
-  ngOnInit() {
-
-  }
-
+   }
 }

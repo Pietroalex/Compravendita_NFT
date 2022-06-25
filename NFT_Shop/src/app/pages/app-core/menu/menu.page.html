@@ -7,7 +7,7 @@
         <ion-note id="user-email">{{profile?.email}}</ion-note>
 
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-          <ion-item routerDirection="root" [routerLink]="['/',p.url, this.profilestring]" [class.active-item]="selectedPath === p.url">
+          <ion-item routerDirection="root" [routerLink]="['/',p.url]" [class.active-item]="selectedPath === p.url">
             <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
             <ion-label>{{ p.title }}</ion-label>
           </ion-item>

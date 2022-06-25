@@ -60,13 +60,14 @@ export class NftPurchaseService {
     this.onsale_date = new Date(param.get('onsale_date'));
     this.price = Number(param.get('price'));
 
-    if( this.buyerprofile.uid != this.uidseller  ){
+    if( true //this.buyerprofile.uid != this.uidseller
+       ){
       this.createPurchaseHistory();
 
     }
   }
   async createPurchaseHistory(){
-    const purchaseRef = doc(collection(this.firestore, `sold_NFTs` ));
+    const purchaseRef = doc(collection(this.firestore, `soldNFTs` ));
     await setDoc(purchaseRef, {                                  //crea il documento del PurchasedNFT
       nftcode: this.nftcode,
       image: this.image,
@@ -83,7 +84,7 @@ export class NftPurchaseService {
   }
 
   async loadHistory(type: string, user: string){
-    const nftHistoryRef = collection(this.firestore, "sold_NFTs");
+    const nftHistoryRef = collection(this.firestore, "soldNFTs");
     const q = query(nftHistoryRef, where(type, "==", user));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {            // per trovare documenti con seller o buyer uguale a quello inserito
@@ -96,9 +97,9 @@ export class NftPurchaseService {
      return this.nfts;
   }
 
-  async get6lastSoldNFTs(type: string, user: string){
-    const nftHistoryRef = collection(this.firestore, "sold_NFTs");
-    const q = query(nftHistoryRef, where(type, "==", user), orderBy("purchase_date", "desc"), limit(6));
+  async get3lastSoldNFTs(type: string, user: string){
+    const nftHistoryRef = collection(this.firestore, "soldNFTs");
+    const q = query(nftHistoryRef, where(type, "==", user), orderBy("purchase_date", "desc"), limit(3));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       this.tempo.push(doc.data());

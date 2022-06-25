@@ -17,15 +17,15 @@
         <ion-label>Name</ion-label>
         <p id="name">{{this.name}}</p>
         <ion-label>Author</ion-label>
-        <p id="author" [routerLink]="['/','publicuser-profile', this.author]">{{this.nameauthor}}</p>
+        <p id="author"  (click)="goauthor()">{{this.nameauthor}}</p>
         <ion-label>Description</ion-label>
         <p id="descr">{{this.description}}</p>
         <ion-label>Seller</ion-label>
-        <p id="seller" [routerLink]="['/','publicuser-profile', this.uidseller]">{{this.nameseller}}</p>
+        <p id="seller"  (click)="goseller()">{{this.nameseller}}</p>
         <ion-label>Price</ion-label>
         <p id="price">{{this.price}}</p>
         <ion-label>Buyer</ion-label>
-        <p id="buyer" [routerLink]="['/','publicuser-profile', this.uidbuyer]">{{this.namebuyer}}</p>
+        <p id="buyer" (click)="gobuyer()">{{this.namebuyer}}</p>
         <ion-label>Purchase date</ion-label>
         <p id="purchase_date">{{this.purchase_date}}</p>
       </div>

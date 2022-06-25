@@ -88,6 +88,7 @@ export class NftService {
    }
 
   async loadAllOnSaleNFTs(){
+    console.log("Niente seller")
     const collRef = collection(this.firestore, "OnSaleNFTs");
     const q = query(collRef);
     const querySnapshot = await getDocs(q);
@@ -142,9 +143,11 @@ export class NftService {
   }
 
 
-  async loadAllSellerOnSaleNFTs(seller: string) {
-    const collRef = collection(this.firestore, "OnSaleNFTs");
-    const q = query(collRef, where('seller', '==', seller));
+  async loadAllSellerOnSaleNFTs() {
+    console.log("Seller")
+    let seller = localStorage.getItem('seller')
+    const onsalesRef = collection(this.firestore, "OnSaleNFTs");
+    const q = query(onsalesRef, where('seller', '==', seller));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
       this.tempo.push(doc.data());

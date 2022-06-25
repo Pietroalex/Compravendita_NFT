@@ -22,12 +22,12 @@ export class PublicuserProfilePage implements OnInit {
     private infoService: InformationService,
     private nftService: NftService,
   ) {
-
+    this.author = localStorage.getItem('seller')
+    this.author = this.author.substring(this.author.indexOf("-")+1);
   }
 
   async ngOnInit() {
-    this.author = this.route.snapshot.paramMap.get('author');
-    console.log(this.author)
+
     await this.infoService.getUserProfile(this.author).subscribe((data) => {
       this.profile = data;
       this.profilestring = JSON.stringify(this.profile);

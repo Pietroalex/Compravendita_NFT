@@ -44,14 +44,10 @@ const menuRoutes: Routes = [
       loadChildren: () => import('../../shopall/shop/shop.module').then(m => m.ShopPageModule),
 
     },
-    {
-      path: 'gallery',
-      loadChildren: () => import('../../galleryall/gallery/gallery.module').then( m => m.GalleryPageModule),
 
-    },
 
   {
-    path: 'profile/:profile',
+    path: 'profile' ,
     loadChildren: () => import('../../profileall/profile/profile.module').then(m => m.ProfilePageModule),
 
   },
@@ -62,11 +58,10 @@ const menuRoutes: Routes = [
   },
 
     {
-      path: 'gallery/:profile',
+      path: 'gallery',
       loadChildren: () => import('../../galleryall/gallery/gallery.module').then( m => m.GalleryPageModule),
 
     },
-
   {
     path: 'shop-detail/:nft',
     loadChildren: () => import('../../shopall/shop-detail/shop-detail.module').then( m => m.ShopDetailPageModule),
@@ -98,6 +93,11 @@ const menuRoutes: Routes = [
     loadChildren: () => import('../../galleryall/new-item/new-item.module').then( m => m.NewItemPageModule),
 
   },
+    {
+      path: 'new-item/:profile',
+      loadChildren: () => import('../../galleryall/new-item/new-item.module').then( m => m.NewItemPageModule),
+
+    },
 
     {
       path: 'sell-item/:nftcode',

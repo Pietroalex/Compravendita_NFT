@@ -31,21 +31,34 @@ export class ProfilePage implements OnInit {
   }
 
    ngOnInit() {
-    this.profile = JSON.parse(this.route.snapshot.paramMap.get('profile'));
-    console.log(this.profile);
-    this.search = this.profile.username + "-" + this.profile.uid;
-     this.get3soldNFTs();
-     this.get3purchasedNFTs();
-     this.get3publicNFTs();
-     this.get3sellerNFTs();
-     this.profilestring = JSON.stringify(this.profile);
+     this.start().then(res => this.continue());
+
+
+  }
+   start() {
+    return new Promise<void>((resolve, reject) => {
+      const result = JSON.parse(localStorage.getItem('profile'));
+      this.profile = result;
+      this.search =  this.profile.username + "-" + this.profile.uid;
+      resolve();
+    });
   }
 
+  async continue() {
+
+    await this.get3soldNFTs();
+    await this.get3purchasedNFTs();
+    await this.get3publicNFTs();
+    await this.get3sellerNFTs();
+    this.profilestring = JSON.stringify(this.profile);
+
+
+  }
   async get3soldNFTs(){
-    this.soldnfts = await this.nftHistory.get6lastSoldNFTs("seller", this.search)
+    this.soldnfts = await this.nftHistory.get3lastSoldNFTs("seller", this.search)
   }
   async get3purchasedNFTs(){
-    this.purchasednfts = await this.nftHistory.get6lastSoldNFTs("buyer", this.search)
+    this.purchasednfts = await this.nftHistory.get3lastSoldNFTs("buyer", this.search)
   }
   async get3publicNFTs(){
     this.gallerynfts = await this.nftService.get3publicNFTs()
