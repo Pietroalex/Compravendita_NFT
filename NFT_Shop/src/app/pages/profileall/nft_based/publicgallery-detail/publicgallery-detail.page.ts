@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-public-gallery-detail',
@@ -16,7 +16,8 @@ export class PublicgalleryDetailPage implements OnInit {
   nameauthor: string;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -32,4 +33,8 @@ export class PublicgalleryDetailPage implements OnInit {
     });
   }
 
+  async gotoauthor() {
+    localStorage.setItem('author', this.author)
+    await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
+  }
 }

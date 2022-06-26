@@ -63,18 +63,17 @@ export class PurchaseDetailPage implements OnInit {
 
   }
 
-  async goauthor() {
-    localStorage.setItem('seller',this.author);
+  async gotoauthor() {
+    localStorage.setItem('author', this.author)
+    await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
+  }
+  async gotoseller(){
+    localStorage.setItem('author', this.uidseller)
     await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
   }
 
- async goseller() {
-    localStorage.setItem('seller',this.seller);
-    await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
-  }
-
-  async gobuyer() {
-    localStorage.setItem('seller',this.buyer);
+  async gotobuyer() {
+    localStorage.setItem('author', this.uidbuyer)
     await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
   }
 }

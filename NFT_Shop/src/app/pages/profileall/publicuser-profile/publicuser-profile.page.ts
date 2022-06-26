@@ -10,9 +10,12 @@ import {NftService} from "../../../services/DBop/nfts/nft.service";
 })
 export class PublicuserProfilePage implements OnInit {
 
+  tempo = [];
+
   author: string;
   profile = null;
-  gallerynfts = [];
+  service: string;
+  publicgallerynfts = [];
   onsalenfts = [];
   profilestring: string;
 
@@ -22,23 +25,56 @@ export class PublicuserProfilePage implements OnInit {
     private infoService: InformationService,
     private nftService: NftService,
   ) {
-    this.author = localStorage.getItem('seller')
-    this.author = this.author.substring(this.author.indexOf("-")+1);
+
+
+
+
   }
 
   async ngOnInit() {
+    this.author = localStorage.getItem('author');
+    console.log(this.author)
+
+
 
     await this.infoService.getUserProfile(this.author).subscribe((data) => {
       this.profile = data;
-      this.profilestring = JSON.stringify(this.profile);
+      localStorage.setItem('seller', this.profile.username + "-" + this.author)
+      this.start().then(res => this.continue());
+
     });
-    this.get3publicNFTs();
-    this.get3sellerNFTs();
   }
-  async get3publicNFTs(){
-    this.gallerynfts = await this.nftService.get3publicNFTs()
+
+
+
+  private start() {
+    return new Promise<void>(async (resolve, reject) => {
+      this.profilestring = JSON.stringify(this.profile);
+      resolve();
+    });
+  }
+
+  private async continue() {
+    await this.get3public();
+    await this.get3sellerNFTs();
+  }
+
+  async get3public() {
+    let publicGallery = this.profile?.publicGallery
+    console.log(publicGallery)
+    let publicGallery3 = publicGallery.slice(0, 3);
+    console.log(publicGallery3)
+    for (const nftcode of publicGallery3) {
+      this.tempo = await this.nftService.getpublicNFTs(nftcode);
+      this.publicgallerynfts.push(this.tempo[0]);
+      this.tempo = [];
+    }
   }
   async get3sellerNFTs(){
     this.onsalenfts = await this.nftService.get3lastselleronsaleNFTs()
+  }
+
+  async gotoshop() {
+    await this.router.navigateByUrl('/shop', {replaceUrl: true});
   }
 }

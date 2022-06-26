@@ -8,7 +8,9 @@
     <ion-button slot="end" (click)="create() ">
       <ion-icon slot="icon-only" name="add" ></ion-icon>
     </ion-button>
-
+    <ion-button slot="end" (click)="deleteallpublic() ">
+      <ion-icon slot="icon-only" name="trash-outline" ></ion-icon>
+    </ion-button>
 
   </ion-toolbar>
 
@@ -17,7 +19,7 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <ion-list id="gallery">
-        <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'gallery-detail', nft ]" >
+        <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'gallery-detail', nft ]" replaceUrl="true" >
           <div class="nftitem">
               <ion-avatar>
                 <img [src]="nft.image" alt=""/>

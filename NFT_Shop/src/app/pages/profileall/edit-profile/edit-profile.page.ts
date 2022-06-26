@@ -11,11 +11,11 @@ import {deleteUser, getAuth} from "firebase/auth";
 
 
 @Component({
-  selector: 'app-edit_profile',
-  templateUrl: './edit_profile.html',
-  styleUrls: ['./edit_profile.page.scss'],
+  selector: 'app-edit-profile',
+  templateUrl: './edit-profile.html',
+  styleUrls: ['./edit-profile.page.scss'],
 })
-export class Edit_profilePage implements OnInit {
+export class EditProfilePage implements OnInit {
 profile = null;
   infos: FormGroup;
 ip: string;

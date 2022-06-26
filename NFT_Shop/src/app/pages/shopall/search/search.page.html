@@ -7,16 +7,25 @@
 
 
 
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar
+      showCancelButton
+      searchIcon="search"
+      animated
+      cancel-button-icon
+      (ionCancel)="hideSearch()"
+      (search)="loadsearch($event.target.value)"
+      placeholder="Search Some Values">
+    </ion-searchbar>
 
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content id="container">
+
   <ion-row>
     <ion-col id="value"><ion-label>Search By:</ion-label></ion-col>
-    <ion-col id="text"><ion-label>{{valuee}}</ion-label></ion-col>
+    <ion-col id="text"><ion-label>{{value}}</ion-label></ion-col>
     <ion-col id="icon"><ion-icon name="filter" id="trigger-button"></ion-icon></ion-col>
 
   </ion-row>
@@ -27,37 +36,75 @@
     <ng-template>
       <ion-content>
         <ion-list>
-          <ion-radio-group value="{{tipo}}">
+          <ion-radio-group value="{{type}}">
             <ion-list-header>
               <ion-label>Search By</ion-label>
             </ion-list-header>
 
             <ion-item (click)="selecttype('profile')">
-              <ion-label>profile</ion-label>
+              <ion-label>Profiles</ion-label>
               <ion-radio slot="start" value="profile"></ion-radio>
             </ion-item>
 
             <ion-item (click)="selecttype('salenft')">
-              <ion-label>salenft</ion-label>
+              <ion-label>OnSaleNFTs</ion-label>
               <ion-radio slot="start" value="salenft"></ion-radio>
             </ion-item>
 
             <ion-item (click)="selecttype('publicnft')">
-              <ion-label>publicnft</ion-label>
+              <ion-label>Public NFTs</ion-label>
               <ion-radio slot="start" value="publicnft"></ion-radio>
             </ion-item>
 
-            <ion-item (click)="selecttype('sellershop')">
-              <ion-label>sellershop</ion-label>
-              <ion-radio slot="start" value="sellershop"></ion-radio>
-            </ion-item>
           </ion-radio-group>
         </ion-list>
       </ion-content>
     </ng-template>
   </ion-popover>
 
+  <div id="salenft">
+    <ion-list>
+      <ion-item *ngFor="let onsalenft of onSaleNFTs "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
+        <div class="nftitem">
+          <ion-avatar>
+            <img [src]="onsalenft.image" alt=""/>
+          </ion-avatar>
+          <p>{{onsalenft.name}}</p>
+          <p>{{onsalenft.price}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
 
+  <div id="publicnft">
+    <ion-list>
+      <ion-item *ngFor="let nft of NFTs "  [routerLink]="['/', 'publicgallery-detail', nft ]" >
+        <div class="nftitem">
+          <ion-avatar>
+            <img [src]="nft.image" alt=""/>
+          </ion-avatar>
+          <p>{{nft.name}}</p>
+
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div id="profile">
+
+    <ion-list>
+      <ion-item *ngFor="let profile of profiles "  [routerLink]="['/', 'publicuser-profile', profile ]" >
+        <div class="nftitem">
+          <ion-avatar>
+            <img [src]="profile.image" alt=""/>
+          </ion-avatar>
+          <p>{{profile.username}}</p>
+
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <!--
   <ion-list id="search">
     <ion-item [routerLink]="[dest]">
       <div>
@@ -87,4 +134,5 @@
       </div>
     </ion-item>
   </ion-list>
+  -->
 </ion-content>

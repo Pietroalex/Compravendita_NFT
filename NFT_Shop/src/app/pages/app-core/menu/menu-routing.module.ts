@@ -30,8 +30,8 @@ const menuRoutes: Routes = [
     },
 
   {
-    path: 'edit_profile',
-    loadChildren: () => import('../../profileall/edit_profile/edit_profile.module').then(m => m.RegistrationPageModule),
+    path: 'edit-profile',
+    loadChildren: () => import('../../profileall/edit-profile/edit-profile.module').then(m => m.RegistrationPageModule),
 
   },
   {

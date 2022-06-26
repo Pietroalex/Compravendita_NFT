@@ -1,7 +1,22 @@
 import { Injectable } from '@angular/core';
 import {
-  Firestore, addDoc, collection, collectionData,
-  doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc, getDoc, query, where, getDocs, orderBy, limit
+  Firestore,
+  addDoc,
+  collection,
+  collectionData,
+  doc,
+  docData,
+  deleteDoc,
+  updateDoc,
+  DocumentReference,
+  setDoc,
+  getDoc,
+  query,
+  where,
+  getDocs,
+  orderBy,
+  limit,
+  arrayUnion, increment, arrayRemove
 } from '@angular/fire/firestore';
 
 import {Auth} from "@angular/fire/auth";
@@ -10,6 +25,9 @@ import {getDownloadURL, ref, uploadString, Storage} from "@angular/fire/storage"
 import {Observable} from "rxjs";
 
 import {AuthService} from "../../user_related/login/auth.service";
+import {AlertController} from "@ionic/angular";
+import {getAuth} from "firebase/auth";
+import {Router} from "@angular/router";
 
 export interface NFT {
   nftcode?: string;
@@ -42,13 +60,55 @@ export class NftService {
     private firestore: Firestore,
     private auth: Auth,
     private storage: Storage,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertController: AlertController,
+    private router: Router
   ) {
     this.authService.getUserProfile().subscribe((data) => {
       this.profile = data;
     });
   }
 
+  async copytopublic(params) {
+    let nftcode = params.get('nftcode');
+    let image = params.get('image');
+    let name = params.get('name');
+    let description = params.get('description');
+    let author = params.get('author');
+    try{
+      await setDoc(doc(this.firestore, "PublicNFTs", nftcode), {                                  //crea il documento del NFT
+        nftcode: nftcode,
+        image: image,
+        name: name,
+        description: description,
+        author: author,
+      });
+
+        const user = this.profile.uid;
+        const docRef = doc(this.firestore, `Users/${user}`);
+        await updateDoc(docRef, {
+          publicGallery: arrayUnion(nftcode)               //aggiunge l'nftcode all'array privateGallery dentro il profilo utente corrente
+        });
+
+
+      const alert = await this.alertController.create({
+        header: 'Successfully publicised',
+        message: 'All users can now admire your piece of art!.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+
+      return true;
+    }catch (e) {
+      const alert = await this.alertController.create({
+        header: 'Unsuccessful publication',
+        message: 'There was a problem in the publication of your item.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      return null;
+    }
+  }
 
   async uploadNFTImage(cameraFile: Photo, nftcode: string) {
 
@@ -72,7 +132,7 @@ export class NftService {
   }
 
 
-   async loadAllGalleryNFTs(nftcode)//: Observable<NFT>
+   async loadAllGalleryNFTs(nftcode)
    {
      const collRef = collection(this.firestore, "NFTs");                                // per trovare tutti gli nft in in gallery
      const q = query(collRef, where('nftcode', '==', nftcode));
@@ -128,20 +188,6 @@ export class NftService {
     return this.nfts;
 
   }
-  async get3publicNFTs(){
-    const onsalesRef = collection(this.firestore, "NFTs");
-    const q = query(onsalesRef, limit(3));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      this.tempo.push(doc.data());
-    })
-
-    this.nfts = this.tempo;
-    this.tempo = [];
-    return this.nfts;
-
-  }
-
 
   async loadAllSellerOnSaleNFTs() {
     console.log("Seller")
@@ -157,5 +203,55 @@ export class NftService {
     this.nfts = this.tempo;
     this.tempo = [];
     return this.nfts;
+  }
+
+  async getpublicNFTs(nftcode: any) {
+    {
+      const collRef = collection(this.firestore, "NFTs");                                // per trovare gli nft in in public gallery
+      const q = query(collRef, where('nftcode', '==', nftcode));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        this.tempo.push(doc.data());
+      })
+
+      this.nfts = this.tempo;
+      this.tempo = [];
+      return this.nfts;
+
+    }
+  }
+
+    async deleteNft(nftcode: any){
+      const user = this.profile.uid;
+      const docRef = doc(this.firestore, `Users/${user}`);
+
+      await updateDoc(docRef, {
+        publicGallery: arrayRemove(nftcode),          //aggiunge l'nftcode all'array privateGallery dentro il profilo utente corrente
+        privateGallery: arrayRemove(nftcode),
+      });
+
+      await deleteDoc(doc(this.firestore, "NFTs", nftcode));
+      await deleteDoc(doc(this.firestore, "PublicNFTs", nftcode));
+      this.authService.getUserProfile().subscribe((data) => {
+        this.profile = data;
+        localStorage.setItem('profile', JSON.stringify(this.profile));
+      })
+
+    }
+
+
+  async deletepublic(nftcode: any) {
+
+    const user = this.profile.uid;
+    const docRef = doc(this.firestore, `Users/${user}`);
+
+    await updateDoc(docRef, {
+      publicGallery: arrayRemove(nftcode)               //aggiunge l'nftcode all'array privateGallery dentro il profilo utente corrente
+    });
+    await deleteDoc(doc(this.firestore, "PublicNFTs", nftcode));
+    this.authService.getUserProfile().subscribe((data) => {
+      this.profile = data;
+      localStorage.setItem('profile', JSON.stringify(this.profile));
+    })
   }
 }

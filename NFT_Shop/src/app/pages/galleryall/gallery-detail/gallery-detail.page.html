@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button (click)="back()"></ion-back-button>
+      <ion-button (click)="back()"><ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon> </ion-button>
     </ion-buttons>
     <ion-title>NFT Info</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="deletenft()"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -18,14 +21,14 @@
           <ion-label>Name</ion-label>
             <p id="name">{{this.name}}</p>
           <ion-label>Author</ion-label>
-            <p [routerLink]="['/','publicuser-profile', this.author]" id="author">{{this.nameauthor}}</p>
+            <p (click)="gotoauthor()" id="author">{{this.nameauthor}}</p>
           <ion-label>Description</ion-label>
             <p id="descr">{{this.description}}</p>
 
     </div>
 
   </div>
-
+    <ion-fab-button (click)="topublic()"><ion-icon name="share-social-outline"></ion-icon></ion-fab-button>
     <ion-fab-button [routerLink]="['/', 'sell-item',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author } ]"><ion-icon name="cash"></ion-icon></ion-fab-button>
 
 </ion-content>

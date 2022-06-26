@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ValueAccessor} from "@ionic/angular/directives/control-value-accessors/value-accessor";
+import {SearchService} from "../../../services/DBop/search/search.service";
+import {arrayUnion, doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
+
 
 @Component({
   selector: 'app-search',
@@ -7,46 +9,102 @@ import {ValueAccessor} from "@ionic/angular/directives/control-value-accessors/v
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
-  dest: string;
-  valuee: string;
-  tipo: string;
 
+  value: string;
+  type: string;
 
-  constructor() { }
+  NFTs = [];
+  profiles = [];
+  onSaleNFTs = [];
+
+  constructor(
+    private searchService: SearchService,
+    private firestore: Firestore
+  ) { }
 
   ngOnInit() {
-    this.dest= "/publicuser-profile";
-    this.valuee= 'profile';
-    this.tipo= 'profile';
+
+    switch(this.type = localStorage.getItem('search-filed')){
+      case "profile":
+        this.value = 'Profile';
+        break;
+      case "salenft":
+        this.value = 'OnSaleNFT';
+        break;
+      case "publicnft":
+        this.value = 'PublicNFT';
+        break;
+    }
+    this.hideother(this.type);
   }
 
   selecttype(value: string) {
 
     switch (value) {
       case "profile":
-        this.valuee= 'Profile';
-        this.dest= "/publicuser-profile";
-        this.tipo=value;
+
+        this.value= 'Profile';
+        this.type = value;
         break;
       case "salenft":
-        this.valuee= 'On Sale NFT';
-        this.dest= "/shop-detail";
-        this.tipo=value;
-        break;
-      case "publicnft":
-        this.valuee= 'Public NFT';
-        this.dest= "/public-gallery-detail";
-        this.tipo=value;
-        break;
-      case "sellershop":
-        this.valuee= 'Sellershop';
-        this.dest= "/shop";
-        this.tipo=value;
-        break;
-    }
 
+        this.value= 'OnSaleNFT';
+        this.type = value;
+        break;
+
+      case "publicnft":
+
+        this.value = 'Public NFT';
+        this.type = value;
+        break;
+
+    }
+    this.hideother(value);
+    localStorage.setItem('search-filed', value)
   }
 
 
+  async loadsearch(value) {
+    console.log(value)
+    switch (this.type) {
+      case "profile":
+        this.profiles = await this.searchService.search(value);
+        break;
+
+      case "salenft":
+        this.onSaleNFTs = await this.searchService.search(value);
+        break;
+
+      case "publicnft":
+        this.NFTs = await this.searchService.search(value);
+        break;
+
+    }
+  }
+  hideSearch() {
+
+  }
+  hideother(value: string) {
+    switch (this.type) {
+      case "profile":
+        document.getElementById('profile').setAttribute("style", "display: block; ")
+        document.getElementById('salenft').setAttribute("style", "display: none; ")
+        document.getElementById('publicnft').setAttribute("style", "display: none; ")
+        break;
+
+      case "salenft":
+        document.getElementById('profile').setAttribute("style", "display: none; ")
+        document.getElementById('salenft').setAttribute("style", "display: block; ")
+        document.getElementById('publicnft').setAttribute("style", "display: none; ")
+        break;
+
+      case "publicnft":
+        document.getElementById('profile').setAttribute("style", "display: none; ")
+        document.getElementById('salenft').setAttribute("style", "display: none; ")
+        document.getElementById('publicnft').setAttribute("style", "display: block; ")
+        break;
+
+    }
+  }
 
 }

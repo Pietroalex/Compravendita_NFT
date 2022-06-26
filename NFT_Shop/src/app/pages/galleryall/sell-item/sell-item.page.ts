@@ -99,6 +99,7 @@ export class SellItemPage implements OnInit {
           });
           this.showAlert('Item On Sale', 'Your item is being published on the shop')
           await deleteDoc(doc(this.firestore, "NFTs", this.nftcode));
+          await deleteDoc(doc(this.firestore, "PublicNFTs", this.nftcode));
           await this.router.navigateByUrl('/home', {replaceUrl: true});
 
           return true;

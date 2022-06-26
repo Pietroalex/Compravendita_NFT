@@ -17,7 +17,8 @@ export class MenuPage   {
     { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Profile', url: 'profile', icon: 'person' },
     { title: 'Gallery', url: 'gallery', icon: 'images' },
-    { title: 'Notifications', url: 'notification', icon: 'notifications' }
+    { title: 'Notifications', url: 'notification', icon: 'notifications' },
+
   ];
   selectedPath= '';
   constructor(
@@ -29,6 +30,8 @@ export class MenuPage   {
     this.authService.getUserProfile().subscribe((data) => {
         this.profile = data;
         localStorage.setItem('profile', JSON.stringify(this.profile));
+        localStorage.setItem('search-filed', "profile")
+        localStorage.setItem('search-filed', "profile")
       });
     this.router.events.subscribe((event: RouterEvent) => this.selectedPath = event.url);
   }

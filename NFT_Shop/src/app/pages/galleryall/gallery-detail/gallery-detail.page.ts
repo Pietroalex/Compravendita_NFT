@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {ModalController} from "@ionic/angular";
+import {AlertController, ModalController} from "@ionic/angular";
+import {arrayUnion, deleteDoc, doc, setDoc} from "@angular/fire/firestore";
+import {NftService} from "../../../services/DBop/nfts/nft.service";
+import {getAuth} from "firebase/auth";
 
 
 
@@ -18,12 +21,15 @@ export class GalleryDetailPage implements OnInit {
   author: string;
   nameauthor: string;
 
+  params: any;
 
 
   constructor(
 
     private router: Router,
     private route: ActivatedRoute,
+    private nftService: NftService,
+    private alertController: AlertController
 
 
   ) { }
@@ -37,11 +43,71 @@ export class GalleryDetailPage implements OnInit {
          this.description = params.get('description');
          this.author = params.get('author');
          this.nameauthor = this.nftcode.substring(0, this.nftcode.indexOf("-"));
-
+          this.params = params;
     });
 
 }
+  async topublic(){
+    await this.nftService.copytopublic(this.params);
+  }
+
   async back() {
     await this.router.navigateByUrl('/gallery', { replaceUrl: true });
   }
+  async gotoauthor() {
+    localStorage.setItem('author', this.author)
+    await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
+  }
+
+
+  async deletenft(){
+    let alert = await this.alertController.create({
+      header: 'Confirm deletion',
+      message: 'Do you want to delete your NFT? Chose wisely',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Delete NFT',
+          handler: () => {
+
+            this.presentConfirm();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  async presentConfirm() {
+    let alert = await this.alertController.create({
+      header: 'Are you sure?',
+      message: 'After accepting, the NFT will be deleted forever and you will not be able to recover it in any way possible',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+
+          }
+        },
+        {
+          text: 'I\'m Sure',
+          handler: async () => {
+
+            await this.nftService.deleteNft(this.nftcode);
+            await this.router.navigateByUrl('/gallery', { replaceUrl: true });
+
+
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
 }

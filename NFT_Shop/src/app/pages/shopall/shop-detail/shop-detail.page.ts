@@ -64,7 +64,8 @@ export class ShopDetailPage implements OnInit {
       this.nameseller = this.seller.substring(0, this.seller.indexOf("-"));
       this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
       localStorage.setItem('seller',this.seller);
-
+      console.log("seller shop "+this.seller)
+      console.log("author shop "+this.author)
       this.onsale_date = new Date(params.get('onsale_date'));
       this.price = Number(params.get('price'));
       this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
@@ -135,5 +136,14 @@ export class ShopDetailPage implements OnInit {
       buttons: ['OK'],
     });
     await alert.present();
+  }
+
+ async gotoauthor() {
+   localStorage.setItem('author', this.author)
+    await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
+  }
+  async gotoseller(){
+    localStorage.setItem('author', this.uidseller)
+    await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
   }
 }

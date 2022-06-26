@@ -15,17 +15,17 @@
   <div id="container">
     <div class="preview">
       <ion-avatar>
-        <ion-img id="profileimg" src="{{profile?.image}}" [routerLink]="['/edit_profile']"></ion-img>
+        <ion-img id="profileimg" src="{{profile?.image}}" (click)="goeditprofile()"></ion-img>
       </ion-avatar>
     </div>
 
 
     <div id="info">
     <ion-label>Username</ion-label><br>
-    <p id="username" [routerLink]="['/edit_profile']">{{profile?.username}}</p>
+    <p id="username" [routerLink]="['/edit-profile']">{{profile?.username}}</p>
 
     <ion-label>Bio</ion-label>
-    <p id="bio" [routerLink]="['/edit_profile']">{{profile?.bio}}</p>
+    <p id="bio" [routerLink]="['/edit-profile']">{{profile?.bio}}</p>
     </div>
     <ion-segment value="private">
       <ion-segment-button value="private" (click)="hide_show('private')">Private</ion-segment-button>
@@ -67,7 +67,7 @@
 <div id="publicsection">
 
   <ion-list id="gallery">
-    <ion-item *ngFor="let gallerynft of gallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
+    <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
       <div class="nftitem">
         <ion-avatar>
           <img [src]="gallerynft.image" alt=""/>

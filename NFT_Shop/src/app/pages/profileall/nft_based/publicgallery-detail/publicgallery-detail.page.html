@@ -18,7 +18,7 @@
       <ion-label>Name</ion-label>
       <p id="name">{{this.name}}</p>
       <ion-label>Author</ion-label>
-      <p [routerLink]="['/','publicuser-profile', this.author]" id="author">{{this.nameauthor}}</p>
+      <p (click)="gotoauthor()" id="author">{{this.nameauthor}}</p>
       <ion-label>Description</ion-label>
       <p id="descr">{{this.description}}</p>
 

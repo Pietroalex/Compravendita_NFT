@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Profile</ion-title>
+    <ion-title>Public Profile</ion-title>
 
   </ion-toolbar>
 
@@ -32,7 +32,7 @@
     <div id="publicsection">
 
       <ion-list id="gallery">
-        <ion-item *ngFor="let gallerynft of gallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
+        <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
           <div class="nftitem">
             <ion-avatar>
               <img [src]="gallerynft.image" alt=""/>
@@ -56,7 +56,7 @@
           </div>
         </ion-item>
       </ion-list>
-      <ion-button [routerLink]="['/','shop', this.profile?.uid]">Pvt SHOP</ion-button>
+      <ion-button (click)="gotoshop()">Pvt SHOP</ion-button>
     </div>
 
   </div>
