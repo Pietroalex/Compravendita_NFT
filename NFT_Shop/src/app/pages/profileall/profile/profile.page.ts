@@ -71,12 +71,7 @@ export class ProfilePage implements OnInit {
   async get3purchasedNFTs(){
     this.purchasednfts = await this.nftHistory.get3lastSoldNFTs("buyer", this.search)
   }
-  /*
-  async get3publicNFTs(){
-    this.gallerynfts = await this.nftService.get3publicNFTs()
-  }
 
-   */
   async get3public() {
     let publicGallery = this.profile?.publicGallery
     console.log(publicGallery)
@@ -106,5 +101,9 @@ export class ProfilePage implements OnInit {
 
   async goeditprofile() {
     await this.router.navigateByUrl('/edit-profile', { replaceUrl: true });
+  }
+  async gotoshop() {
+    localStorage.setItem('seller', this.profile.username + "-" + this.profile.uid)
+    await this.router.navigateByUrl('/shop', {replaceUrl: true});
   }
 }

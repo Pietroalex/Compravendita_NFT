@@ -24,7 +24,7 @@ export class SearchPage implements OnInit {
 
   ngOnInit() {
 
-    switch(this.type = localStorage.getItem('search-filed')){
+    switch(this.type = localStorage.getItem('search-field')){
       case "profile":
         this.value = 'Profile';
         break;
@@ -60,7 +60,7 @@ export class SearchPage implements OnInit {
 
     }
     this.hideother(value);
-    localStorage.setItem('search-filed', value)
+    localStorage.setItem('search-field', value)
   }
 
 

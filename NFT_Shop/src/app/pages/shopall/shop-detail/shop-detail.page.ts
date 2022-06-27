@@ -14,6 +14,7 @@ import {
 import {InformationService} from "../../../services/user_related/check_user/information.service";
 import {AlertController} from "@ionic/angular";
 import {NftPurchaseService} from "../../../services/DBop/nft_purchase/nft-purchase.service";
+import {NotifyService} from "../../../services/DBop/notification/notify.service";
 
 @Component({
   selector: 'app-shop-detail',
@@ -38,7 +39,7 @@ export class ShopDetailPage implements OnInit {
 
   money: number;
   Sellerprofile = null;
-  param
+  params: any;
 
   constructor(
     private router: Router,
@@ -48,6 +49,7 @@ export class ShopDetailPage implements OnInit {
     private infoService: InformationService,
     private alertController: AlertController,
     private nftpurchaseService: NftPurchaseService,
+    private notifyService: NotifyService
   ) {
     this.authService.getUserProfile().subscribe((data) => { this.profile = data ;});
   }
@@ -64,12 +66,10 @@ export class ShopDetailPage implements OnInit {
       this.nameseller = this.seller.substring(0, this.seller.indexOf("-"));
       this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
       localStorage.setItem('seller',this.seller);
-      console.log("seller shop "+this.seller)
-      console.log("author shop "+this.author)
       this.onsale_date = new Date(params.get('onsale_date'));
       this.price = Number(params.get('price'));
       this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
-      this.param = params;
+      this.params = params;
     });
 
   }
@@ -114,11 +114,11 @@ export class ShopDetailPage implements OnInit {
         });
 
         this.showAlert('Item successfully purchased', 'Your item is being added to your gallery')
+
         await deleteDoc(doc(this.firestore, "OnSaleNFTs", this.nftcode));
+        await this.nftpurchaseService.createHistory(this.profile, this.Sellerprofile, this.params);
+        await this.notifyService.notify(this.profile, this.Sellerprofile, this.params);
         await this.router.navigateByUrl('/gallery', {replaceUrl: true});
-
-        this.nftpurchaseService.createHistory(this.profile, this.Sellerprofile, this.param);
-
         return true;
       } catch (e) {
         return null;

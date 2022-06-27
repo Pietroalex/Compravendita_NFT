@@ -33,9 +33,6 @@ export class PublicuserProfilePage implements OnInit {
 
   async ngOnInit() {
     this.author = localStorage.getItem('author');
-    console.log(this.author)
-
-
 
     await this.infoService.getUserProfile(this.author).subscribe((data) => {
       this.profile = data;
@@ -61,9 +58,9 @@ export class PublicuserProfilePage implements OnInit {
 
   async get3public() {
     let publicGallery = this.profile?.publicGallery
-    console.log(publicGallery)
+
     let publicGallery3 = publicGallery.slice(0, 3);
-    console.log(publicGallery3)
+
     for (const nftcode of publicGallery3) {
       this.tempo = await this.nftService.getpublicNFTs(nftcode);
       this.publicgallerynfts.push(this.tempo[0]);

@@ -161,6 +161,36 @@ export class NftService {
   this.tempo = [];
   return this.nfts;
   }
+  async loadAllOnSaleNFTsorder(){
+    const collRef = collection(this.firestore, "OnSaleNFTs");
+    let q = query(collRef, orderBy("onSale_date", "desc"));
+    let input = localStorage.getItem('order-field')
+    switch (input) {
+      case "newer":
+         q = query(collRef, orderBy("onSale_date", "desc"));
+        break;
+      case "older":
+         q = query(collRef, orderBy("onSale_date", "asc"));
+        break;
+
+      case "cheaper":
+         q = query(collRef, orderBy("price", "asc"));
+        break;
+      case "expensive":
+         q = query(collRef, orderBy("price", "desc"));
+        break;
+    }
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
+      this.tempo.push(doc.data());
+      console.log(doc.id, " => ", doc.data());
+    });
+
+    this.nfts = this.tempo;
+    this.tempo = [];
+    return this.nfts;
+  }
 
   async get6lastonsaleNFTs(){
     const onsalesRef = collection(this.firestore, "OnSaleNFTs");
@@ -194,6 +224,41 @@ export class NftService {
     let seller = localStorage.getItem('seller')
     const onsalesRef = collection(this.firestore, "OnSaleNFTs");
     const q = query(onsalesRef, where('seller', '==', seller));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
+      this.tempo.push(doc.data());
+      console.log(doc.id, " => ", doc.data());
+    });
+
+    this.nfts = this.tempo;
+    this.tempo = [];
+    return this.nfts;
+  }
+
+  async loadAllSellerOnSaleNFTsorder() {
+    console.log("Seller")
+    let seller = localStorage.getItem('seller')
+    const onsalesRef = collection(this.firestore, "OnSaleNFTs");
+
+    let q = query(onsalesRef, orderBy("onSale_date", "desc"), where('seller', '==', seller));
+    let input = localStorage.getItem('order-field')
+    switch (input) {
+      case "newer":
+        q = query(onsalesRef, orderBy("onSale_date", "desc"), where('seller', '==', seller));
+        break;
+      case "older":
+        q = query(onsalesRef, orderBy("onSale_date", "asc"), where('seller', '==', seller));
+        break;
+
+      case "cheaper":
+        q = query(onsalesRef, orderBy("price", "asc"), where('seller', '==', seller));
+        break;
+      case "expensive":
+        q = query(onsalesRef, orderBy("price", "desc"), where('seller', '==', seller));
+        break;
+    }
+
+
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
       this.tempo.push(doc.data());

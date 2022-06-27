@@ -52,7 +52,7 @@ const menuRoutes: Routes = [
 
   },
   {
-    path: 'notification/:profile',
+    path: 'notification',
     loadChildren: () => import('../../notification/notification.module').then( m => m.NotificationPageModule),
 
   },

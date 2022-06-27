@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {AuthService} from "../../../services/user_related/login/auth.service";
@@ -12,32 +12,49 @@ import {NftService} from "../../../services/DBop/nfts/nft.service";
   templateUrl: './shop.page.html',
   styleUrls: ['./shop.page.scss'],
 })
-export class ShopPage implements OnInit {
+export class ShopPage implements OnInit, OnDestroy {
   nfts = [];
   seller: string;
   profile = null;
-  check:boolean;
-   constructor(
+  check: boolean;
+  value: string;
+  type: string;
+
+  constructor(
     private router: Router,
     private firestore: Firestore,
     private nftService: NftService,
     private authService: AuthService,
     private route: ActivatedRoute,
   ) {
-     this.seller = localStorage.getItem('seller');
-     this.start().then(res => this.continue());
+    this.seller = localStorage.getItem('seller');
+    this.start().then(res => this.continue());
   }
-
 
 
   async ngOnInit() {
+    switch (this.type = localStorage.getItem('order-field')) {
+      case "newer":
+        this.value = 'newer';
+        break;
+      case "older":
+        this.value = 'older';
+        break;
+      case "cheaper":
+        this.value = 'cheaper';
+        break;
+      case "expensive":
+        this.value = 'expensive';
+        break;
+    }
   }
+
 
   async gotosearch() {
     await this.router.navigateByUrl('/search', {replaceUrl: true});
   }
 
-   async start() {
+  async start() {
     return new Promise<void>((resolve, reject) => {
       const result = JSON.parse(localStorage.getItem('profile'));
       this.profile = result;
@@ -45,13 +62,44 @@ export class ShopPage implements OnInit {
     });
   }
 
-   async continue() {
-     //this.seller = this.route.snapshot.paramMap.get('seller');
+  async continue() {
+    //this.seller = this.route.snapshot.paramMap.get('seller');
 
-     this.startt().then(res => this.continuee());
+    this.startt().then(res => this.continuee());
 
 
-   }
+  }
+
+  selectorder(value: string) {
+
+    switch (value) {
+      case "newer":
+        this.value = 'newer';
+        this.type = value;
+        break;
+
+      case "older":
+        this.value = 'older';
+        this.type = value;
+        break;
+
+      case "cheaper":
+        this.value = 'cheaper';
+        this.type = value;
+        break;
+
+      case "expensive":
+        this.value = 'expensive';
+        this.type = value;
+        break;
+
+    }
+
+    localStorage.setItem('order-field', value)
+    this.continuee()
+  }
+
+
 
 
    startt() {
@@ -60,7 +108,7 @@ export class ShopPage implements OnInit {
        if (this.seller === "null") {
          this.check = true;
        }else { this.check = false }
-       console.log(this.check)
+
        resolve();
      });
 
@@ -68,12 +116,17 @@ export class ShopPage implements OnInit {
 }
 
    async continuee() {
-     console.log(this.seller)
+
      if (this.check) {
-       this.nfts = await this.nftService.loadAllOnSaleNFTs();
+     //  this.nfts = await this.nftService.loadAllOnSaleNFTs();
+       this.nfts = await this.nftService.loadAllOnSaleNFTsorder();
      } else {
-       this.nfts = await this.nftService.loadAllSellerOnSaleNFTs();
+       //this.nfts = await this.nftService.loadAllSellerOnSaleNFTs();
+       this.nfts = await this.nftService.loadAllSellerOnSaleNFTsorder();
      }
 
+   }
+   ngOnDestroy() {
+     localStorage.setItem('seller', "null");
    }
 }

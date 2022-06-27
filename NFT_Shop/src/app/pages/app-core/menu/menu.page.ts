@@ -11,13 +11,13 @@ import { getAuth, signOut } from "firebase/auth";
 })
 export class MenuPage   {
   profile = null;
-  profilestring: any;
+
 
   public appPages = [
-    { title: 'Home', url: 'home', icon: 'home' },
-    { title: 'Profile', url: 'profile', icon: 'person' },
-    { title: 'Gallery', url: 'gallery', icon: 'images' },
-    { title: 'Notifications', url: 'notification', icon: 'notifications' },
+    { id: 'home', title: 'Home', url: 'home', icon: 'home' },
+    { id: 'person', title: 'Profile', url: 'profile', icon: 'person' },
+    { id: 'gallery', title: 'Gallery', url: 'gallery', icon: 'images' },
+    { id: 'notify', title: 'Notifications', url: 'notification', icon: 'notifications' },
 
   ];
   selectedPath= '';
@@ -30,10 +30,12 @@ export class MenuPage   {
     this.authService.getUserProfile().subscribe((data) => {
         this.profile = data;
         localStorage.setItem('profile', JSON.stringify(this.profile));
-        localStorage.setItem('search-filed', "profile")
-        localStorage.setItem('search-filed', "profile")
+        localStorage.setItem('search-field', "profile")
+        localStorage.setItem('order-field', "newer")
       });
     this.router.events.subscribe((event: RouterEvent) => this.selectedPath = event.url);
+    localStorage.setItem('notif', 'background-color: transparent;')
+
   }
 
   async logout() {

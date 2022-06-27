@@ -1,22 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+    <ion-header [translucent]="true">
+      <ion-toolbar>
 
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Notifications</ion-title>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Notifications</ion-title>
 
-  </ion-toolbar>
+      </ion-toolbar>
 
-</ion-header>
+    </ion-header>
+    <ion-content>
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="chevron-down-circle-outline"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
 
-<ion-content [fullscreen]="true">
-<ion-list>
-  <ion-item *ngFor="let notifications of notifications$ | async" [routerLink]="['/notifications', notifications.id]" routerDirection="forward" detail="true">
-    <p>{{notifications.nft.nftcode }}</p>
-    <p>{{notifications.nft.image }}</p>
-    <p>{{notifications.nft.name }}</p>
-    <p>{{notifications.nft.purchase_date | date:'dd/MM/yyyy'}}</p><p>{{notifications.nft.buyer }}</p><p>{{notifications.nft.price }}</p>
-  </ion-item>
-</ion-list>
-</ion-content>
+
+      <ion-list>
+
+        <ion-item-sliding id="item100" *ngFor="let notification of notifications ; index as i  " >
+          <ion-item >
+            <div></div>
+            <ion-label>
+              <h2>{{notification.nftcode }}</h2>
+              <p>{{notification.name }}</p>
+              <p>{{notification.buyer }}</p><p>{{notification.price }}</p>
+            </ion-label>
+            <ion-note slot="end">
+              {{notification.purchase_date }}
+            </ion-note>
+          </ion-item>
+
+
+          <ion-item-options side="end">
+            <ion-item-option color="danger">
+              <ion-icon slot="icon-only" name="trash" (click)="delete1Notify(i)"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+
+
+      </ion-list>
+    </ion-content>
+
+
