@@ -4,20 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenuPageRoutingModule } from './menu-routing.module';
+import { LanguagePopoverPageRoutingModule } from './language-popover-routing.module';
 
-import { MenuPage } from './menu.page';
-
-import {TranslateModule} from "@ngx-translate/core";
+import { LanguagePopoverPage } from './language-popover.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TranslateModule,
-    MenuPageRoutingModule
+    LanguagePopoverPageRoutingModule
   ],
-  declarations: [MenuPage]
+  declarations: [LanguagePopoverPage]
 })
-export class MenuPageModule {}
+export class LanguagePopoverPageModule {}

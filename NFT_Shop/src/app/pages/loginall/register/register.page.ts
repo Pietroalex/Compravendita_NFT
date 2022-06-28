@@ -42,7 +42,7 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
-    let isUsernameOk = true;
+
     const auth = getAuth();
     let email = this.registers.controls['email'].value;
     let password = this.registers.controls['password'].value;
@@ -65,8 +65,10 @@ export class RegisterPage implements OnInit {
               cashart: 5000,
               nft_created_count: 0,
               privateGallery: [],
-              publicGallery: []
+              publicGallery: [],
+              language : "en"
             });
+            localStorage.setItem("logged", "true")
             this.router.navigateByUrl('/menu/home', {replaceUrl: true});
 
 

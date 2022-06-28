@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {LanguageService} from "./services/user_related/language/language.service";
+import { Platform } from "@ionic/angular";
 
 @Component({
   selector: 'app-root',
@@ -9,11 +11,17 @@ export class AppComponent {
 
 
   constructor(
-
+    private platform: Platform,
+    private languageService: LanguageService
   ) {
-
+    localStorage.setItem("logged", "false")
+  this.inizializeApp();
   }
-
+inizializeApp(){
+    this.platform.ready().then(() =>{
+      this.languageService.setInitialAppLanguage();
+    })
+}
 
 
 }

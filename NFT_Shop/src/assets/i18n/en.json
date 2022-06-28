@@ -1,0 +1,12 @@
+{
+  "MENU": {
+    "lang": "english"
+  },
+  "HOME": {
+    "vetrina": "Shop Window",
+    "shop": "Shop"
+  },
+  "PROFILE":{
+    "username": "Username"
+  }
+}

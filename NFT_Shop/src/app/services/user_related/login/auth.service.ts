@@ -9,6 +9,7 @@ import {
 } from "@angular/fire/auth";
 import {doc, docData, Firestore} from "@angular/fire/firestore";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,6 +35,7 @@ export class AuthService {
         email,
         password
       );
+
       return user;
 
     }catch (e) {
@@ -41,25 +43,7 @@ export class AuthService {
     }
 
   }
-  async loginP({ email, password}) {
-    this.auth = getAuth();
-    setPersistence(this.auth, browserSessionPersistence)
-      .then(async () => {
-        // Existing and future Auth states are now persisted in the current
-        // session only. Closing the window would clear any existing state even
-        // if a user forgets to sign out.
-        // ...
-        // New sign-in will be persisted with session persistence.
-        const user = await signInWithEmailAndPassword(this.auth, email, password);
-        return user;
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
 
-      });
-  }
   async login({ email, password}){
     try {
       const user = await signInWithEmailAndPassword(
@@ -74,6 +58,7 @@ export class AuthService {
     }
   }
 logout(){
+  localStorage.setItem("logged", "false")
     return signOut(this.auth);
 }
 

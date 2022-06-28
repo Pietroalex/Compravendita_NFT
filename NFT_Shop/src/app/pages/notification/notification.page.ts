@@ -23,7 +23,7 @@ export class NotificationPage implements OnInit {
     localStorage.setItem('notif', "background-color: transparent;")
     let val = localStorage.getItem('notif')
     document.getElementById('notify').setAttribute("style", val)
-    document.getElementById('menu').setAttribute("style", val)
+
 
     this.start().then(res => this.continue());
 

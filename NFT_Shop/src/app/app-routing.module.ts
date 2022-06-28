@@ -30,7 +30,11 @@ const routes: Routes = [
     path: 'forgot',
     loadChildren: () => import('./pages/loginall/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
     ...canActivate(redirectLogged)
+  },  {
+    path: 'language-popover',
+    loadChildren: () => import('./pages/app-core/language-popover/language-popover.module').then( m => m.LanguagePopoverPageModule)
   },
+
 
 
 ];
