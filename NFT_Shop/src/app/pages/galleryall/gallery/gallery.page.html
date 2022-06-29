@@ -20,8 +20,8 @@
   <div id="container">
     <ion-list id="gallery">
         <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'gallery-detail', nft ]" replaceUrl="true" >
-          <div class="nftitem">
-              <ion-avatar>
+          <div >
+              <ion-avatar id="nft_image">
                 <img [src]="nft.image" alt=""/>
               </ion-avatar>
             <p>{{nft.name}}</p>
