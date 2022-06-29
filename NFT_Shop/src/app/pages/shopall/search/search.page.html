@@ -66,8 +66,8 @@
   <div id="salenft">
     <ion-list>
       <ion-item *ngFor="let onsalenft of onSaleNFTs "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
-        <div class="nftitem">
-          <ion-avatar>
+        <div>
+          <ion-avatar class="nft_image">
             <img [src]="onsalenft.image" alt=""/>
           </ion-avatar>
           <p>{{onsalenft.name}}</p>
@@ -80,8 +80,8 @@
   <div id="publicnft">
     <ion-list>
       <ion-item *ngFor="let nft of NFTs "  [routerLink]="['/', 'publicgallery-detail', nft ]" >
-        <div class="nftitem">
-          <ion-avatar>
+        <div>
+          <ion-avatar class="nft_image">
             <img [src]="nft.image" alt=""/>
           </ion-avatar>
           <p>{{nft.name}}</p>
@@ -95,8 +95,8 @@
 
     <ion-list>
       <ion-item *ngFor="let profile of profiles "  [routerLink]="['/', 'publicuser-profile', profile ]" >
-        <div class="nftitem">
-          <ion-avatar>
+        <div>
+          <ion-avatar class="nft_image">
             <img [src]="profile.image" alt=""/>
           </ion-avatar>
           <p>{{profile.username}}</p>
