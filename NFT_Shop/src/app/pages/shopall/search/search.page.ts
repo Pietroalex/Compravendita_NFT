@@ -68,15 +68,15 @@ export class SearchPage implements OnInit {
     console.log(value)
     switch (this.type) {
       case "profile":
-        this.profiles = await this.searchService.search(value);
+        this.profiles = await this.searchService.searchprofile(value);
         break;
 
       case "salenft":
-        this.onSaleNFTs = await this.searchService.search(value);
+        this.onSaleNFTs = await this.searchService.searchonsale(value);
         break;
 
       case "publicnft":
-        this.NFTs = await this.searchService.search(value);
+        this.NFTs = await this.searchService.searchpublic(value);
         break;
 
     }

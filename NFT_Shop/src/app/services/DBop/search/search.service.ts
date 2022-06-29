@@ -17,11 +17,41 @@ export class SearchService {
   ) {
   }
 
-  async search(value: string) {
-    let search = await this.checksearch()
-    const searchRef = collection(this.firestore, search);
-    const q = query(searchRef, where(this.searched, '>=', value),
-      where(this.searched, '<=', value + '\uf8ff'));
+  async searchprofile(value: string) {
+
+    const searchRef = collection(this.firestore, "Users");
+    const q = query(searchRef, where("username", '>=', value),
+      where("username", '<=', value + '\uf8ff'));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
+      this.tempo.push(doc.data());
+      console.log(doc.id, " => ", doc.data());
+    });
+
+    this.result = this.tempo;
+    this.tempo = [];
+    return this.result;
+  }
+  async searchonsale(value: string) {
+
+    const searchRef = collection(this.firestore, "OnSaleNFTs");
+    const q = query(searchRef, where("name", '>=', value),
+      where("name", '<=', value + '\uf8ff'));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
+      this.tempo.push(doc.data());
+      console.log(doc.id, " => ", doc.data());
+    });
+
+    this.result = this.tempo;
+    this.tempo = [];
+    return this.result;
+  }
+  async searchpublic(value: string) {
+
+    const searchRef = collection(this.firestore, "PublicNFTs");
+    const q = query(searchRef, where("name", '>=', value),
+      where("name", '<=', value + '\uf8ff'));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
       this.tempo.push(doc.data());
