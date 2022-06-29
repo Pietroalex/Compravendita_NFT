@@ -22,7 +22,10 @@
   <div id="container">
   <div>
 
-    <ion-img [src]="this.image"></ion-img>
+    <ion-avatar id="nft_image">
+      <ion-img [src]="this.image"></ion-img>
+    </ion-avatar>
+
     <div id="text">
       <ion-label>NFT-Code</ion-label><br>
       <p id="nft_code">{{this.nftcode}}</p>

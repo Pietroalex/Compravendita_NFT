@@ -11,9 +11,9 @@
 
 <ion-content id="container">
 
-  <ion-list id="gallery">
+  <ion-list id="sold">
     <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'purchase-detail', nft ]" >
-      <div class="nftitem">
+      <div>
         <ion-avatar>
           <img [src]="nft.image" alt=""/>
         </ion-avatar>

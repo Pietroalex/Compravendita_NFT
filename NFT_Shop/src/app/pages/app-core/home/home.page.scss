@@ -32,13 +32,6 @@ ion-menu-button {
   alignment: right;
 }
 
-#vetrina {
-  display: flex;
-  justify-content: flex-start; /* center if you want to the center */
-  align-items: center;
-  flex-wrap: wrap;
-  width:available;
-}
 ion-list{
   width:available;
   display: flex;
@@ -52,18 +45,13 @@ ion-item {
   font-size: smaller;
 }
 
-#vetrina ion-img{
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  margin-top: 2px;
-
-}
-
 #footer {
   text-align: center;
   font-size: 10px;
 }
-
+#nft_image {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+}
 

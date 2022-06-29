@@ -30,7 +30,6 @@ ion-menu-button {
   line-height: 8px;
   color: green;
   margin-top: 5px;
-
 }
 
 
@@ -50,7 +49,7 @@ ion-menu-button {
   height: 30px;
   alignment: right;
 }
-#pbgallery,#pbshop,#purchased,#sold {
+#gallery,#shop,#purchased,#sold {
   height:auto;
   display: flex;
   justify-content: flex-start; /* center if you want to the center */
@@ -65,12 +64,6 @@ ion-item {
   font-size: smaller;
 }
 
-#pbgallery,#pbshop ion-img{
-  height: 100px;
-  width: auto;
-  margin-top: 1px;
-
-}
 ion-button{
   height: 20px;
 }
@@ -80,10 +73,10 @@ ion-button{
   margin-top: 5px;
 
 }
-#profileimg {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.nft_image {
+    width: 50px;
+    height: 50px;
+    justify-content: center;
 }
 #container {
   height: auto;
@@ -91,10 +84,13 @@ ion-button{
   text-align: center;
 }
 
-ion-avatar{
+#profileimg{
   width: 128px;
   height: 128px;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .preview {

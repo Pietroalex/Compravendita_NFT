@@ -17,11 +17,11 @@
 
     <ion-item-divider><strong class="capitalize">{{'HOME.vetrina' | translate }}</strong></ion-item-divider>
 
-    <div id="vetrinae">
+    <div>
       <ion-list id="shop">
         <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'shop-detail', nft ]" >
-          <div class="nftitem">
-            <ion-avatar>
+          <div>
+            <ion-avatar id="nft_image">
               <img [src]="nft.image" alt=""/>
             </ion-avatar>
             <p>{{nft.name}}</p>

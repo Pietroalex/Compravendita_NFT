@@ -1,43 +1,3 @@
-/*
-ion-item {
-  width : 33%;
-  text-aligh: left;
-  font-size: smaller;
-}
-
-#shop ion-img {
-  height: 100px;
-  width: auto;
-  margin-top: 5px;
-}
-#currency{
-  font-size: 8px;
-  color: #8c8c8c;
-  width: 10%;
-  alignment: right;
-}
-#cashart {
-  height: 30px;
-  alignment: right;
-}
-#container {
-  height: auto;
-  width: auto;
-  text-align: center;
-}
-#container p {
-  font-size: 14px;
-  line-height: 22px;
-  margin-top: 0px;
-  align-content: baseline;
-}
-#shop {
-  display: flex;
-  justify-content: flex-start; /* center if you want to the center
-  align-items: center;
-  flex-wrap: wrap;
-}
-*/
 #shopdiv ion-item {
   width : 33%;
   text-aligh: left;
@@ -67,8 +27,11 @@ ion-item {
   line-height: 35px;
 }
 #container p {
-  margin-top: -20px;
-  margin-bottom: -8px;
+  color: #8c8c8c;
+  align-content: baseline;
+  font-size: 13px;
+  line-height: 11px;
+  margin-top: 2px;
 }
 #shop {
   display: flex;
@@ -87,4 +50,8 @@ ion-item {
 #text {
   text-align: left;
 }
-
+#nft_image {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+}
