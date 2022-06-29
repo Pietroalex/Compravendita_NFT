@@ -5,7 +5,7 @@
         <ion-buttons><ion-button (click)="back()"><ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon> </ion-button></ion-buttons>
       </ion-col>
 
-        <ion-title>New NFT</ion-title>
+        <ion-title>{{ "GALLERY.titleN" | translate }}</ion-title>
 
     </ion-row>
   </ion-toolbar>
@@ -16,19 +16,19 @@
 
 
   <form [formGroup]="nftInfo" (ngSubmit)="createNFT()">
-    <ion-label>Name</ion-label>
+    <ion-label>{{ "GALLERY.name" | translate }}</ion-label>
     <ion-item-divider>
       <ion-input id="item" type="text" required placeholder="Name" formControlName="name"></ion-input>
       <ion-note slot="error" *ngIf="(name.dirty || name.touched) && name.errors"></ion-note>
     </ion-item-divider>
 
-    <ion-label>Description</ion-label>
+    <ion-label>{{ "GALLERY.description" | translate }}</ion-label>
     <ion-item-divider>
       <ion-input type="text" required placeholder="Description" formControlName="desc"></ion-input>
       <ion-note slot="error" *ngIf="(name.dirty || desc.touched) && desc.errors"></ion-note>
     </ion-item-divider>
 
-    <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">Create</ion-button>
+    <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">{{ "GALLERY.create" | translate }}</ion-button>
 
 
   </form>

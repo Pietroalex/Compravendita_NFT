@@ -1,9 +1,48 @@
 {
   "MENU": {
-    "title": "italiano"
+    "home": "Pagina Iniziale",
+    "profile": "Profilo",
+    "gallery": "Galleria",
+    "notify": "Notifiche",
+    "logout": "Disconnetti"
   },
   "HOME": {
     "vetrina": "Vetrina",
-    "shop": "Negozio"
+    "shop": "Negozio",
+    "title": "Pagina Inziale"
+  },
+
+  "GALLERY":{
+    "title": "Galleria",
+    "titleD": "Dettaglio NFT",
+    "titleS": "Vendita NFT",
+    "titleN": "Creazione NFT",
+    "name": "Nome",
+    "nftcode": "Codice NFT",
+    "description": "Descrizione",
+    "sell": "Vendi Oggetto",
+    "create": "Crea NFT",
+    "author": "Autore",
+    "seller": "Venditore",
+    "price": "Prezzo",
+    "cancel": "Annulla"
+
+},
+  "LOGIN": {
+    "resetmessage": "Si prega di fornire il nome utente o l'indirizzo e-mail che hai utilizzato al momento della firma\n       per il tuo account.",
+    "titleF": "Richiesta Nuova Password",
+    "reset": "Chiedi Nuova Password",
+    "title": "Accedi",
+    "forgot": "Password dimenticata?",
+    "signin": "Accedi",
+    "newuser": "Nuovo Utente?",
+    "titleR": "Registrazione",
+    "username": "Nome Utente",
+    "bio": "Biografia",
+    "register": "Registrati"
+  },
+  "PROFILE":{
+    "username": "Nome utente",
+    "title": "Profilo"
   }
 }

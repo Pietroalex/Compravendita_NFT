@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-button (click)="back()"><ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon> </ion-button>
     </ion-buttons>
-    <ion-title>NFT Info</ion-title>
+    <ion-title>{{"GALLERY.titleD" | translate }}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="deletenft()"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-button>
     </ion-buttons>
@@ -17,13 +17,13 @@
           <ion-img [src]="this.image"></ion-img>
         </ion-avatar>
         <div id="text">
-          <ion-label>NFT-Code</ion-label><br>
+          <ion-label>{{"GALLERY.nftcode" | translate }}</ion-label><br>
             <p id="nft_code">{{this.nftcode}}</p>
-          <ion-label>Name</ion-label>
+          <ion-label>{{"GALLERY.name" | translate }}</ion-label>
             <p id="name">{{this.name}}</p>
-          <ion-label>Author</ion-label>
+          <ion-label>{{"GALLERY.author" | translate }}</ion-label>
             <p (click)="gotoauthor()" id="author">{{this.nameauthor}}</p>
-          <ion-label>Description</ion-label>
+          <ion-label>{{"GALLERY.description" | translate }}</ion-label>
             <p id="descr">{{this.description}}</p>
 
     </div>

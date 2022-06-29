@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SellItemPageRoutingModule } from './sell-item-routing.module';
 
 import { SellItemPage } from './sell-item.page';
+import {TranslateModule, TranslateService} from "@ngx-translate/core";
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { SellItemPage } from './sell-item.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
+    TranslateModule,
     SellItemPageRoutingModule
   ],
   declarations: [SellItemPage]

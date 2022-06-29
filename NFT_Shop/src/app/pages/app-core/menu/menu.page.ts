@@ -15,19 +15,13 @@ export class MenuPage   {
   profile = null;
 
 
-  public appPages = [
-    { id: 'home', title: 'Home', url: 'home', icon: 'home' },
-    { id: 'person', title: 'Profile', url: 'profile', icon: 'person' },
-    { id: 'gallery', title: 'Gallery', url: 'gallery', icon: 'images' },
-    { id: 'notify', title: 'Notifications', url: 'notification', icon: 'notifications' },
 
-  ];
-  selectedPath= '';
+
   constructor(
     private alertController: AlertController,
     private authService: AuthService,
     private router: Router,
-    private popoverConroller: PopoverController,
+    private popoverController: PopoverController,
 
 
   ) {
@@ -38,7 +32,7 @@ export class MenuPage   {
         localStorage.setItem('order-field', "newer")
 
       });
-    this.router.events.subscribe((event: RouterEvent) => this.selectedPath = event.url);
+
     localStorage.setItem('notif', 'background-color: transparent;')
 
   }
@@ -53,7 +47,7 @@ export class MenuPage   {
   }
 
   async openLangPop($event) {
-    const popover = await this.popoverConroller.create({
+    const popover = await this.popoverController.create({
       component: LanguagePopoverPage,
       event: $event
     });

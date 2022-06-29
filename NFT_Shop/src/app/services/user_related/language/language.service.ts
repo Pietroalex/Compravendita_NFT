@@ -22,18 +22,9 @@ export class LanguageService {
 
   setInitialAppLanguage(){
 
-    let language = "en";//this.translate.getBrowserLang();
+    let language = "en";
       this.translate.setDefaultLang(language);
 
-   /*
-      this.storage.get(LNG_KEY).then(val => {
-      if (val){
-        this.setLanguage(val);
-        this.selected = val;
-      }
-    })
-
-    */
   }
   getLanguages(){
     return [
@@ -50,7 +41,7 @@ export class LanguageService {
     this.translate.use(lng);
     this.selected = lng;
     this.updatelang(lng);
-    //this.storage.set(LNG_KEY, lng);
+
 
   }
   async updatelang(lng){

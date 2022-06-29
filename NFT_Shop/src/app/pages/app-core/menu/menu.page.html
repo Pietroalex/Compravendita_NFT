@@ -7,23 +7,35 @@
         <ion-row><ion-col><ion-list-header id="user-username">{{profile?.username}}</ion-list-header></ion-col><ion-col><ion-icon id="language" name="language-outline"  (click)="openLangPop($event)"></ion-icon></ion-col></ion-row>
         <ion-note id="user-email">{{profile?.email}}</ion-note>
 
-        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-          <ion-item routerDirection="root" [routerLink]="['/',p.url]" [class.active-item]="selectedPath === p.url">
-            <div id="{{p.id}}"></div> <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-            <ion-label >{{ p.title }}</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
 
+          <ion-menu-toggle auto-hide="false">
+        <ion-item routerDirection="root" [routerLink]="['/', 'home']" >
+          <div id="home"></div> <ion-icon slot="start" [ios]="'home' + '-outline'" [md]="'home' + '-sharp'"></ion-icon>
+          <ion-label>{{ "MENU.home" | translate }}</ion-label>
+        </ion-item>
+
+            <ion-item routerDirection="root" [routerLink]="['/', 'profile']" >
+              <div id="person"></div> <ion-icon slot="start" [ios]="'person' + '-outline'" [md]="'person' + '-sharp'"></ion-icon>
+              <ion-label>{{ "MENU.profile" | translate }}</ion-label>
+            </ion-item>
+
+            <ion-item routerDirection="root" [routerLink]="['/', 'gallery']" >
+              <div id="gallery"></div> <ion-icon slot="start" [ios]="'images' + '-outline'" [md]="'images' + '-sharp'"></ion-icon>
+              <ion-label>{{ "MENU.gallery" | translate }}</ion-label>
+            </ion-item>
+
+            <ion-item routerDirection="root" [routerLink]="['/', 'notification']" >
+              <div id="notify"></div> <ion-icon slot="start" [ios]="'notifications' + '-outline'" [md]="'notifications' + '-sharp'"></ion-icon>
+              <ion-label>{{ "MENU.notify" | translate }}</ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
       </ion-list>
-
 
     </ion-content>
 
     <ion-menu-toggle id="toggle">
-
-
-
-      <ion-button (click)="logout()"><ion-icon name="log-out"></ion-icon><ion-label>Log Out</ion-label></ion-button>
+      <ion-button (click)="logout()"><ion-icon name="log-out"></ion-icon><ion-label>{{ "MENU.logout" | translate}}</ion-label></ion-button>
     </ion-menu-toggle>
   </ion-menu>
 

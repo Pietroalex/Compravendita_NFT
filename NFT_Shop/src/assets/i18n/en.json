@@ -1,12 +1,38 @@
 {
   "MENU": {
-    "lang": "english"
+    "home": "Home",
+    "profile": "Profile",
+    "gallery": "Gallery",
+    "notify": "Notifications",
+    "logout": "Log Out"
   },
   "HOME": {
     "vetrina": "Shop Window",
-    "shop": "Shop"
+    "shop": "Shop",
+    "title": "Home"
   },
-  "PROFILE":{
-    "username": "Username"
+    "PROFILE":{
+      "username": "Nome utente",
+      "title": "Profile"
+  },
+
+    "GALLERY":{
+      "title": "Gallery",
+      "titleD": "NFT detail",
+      "titleS": "Sell NFT",
+      "titleN": "New NFT",
+      "name": "Name",
+      "nftcode": "NFTCode",
+      "description": "Description",
+      "sell": "Sell Item",
+      "create": "Create NFT",
+      "author": "Author",
+      "seller": "Seller",
+      "price": "Price",
+      "cancel": "Cancel"
+
+    },
+  "LOGIN": {
+    "resetmessage": "      Please provide the username or email address that you used when you signed\n      up for your Evernote account."
   }
-}
+    }

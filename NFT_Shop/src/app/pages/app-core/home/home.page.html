@@ -5,7 +5,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button><div id="menu"></div>
     </ion-buttons>
-    <ion-row><ion-col><ion-title>Home</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">{{profile?.cashart}}</ion-text></ion-col></ion-row>
+    <ion-row><ion-col><ion-title>{{ "HOME.title" | translate }}</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">{{profile?.cashart}}</ion-text></ion-col></ion-row>
 
   </ion-toolbar>
 
@@ -30,7 +30,7 @@
         </ion-item>
       </ion-list>
     </div>
-    <ion-button [routerLink]="['/shop']">SHOP</ion-button>
+    <ion-button [routerLink]="['/shop']">{{ "HOME.shop" | translate }}</ion-button>
 
   </div>
 
