@@ -58,7 +58,7 @@ ion-item {
   height: 50px;
   justify-content: center;
 }
-ion-title{
+.md ion-title{
   font-size: 15px;
   display: flex;
   position: center;
@@ -72,4 +72,8 @@ ion-col{
   display: flex;
   flex-wrap: wrap;
 }
+.ios ion-title{
+  padding-left: 10px;
+  padding-right: 10px;
 
+}
