@@ -29,7 +29,10 @@
     </div>
 
   </div>
-    <ion-fab-button (click)="topublic()"><ion-icon name="share-social-outline"></ion-icon></ion-fab-button>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" (click)="topublic()"><ion-icon name="share-social-outline"></ion-icon></ion-fab-button>
     <ion-fab-button [routerLink]="['/', 'sell-item',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author } ]"><ion-icon name="cash"></ion-icon></ion-fab-button>
+  </ion-fab>
 
 </ion-content>

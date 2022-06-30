@@ -55,3 +55,15 @@
   height: 50px;
   justify-content: center;
 }
+.md ion-title{
+  font-size: 15px;
+  display: flex;
+  position: center;
+  margin: 5px -15px 0px -15px;
+}
+.ios ion-title{
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
