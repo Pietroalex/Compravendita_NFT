@@ -21,15 +21,19 @@ ion-menu-button {
   align-content: baseline;
 }
 
+
+
 #currency{
-  font-size: 8px;
+  font-size: 15px;
+  display: flex;
+  margin-top:7px;
   color: #8c8c8c;
   width: 10%;
-  alignment: right;
 }
 #cashart {
   height: 30px;
   alignment: right;
+  overflow-inline: auto;
 }
 
 ion-list{
@@ -53,5 +57,19 @@ ion-item {
   width: 50px;
   height: 50px;
   justify-content: center;
+}
+ion-title{
+  font-size: 15px;
+  display: flex;
+  position: center;
+  margin: 5px -15px 0px -15px;
+}
+#cash{
+  display: flex;
+  position: center;
+}
+ion-col{
+  display: flex;
+  flex-wrap: wrap;
 }
 
