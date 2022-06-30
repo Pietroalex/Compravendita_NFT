@@ -40,14 +40,16 @@ ion-menu-button {
   display: block;
 }
 #currency{
-  font-size: 8px;
+  font-size: 15px;
+  display: flex;
+  margin-top:7px;
   color: #8c8c8c;
   width: 10%;
-  alignment: right;
 }
 #cashart {
   height: 30px;
   alignment: right;
+  overflow-inline: auto;
 }
 #gallery,#shop,#purchased,#sold {
   height:auto;
@@ -97,4 +99,12 @@ ion-button{
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+#cash{
+  display: flex;
+  position: center;
+}
+ion-col{
+  display: flex;
+  flex-wrap: wrap;
 }
