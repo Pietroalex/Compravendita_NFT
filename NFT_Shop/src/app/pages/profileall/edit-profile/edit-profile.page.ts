@@ -33,6 +33,9 @@ ip: string;
   this.authService.getUserProfile().subscribe((data) => { this.profile = data; });      //ritirare i dati già presenti sul database
   }
 
+  async back() {
+    await this.router.navigateByUrl('/profile', { replaceUrl: true });
+  }
 
   ngOnInit() {
     this.infos = this.fb.group({      //preparare i campi da richiedere nel formGroup
