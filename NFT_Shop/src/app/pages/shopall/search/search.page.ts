@@ -107,4 +107,7 @@ export class SearchPage implements OnInit {
     }
   }
 
+  goprofile(uid) {
+    localStorage.setItem('author', uid);
+  }
 }

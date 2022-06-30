@@ -14,18 +14,18 @@
 
   <div id="container">
     <div class="preview">
-      <ion-avatar>
-        <ion-img id="profileimg" src="{{profile?.image}}" ></ion-img>
+      <ion-avatar id="profileimg">
+        <ion-img src="{{profile?.image}}"></ion-img>
       </ion-avatar>
     </div>
 
 
     <div id="info">
-      <ion-label>Username</ion-label><br>
-      <p id="username" >{{profile?.username}}</p>
+      <ion-label>{{"PROFILE.username" | translate }}</ion-label><br>
+      <p id="username">{{profile?.username}}</p>
 
       <ion-label>Bio</ion-label>
-      <p id="bio" >{{profile?.bio}}</p>
+      <p id="bio">{{profile?.bio}}</p>
     </div>
 
 
@@ -33,8 +33,8 @@
 
       <ion-list id="gallery">
         <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
-          <div class="nftitem">
-            <ion-avatar>
+          <div>
+            <ion-avatar class="nft_image">
               <img [src]="gallerynft.image" alt=""/>
             </ion-avatar>
             <p>{{gallerynft.name}}</p>
@@ -47,8 +47,8 @@
 
       <ion-list id="shop">
         <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
-          <div class="nftitem">
-            <ion-avatar>
+          <div>
+            <ion-avatar class="nft_image">
               <img [src]="onsalenft.image" alt=""/>
             </ion-avatar>
             <p>{{onsalenft.name}}</p>

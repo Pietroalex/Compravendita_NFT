@@ -64,6 +64,7 @@ ion-item {
   width : 33%;
   text-aligh: left;
   font-size: smaller;
+  margin-top: 5px;
 }
 
 #pbgallery,#pbshop ion-img{
@@ -79,5 +80,45 @@ ion-button{
   margin-right: -100px;
   margin-left: 190px;
   margin-top: 5px;
+
+}
+.nft_image {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+}
+#profileimg{
+  width: 128px;
+  height: 128px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.preview {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+#cash{
+  display: flex;
+  position: center;
+}
+ion-col{
+  display: flex;
+  flex-wrap: wrap;
+}
+.ios ion-title{
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+#gallery,#shop {
+  height:auto;
+  display: flex;
+  justify-content: flex-start; /* center if you want to the center */
+  align-items: center;
+  flex-wrap: wrap;
 
 }
