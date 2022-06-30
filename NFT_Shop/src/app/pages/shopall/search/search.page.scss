@@ -39,12 +39,6 @@
   align-items: center;
   flex-wrap: wrap;
 }
-#radiogaga {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
 #value{
   text-align: left;
   margin-right: -20px;
@@ -60,4 +54,7 @@
   width: 50px;
   height: 50px;
   justify-content: center;
+}
+.md ion-searchbar{
+
 }
