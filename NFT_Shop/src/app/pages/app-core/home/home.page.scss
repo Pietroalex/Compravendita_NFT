@@ -58,12 +58,7 @@ ion-item {
   height: 50px;
   justify-content: center;
 }
-.md ion-title{
-  font-size: 15px;
-  display: flex;
-  position: center;
-  margin: 5px -15px 0px -15px;
-}
+
 #cash{
   display: flex;
   position: center;
@@ -71,6 +66,13 @@ ion-item {
 ion-col{
   display: flex;
   flex-wrap: wrap;
+}
+
+.md ion-title{
+  font-size: 15px;
+  display: flex;
+  position: center;
+  margin: 5px -15px 0px -15px;
 }
 .ios ion-title{
   padding-left: 10px;
