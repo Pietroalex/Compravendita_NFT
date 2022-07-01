@@ -11,19 +11,19 @@
 
 <ion-content id="container">
 
-  <ion-list id="sold">
-    <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'purchase-detail', nft ]" >
-      <div>
-        <ion-avatar>
-          <img [src]="nft.image" alt=""/>
-        </ion-avatar>
-        <p>{{nft.name}}</p>
-        <p>{{nft.price}}</p>
-        <p>{{nft.buyer}}</p>
-        <p>{{nft.purchase_date}}</p>
-      </div>
-    </ion-item>
+    <ion-list id="sold">
+      <ion-item *ngFor="let nft of nfts; index as i " (click)="gotodetail(i)">
+        <div>
+          <ion-avatar>
+            <img [src]="nft.image" alt=""/>
+          </ion-avatar>
+          <p>{{nft.name}}</p>
+          <p>{{nft.price}}</p>
+          <p>{{nft.buyer}}</p>
+          <p>{{nft.purchase_date.toDate() | date:'dd/MM/yyyy'}}</p>
+        </div>
+      </ion-item>
 
-  </ion-list>
+    </ion-list>
 
 </ion-content>

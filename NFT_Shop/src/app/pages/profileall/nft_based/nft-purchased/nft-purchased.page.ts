@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Route, Router} from "@angular/router";
 import {Firestore} from "@angular/fire/firestore";
 import {NftService} from "../../../../services/DBop/nfts/nft.service";
 import {NftPurchaseService} from "../../../../services/DBop/nft_purchase/nft-purchase.service";
@@ -19,16 +19,21 @@ export class NftPurchasedPage implements OnInit {
     private router: Router,
     private firestore: Firestore,
     private nftHistory: NftPurchaseService,
-    private authService: AuthService
+    private route: ActivatedRoute
   ) {
-    this.authService.getUserProfile().subscribe(async (data) => {
-      this.profile = data;
-      this.search = this.profile.username + "-" + this.profile.uid;
-      this.nfts = await this.nftHistory.loadHistory("buyer", this.search);
-    });
+
+
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.profile = JSON.parse(this.route.snapshot.paramMap.get('profile'));
+    console.log(this.profile);
+    this.search = this.profile.username + "-" + this.profile.uid;
+    this.nfts = await this.nftHistory.loadHistory("seller", this.search)
   }
 
+  async gotodetail(num: number) {
+    await localStorage.setItem('purchased', JSON.stringify(this.nfts[num]));
+    this.router.navigateByUrl('/purchase-detail');
+  }
 }

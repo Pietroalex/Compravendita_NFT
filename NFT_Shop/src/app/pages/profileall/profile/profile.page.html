@@ -43,7 +43,7 @@
 
 
         <ion-list id="sold">
-          <ion-item *ngFor="let soldnft of soldnfts "  [routerLink]="['/', 'purchase-detail', soldnft ]" >
+          <ion-item *ngFor="let soldnft of soldnfts; index as i " (click)="gotodetailsold(i)">
             <div class="nftitem">
               <ion-avatar class="nft_image">
                 <img [src]="soldnft.image" alt=""/>
@@ -57,7 +57,7 @@
       <ion-button [routerLink]="['/','nft-sold', this.profilestring]">All Sold</ion-button>
 
         <ion-list id="purchased">
-          <ion-item *ngFor="let purchasednft of purchasednfts "  [routerLink]="['/', 'purchase-detail', purchasednft ]" >
+          <ion-item *ngFor="let purchasednft of purchasednfts; index as i " (click)="gotodetailpurchased(i)">
             <div class="nftitem">
               <ion-avatar class="nft_image">
                 <img [src]="purchasednft.image" alt=""/>

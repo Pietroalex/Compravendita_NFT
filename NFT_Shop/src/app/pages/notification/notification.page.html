@@ -23,15 +23,15 @@
       <ion-list>
 
         <ion-item-sliding id="item100" *ngFor="let notification of notifications ; index as i  " >
-          <ion-item >
+          <ion-item (click)="godetail(i)">
             <div></div>
             <ion-label>
               <h2>{{notification.nftcode }}</h2>
               <p>{{notification.name }}</p>
-              <p>{{notification.buyer }}</p><p>{{notification.price }}</p>
+              <p>{{notification.buyer.substring(0, notification.buyer.indexOf("-"))}}</p><p>{{notification.price }}</p>
             </ion-label>
             <ion-note slot="end">
-              {{notification.purchase_date }}
+              {{notification.purchase_date.toDate() | date:'dd/MM/yyyy'}}
             </ion-note>
           </ion-item>
 

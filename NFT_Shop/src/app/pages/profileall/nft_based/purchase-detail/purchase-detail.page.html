@@ -29,7 +29,7 @@
         <ion-label>Buyer</ion-label>
         <p id="buyer" (click)="gotobuyer()">{{this.namebuyer}}</p>
         <ion-label>Purchase date</ion-label>
-        <p id="purchase_date">{{this.purchase_date}}</p>
+        <p id="purchase_date">{{this.purchase_date | date:'dd/MM/yyyy'}}</p>
       </div>
     </div>
   </div>

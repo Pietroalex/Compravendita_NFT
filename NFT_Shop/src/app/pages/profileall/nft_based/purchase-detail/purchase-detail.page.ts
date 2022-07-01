@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../../../services/user_related/login/auth.service";
-import {Firestore} from "@angular/fire/firestore";
+import {Firestore, serverTimestamp} from "@angular/fire/firestore";
 import {InformationService} from "../../../../services/user_related/check_user/information.service";
 import {AlertController} from "@ionic/angular";
 import {NftPurchaseService} from "../../../../services/DBop/nft_purchase/nft-purchase.service";
+import {timestamp} from "rxjs/operators";
+import firebase from "firebase/compat";
+import Timestamp = firebase.firestore.Timestamp;
 
 @Component({
   selector: 'app-purchase-detail',
   templateUrl: './purchase-detail.page.html',
   styleUrls: ['./purchase-detail.page.scss'],
 })
-export class PurchaseDetailPage implements OnInit {
+export class PurchaseDetailPage implements OnInit, OnDestroy {
   nftcode: string;
   image: string;
   name: string;
@@ -20,7 +23,7 @@ export class PurchaseDetailPage implements OnInit {
   nameauthor: string;
   seller: string;
   buyer: string;
-  purchase_date: Date;
+  purchase_date: any;
   price: number;
 
   profile = null;
@@ -32,6 +35,7 @@ export class PurchaseDetailPage implements OnInit {
   money: number;
   Sellerprofile = null;
 
+  nft = null;
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -42,6 +46,12 @@ export class PurchaseDetailPage implements OnInit {
   ) { }
 
   ngOnInit() {
+
+
+
+
+    this.start().then(res => this.continue());
+    /*
     this.route.paramMap.subscribe(params => {
       this.nftcode = params.get('nftcode');
       this.image = params.get('image');
@@ -55,14 +65,47 @@ export class PurchaseDetailPage implements OnInit {
       this.buyer = params.get('buyer');
       this.namebuyer = this.buyer.substring(0, this.buyer.indexOf("-"));
       this.uidbuyer = this.buyer.substring(this.seller.indexOf("-")+1);
-      this.purchase_date = new Date(params.get('opurchase_date'));
+
       this.price = Number(params.get('price'));
       this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
 
     });
 
+
+     */
+  }
+  async start() {
+    return new Promise<void>(async (resolve, reject) => {
+      this.nft = await JSON.parse(localStorage.getItem('purchased'));
+      resolve();
+    });
   }
 
+  async continue() {
+    this.nftcode = this.nft.nftcode;
+    this.image = this.nft.image
+    this.name = this.nft.name;
+    this.description = this.nft.description;
+    this.author = this.nft.author;
+    this.nameauthor = this.nftcode.substring(0, this.nftcode.indexOf("-"));
+    this.seller = this.nft.seller;
+    this.nameseller = this.seller.substring(0, this.seller.indexOf("-"));
+    this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
+    this.buyer = this.nft.buyer;
+    this.namebuyer = this.buyer.substring(0, this.buyer.indexOf("-"));
+    this.uidbuyer = this.buyer.substring(this.seller.indexOf("-")+1);
+    this.price = Number(this.nft.price);
+
+
+    let seconds = (this.nft.purchase_date.seconds)* 1000;
+    let nanoseconds = (this.nft.purchase_date.nanoseconds)/ 1000000;
+
+    this.purchase_date = seconds + nanoseconds;
+    this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
+
+
+
+  }
   async gotoauthor() {
     localStorage.setItem('author', this.author)
     await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
@@ -75,5 +118,7 @@ export class PurchaseDetailPage implements OnInit {
   async gotobuyer() {
     localStorage.setItem('author', this.uidbuyer)
     await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
+  }
+  ngOnDestroy() {
   }
 }

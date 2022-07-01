@@ -31,5 +31,8 @@ export class NftSoldPage implements OnInit {
     this.search = this.profile.username + "-" + this.profile.uid;
     this.nfts = await this.nftHistory.loadHistory("seller", this.search)
   }
-
+  async gotodetail(num: number) {
+    await localStorage.setItem('purchased', JSON.stringify(this.nfts[num]));
+    this.router.navigateByUrl('/purchase-detail');
+  }
 }

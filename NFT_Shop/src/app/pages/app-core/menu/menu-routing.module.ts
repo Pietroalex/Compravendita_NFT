@@ -125,14 +125,6 @@ const menuRoutes: Routes = [
       loadChildren: () => import('../../profileall/nft_based/purchase-detail/purchase-detail.module').then(m => m.PurchaseDetailPageModule),
 
     },
-
-
-
-    {
-      path: 'purchase-detail/:nftcode',
-      loadChildren: () => import('../../profileall/nft_based/purchase-detail/purchase-detail.module').then(m => m.PurchaseDetailPageModule),
-
-    },
   {
     path: 'public-gallery',
     loadChildren: () => import('../../profileall/nft_based/public-gallery/public-gallery.module').then(m => m.PublicuserGalleryPageModule),

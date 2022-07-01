@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NftService} from "../../services/DBop/nfts/nft.service";
 import {NotifyService} from "../../services/DBop/notification/notify.service";
+import {Router} from "@angular/router";
+import {doc, docData} from "@angular/fire/firestore";
 
 @Component({
   selector: 'app-notification',
@@ -12,11 +14,12 @@ export class NotificationPage implements OnInit {
   ids = [];
   tempo = [];
   profile = null;
-
+  nft = null;
 
   constructor(
     private nftService: NftService,
-    private notifyService: NotifyService
+    private notifyService: NotifyService,
+    private router: Router
   ) { }
 
   async ngOnInit() {
@@ -53,6 +56,7 @@ export class NotificationPage implements OnInit {
     this.tempo = await this.notifyService.loadNotify(this.profile.uid)
     this.notifications = this.tempo.slice(0, (this.tempo.length/2))
     this.ids = this.tempo.slice((this.tempo.length/2))
+
     console.log(this.ids)
   }
 
@@ -65,6 +69,24 @@ export class NotificationPage implements OnInit {
     console.log(value + " " + id)
     await this.notifyService.delete1Notify(id)
     this.doRefresh(event)
+  }
+
+  async godetail(i: number) {
+    let nftcode = this.notifications[i].nftcode
+    this.start2(nftcode).then(res => this.continue2());
+
+  }
+  async start2(nftcode) {
+    return new Promise<void>(async (resolve, reject) => {
+      this.nft = await this.notifyService.load1SoldNFTs(nftcode)
+      resolve();
+    });
+  }
+
+  async continue2() {
+    await localStorage.setItem('purchased', JSON.stringify(this.nft));
+    this.router.navigateByUrl('/purchase-detail');
+
   }
 }
 

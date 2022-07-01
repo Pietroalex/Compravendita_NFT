@@ -110,5 +110,6 @@ export class NftPurchaseService {
     return this.nfts;
 
   }
+
 }
 
