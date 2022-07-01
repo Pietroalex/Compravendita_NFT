@@ -8,15 +8,14 @@
 
 
     <ion-searchbar
-      showCancelButton
       searchIcon="search"
       animated
       cancel-button-icon
       (ionCancel)="hideSearch()"
-      (search)="loadsearch($event.target.value)"
+      (keyup.enter)="loadsearch($event.target.value)"
       placeholder="Search in the app">
     </ion-searchbar>
-
+    <!--(search)="loadsearch($event.target.value)"-->
   </ion-toolbar>
 
 </ion-header>
@@ -63,8 +62,8 @@
     </ng-template>
   </ion-popover>
 
-  <div >
-    <ion-list id="salenftl">
+  <div id="salenft">
+    <ion-list id="salenftlist">
       <ion-item *ngFor="let onsalenft of onSaleNFTs "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
         <div>
           <ion-avatar class="nft_image">
@@ -77,8 +76,8 @@
     </ion-list>
   </div>
 
-  <div >
-    <ion-list id="publicnftl">
+  <div id="publicnft">
+    <ion-list id="publicnftlist">
       <ion-item *ngFor="let nft of NFTs "  [routerLink]="['/', 'publicgallery-detail', nft ]" >
         <div>
           <ion-avatar class="nft_image">
@@ -91,9 +90,9 @@
     </ion-list>
   </div>
 
-  <div >
+  <div id="profile">
 
-    <ion-list id="profilel">
+    <ion-list id="profilelist">
       <ion-item *ngFor="let profile of profiles " (click)="goprofile(profile.uid)" [routerLink]="['/publicuser-profile']" replaceUrl="true" >
         <div>
           <ion-avatar class="nft_image">
