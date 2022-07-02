@@ -1,87 +1,88 @@
-ion-menu-button {
-  color: var(--ion-color-primary);
-}
+      ion-menu-button {
+        color: var(--ion-color-primary);
+      }
 
-#container {
-  height: auto;
-  width: auto;
-  text-align: center;
-}
+      #container {
+        height: auto;
+        width: auto;
+        text-align: center;
+      }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+      #container strong {
+        font-size: 20px;
+        line-height: 26px;
+      }
 
-#container p {
-  font-size: 14px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
-  align-content: baseline;
-}
+      #container p {
+        font-size: 14px;
+        line-height: 22px;
+        color: #8c8c8c;
+        margin: 0;
+        align-content: baseline;
+      }
 
-#currency{
-  font-size: 15px;
-  display: flex;
-  margin-top:7px;
-  color: #8c8c8c;
-  width: 10%;
-}
-#cashart {
-  height: 30px;
-  alignment: right;
-  overflow-inline: auto;
-}
+      #currency{
+        font-size: 15px;
+        display: flex;
+        margin-top:7px;
+        color: #8c8c8c;
+        width: 10%;
+        margin-left: 5px;
+      }
+      #cashart {
+        height: 30px;
+        alignment: right;
+        overflow-inline: auto;
+      }
 
-ion-list{
-  width:available;
-  display: flex;
-  justify-content: flex-start; /* center if you want to the center */
-  align-items: center;
-  flex-wrap: wrap;
-}
-ion-item {
-  width : 33%;
-  text-align: left;
-  font-size: smaller;
-  margin-top: 5px;
-}
-.ios ion-list{
-  margin-top: 7px;
-}
+      ion-list{
+        width:available;
+        display: flex;
+        justify-content: flex-start; /* center if you want to the center */
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      ion-item {
+        width : 33%;
+        text-align: left;
+        font-size: smaller;
+        margin-top: 5px;
+      }
+      .ios ion-list{
+        margin-top: 7px;
+      }
 
-#footer {
-  text-align: center;
-  font-size: 10px;
-}
-#nft_image {
-  width: 50px;
-  height: 50px;
-  justify-content: center;
-}
+      #footer {
+        text-align: center;
+        font-size: 10px;
+      }
+      #nft_image {
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+      }
 
-#cash{
-  display: flex;
-  position: center;
-}
-ion-col{
-  display: flex;
-  flex-wrap: wrap;
-}
+      #cash{
+        display: flex;
+        position: center;
+      }
+      ion-col{
+        display: flex;
+        flex-wrap: wrap;
+      }
 
-.md ion-title{
-  font-size: 15px;
-  display: flex;
-  position: center;
-  margin: 5px -15px 0px -15px;
-}
-.ios ion-title{
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.logo{
-  height: 11px;
-  alignment: right;
-  overflow-inline: auto;
-}
+      .md ion-title{
+        font-size: 15px;
+        display: flex;
+        position: center;
+        margin: 5px -15px 0px -15px;
+      }
+      .ios ion-title{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .logo{
+        height: 11px;
+        alignment: right;
+        overflow-inline: auto;
+      }
