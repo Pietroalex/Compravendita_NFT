@@ -21,8 +21,6 @@ ion-menu-button {
   align-content: baseline;
 }
 
-
-
 #currency{
   font-size: 15px;
   display: flex;
@@ -45,7 +43,7 @@ ion-list{
 }
 ion-item {
   width : 33%;
-  text-aligh: left;
+  text-align: left;
   font-size: smaller;
   margin-top: 5px;
 }
@@ -81,5 +79,9 @@ ion-col{
 .ios ion-title{
   padding-left: 10px;
   padding-right: 10px;
-
+}
+.logo{
+  height: 11px;
+  alignment: right;
+  overflow-inline: auto;
 }
