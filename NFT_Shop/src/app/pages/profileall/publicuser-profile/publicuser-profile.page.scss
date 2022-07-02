@@ -120,5 +120,9 @@ ion-col{
   justify-content: flex-start; /* center if you want to the center */
   align-items: center;
   flex-wrap: wrap;
-
+}
+.logo{
+  height: 11px;
+  alignment: right;
+  overflow-inline: auto;
 }

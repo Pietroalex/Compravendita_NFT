@@ -27,7 +27,7 @@
       <form [formGroup]="nftInfo" (ngSubmit)="sellItem()">
         <ion-label>{{ "GALLERY.price" | translate }}</ion-label>
         <ion-item-divider>
-          <ion-input id="item" type="text" required placeholder="Price" formControlName="price"></ion-input>
+          <ion-input id="item" type="text" required placeholder="{{ 'GALLERY.insertprice' | translate }}" formControlName="price"></ion-input>
           <ion-note slot="error" *ngIf="(price.dirty || price.touched) && price.errors"></ion-note>
         </ion-item-divider>
 

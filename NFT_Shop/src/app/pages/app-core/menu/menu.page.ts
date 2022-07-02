@@ -13,7 +13,7 @@ import {LanguageService} from "../../../services/user_related/language/language.
 })
 export class MenuPage   {
   profile = null;
-
+  auth: any
 
 
 
@@ -32,18 +32,19 @@ export class MenuPage   {
         localStorage.setItem('order-field', "newer")
 
       });
-
+     this.auth = getAuth();
     localStorage.setItem('notif', 'background-color: transparent;')
 
   }
 
   async logout() {
-    const auth = getAuth();
-    signOut(auth).then( () => {
+
+    await signOut(this.auth).then( () => {
        this.router.navigateByUrl('/', {replaceUrl: true});
     }).catch((error) => {
-      // An error happened.
+      console.log("no signout")
     });
+
   }
 
   async openLangPop($event) {

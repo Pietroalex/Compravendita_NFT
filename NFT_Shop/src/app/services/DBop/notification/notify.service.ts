@@ -4,7 +4,7 @@ import {
   collection, deleteDoc,
   doc, docData,
   Firestore,
-  getDocs,
+  getDocs, orderBy,
   query,
   serverTimestamp,
   setDoc,
@@ -47,8 +47,8 @@ export class NotifyService {
     this.name = param.get('name');
     this.price = Number(param.get('price'));
 
-    if( true
-      //this.buyerprofile.uid != this.sellerprofile.uid
+    if(
+      this.buyerprofile.uid != this.sellerprofile.uid
     ){
       this.createnotify();
 
@@ -77,7 +77,7 @@ export class NotifyService {
 
   async loadNotify( user: string){
     const nftHistoryRef = collection(this.firestore, "Notifications");
-    const q = query(nftHistoryRef, where("seller", "==", user));
+    const q = query(nftHistoryRef, where("seller", "==", user), orderBy("purchase_date", "desc"));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {            // per trovare documenti con seller o buyer uguale a quello inserito
       this.tempo.push(doc.data()) ;

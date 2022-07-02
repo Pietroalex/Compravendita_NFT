@@ -20,18 +20,12 @@ export class HomePage  implements OnInit {
     private nftService: NftService,
     private languageService: LanguageService
   ) {
-
       this.start().then(res => this.continue());
-
-
   }
 
 
   ngOnInit() {
-
-
   }
-
 
    start() {
      return new Promise<void>((resolve, reject) => {
@@ -43,7 +37,6 @@ export class HomePage  implements OnInit {
        });
        resolve();
      });
-
   }
 
    continue() {

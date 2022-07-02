@@ -12,10 +12,7 @@ import {
   setDoc,
   updateDoc
 } from "@angular/fire/firestore";
-import {User} from "../../model/user";
-import {timestamp} from "rxjs/operators";
 import firebase from "firebase/compat";
-import Timestamp = firebase.firestore.Timestamp;
 import {AlertController, IonDatetime} from "@ionic/angular";
 import {ActivatedRoute, Router} from "@angular/router";
 

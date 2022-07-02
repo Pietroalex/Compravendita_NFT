@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-button (click)="back()"><ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon> </ion-button>
     </ion-buttons>
-    <ion-title>Profile Edit</ion-title>
+    <ion-title>{{ "PROFILE.titleE" | translate }}</ion-title>
     <ion-icon slot="end" name="trash-outline" (click)="delete()"></ion-icon>
   </ion-toolbar>
 
@@ -18,28 +18,25 @@
         <img *ngIf="profile?.image; else placeholder_avatar;" [src]="profile.image"/>
         <ng-template #placeholder_avatar>
           <div class="fallback">
-            <p>Select Profile Image</p>
           </div>
         </ng-template>
       </ion-avatar>
     </div>
 
 
-      <ion-label>Username</ion-label>
+      <ion-label>{{ "PROFILE.username" | translate }}</ion-label>
       <ion-item-divider>
         <p>{{profile?.username}}</p>
       </ion-item-divider>
 
-      <ion-label position="floating">Bio</ion-label>
+      <ion-label position="floating">{{ "PROFILE.bio" | translate }}</ion-label>
       <ion-item-divider>
         <ion-input type="text" required value="{{profile?.bio}}" formControlName="bio"></ion-input>
       </ion-item-divider>
 
       <ion-row>
         <ion-col>
-          <ion-button  type="submit" color="danger" expand="block" [disabled]="!infos.valid">Update Info</ion-button>
-          <ion-button (click)="getUser()" type="button" color="secondary" expand="block">Solo per controllo</ion-button>
-
+          <ion-button  type="submit" color="danger" expand="block" [disabled]="!infos.valid">{{ "PROFILE.updateb" | translate }}</ion-button>
         </ion-col>
       </ion-row>
     </form>

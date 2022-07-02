@@ -11,28 +11,70 @@
     "shop": "Shop",
     "title": "Home"
   },
-    "PROFILE":{
-      "username": "Nome utente",
-      "title": "Profile"
+  "GALLERY":{
+    "title": "Gallery",
+    "titleP": "Public Gallery",
+    "titleSD": "Purchase Detail",
+    "titlePD": "Pub NFT info",
+    "titleD": "NFT detail",
+    "titleS": "Sell NFT",
+    "titleN": "New NFT",
+    "name": "Name",
+    "nftcode": "NFTCode",
+    "description": "Description",
+    "sell": "Sell Item",
+    "create": "Create NFT",
+    "author": "Author",
+    "seller": "Seller",
+    "price": "Price",
+    "cancel": "Cancel",
+    "insertprice": "Insert price",
+    "descI": "Insert description",
+    "nameI": "Insert name",
+    "buyer": "Buyer",
+    "date": "Purchase Date"
+
   },
-
-    "GALLERY":{
-      "title": "Gallery",
-      "titleD": "NFT detail",
-      "titleS": "Sell NFT",
-      "titleN": "New NFT",
-      "name": "Name",
-      "nftcode": "NFTCode",
-      "description": "Description",
-      "sell": "Sell Item",
-      "create": "Create NFT",
-      "author": "Author",
-      "seller": "Seller",
-      "price": "Price",
-      "cancel": "Cancel"
-
-    },
   "LOGIN": {
     "resetmessage": "      Please provide the username or email address that you used when you signed\n      up for your Evernote account."
+  },
+  "PROFILE":{
+    "username": "Nome utente",
+    "title": "Profile",
+    "titleP": "Public Profile",
+    "titleE": "Update Profile",
+    "updateb": "Update Info",
+    "bio": "Biography",
+    "private": "Private",
+    "public": "Public",
+    "allsold": "All Sold NFTs",
+    "allpurchased": "All Purchased NFTs",
+    "shop": "Private Shop"
+  },
+  "NOTIFY": {
+    "title": "Notifications",
+    "buyer": "Buyer"
+  },
+  "NFT": {
+    "titleP": "Purchased NFTs",
+    "titleS": "Sold NFTs"
+  },
+  "SEARCH": {
+    "searchby": "Search By",
+    "searchby:": "Searched By:",
+    "profile": "Profiles",
+    "onsale": "On Sale NFTs",
+    "public": "Public NFTs"
+  },
+  "SHOP": {
+    "title": "Shop",
+    "titleS": "On Sale NFT",
+    "orderby:": "Ordered By:",
+    "orderby": "Order by",
+    "datenew": "Newer",
+    "dateold": "Older",
+    "pricecheap": "Cheaper",
+    "priceexpensive": "More expensive",
+    "buy": "Buy"
   }
-    }
+}

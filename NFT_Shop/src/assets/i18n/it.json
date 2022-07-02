@@ -14,6 +14,9 @@
 
   "GALLERY":{
     "title": "Galleria",
+    "titleP": "Galleria Pubblica",
+    "titlePD": "NFT Pubblico",
+    "titleSD": "Dettaglio Acquisto",
     "titleD": "Dettaglio NFT",
     "titleS": "Vendita NFT",
     "titleN": "Creazione NFT",
@@ -25,8 +28,12 @@
     "author": "Autore",
     "seller": "Venditore",
     "price": "Prezzo",
-    "cancel": "Annulla"
-
+    "cancel": "Annulla",
+    "insertprice": "Inserire prezzo",
+    "descI": "Inserire descrizione",
+    "nameI": "Inserire nome",
+    "buyer": "Compratore",
+    "date": "Data Acquisto"
 },
   "LOGIN": {
     "resetmessage": "Si prega di fornire il nome utente o l'indirizzo e-mail che hai utilizzato al momento della firma\n       per il tuo account.",
@@ -43,6 +50,41 @@
   },
   "PROFILE":{
     "username": "Nome utente",
-    "title": "Profilo"
+    "title": "Profilo",
+    "titleP": "Profilo Pubblico",
+    "titleE": "Aggiorna Profilo",
+    "updateb": "Aggiorna Info",
+    "bio": "Biografia",
+    "private": "Privato",
+    "public": "Pubblico",
+    "allsold": "NFT Venduti",
+    "allpurchased": "NFT Comprati",
+    "shop": "Negozio Privato"
+  },
+  "NOTIFY": {
+    "title": "Notifiche",
+    "buyer": "Compratore"
+  },
+  "NFT": {
+    "titleP": "Acquisti",
+    "titleS": "Vendite"
+  },
+  "SEARCH": {
+    "searchby": "Cerca in",
+    "searchby:": "Cercato in:",
+    "profile": "Profili",
+    "onsale": "NFT In Vendita",
+    "public": "NFT Pubblici"
+  },
+  "SHOP": {
+    "title": "Negozio",
+    "titleS": "NFT in Vendita",
+    "orderby:": "Ordinato Per:",
+    "orderby": "Ordinar Per",
+    "datenew": "Ultimi Arrivati",
+    "dateold": "Meno Recenti",
+    "pricecheap": "Meno Costosi",
+    "priceexpensive": "Più Costosi",
+    "buy": "Compra"
   }
 }

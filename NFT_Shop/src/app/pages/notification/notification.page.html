@@ -4,7 +4,7 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Notifications</ion-title>
+        <ion-title>{{ "NOTIFY.title" | translate }}</ion-title>
 
       </ion-toolbar>
 
@@ -28,7 +28,7 @@
             <ion-label>
               <h2>{{notification.nftcode }}</h2>
               <p>{{notification.name }}</p>
-              <p>{{notification.buyer.substring(0, notification.buyer.indexOf("-"))}}</p><p>{{notification.price }}</p>
+              <p>{{ "NOTIFY.buyer" | translate }}: {{notification.buyer.substring(0, notification.buyer.indexOf("-"))}}</p><p><img class="logo" src="./assets/images/cashart.png"> {{notification.price}}</p>
             </ion-label>
             <ion-note slot="end">
               {{notification.purchase_date.toDate() | date:'dd/MM/yyyy'}}

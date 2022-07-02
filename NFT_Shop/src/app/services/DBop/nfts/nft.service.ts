@@ -147,20 +147,7 @@ export class NftService {
 
    }
 
-  async loadAllOnSaleNFTs(){
-    console.log("Niente seller")
-    const collRef = collection(this.firestore, "OnSaleNFTs");
-    const q = query(collRef);
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
-    this.tempo.push(doc.data());
-    console.log(doc.id, " => ", doc.data());
-  });
 
-  this.nfts = this.tempo;
-  this.tempo = [];
-  return this.nfts;
-  }
   async loadAllOnSaleNFTsorder(){
     const collRef = collection(this.firestore, "OnSaleNFTs");
     let q = query(collRef, orderBy("onSale_date", "desc"));
@@ -205,9 +192,9 @@ export class NftService {
     return this.nfts;
 
     }
-  async get3lastselleronsaleNFTs(){
+  async get3lastselleronsaleNFTs(seller){
     const onsalesRef = collection(this.firestore, "OnSaleNFTs");
-    const q = query(onsalesRef, orderBy("onSale_date", "desc"), limit(3));
+    const q = query(onsalesRef, orderBy("onSale_date", "desc"), where("seller", "==", seller ), limit(3));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       this.tempo.push(doc.data());
@@ -219,21 +206,7 @@ export class NftService {
 
   }
 
-  async loadAllSellerOnSaleNFTs() {
-    console.log("Seller")
-    let seller = localStorage.getItem('seller')
-    const onsalesRef = collection(this.firestore, "OnSaleNFTs");
-    const q = query(onsalesRef, where('seller', '==', seller));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
-      this.tempo.push(doc.data());
-      console.log(doc.id, " => ", doc.data());
-    });
 
-    this.nfts = this.tempo;
-    this.tempo = [];
-    return this.nfts;
-  }
 
   async loadAllSellerOnSaleNFTsorder() {
     console.log("Seller")

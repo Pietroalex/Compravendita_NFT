@@ -4,7 +4,7 @@ import { Storage } from "@ionic/storage";
 import { doc, Firestore, updateDoc} from "@angular/fire/firestore";
 import {AuthService} from "../login/auth.service";
 
-const LNG_KEY = 'SELECTED_LANGUAGE';
+
 
 @Injectable({
   providedIn: 'root'

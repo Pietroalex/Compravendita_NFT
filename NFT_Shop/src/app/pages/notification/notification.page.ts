@@ -68,7 +68,11 @@ export class NotificationPage implements OnInit {
     let id = this.ids[value]
     console.log(value + " " + id)
     await this.notifyService.delete1Notify(id)
-    this.doRefresh(event)
+    this.notifications = [];
+    this.ids = [];
+    this.tempo = await this.notifyService.loadNotify(this.profile.uid)
+    this.notifications = this.tempo.slice(0, (this.tempo.length/2))
+    this.ids = this.tempo.slice((this.tempo.length/2))
   }
 
   async godetail(i: number) {

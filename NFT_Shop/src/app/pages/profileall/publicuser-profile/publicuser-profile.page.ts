@@ -68,7 +68,7 @@ export class PublicuserProfilePage implements OnInit {
     }
   }
   async get3sellerNFTs(){
-    this.onsalenfts = await this.nftService.get3lastselleronsaleNFTs()
+    this.onsalenfts = await this.nftService.get3lastselleronsaleNFTs(this.profile.username + "-" + this.profile.uid)
   }
 
   async gotoshop() {

@@ -31,12 +31,12 @@
     <ion-label>{{"PROFILE.username" | translate }}</ion-label><br>
     <p id="username" [routerLink]="['/edit-profile']">{{profile?.username}}</p>
 
-    <ion-label>Bio</ion-label>
+    <ion-label>{{ "PROFILE.bio" | translate }}</ion-label>
     <p id="bio" [routerLink]="['/edit-profile']">{{profile?.bio}}</p>
     </div>
     <ion-segment value="private">
-      <ion-segment-button value="private" (click)="hide_show('private')">Private</ion-segment-button>
-      <ion-segment-button value="public" (click)="hide_show('public')">Public</ion-segment-button>
+      <ion-segment-button value="private" (click)="hide_show('private')">{{ "PROFILE.private" | translate }}</ion-segment-button>
+      <ion-segment-button value="public" (click)="hide_show('public')">{{ "PROFILE.public" | translate }}</ion-segment-button>
     </ion-segment>
 
     <div id="privatesection">
@@ -44,38 +44,38 @@
 
         <ion-list id="sold">
           <ion-item *ngFor="let soldnft of soldnfts; index as i " (click)="gotodetailsold(i)">
-            <div class="nftitem">
+            <div>
               <ion-avatar class="nft_image">
                 <img [src]="soldnft.image" alt=""/>
               </ion-avatar>
               <p>{{soldnft.name}}</p>
-              <p>{{soldnft.price}}</p>
+              <p><img class="logo" src="./assets/images/cashart.png"> {{soldnft.price}}</p>
             </div>
           </ion-item>
         </ion-list>
 
-      <ion-button [routerLink]="['/','nft-sold', this.profilestring]">All Sold</ion-button>
+      <ion-button [routerLink]="['/','nft-sold', this.profilestring]">{{ "PROFILE.allsold" | translate }}</ion-button>
 
         <ion-list id="purchased">
           <ion-item *ngFor="let purchasednft of purchasednfts; index as i " (click)="gotodetailpurchased(i)">
-            <div class="nftitem">
+            <div>
               <ion-avatar class="nft_image">
                 <img [src]="purchasednft.image" alt=""/>
               </ion-avatar>
               <p>{{purchasednft.name}}</p>
-              <p>{{purchasednft.price}}</p>
+              <p><img class="logo" src="./assets/images/cashart.png"> {{purchasednft.price}}</p>
             </div>
           </ion-item>
         </ion-list>
 
-      <ion-button [routerLink]="['/','nft-purchased', this.profilestring]">All Purchased</ion-button>
+      <ion-button [routerLink]="['/','nft-purchased', this.profilestring]">{{ "PROFILE.allpurchased" | translate }}</ion-button>
     </div>
 
 <div id="publicsection">
 
   <ion-list id="gallery">
     <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
-      <div class="nftitem">
+      <div>
         <ion-avatar class="nft_image">
           <img [src]="gallerynft.image" alt=""/>
         </ion-avatar>
@@ -84,21 +84,21 @@
     </ion-item>
 
   </ion-list>
-  <ion-button [routerLink]="['/','public-gallery', this.profilestring]">Pb-Gallery</ion-button>
+  <ion-button [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
 
 
   <ion-list id="shop">
     <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
-      <div class="nftitem">
+      <div>
         <ion-avatar class="nft_image">
           <img [src]="onsalenft.image" alt=""/>
         </ion-avatar>
         <p>{{onsalenft.name}}</p>
-        <p>{{onsalenft.price}}</p>
+        <p><img class="logo" src="./assets/images/cashart.png"> {{onsalenft.price}}</p>
       </div>
     </ion-item>
   </ion-list>
-  <ion-button (click)="gotoshop()">Pvt SHOP</ion-button>
+  <ion-button (click)="gotoshop()">{{ "PROFILE.shop" | translate }}</ion-button>
     </div>
 
   </div>

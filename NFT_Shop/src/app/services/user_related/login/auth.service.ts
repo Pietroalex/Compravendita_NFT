@@ -27,23 +27,6 @@ export class AuthService {
     return docData(userDocRef);
   }
 
-
-  async register({ email, password}){
-    try {
-      const user = await createUserWithEmailAndPassword(
-        this.auth,
-        email,
-        password
-      );
-
-      return user;
-
-    }catch (e) {
-      return null;
-    }
-
-  }
-
   async login({ email, password}){
     try {
       const user = await signInWithEmailAndPassword(
@@ -57,10 +40,6 @@ export class AuthService {
       return null;
     }
   }
-logout(){
-  localStorage.setItem("logged", "false")
-    return signOut(this.auth);
-}
 
   getUserId() {
     const user = this.auth.currentUser;

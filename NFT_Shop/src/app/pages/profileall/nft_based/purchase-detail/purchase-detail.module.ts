@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { PurchaseDetailPageRoutingModule } from './purchase-detail-routing.module';
 
 import { PurchaseDetailPage } from './purchase-detail.page';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    TranslateModule,
     PurchaseDetailPageRoutingModule
   ],
   declarations: [PurchaseDetailPage]

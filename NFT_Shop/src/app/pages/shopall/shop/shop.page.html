@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-row><ion-col><ion-title>Shop</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">{{this.profile?.cashart}}</ion-text></ion-col></ion-row>
+    <ion-row><ion-col><ion-title>{{ "SHOP.title" | translate }}</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">{{this.profile?.cashart}}</ion-text></ion-col></ion-row>
 
   </ion-toolbar>
 
@@ -12,7 +12,7 @@
 <ion-content id="container">
 
   <ion-row>
-    <ion-col id="value"><ion-label>Order By:</ion-label></ion-col>
+    <ion-col id="value"><ion-label>{{ "SHOP.orderby:" | translate }}</ion-label></ion-col>
     <ion-col id="text"><ion-label>{{value}}</ion-label></ion-col>
     <ion-col id="icon"><ion-icon name="filter" id="trigger-buttonn" ></ion-icon></ion-col>
 
@@ -26,26 +26,26 @@
         <ion-list>
           <ion-radio-group value="{{type}}">
             <ion-list-header>
-              <ion-label>Order By</ion-label>
+              <ion-label>{{ "SHOP.orderby" | translate }}</ion-label>
             </ion-list-header>
 
             <ion-item (click)="selectorder('newer')">
-              <ion-label>Date: Newer</ion-label>
+              <ion-label>{{ "SHOP.datenew" | translate }}</ion-label>
               <ion-radio slot="start" value="newer"></ion-radio>
             </ion-item>
 
             <ion-item (click)="selectorder('older')">
-              <ion-label>Date: Older</ion-label>
+              <ion-label>{{ "SHOP.dateold" | translate }}</ion-label>
               <ion-radio slot="start" value="older"></ion-radio>
             </ion-item>
 
             <ion-item (click)="selectorder('cheaper')">
-              <ion-label>Price: cheaper</ion-label>
+              <ion-label>{{ "SHOP.pricecheap" | translate }}</ion-label>
               <ion-radio slot="start" value="cheaper"></ion-radio>
             </ion-item>
 
             <ion-item (click)="selectorder('expensive')">
-              <ion-label>Price: more expensive</ion-label>
+              <ion-label>{{ "SHOP.priceexpensive" | translate }}</ion-label>
               <ion-radio slot="start" value="expensive"></ion-radio>
             </ion-item>
 
@@ -63,7 +63,7 @@
           <img [src]="nft.image" alt=""/>
         </ion-avatar>
         <p>{{nft.name}}</p>
-        <p>{{nft.price}}</p>
+        <p><img class="logo" src="./assets/images/cashart.png"> {{nft.price}}</p>
       </div>
     </ion-item>
   </ion-list>

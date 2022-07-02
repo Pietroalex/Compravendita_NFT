@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Sold Nft</ion-title>
+    <ion-title>{{ "NFT.titleS" | translate }}</ion-title>
   </ion-toolbar>
 
 </ion-header>
@@ -18,8 +18,8 @@
             <img [src]="nft.image" alt=""/>
           </ion-avatar>
           <p>{{nft.name}}</p>
-          <p>{{nft.price}}</p>
-          <p>{{nft.buyer}}</p>
+          <p><img class="logo" src="./assets/images/cashart.png"> {{nft.price}}</p>
+          <p>{{nft.buyer.substring(0, nft.buyer.indexOf("-"))}}</p>
           <p>{{nft.purchase_date.toDate() | date:'dd/MM/yyyy'}}</p>
         </div>
       </ion-item>

@@ -23,7 +23,7 @@
 <ion-content id="container">
 
   <ion-row>
-    <ion-col id="value"><ion-label>Search By:</ion-label></ion-col>
+    <ion-col id="value"><ion-label>{{ "SEARCH.searchby:" | translate }}</ion-label></ion-col>
     <ion-col id="text"><ion-label>{{value}}</ion-label></ion-col>
     <ion-col id="icon"><ion-icon name="filter" id="trigger-button"></ion-icon></ion-col>
 
@@ -37,21 +37,21 @@
         <ion-list>
           <ion-radio-group value="{{type}}">
             <ion-list-header>
-              <ion-label>Search By</ion-label>
+              <ion-label>{{ "SEARCH.searchby" | translate }}</ion-label>
             </ion-list-header>
 
             <ion-item (click)="selecttype('profile')">
-              <ion-label>Profiles</ion-label>
+              <ion-label>{{ "SEARCH.profile" | translate }}</ion-label>
               <ion-radio slot="start" value="profile"></ion-radio>
             </ion-item>
 
             <ion-item (click)="selecttype('salenft')">
-              <ion-label>OnSaleNFTs</ion-label>
+              <ion-label>{{ "SEARCH.onsale" | translate }}</ion-label>
               <ion-radio slot="start" value="salenft"></ion-radio>
             </ion-item>
 
             <ion-item (click)="selecttype('publicnft')">
-              <ion-label>Public NFTs</ion-label>
+              <ion-label>{{ "SEARCH.public" | translate }}</ion-label>
               <ion-radio slot="start" value="publicnft"></ion-radio>
             </ion-item>
 
@@ -70,7 +70,7 @@
             <img [src]="onsalenft.image" alt=""/>
           </ion-avatar>
           <p>{{onsalenft.name}}</p>
-          <p>{{onsalenft.price}}</p>
+          <p><img class="logo" src="./assets/images/cashart.png"> {{onsalenft.price}}</p>
         </div>
       </ion-item>
     </ion-list>

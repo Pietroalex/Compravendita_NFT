@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-row>
       <ion-col>
-        <ion-title>On Sale</ion-title>
+        <ion-title>{{ "SHOP.titleS" | translate }}</ion-title>
       </ion-col>
       <ion-col>
         <ion-img id="cashart" src="./assets/images/cashart.png"></ion-img>
@@ -27,21 +27,21 @@
     </ion-avatar>
 
     <div id="text">
-      <ion-label>NFT-Code</ion-label><br>
+      <ion-label>{{ "GALLERY.nftcode" | translate }}</ion-label><br>
       <p id="nft_code">{{this.nftcode}}</p>
-      <ion-label>Name</ion-label>
+      <ion-label>{{ "GALLERY.name" | translate }}</ion-label>
       <p id="name">{{this.name}}</p>
-      <ion-label>Author</ion-label>
+      <ion-label>{{ "GALLERY.author" | translate }}</ion-label>
       <p  (click)="gotoauthor()" id="author">{{this.nameauthor}}</p>
-      <ion-label>Description</ion-label>
+      <ion-label>{{ "GALLERY.description" | translate }}</ion-label>
       <p id="descr">{{this.description}}</p>
-      <ion-label>Seller</ion-label>
+      <ion-label>{{ "GALLERY.seller" | translate }}</ion-label>
       <p id="seller" (click)="gotoseller()">{{this.nameseller}}</p>
-      <ion-label>Price</ion-label>
-      <p id="price">{{this.price}}</p>
+      <ion-label>{{ "GALLERY.price" | translate }}</ion-label>
+      <p id="price"><img class="logo" src="./assets/images/cashart.png"> {{this.price}}</p>
     </div>
 
   </div>
-  <ion-button id="buy" (click)="buynft()">Buy</ion-button>
+  <ion-button id="buy" (click)="buynft()">{{ "SHOP.buy" | translate }}</ion-button>
   </div>
 </ion-content>

@@ -4,7 +4,7 @@ import {AlertController, LoadingController} from "@ionic/angular";
 import {AuthService} from "../../../services/user_related/login/auth.service";
 import {Router} from "@angular/router";
 import {collection, doc, Firestore, getDocs, query, setDoc, where} from "@angular/fire/firestore";
-import {Auth, createUserWithEmailAndPassword, getAuth, signInWithRedirect} from "@angular/fire/auth";
+import {Auth, createUserWithEmailAndPassword, getAuth, signInWithRedirect, signOut} from "@angular/fire/auth";
 import firebase from "firebase/compat";
 import AuthProvider = firebase.auth.AuthProvider;
 
@@ -68,8 +68,8 @@ export class RegisterPage implements OnInit {
               publicGallery: [],
               language : "en"
             });
-            localStorage.setItem("logged", "true")
-            this.router.navigateByUrl('/menu/home', {replaceUrl: true});
+            signOut(auth)
+            this.router.navigateByUrl('/', {replaceUrl: true});
 
 
           })

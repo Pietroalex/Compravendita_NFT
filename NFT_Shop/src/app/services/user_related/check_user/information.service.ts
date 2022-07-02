@@ -11,8 +11,7 @@ export class InformationService {
   ) { }
 
 
-  getUserProfile(value: string) {
-    const user = value;
+  getUserProfile(user: string) {
     const userDocRef = doc(this.firestore, `Users/${user}`);
     return docData(userDocRef);
   }

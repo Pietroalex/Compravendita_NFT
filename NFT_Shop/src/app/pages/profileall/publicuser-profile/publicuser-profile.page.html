@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Public Profile</ion-title>
+    <ion-title>{{ "PROFILE.titleP" | translate }}</ion-title>
 
   </ion-toolbar>
 
@@ -24,7 +24,7 @@
       <ion-label>{{"PROFILE.username" | translate }}</ion-label><br>
       <p id="username">{{profile?.username}}</p>
 
-      <ion-label>Bio</ion-label>
+      <ion-label>{{ "PROFILE.bio" | translate }}</ion-label>
       <p id="bio">{{profile?.bio}}</p>
     </div>
 
@@ -42,7 +42,7 @@
         </ion-item>
 
       </ion-list>
-      <ion-button [routerLink]="['/','public-gallery', this.profilestring]">Pb-Gallery</ion-button>
+      <ion-button [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
 
 
       <ion-list id="shop">
@@ -52,11 +52,11 @@
               <img [src]="onsalenft.image" alt=""/>
             </ion-avatar>
             <p>{{onsalenft.name}}</p>
-            <p>{{onsalenft.price}}</p>
+            <p><img class="logo" src="./assets/images/cashart.png"> {{onsalenft.price}}</p>
           </div>
         </ion-item>
       </ion-list>
-      <ion-button (click)="gotoshop()">Pvt SHOP</ion-button>
+      <ion-button (click)="gotoshop()">{{ "PROFILE.shop" | translate }}</ion-button>
     </div>
 
   </div>
