@@ -51,9 +51,7 @@ export class NotifyService {
       this.buyerprofile.uid != this.sellerprofile.uid
     ){
       this.createnotify();
-
     }
-
   }
 
   async createnotify() {
@@ -108,4 +106,5 @@ export class NotifyService {
 
     return tempo
   }
+
 }
