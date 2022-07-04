@@ -24,10 +24,12 @@
   margin:0px 0px 5px;
 }
 #currency{
-  font-size: 8px;
+  font-size: 15px;
+  display: flex;
+  margin-top:7px;
   color: #8c8c8c;
   width: 10%;
-  alignment: right;
+  margin-left: 5px;
 }
 #cashart {
   height: 30px;
@@ -54,4 +56,8 @@ ion-button{
   height: 11px;
   alignment: right;
   overflow-inline: auto;
+}
+#cash{
+  display: flex;
+  position: center;
 }

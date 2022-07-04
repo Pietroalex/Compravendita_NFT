@@ -8,11 +8,12 @@
         <ion-title>{{ "SHOP.titleS" | translate }}</ion-title>
       </ion-col>
       <ion-col>
-        <ion-img id="cashart" src="./assets/images/cashart.png"></ion-img>
+        <div id="cash">
+          <ion-img id="cashart" src="./assets/images/cashart.png"></ion-img>
+          <ion-text id="currency">{{profile?.cashart}}</ion-text>
+        </div>
       </ion-col>
-      <ion-col>
-        <ion-text id="currency">{{profile?.cashart}}</ion-text>
-      </ion-col>
+
     </ion-row>
 
   </ion-toolbar>
