@@ -52,8 +52,14 @@ export class PublicuserProfilePage implements OnInit {
   }
 
   private async continue() {
-    await this.get3public();
-    await this.get3sellerNFTs();
+    await this.get3public().then(() => {
+      if(this.publicgallerynfts.length > 0){
+        document.getElementById('gallerydummy').setAttribute("style", "display: none; ")
+      }});
+    await this.get3sellerNFTs().then(() => {
+      if(this.onsalenfts.length > 0){
+        document.getElementById('shopdummy').setAttribute("style", "display: none; ")
+      }});
   }
 
   async get3public() {

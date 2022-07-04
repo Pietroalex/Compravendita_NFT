@@ -17,7 +17,7 @@ export class AppComponent {
 
   this.inizializeApp();
   }
-inizializeApp(){
+    inizializeApp(){
     this.platform.ready().then(() =>{
       this.languageService.setInitialAppLanguage();
     })

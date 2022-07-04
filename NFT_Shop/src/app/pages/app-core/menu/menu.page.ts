@@ -36,7 +36,7 @@ export class MenuPage   {
 
       });
 
-    localStorage.setItem('notif', 'background-color: transparent;')
+
 
   }
 

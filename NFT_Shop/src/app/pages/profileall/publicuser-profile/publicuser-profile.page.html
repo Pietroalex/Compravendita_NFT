@@ -40,10 +40,20 @@
             <p>{{gallerynft.name}}</p>
           </div>
         </ion-item>
-
       </ion-list>
-      <ion-button [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
+      <ion-list id="gallerydummy">
+        <ion-item>
+          <div>
+            <ion-avatar class="nft_image">
+              <img src="./assets/images/icon.png">
+            </ion-avatar>
+            <p>No</p>
+            <p>Items</p>
+          </div>
+        </ion-item>
+      </ion-list>
 
+      <ion-button [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
 
       <ion-list id="shop">
         <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
@@ -56,6 +66,19 @@
           </div>
         </ion-item>
       </ion-list>
+
+      <ion-list id="shopdummy">
+        <ion-item>
+          <div>
+            <ion-avatar class="nft_image">
+              <img src="./assets/images/icon.png">
+            </ion-avatar>
+            <p>No</p>
+            <p>Items</p>
+          </div>
+        </ion-item>
+      </ion-list>
+
       <ion-button (click)="gotoshop()">{{ "PROFILE.shop" | translate }}</ion-button>
     </div>
 

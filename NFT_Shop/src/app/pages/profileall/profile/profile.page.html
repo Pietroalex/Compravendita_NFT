@@ -54,6 +54,18 @@
           </ion-item>
         </ion-list>
 
+      <ion-list id="solddummy">
+        <ion-item>
+          <div>
+            <ion-avatar class="nft_image">
+              <img src="./assets/images/icon.png">
+            </ion-avatar>
+            <p>No</p>
+            <p>Items</p>
+          </div>
+        </ion-item>
+      </ion-list>
+
       <ion-button [routerLink]="['/','nft-sold', this.profilestring]">{{ "PROFILE.allsold" | translate }}</ion-button>
 
         <ion-list id="purchased">
@@ -67,6 +79,18 @@
             </div>
           </ion-item>
         </ion-list>
+
+      <ion-list id="purchasedummy">
+        <ion-item>
+          <div>
+            <ion-avatar class="nft_image">
+              <img src="./assets/images/icon.png">
+            </ion-avatar>
+            <p>No</p>
+            <p>Items</p>
+          </div>
+        </ion-item>
+      </ion-list>
 
       <ion-button [routerLink]="['/','nft-purchased', this.profilestring]">{{ "PROFILE.allpurchased" | translate }}</ion-button>
     </div>
@@ -82,8 +106,20 @@
         <p>{{gallerynft.name}}</p>
       </div>
     </ion-item>
-
   </ion-list>
+
+  <ion-list id="gallerydummy">
+    <ion-item>
+      <div>
+        <ion-avatar class="nft_image">
+          <img src="./assets/images/icon.png">
+        </ion-avatar>
+        <p>No</p>
+        <p>Items</p>
+      </div>
+    </ion-item>
+  </ion-list>
+
   <ion-button [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
 
 
@@ -98,6 +134,19 @@
       </div>
     </ion-item>
   </ion-list>
+
+  <ion-list id="shopdummy">
+    <ion-item>
+      <div>
+        <ion-avatar class="nft_image">
+          <img  src="./assets/images/icon.png">
+        </ion-avatar>
+        <p>No</p>
+        <p>Items</p>
+      </div>
+    </ion-item>
+  </ion-list>
+
   <ion-button (click)="gotoshop()">{{ "PROFILE.shop" | translate }}</ion-button>
     </div>
 

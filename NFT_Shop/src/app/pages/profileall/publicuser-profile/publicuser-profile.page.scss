@@ -126,3 +126,10 @@ ion-col{
   alignment: right;
   overflow-inline: auto;
 }
+#purchasedummy,#gallerydummy {
+  height:auto;
+  display: flex;
+  justify-content: flex-start; /* center if you want to the center */
+  align-items: center;
+  flex-wrap: wrap;
+}

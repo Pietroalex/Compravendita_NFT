@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AvatarService} from "../../../services/user_related/profile_image/avatar.service";
 import {AuthService} from "../../../services/user_related/login/auth.service";
 import {NftPurchaseService} from "../../../services/DBop/nft_purchase/nft-purchase.service";
@@ -10,7 +10,7 @@ import {NftService} from "../../../services/DBop/nfts/nft.service";
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class ProfilePage implements OnInit, OnDestroy {
 
   tempo = [];
 
@@ -46,7 +46,7 @@ export class ProfilePage implements OnInit {
   }
 
    ngOnInit() {
-
+  console.log("comincio profile")
   }
    start() {
     return new Promise<void>((resolve, reject) => {
@@ -57,19 +57,24 @@ export class ProfilePage implements OnInit {
 
   async continue() {
 
-    await this.get3soldNFTs();
-    await this.get3purchasedNFTs();
-    await this.get3public();
-    await this.get3sellerNFTs();
+     this.get3soldNFTs()
+     this.get3purchasedNFTs()
+     this.get3public()
+     this.get3sellerNFTs()
 
 
 
   }
   async get3soldNFTs(){
     this.soldnfts = await this.nftHistory.get3lastSoldNFTs("seller", this.search)
+    if(this.soldnfts.length > 0){
+      document.getElementById('solddummy').setAttribute("style", "display: none; ")}
   }
   async get3purchasedNFTs(){
     this.purchasednfts = await this.nftHistory.get3lastSoldNFTs("buyer", this.search)
+    if(this.purchasednfts.length > 0){
+      document.getElementById('purchasedummy').setAttribute("style", "display: none; ")
+    }
   }
 
   async get3public() {
@@ -82,10 +87,16 @@ export class ProfilePage implements OnInit {
       this.publicgallerynfts.push(this.tempo[0]);
       this.tempo = [];
     }
+    if(this.publicgallerynfts.length > 0){
+      document.getElementById('gallerydummy').setAttribute("style", "display: none; ")
+    }
   }
 
   async get3sellerNFTs(){
     this.onsalenfts = await this.nftService.get3lastselleronsaleNFTs(this.profile.username + "-" + this.profile.uid)
+    if(this.onsalenfts.length > 0){
+      document.getElementById('shopdummy').setAttribute("style", "display: none; ")
+    }
   }
 
   hide_show(value: string) {
@@ -113,5 +124,8 @@ export class ProfilePage implements OnInit {
   async gotodetailpurchased(num: number) {
     await localStorage.setItem('purchased', JSON.stringify(this.purchasednfts[num]) );
     this.router.navigateByUrl('/purchase-detail' );
+  }
+  ngOnDestroy() {
+    console.log("lascio profile")
   }
 }
