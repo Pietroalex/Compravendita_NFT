@@ -10,7 +10,6 @@ export class SearchService {
   result = [];
 
   public = null;
-  searched: string;
 
   constructor(
     private firestore: Firestore,
@@ -25,7 +24,7 @@ export class SearchService {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
       this.tempo.push(doc.data());
-      console.log(doc.id, " => ", doc.data());
+
     });
 
     this.result = this.tempo;
@@ -40,7 +39,7 @@ export class SearchService {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
       this.tempo.push(doc.data());
-      console.log(doc.id, " => ", doc.data());
+
     });
 
     this.result = this.tempo;
@@ -55,7 +54,7 @@ export class SearchService {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
       this.tempo.push(doc.data());
-      console.log(doc.id, " => ", doc.data());
+
     });
 
     this.result = this.tempo;
@@ -63,25 +62,5 @@ export class SearchService {
     return this.result;
   }
 
-  checksearch() {
-    let type = localStorage.getItem('search-filed');
-    let res;
-    switch (type) {
-      case "profile":
-        res = 'Users';
-        this.searched = "username";
-        break;
-      case "salenft":
-        res = 'OnSaleNFTs';
-        this.searched = "name";
-        break;
-      case "publicnft":
-        res = 'PublicNFTs';
-        this.searched = "name";
-        break;
-
-    }
-    return res;
-  }
 
 }

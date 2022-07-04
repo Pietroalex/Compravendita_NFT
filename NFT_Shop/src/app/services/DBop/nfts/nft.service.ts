@@ -245,7 +245,7 @@ export class NftService {
 
   async getpublicNFTs(nftcode: any) {
     {
-      const collRef = collection(this.firestore, "NFTs");                                // per trovare gli nft in in public gallery
+      const collRef = collection(this.firestore, "NFTs");                                // per trovare gli tutti nft in in public gallery
       const q = query(collRef, where('nftcode', '==', nftcode));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {

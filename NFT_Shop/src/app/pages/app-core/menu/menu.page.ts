@@ -6,6 +6,7 @@ import {AvatarService} from "../../../services/user_related/profile_image/avatar
 import { getAuth, signOut } from "firebase/auth";
 import {LanguagePopoverPage} from "../language-popover/language-popover.page";
 import {LanguageService} from "../../../services/user_related/language/language.service";
+import {NotifyService} from "../../../services/DBop/notification/notify.service";
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
@@ -22,9 +23,11 @@ export class MenuPage   {
     private authService: AuthService,
     private router: Router,
     private popoverController: PopoverController,
+    private notifyService: NotifyService
 
 
   ) {
+    this.auth = getAuth();
     this.authService.getUserProfile().subscribe((data) => {
         this.profile = data;
         localStorage.setItem('profile', JSON.stringify(this.profile));
@@ -32,18 +35,14 @@ export class MenuPage   {
         localStorage.setItem('order-field', "newer")
 
       });
-     this.auth = getAuth();
+
     localStorage.setItem('notif', 'background-color: transparent;')
 
   }
 
   async logout() {
 
-    await signOut(this.auth).then( () => {
-       this.router.navigateByUrl('/', {replaceUrl: true});
-    }).catch((error) => {
-      console.log("no signout")
-    });
+    signOut(this.auth).then(() => this.router.navigateByUrl('/home', {replaceUrl: true}))
 
   }
 

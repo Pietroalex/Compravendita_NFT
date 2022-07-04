@@ -55,7 +55,6 @@ export class SellItemPage implements OnInit {
       price: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10)]],//aggiungere il controllo sull'input per inserire solo numeri che non inizino per 0
     });
     this.route.paramMap.subscribe(params => {
-      console.log(params);
       this.nftcode = params.get('nftcode');
       this.image = params.get('image');
       this.name = params.get('name');

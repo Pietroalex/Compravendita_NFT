@@ -14,7 +14,7 @@ export class AppComponent {
     private platform: Platform,
     private languageService: LanguageService
   ) {
-    localStorage.setItem("logged", "false")
+
   this.inizializeApp();
   }
 inizializeApp(){

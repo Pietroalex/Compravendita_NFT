@@ -68,9 +68,8 @@ export class RegisterPage implements OnInit {
               publicGallery: [],
               language : "en"
             });
-            signOut(auth)
-            this.router.navigateByUrl('/', {replaceUrl: true});
 
+            signOut(auth).then(() => this.router.navigateByUrl('/home', {replaceUrl: true}))
 
           })
           .catch((error) => {

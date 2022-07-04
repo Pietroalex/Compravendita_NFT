@@ -72,18 +72,7 @@ ip: string;
       }
   }
 
-  async getUser() {
-    const userUid = this.profile.uid;
-    const docRef = doc(this.firestore, `Users/${userUid}`);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
-    } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
 
-  }
 
   async updateInfo() {
 
@@ -163,7 +152,7 @@ ip: string;
     let count = this.profile?.nft_created_count;
     let cashart = this.profile?.cashart;
     deleteUser(user).then(() => {
-      this.router.navigateByUrl('/', {replaceUrl: true});
+      this.router.navigateByUrl('/home', {replaceUrl: true});
       alert("Succesfully deleted");
 
       if ((privateGallery.length() == 0) && count == 0 && cashart == 5000){

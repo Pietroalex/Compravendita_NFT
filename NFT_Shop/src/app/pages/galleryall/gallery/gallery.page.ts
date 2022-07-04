@@ -30,9 +30,9 @@ export class GalleryPage implements OnInit, OnDestroy {
     private router: Router,
     private alertController: AlertController
   ) {
-    console.log("appena avviato")
+
     const result = JSON.parse(localStorage.getItem('profile'));
-    console.log(result)
+
     this.profile = result;
   }
 
@@ -86,7 +86,7 @@ export class GalleryPage implements OnInit, OnDestroy {
     ngOnDestroy() {
       this.nfts = [];
       this.profile = null;
-      console.log("uscendo")
+
     }
 
   async create() {

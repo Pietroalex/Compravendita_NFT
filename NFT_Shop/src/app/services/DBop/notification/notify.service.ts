@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import {
-  arrayRemove,
+  arrayRemove, arrayUnion,
   collection, deleteDoc,
   doc, docData,
   Firestore,
-  getDocs, orderBy,
+  getDocs, limit, orderBy,
   query,
   serverTimestamp,
   setDoc,
   updateDoc,
   where
 } from "@angular/fire/firestore";
+import {AlertController} from "@ionic/angular";
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +24,7 @@ export class NotifyService {
   name: string;
   price: number;
   seller: string;
-
+  result = null;
 
 
   buyerprofile = null;
@@ -33,8 +35,9 @@ export class NotifyService {
   notifyarr = [];
   notifyarr2 = [];
 
+
   constructor(
-    private firestore: Firestore
+    private firestore: Firestore,
   ) { }
 
 
@@ -67,13 +70,10 @@ export class NotifyService {
       purchase_date: serverTimestamp(),
     });
     console.log("notificato")
-    localStorage.setItem('notif', "background-color: #3684ff;")
-    let val = localStorage.getItem('notif')
-    document.getElementById('notify').setAttribute("style", val)
-
   }
 
-  async loadNotify( user: string){
+
+  async loadNotify( user: string ){
     const nftHistoryRef = collection(this.firestore, "Notifications");
     const q = query(nftHistoryRef, where("seller", "==", user), orderBy("purchase_date", "desc"));
     const querySnapshot = await getDocs(q);
@@ -98,6 +98,7 @@ export class NotifyService {
     let tempo
     const nftHistoryRef = collection(this.firestore, `SoldNFTs`);
     const q = query(nftHistoryRef, where("nftcode", "==", nftcode));
+    console.log(q)
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {            // per trovare documenti con seller o buyer uguale a quello inserito
       tempo = doc.data() ;
@@ -106,5 +107,6 @@ export class NotifyService {
 
     return tempo
   }
+
 
 }

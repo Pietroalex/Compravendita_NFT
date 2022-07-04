@@ -89,7 +89,7 @@ export class NftPurchaseService {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {            // per trovare documenti con seller o buyer uguale a quello inserito
       this.tempo.push(doc.data()) ;
-      console.log(doc.id, " => ", doc.data());
+
     });
     console.log(this.nfts)
     this.nfts = this.tempo;
@@ -104,7 +104,6 @@ export class NftPurchaseService {
     querySnapshot.forEach((doc) => {
       this.tempo.push(doc.data());
     })
-    console.log(this.tempo)
     this.nfts = this.tempo;
     this.tempo = [];
     return this.nfts;
