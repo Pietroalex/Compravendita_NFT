@@ -20,9 +20,8 @@
       </ion-refresher>
 
 
-      <ion-list>
-
-        <ion-item-sliding id="item100" *ngFor="let notification of notifications ; index as i  " >
+      <ion-list [ngClass]="[notify]">
+        <ion-item-sliding  *ngFor="let notification of notifications ; index as i  " >
           <ion-item (click)="godetail(i)">
             <div></div>
             <ion-label>
@@ -42,9 +41,31 @@
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
-
-
       </ion-list>
+
+      <ion-list [ngClass]="[notifydummy]">
+        <ion-item-sliding>
+            <ion-item>
+              <div></div>
+              <ion-label>
+                <h2>No</h2>
+                <p>Notification</p>
+                <p>buyer</p><p><img class="logo" src="./assets/images/cashart.png"> price</p>
+              </ion-label>
+              <ion-note slot="end">
+                purchase_date
+              </ion-note>
+        </ion-item>
+
+
+        <ion-item-options side="end">
+          <ion-item-option color="danger">
+            <ion-icon slot="icon-only" name="trash" ></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
     </ion-content>
 
 

@@ -16,11 +16,17 @@ export class NotificationPage implements OnInit {
   profile = null;
   nft = null;
 
+  notify: string;
+  notifydummy: string;
+
   constructor(
     private nftService: NftService,
     private notifyService: NotifyService,
     private router: Router
-  ) { }
+  ) {
+    this.notify = 'need';
+    this.notifydummy = 'need';
+  }
 
   async ngOnInit() {
     localStorage.setItem('notif', "background-color: transparent;")
@@ -38,6 +44,11 @@ export class NotificationPage implements OnInit {
     this.ids = [];
     this.tempo = await this.notifyService.loadNotify(this.profile.uid)
     this.notifications = this.tempo.slice(0, (this.tempo.length/2))
+    if (this.notify.length > 0) {
+      this.notifydummy = 'no-need';
+    } else {
+      this.notify = 'no-need';
+    }
     this.ids = this.tempo.slice((this.tempo.length/2))
     setTimeout(() => {
       console.log('Async operation has ended');
@@ -55,6 +66,11 @@ export class NotificationPage implements OnInit {
   async continue() {
     this.tempo = await this.notifyService.loadNotify(this.profile.uid)
     this.notifications = this.tempo.slice(0, (this.tempo.length/2))
+    if (this.notifications.length > 0) {
+      this.notifydummy = 'no-need';
+    } else {
+      this.notify = 'no-need';
+    }
     this.ids = this.tempo.slice((this.tempo.length/2))
 
     console.log(this.ids)
