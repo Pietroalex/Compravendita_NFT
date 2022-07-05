@@ -27,7 +27,8 @@ selector: '[longPress]'
 
      selected = [];
 
-  gallery: string;gallerydummy: string;
+  gallery: string;
+  gallerydummy: string;
 
     constructor(
       private db: Firestore,
