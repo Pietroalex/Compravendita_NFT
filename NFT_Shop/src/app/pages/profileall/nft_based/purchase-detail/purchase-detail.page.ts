@@ -43,9 +43,12 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
     private firestore: Firestore,
     private infoService: InformationService,
 
-  ) { }
+  ) {
+    this.profile =  JSON.parse(localStorage.getItem('profile'));
+  }
 
   ngOnInit() {
+
 
 
 
@@ -103,7 +106,16 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
     this.purchase_date = seconds + nanoseconds;
     this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
 
-
+    if(this.nameseller == this.profile.username){
+      console.log("venditore e profilo uguali")
+      //title: Dettaglio Vendite
+      //ion label & p seller eliminati
+    }
+    if(this.namebuyer == this.profile.username){
+      console.log("compratore e profilo uguali")
+      //title: Dettaglio Acquisti
+      //ion label & p buyer eliminati
+    }
 
   }
   async gotoauthor() {
