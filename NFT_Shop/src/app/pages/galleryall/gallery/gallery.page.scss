@@ -3,13 +3,7 @@
   width: auto;
   text-align: center;
 }
-#gallery {
-  display: flex;
-  justify-content: flex-start; /* center if you want to the center */
-  align-items: center;
-  flex-wrap: wrap;
 
-}
 
 ion-item {
   width : 33%;
@@ -38,4 +32,14 @@ ion-button{
   width: 50px;
   height: 50px;
   justify-content: center;
+}
+.need{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.no-need{
+  display: none;
 }

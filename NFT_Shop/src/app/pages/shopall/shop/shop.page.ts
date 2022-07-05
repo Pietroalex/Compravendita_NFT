@@ -20,6 +20,9 @@ export class ShopPage implements OnInit, OnDestroy {
   value: string;
   type: string;
 
+  shopdummy: string;
+  shop: string;
+
   constructor(
     private router: Router,
     private firestore: Firestore,
@@ -27,6 +30,9 @@ export class ShopPage implements OnInit, OnDestroy {
     private authService: AuthService,
     private route: ActivatedRoute,
   ) {
+    this.shopdummy = 'need';
+    this.shop = 'need';
+
     this.seller = localStorage.getItem('seller');
     this.start().then(res => this.continue());
   }
@@ -120,9 +126,19 @@ export class ShopPage implements OnInit, OnDestroy {
      if (this.check) {
      //  this.nfts = await this.nftService.loadAllOnSaleNFTs();
        this.nfts = await this.nftService.loadAllOnSaleNFTsorder();
+       if(this.nfts.length > 0){
+         this.shopdummy = 'no-need';
+       }else{
+         this.shop = 'no-need';
+       }
      } else {
        //this.nfts = await this.nftService.loadAllSellerOnSaleNFTs();
        this.nfts = await this.nftService.loadAllSellerOnSaleNFTsorder();
+       if(this.nfts.length > 0){
+         this.shopdummy = 'no-need';
+       }else{
+         this.shop = 'no-need';
+       }
      }
 
    }

@@ -3,14 +3,6 @@
   width: auto;
   text-align: center;
 }
-#gallery {
-  display: flex;
-  justify-content: flex-start; /* center if you want to the center */
-  align-items: center;
-  flex-wrap: wrap;
-
-}
-
 ion-item {
   width : 33%;
   text-aligh: left;
@@ -24,9 +16,24 @@ ion-item {
 }
 
 #container p {
-  margin-top: -10px;
+  margin-top: 2px;
   line-height: 10px;
 }
 ion-button{
   border-radius: 5px;
+}
+.need{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.no-need{
+  display: none;
+}
+.nft_image {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
 }

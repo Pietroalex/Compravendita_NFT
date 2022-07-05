@@ -14,7 +14,8 @@ export class HomePage  implements OnInit {
 
   profile = null;
   nfts = [];
-
+  shop: string;
+  shopdummy: string;
 
   constructor(
     private alertController: AlertController,
@@ -23,7 +24,8 @@ export class HomePage  implements OnInit {
     private languageService: LanguageService,
     private notifyService: NotifyService
   ) {
-
+    this.shopdummy = 'need';
+    this.shop = 'need';
   }
 
 
@@ -36,6 +38,11 @@ export class HomePage  implements OnInit {
        this.authService.getUserProfile().subscribe(async (data) => {
          this.profile = data;
          this.nfts = await this.nftService.get6lastonsaleNFTs();
+         if(this.nfts.length > 0){
+           this.shopdummy = 'no-need';
+         }else{
+           this.shop = 'no-need';
+         }
          localStorage.setItem('profile', JSON.stringify(this.profile));
          localStorage.setItem('seller', "null");
 

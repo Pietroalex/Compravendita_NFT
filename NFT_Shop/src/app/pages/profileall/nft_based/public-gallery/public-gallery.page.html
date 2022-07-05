@@ -14,16 +14,27 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-list id="gallery">
-      <ion-item *ngFor="let nft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', nft ]" >
-        <div class="nftitem">
-          <ion-avatar>
-            <img [src]="nft.image" alt=""/>
+    <ion-list [ngClass]="[gallery]">
+      <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" >
+        <div>
+          <ion-avatar class="nft_image">
+            <img [src]="gallerynft.image" alt=""/>
           </ion-avatar>
-          <p>{{nft.name}}</p>
+          <p>{{gallerynft.name}}</p>
         </div>
       </ion-item>
+    </ion-list>
 
+    <ion-list [ngClass]="[gallerydummy]">
+      <ion-item>
+        <div>
+          <ion-avatar class="nft_image">
+            <img src="./assets/images/icon.png">
+          </ion-avatar>
+          <p>No</p>
+          <p>Items</p>
+        </div>
+      </ion-item>
     </ion-list>
 
 

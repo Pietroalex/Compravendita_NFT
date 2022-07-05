@@ -62,8 +62,8 @@
     </ng-template>
   </ion-popover>
 
-  <div id="salenft">
-    <ion-list id="salenftlist">
+  <div [ngClass]="[onsalediv]">
+    <ion-list [ngClass]="[onsale]">
       <ion-item *ngFor="let onsalenft of onSaleNFTs "  [routerLink]="['/', 'shop-detail', onsalenft ]" >
         <div>
           <ion-avatar class="nft_image">
@@ -74,10 +74,22 @@
         </div>
       </ion-item>
     </ion-list>
+
+    <ion-list [ngClass]="[onsaledummy]">
+      <ion-item>
+        <div>
+          <ion-avatar class="nft_image">
+            <img  src="./assets/images/icon.png">
+          </ion-avatar>
+          <p>No</p>
+          <p>Items</p>
+        </div>
+      </ion-item>
+    </ion-list>
   </div>
 
-  <div id="publicnft">
-    <ion-list id="publicnftlist">
+  <div [ngClass]="[publicdiv]">
+    <ion-list [ngClass]="[public]">
       <ion-item *ngFor="let nft of NFTs "  [routerLink]="['/', 'publicgallery-detail', nft ]" >
         <div>
           <ion-avatar class="nft_image">
@@ -88,11 +100,24 @@
         </div>
       </ion-item>
     </ion-list>
+
+    <ion-list [ngClass]="[publicdummy]">
+      <ion-item>
+        <div>
+          <ion-avatar class="nft_image">
+            <img  src="./assets/images/icon.png">
+          </ion-avatar>
+          <p>No</p>
+          <p>Items</p>
+        </div>
+      </ion-item>
+    </ion-list>
+
   </div>
 
-  <div id="profile">
+  <div [ngClass]="[profilediv]">
 
-    <ion-list id="profilelist">
+    <ion-list [ngClass]="[profile]">
       <ion-item *ngFor="let profile of profiles " (click)="goprofile(profile.uid)" [routerLink]="['/publicuser-profile']" replaceUrl="true" >
         <div>
           <ion-avatar class="nft_image">
@@ -103,6 +128,19 @@
         </div>
       </ion-item>
     </ion-list>
+
+    <ion-list [ngClass]="[profilesdummy]">
+      <ion-item>
+        <div>
+          <ion-avatar class="nft_image">
+            <img  src="./assets/images/icon.png">
+          </ion-avatar>
+          <p>No</p>
+          <p>Items</p>
+        </div>
+      </ion-item>
+    </ion-list>
+
   </div>
 
 </ion-content>

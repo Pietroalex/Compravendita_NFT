@@ -51,15 +51,6 @@ ion-menu-button {
   height: 30px;
   alignment: right;
 }
-#pbgallery,#pbshop,#purchased,#sold {
-  height:auto;
-  display: flex;
-  justify-content: flex-start; /* center if you want to the center */
-  align-items: center;
-  flex-wrap: wrap;
-
-}
-
 ion-item {
   width : 33%;
   text-aligh: left;
@@ -67,12 +58,7 @@ ion-item {
   margin-top: 5px;
 }
 
-#pbgallery,#pbshop ion-img{
-  height: 100px;
-  width: auto;
-  margin-top: 1px;
 
-}
 ion-button{
   height: 20px;
 }
@@ -114,22 +100,19 @@ ion-col{
   padding-right: 10px;
 
 }
-#gallery,#shop {
-  height:auto;
-  display: flex;
-  justify-content: flex-start; /* center if you want to the center */
-  align-items: center;
-  flex-wrap: wrap;
-}
+
 .logo{
   height: 11px;
   alignment: right;
   overflow-inline: auto;
 }
-#purchasedummy,#gallerydummy {
-  height:auto;
+.need{
+  height: auto;
   display: flex;
-  justify-content: flex-start; /* center if you want to the center */
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+.no-need{
+  display: none;
 }

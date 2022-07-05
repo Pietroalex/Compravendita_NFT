@@ -19,11 +19,14 @@
 
   </ion-toolbar>
 
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+
   <div id="container">
-    <ion-list id="gallery">
+    <ion-list [ngClass]="[gallery]">
         <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'gallery-detail', nft ]" replaceUrl="true" >
           <div >
               <ion-avatar id="nft_image">
@@ -32,9 +35,20 @@
             <p>{{nft.name}}</p>
           </div>
         </ion-item>
-
       </ion-list>
 
+    <ion-list [ngClass]="[gallerydummy]">
+      <ion-item>
+        <div>
+          <ion-avatar class="nft_image">
+            <img src="./assets/images/icon.png">
+          </ion-avatar>
+          <p>No</p>
+          <p>Items</p>
+        </div>
+      </ion-item>
+    </ion-list>
 
     </div>
+
 </ion-content>

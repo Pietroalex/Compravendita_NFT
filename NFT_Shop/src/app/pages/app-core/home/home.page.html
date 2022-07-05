@@ -25,7 +25,7 @@
     <ion-item-divider><strong class="capitalize">{{'HOME.vetrina' | translate }}</strong></ion-item-divider>
 
     <div>
-      <ion-list id="shop">
+      <ion-list [ngClass]="[shop]">
         <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'shop-detail', nft ]" >
           <div>
             <ion-avatar id="nft_image">
@@ -36,6 +36,19 @@
           </div>
         </ion-item>
       </ion-list>
+
+      <ion-list [ngClass]="[shopdummy]">
+        <ion-item>
+          <div>
+            <ion-avatar class="nft_image">
+              <img  src="./assets/images/icon.png">
+            </ion-avatar>
+            <p>No</p>
+            <p>Items</p>
+          </div>
+        </ion-item>
+      </ion-list>
+
     </div>
     <ion-button [routerLink]="['/shop']">{{ "HOME.shop" | translate }}</ion-button>
 

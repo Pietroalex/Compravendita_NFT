@@ -11,7 +11,7 @@
 
 <ion-content id="container">
 
-    <ion-list id="sold">
+  <ion-list [ngClass]="[sold]">
       <ion-item *ngFor="let nft of nfts; index as i " (click)="gotodetail(i)">
         <div>
           <ion-avatar>
@@ -26,4 +26,15 @@
 
     </ion-list>
 
+  <ion-list [ngClass]="[solddummy]">
+    <ion-item>
+      <div>
+        <ion-avatar class="nft_image">
+          <img src="./assets/images/icon.png">
+        </ion-avatar>
+        <p>No</p>
+        <p>Items</p>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

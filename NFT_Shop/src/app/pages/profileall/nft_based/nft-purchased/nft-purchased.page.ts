@@ -15,13 +15,18 @@ export class NftPurchasedPage implements OnInit {
   nfts = [];
   profile = null;
   search: string;
+
+  purchased: string;
+  purchasedummy: string;
+
   constructor(
     private router: Router,
     private firestore: Firestore,
     private nftHistory: NftPurchaseService,
     private route: ActivatedRoute
   ) {
-
+    this.purchased = 'need';
+    this.purchasedummy = 'need';
 
   }
 
@@ -29,7 +34,12 @@ export class NftPurchasedPage implements OnInit {
     this.profile = JSON.parse(this.route.snapshot.paramMap.get('profile'));
     console.log(this.profile);
     this.search = this.profile.username + "-" + this.profile.uid;
-    this.nfts = await this.nftHistory.loadHistory("seller", this.search)
+    this.nfts = await this.nftHistory.loadHistory("seller", this.search);
+    if(this.nfts.length > 0){
+      this.purchasedummy = 'no-need';
+    }else{
+      this.purchased = 'no-need';
+    }
   }
 
   async gotodetail(num: number) {

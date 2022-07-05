@@ -17,10 +17,35 @@ export class SearchPage implements OnInit {
   profiles = [];
   onSaleNFTs = [];
 
+  profilesdummy: string;
+  publicdummy: string;
+  onsaledummy: string;
+
+  profile: string;
+  public: string;
+  onsale: string;
+
+  profilediv: string;
+  publicdiv: string;
+  onsalediv: string;
+
   constructor(
     private searchService: SearchService,
-    private firestore: Firestore
-  ) { }
+
+  ) {
+    this.profile = 'need';
+    this.public = 'need';
+    this.onsale = 'need';
+
+    this.onsaledummy = 'need';
+    this.profilesdummy = 'need';
+    this.publicdummy = 'need';
+
+    this.profilediv = 'no-need';
+    this.publicdiv = 'no-need';
+    this.onsalediv = 'no-need';
+
+  }
 
   ngOnInit() {
 
@@ -69,14 +94,29 @@ export class SearchPage implements OnInit {
     switch (this.type) {
       case "profile":
         this.profiles = await this.searchService.searchprofile(value);
+        if (this.profiles.length > 0) {
+          this.profilesdummy = 'no-need';
+        }else{
+          this.profile = 'no-need';
+        }
         break;
 
       case "salenft":
         this.onSaleNFTs = await this.searchService.searchonsale(value);
+        if (this.onSaleNFTs.length > 0) {
+          this.onsaledummy = 'no-need';
+        }else{
+          this.onsale = 'no-need';
+        }
         break;
 
       case "publicnft":
         this.NFTs = await this.searchService.searchpublic(value);
+        if (this.NFTs.length > 0) {
+          this.publicdummy = 'no-need';
+        }else{
+          this.public = 'no-need';
+        }
         break;
 
     }
@@ -87,21 +127,21 @@ export class SearchPage implements OnInit {
   hideother(value: string) {
     switch (this.type) {
       case "profile":
-        document.getElementById('profile').setAttribute("style", "display: block; ")
-        document.getElementById('salenft').setAttribute("style", "display: none; ")
-        document.getElementById('publicnft').setAttribute("style", "display: none; ")
+        this.profilediv = 'need';
+        this.publicdiv = 'no-need';
+        this.onsalediv = 'no-need';
         break;
 
       case "salenft":
-        document.getElementById('profile').setAttribute("style", "display: none; ")
-        document.getElementById('salenft').setAttribute("style", "display: block; ")
-        document.getElementById('publicnft').setAttribute("style", "display: none; ")
+        this.profilediv = 'no-need';
+        this.publicdiv = 'no-need';
+        this.onsalediv = 'need';
         break;
 
       case "publicnft":
-        document.getElementById('profile').setAttribute("style", "display: none; ")
-        document.getElementById('salenft').setAttribute("style", "display: none; ")
-        document.getElementById('publicnft').setAttribute("style", "display: block; ")
+        this.profilediv = 'no-need';
+        this.publicdiv = 'need';
+        this.onsalediv = 'no-need';
         break;
 
     }

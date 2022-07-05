@@ -56,7 +56,7 @@
   </ion-popover>
 
   <div id="shopdiv">
-  <ion-list id="shop">
+  <ion-list [ngClass]="[shop]">
     <ion-item *ngFor="let nft of nfts "  [routerLink]="['/', 'shop-detail', nft ]" replaceUrl="true">
       <div>
         <ion-avatar id="nft_image">
@@ -67,6 +67,19 @@
       </div>
     </ion-item>
   </ion-list>
+
+    <ion-list [ngClass]="[shopdummy]">
+      <ion-item>
+        <div>
+          <ion-avatar class="nft_image">
+            <img  src="./assets/images/icon.png">
+          </ion-avatar>
+          <p>No</p>
+          <p>Items</p>
+        </div>
+      </ion-item>
+    </ion-list>
+
   </div>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

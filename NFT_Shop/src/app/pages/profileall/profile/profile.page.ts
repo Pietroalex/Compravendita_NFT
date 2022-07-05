@@ -25,6 +25,22 @@ export class ProfilePage implements OnInit, OnDestroy {
 
   profilestring: string;
 
+  purchasedummy: string;
+  solddummy: string;
+  shopdummy: string;
+  gallerydummy: string;
+
+  private: string;
+  public: string;
+
+  purchased: string;
+  sold: string;
+  gallery: string;
+  shop: string;
+
+
+
+
   constructor(
     private authService: AuthService,
     private nftHistory: NftPurchaseService,
@@ -32,6 +48,18 @@ export class ProfilePage implements OnInit, OnDestroy {
     private nftService: NftService,
     private router: Router
   ) {
+    this.purchasedummy = 'need';
+    this.solddummy = 'need';
+    this.shopdummy = 'need';
+    this.gallerydummy = 'need';
+
+    this.private = 'default';
+    this.public = 'hidden';
+
+    this.purchased = 'need';
+    this.sold = 'need';
+    this.gallery = 'need';
+    this.shop = 'need';
 
     this.authService.getUserProfile().subscribe((data) => {
       this.publicgallerynfts = [];
@@ -65,15 +93,20 @@ export class ProfilePage implements OnInit, OnDestroy {
 
 
   }
-  async get3soldNFTs(){
+  async get3soldNFTs() {
     this.soldnfts = await this.nftHistory.get3lastSoldNFTs("seller", this.search)
-    if(this.soldnfts.length > 0){
-      document.getElementById('solddummy').setAttribute("style", "display: none; ")}
+    if (this.soldnfts.length > 0) {
+      this.solddummy = 'no-need';
+    }else{
+      this.sold = 'no-need';
+    }
   }
   async get3purchasedNFTs(){
     this.purchasednfts = await this.nftHistory.get3lastSoldNFTs("buyer", this.search)
     if(this.purchasednfts.length > 0){
-      document.getElementById('purchasedummy').setAttribute("style", "display: none; ")
+      this.purchasedummy = 'no-need';
+    }else{
+      this.purchased = 'no-need';
     }
   }
 
@@ -88,25 +121,29 @@ export class ProfilePage implements OnInit, OnDestroy {
       this.tempo = [];
     }
     if(this.publicgallerynfts.length > 0){
-      document.getElementById('gallerydummy').setAttribute("style", "display: none; ")
+      this.gallerydummy = 'no-need';
+    }else{
+      this.gallery = 'no-need';
     }
   }
 
   async get3sellerNFTs(){
     this.onsalenfts = await this.nftService.get3lastselleronsaleNFTs(this.profile.username + "-" + this.profile.uid)
     if(this.onsalenfts.length > 0){
-      document.getElementById('shopdummy').setAttribute("style", "display: none; ")
+      this.shopdummy = 'no-need';
+    }else{
+      this.shop = 'no-need';
     }
   }
 
   hide_show(value: string) {
     if(value === "private"){
-      document.getElementById('privatesection').setAttribute("style", "display: block; ")
-      document.getElementById('publicsection').setAttribute("style", "display: none; ")
+      this.private = 'default';
+      this.public = 'hidden';
     }
     else{
-      document.getElementById('publicsection').setAttribute("style", "display: block; ")
-      document.getElementById('privatesection').setAttribute("style", "display: none; ")
+      this.private = 'hidden';
+      this.public = 'default';
     }
   }
 

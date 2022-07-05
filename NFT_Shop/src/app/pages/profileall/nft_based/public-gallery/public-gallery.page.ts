@@ -14,10 +14,16 @@ export class PublicGalleryPage implements OnInit {
   num = 0;
   tempo = [];
 
+  gallery: string;
+  gallerydummy: string;
+
   constructor(
     private route: ActivatedRoute,
     private nftService: NftService
-  ) { }
+  ) {
+    this.gallerydummy = 'need';
+    this.gallery = 'need';
+  }
 
   ngOnInit() {
     this.profile = JSON.parse(this.route.snapshot.paramMap.get('profile'));
@@ -33,6 +39,10 @@ export class PublicGalleryPage implements OnInit {
       this.publicgallerynfts.push(this.tempo[0]);
       this.tempo = [];
     }
-
+    if(this.publicgallerynfts.length > 0){
+      this.gallerydummy = 'no-need';
+    }else{
+      this.gallery = 'no-need';
+    }
   }
 }

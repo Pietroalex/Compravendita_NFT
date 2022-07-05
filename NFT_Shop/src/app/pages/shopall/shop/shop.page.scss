@@ -72,5 +72,14 @@
   alignment: right;
   overflow-inline: auto;
 }
-
+.need{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.no-need{
+  display: none;
+}
 

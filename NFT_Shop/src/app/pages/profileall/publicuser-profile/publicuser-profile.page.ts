@@ -19,6 +19,12 @@ export class PublicuserProfilePage implements OnInit {
   onsalenfts = [];
   profilestring: string;
 
+  gallery: string;
+  shop: string;
+
+  shopdummy: string;
+  gallerydummy: string;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -26,8 +32,11 @@ export class PublicuserProfilePage implements OnInit {
     private nftService: NftService,
   ) {
 
+    this.shopdummy = 'need';
+    this.gallerydummy = 'need';
 
-
+    this.gallery = 'need';
+    this.shop = 'need';
 
   }
 
@@ -52,14 +61,8 @@ export class PublicuserProfilePage implements OnInit {
   }
 
   private async continue() {
-    await this.get3public().then(() => {
-      if(this.publicgallerynfts.length > 0){
-        document.getElementById('gallerydummy').setAttribute("style", "display: none; ")
-      }});
-    await this.get3sellerNFTs().then(() => {
-      if(this.onsalenfts.length > 0){
-        document.getElementById('shopdummy').setAttribute("style", "display: none; ")
-      }});
+    await this.get3public();
+    await this.get3sellerNFTs();
   }
 
   async get3public() {
@@ -72,9 +75,19 @@ export class PublicuserProfilePage implements OnInit {
       this.publicgallerynfts.push(this.tempo[0]);
       this.tempo = [];
     }
+    if(this.publicgallerynfts.length > 0){
+      this.gallerydummy = 'no-need';
+    }else{
+      this.gallery = 'no-need';
+    }
   }
   async get3sellerNFTs(){
     this.onsalenfts = await this.nftService.get3lastselleronsaleNFTs(this.profile.username + "-" + this.profile.uid)
+    if(this.onsalenfts.length > 0){
+      this.shopdummy = 'no-need';
+    }else{
+      this.shop = 'no-need';
+    }
   }
 
   async gotoshop() {
