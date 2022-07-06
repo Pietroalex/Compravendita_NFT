@@ -35,13 +35,6 @@
         overflow-inline: auto;
       }
 
-      ion-list{
-        width:available;
-        display: flex;
-        justify-content: flex-start; /* center if you want to the center */
-        align-items: center;
-        flex-wrap: wrap;
-      }
       ion-item {
         width : 33%;
         text-align: left;
@@ -89,7 +82,7 @@
       .need{
         height: auto;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
       }
@@ -103,4 +96,13 @@
       .ios #refresh{
         height: 26px;
         width: 26px;
+      }
+      .need-a-copy{
+        visibility: visible;
+      }
+      .need-copy{
+        visibility: hidden;
+      }
+      .no-need-copy{
+        display: none;
       }

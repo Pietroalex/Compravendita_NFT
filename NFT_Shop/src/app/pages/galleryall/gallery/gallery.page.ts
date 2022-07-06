@@ -38,8 +38,8 @@ selector: '[longPress]'
       private router: Router,
       private alertController: AlertController
     ) {
+      this.gallerydummy = 'no-need';
       this.gallery = 'need';
-      this.gallerydummy = 'need';
       const result = JSON.parse(localStorage.getItem('profile'));
       this.profile = result;
     }
@@ -89,7 +89,9 @@ selector: '[longPress]'
       }
       if (this.nfts.length > 0) {
         this.gallerydummy = 'no-need';
+        this.gallery = 'need';
       } else {
+        this.gallerydummy = 'need';
         this.gallery = 'no-need';
       }
     }

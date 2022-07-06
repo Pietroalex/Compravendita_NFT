@@ -15,7 +15,13 @@ export class HomePage  implements OnInit {
   profile = null;
   nfts = [];
   shop: string;
-  shopdummy: string;
+  shopdummy1: string;
+  shopdummy2: string;
+  shopdummy3: string;
+  shopdummy4: string;
+  shopdummy5: string;
+  shopdummy6: string;
+
 
   constructor(
     private alertController: AlertController,
@@ -23,8 +29,13 @@ export class HomePage  implements OnInit {
     private nftService: NftService,
     private languageService: LanguageService,
   ) {
-    this.shopdummy = 'need';
     this.shop = 'need';
+    this.shopdummy1 = 'no-need-copy';
+    this.shopdummy2 = 'no-need-copy'
+    this.shopdummy3 = 'no-need-copy'
+    this.shopdummy4 = 'no-need-copy'
+    this.shopdummy5 = 'no-need-copy'
+    this.shopdummy6 = 'no-need-copy'
   }
 
 
@@ -37,10 +48,63 @@ export class HomePage  implements OnInit {
        this.authService.getUserProfile().subscribe(async (data) => {
          this.profile = data;
          this.nfts = await this.nftService.get6lastonsaleNFTs();
-         if(this.nfts.length > 0){
-           this.shopdummy = 'no-need';
-         }else{
-           this.shop = 'no-need';
+         switch(this.nfts.length){
+           case 0:
+             this.shopdummy1 = 'need-a-copy';
+             this.shopdummy2 = 'need-copy';
+             this.shopdummy3 = 'need-copy';
+             this.shopdummy4 = 'need-copy';
+             this.shopdummy5 = 'need-copy';
+             this.shopdummy6 = 'need-copy';
+             break;
+           case 1:
+             this.shopdummy1 = 'need-copy';
+             this.shopdummy2 = 'need-copy';
+             this.shopdummy3 = 'need-copy';
+             this.shopdummy4 = 'need-copy';
+             this.shopdummy5 = 'need-copy';
+             this.shopdummy6 = 'no-need-copy';
+             break;
+           case 2:
+             this.shopdummy1 = 'need-copy';
+             this.shopdummy2 = 'need-copy';
+             this.shopdummy3 = 'need-copy';
+             this.shopdummy4 = 'need-copy';
+             this.shopdummy5 = 'no-need-copy';
+             this.shopdummy6 = 'no-need-copy';
+             break;
+           case 3:
+             this.shopdummy1 = 'need-copy';
+             this.shopdummy2 = 'need-copy';
+             this.shopdummy3 = 'need-copy';
+             this.shopdummy4 = 'no-need-copy';
+             this.shopdummy5 = 'no-need-copy';
+             this.shopdummy6 = 'no-need-copy';
+             break;
+           case 4:
+             this.shopdummy1 = 'need-copy';
+             this.shopdummy2 = 'need-copy';
+             this.shopdummy3 = 'no-need-copy';
+             this.shopdummy4 = 'no-need-copy';
+             this.shopdummy5 = 'no-need-copy';
+             this.shopdummy6 = 'no-need-copy';
+             break;
+           case 5:
+             this.shopdummy1 = 'need-copy';
+             this.shopdummy2 = 'no-need-copy';
+             this.shopdummy3 = 'no-need-copy';
+             this.shopdummy4 = 'no-need-copy';
+             this.shopdummy5 = 'no-need-copy';
+             this.shopdummy6 = 'no-need-copy';
+             break;
+           case 6:
+             this.shopdummy1 = 'no-need-copy';
+             this.shopdummy2 = 'no-need-copy';
+             this.shopdummy3 = 'no-need-copy';
+             this.shopdummy4 = 'no-need-copy';
+             this.shopdummy5 = 'no-need-copy';
+             this.shopdummy6 = 'no-need-copy';
+             break;
          }
          localStorage.setItem('profile', JSON.stringify(this.profile));
          localStorage.setItem('seller', "null");
@@ -62,10 +126,63 @@ export class HomePage  implements OnInit {
   async refresh() {
     this.nfts = [];
     this.nfts = await this.nftService.get6lastonsaleNFTs();
-    if(this.nfts.length > 0){
-      this.shopdummy = 'no-need';
-    }else{
-      this.shop = 'no-need';
+    switch(this.nfts.length){
+      case 0:
+        this.shopdummy1 = 'need-a-copy';
+        this.shopdummy2 = 'need-copy';
+        this.shopdummy3 = 'need-copy';
+        this.shopdummy4 = 'need-copy';
+        this.shopdummy5 = 'need-copy';
+        this.shopdummy6 = 'need-copy';
+        break;
+      case 1:
+        this.shopdummy1 = 'need-copy';
+        this.shopdummy2 = 'need-copy';
+        this.shopdummy3 = 'need-copy';
+        this.shopdummy4 = 'need-copy';
+        this.shopdummy5 = 'need-copy';
+        this.shopdummy6 = 'no-need-copy';
+        break;
+      case 2:
+        this.shopdummy1 = 'need-copy';
+        this.shopdummy2 = 'need-copy';
+        this.shopdummy3 = 'need-copy';
+        this.shopdummy4 = 'need-copy';
+        this.shopdummy5 = 'no-need-copy';
+        this.shopdummy6 = 'no-need-copy';
+        break;
+      case 3:
+        this.shopdummy1 = 'need-copy';
+        this.shopdummy2 = 'need-copy';
+        this.shopdummy3 = 'need-copy';
+        this.shopdummy4 = 'no-need-copy';
+        this.shopdummy5 = 'no-need-copy';
+        this.shopdummy6 = 'no-need-copy';
+        break;
+      case 4:
+        this.shopdummy1 = 'need-copy';
+        this.shopdummy2 = 'need-copy';
+        this.shopdummy3 = 'no-need-copy';
+        this.shopdummy4 = 'no-need-copy';
+        this.shopdummy5 = 'no-need-copy';
+        this.shopdummy6 = 'no-need-copy';
+        break;
+      case 5:
+        this.shopdummy1 = 'need-copy';
+        this.shopdummy2 = 'no-need-copy';
+        this.shopdummy3 = 'no-need-copy';
+        this.shopdummy4 = 'no-need-copy';
+        this.shopdummy5 = 'no-need-copy';
+        this.shopdummy6 = 'no-need-copy';
+        break;
+      case 6:
+        this.shopdummy1 = 'no-need-copy';
+        this.shopdummy2 = 'no-need-copy';
+        this.shopdummy3 = 'no-need-copy';
+        this.shopdummy4 = 'no-need-copy';
+        this.shopdummy5 = 'no-need-copy';
+        this.shopdummy6 = 'no-need-copy';
+        break;
     }
   }
 }

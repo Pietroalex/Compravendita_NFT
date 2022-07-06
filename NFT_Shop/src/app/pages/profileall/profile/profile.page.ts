@@ -74,7 +74,6 @@ export class ProfilePage implements OnInit, OnDestroy {
   }
 
    ngOnInit() {
-  console.log("comincio profile")
   }
    start() {
     return new Promise<void>((resolve, reject) => {
@@ -163,6 +162,5 @@ export class ProfilePage implements OnInit, OnDestroy {
     this.router.navigateByUrl('/purchase-detail' );
   }
   ngOnDestroy() {
-    console.log("lascio profile")
   }
 }
