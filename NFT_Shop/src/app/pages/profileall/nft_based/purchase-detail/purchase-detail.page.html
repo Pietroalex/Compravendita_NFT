@@ -22,12 +22,12 @@
         <p id="author"  (click)="gotoauthor()">{{this.nameauthor}}</p>
         <ion-label>{{ "GALLERY.description" | translate }}</ion-label>
         <p id="descr">{{this.description}}</p>
-        <ion-label>{{ "GALLERY.seller" | translate }}</ion-label>
-        <p id="seller"  (click)="gotoseller()">{{this.nameseller}}</p>
+        <ion-label [ngClass]="[sellerdiv]">{{ "GALLERY.seller" | translate }}</ion-label>
+        <p id="seller" [ngClass]="[sellerdiv]" (click)="gotoseller()">{{this.nameseller}}</p>
         <ion-label>{{ "GALLERY.price" | translate }}</ion-label>
         <p id="price">{{this.price}} <img class="logo" src="./assets/images/cashart.png"></p>
-        <ion-label>{{ "GALLERY.buyer" | translate }}</ion-label>
-        <p id="buyer" (click)="gotobuyer()">{{this.namebuyer}}</p>
+        <ion-label [ngClass]="[buyerdiv]">{{ "GALLERY.buyer" | translate }}</ion-label>
+        <p id="buyer" [ngClass]="[buyerdiv]" (click)="gotobuyer()">{{this.namebuyer}}</p>
         <ion-label>{{ "GALLERY.date" | translate }}</ion-label>
         <p id="purchase_date">{{this.purchase_date | date:'dd/MM/yyyy'}}</p>
       </div>

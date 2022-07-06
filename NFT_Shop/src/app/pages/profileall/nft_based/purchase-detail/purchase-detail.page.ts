@@ -32,7 +32,9 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
   namebuyer: string;
   uidbuyer: string;
 
-  money: number;
+  sellerdiv: string;
+  buyerdiv: string;
+
   Sellerprofile = null;
 
   nft = null;
@@ -44,7 +46,10 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
     private infoService: InformationService,
 
   ) {
+    this.sellerdiv = "need";
+    this.buyerdiv = "need";
     this.profile =  JSON.parse(localStorage.getItem('profile'));
+    console.log(this.profile)
   }
 
   ngOnInit() {
@@ -106,6 +111,12 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
     this.purchase_date = seconds + nanoseconds;
     this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
 
+    if (this.nameseller == this.profile.username) {
+      this.sellerdiv = 'no-need';
+    } else {
+      this.buyerdiv = 'no-need';
+    }
+/*
     if(this.nameseller == this.profile.username){
       console.log("venditore e profilo uguali")
       //title: Dettaglio Vendite/Sell Detail
@@ -118,6 +129,7 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
       //ion label & p buyer eliminati
       document.getElementById("buyer").style.display = "none"
     }
+ */
 
   }
   async gotoauthor() {

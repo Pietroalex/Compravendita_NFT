@@ -34,7 +34,7 @@ export class NftPurchasedPage implements OnInit {
     this.profile = JSON.parse(this.route.snapshot.paramMap.get('profile'));
     console.log(this.profile);
     this.search = this.profile.username + "-" + this.profile.uid;
-    this.nfts = await this.nftHistory.loadHistory("seller", this.search);
+    this.nfts = await this.nftHistory.loadHistory("buyer", this.search);
     if(this.nfts.length > 0){
       this.purchasedummy = 'no-need';
     }else{
