@@ -108,13 +108,15 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
 
     if(this.nameseller == this.profile.username){
       console.log("venditore e profilo uguali")
-      //title: Dettaglio Vendite
+      //title: Dettaglio Vendite/Sell Detail
       //ion label & p seller eliminati
+      document.getElementById("seller").style.display = "none"
     }
     if(this.namebuyer == this.profile.username){
       console.log("compratore e profilo uguali")
-      //title: Dettaglio Acquisti
+      //title: Dettaglio Acquisti/Purchase Detail
       //ion label & p buyer eliminati
+      document.getElementById("buyer").style.display = "none"
     }
 
   }
