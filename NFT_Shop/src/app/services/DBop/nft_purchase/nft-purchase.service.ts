@@ -62,7 +62,7 @@ export class NftPurchaseService {
 
     if( this.buyerprofile.uid != this.uidseller
        ){
-      this.createPurchaseHistory();
+      await this.createPurchaseHistory();
 
     }
   }

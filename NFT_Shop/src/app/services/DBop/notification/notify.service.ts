@@ -53,7 +53,7 @@ export class NotifyService {
     if(
       this.buyerprofile.uid != this.sellerprofile.uid
     ){
-      this.createnotify();
+      await this.createnotify();
     }
   }
 
