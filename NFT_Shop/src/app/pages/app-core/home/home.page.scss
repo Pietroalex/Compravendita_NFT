@@ -96,3 +96,11 @@
       .no-need{
         display: none;
       }
+      #refresh{
+        height: 40px;
+        width: 40px;
+      }
+      .ios #refresh{
+        height: 26px;
+        width: 26px;
+      }
