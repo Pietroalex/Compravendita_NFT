@@ -22,7 +22,7 @@
 
   <div id="container">
 
-    <ion-item-divider><strong class="capitalize">{{'HOME.vetrina' | translate }}</strong></ion-item-divider>
+    <ion-item-divider><strong slot="start" class="capitalize">{{'HOME.vetrina' | translate }}</strong> <ion-buttons slot="end"><ion-button (click)="refresh()"><ion-icon slot="icon-only" name="refresh"></ion-icon></ion-button></ion-buttons></ion-item-divider>
 
     <div>
       <ion-list [ngClass]="[shop]">

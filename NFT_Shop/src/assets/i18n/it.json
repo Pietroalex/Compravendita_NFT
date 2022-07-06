@@ -16,7 +16,8 @@
     "title": "Galleria",
     "titleP": "Galleria Pubblica",
     "titlePD": "NFT Pubblico",
-    "titleSD": "Dettaglio Acquisto",
+    "titleSDS": "Dettaglio Acquisto",
+    "titlePDS": "Dettaglio Vendita",
     "titleD": "Dettaglio NFT",
     "titleS": "Vendita NFT",
     "titleN": "Creazione NFT",
@@ -49,7 +50,7 @@
     "register": "Registrati"
   },
   "PROFILE":{
-    "username": "Nome utente",
+    "username": "Nome Utente",
     "title": "Profilo",
     "titleP": "Profilo Pubblico",
     "titleE": "Aggiorna Profilo",

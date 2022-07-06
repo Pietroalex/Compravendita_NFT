@@ -22,7 +22,6 @@ export class HomePage  implements OnInit {
     private authService: AuthService,
     private nftService: NftService,
     private languageService: LanguageService,
-    private notifyService: NotifyService
   ) {
     this.shopdummy = 'need';
     this.shop = 'need';
@@ -60,10 +59,15 @@ export class HomePage  implements OnInit {
   }
 
 
-
-
-
-
+  async refresh() {
+    this.nfts = [];
+    this.nfts = await this.nftService.get6lastonsaleNFTs();
+    if(this.nfts.length > 0){
+      this.shopdummy = 'no-need';
+    }else{
+      this.shop = 'no-need';
+    }
+  }
 }
 
 

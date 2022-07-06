@@ -35,6 +35,9 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
   sellerdiv: string;
   buyerdiv: string;
 
+  sell: string;
+  purchase: string;
+
   Sellerprofile = null;
 
   nft = null;
@@ -48,6 +51,8 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
   ) {
     this.sellerdiv = "need";
     this.buyerdiv = "need";
+    this.sell = "need";
+    this.purchase = "need";
     this.profile =  JSON.parse(localStorage.getItem('profile'));
     console.log(this.profile)
   }
@@ -59,28 +64,6 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
 
 
     this.start().then(res => this.continue());
-    /*
-    this.route.paramMap.subscribe(params => {
-      this.nftcode = params.get('nftcode');
-      this.image = params.get('image');
-      this.name = params.get('name');
-      this.description = params.get('description');
-      this.author = params.get('author');
-      this.nameauthor = this.nftcode.substring(0, this.nftcode.indexOf("-"));
-      this.seller = params.get('seller');
-      this.nameseller = this.seller.substring(0, this.seller.indexOf("-"));
-      this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
-      this.buyer = params.get('buyer');
-      this.namebuyer = this.buyer.substring(0, this.buyer.indexOf("-"));
-      this.uidbuyer = this.buyer.substring(this.seller.indexOf("-")+1);
-
-      this.price = Number(params.get('price'));
-      this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
-
-    });
-
-
-     */
   }
   async start() {
     return new Promise<void>(async (resolve, reject) => {
@@ -113,24 +96,11 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
 
     if (this.nameseller == this.profile.username) {
       this.sellerdiv = 'no-need';
+      this.sell = 'no-need';
     } else {
       this.buyerdiv = 'no-need';
+      this.purchase = 'no-need';
     }
-/*
-    if(this.nameseller == this.profile.username){
-      console.log("venditore e profilo uguali")
-      //title: Dettaglio Vendite/Sell Detail
-      //ion label & p seller eliminati
-      document.getElementById("seller").style.display = "none"
-    }
-    if(this.namebuyer == this.profile.username){
-      console.log("compratore e profilo uguali")
-      //title: Dettaglio Acquisti/Purchase Detail
-      //ion label & p buyer eliminati
-      document.getElementById("buyer").style.display = "none"
-    }
- */
-
   }
   async gotoauthor() {
     localStorage.setItem('author', this.author)

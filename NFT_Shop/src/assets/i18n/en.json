@@ -16,7 +16,8 @@
     "titleP": "Public Gallery",
     "titleSD": "Purchase Detail",
     "titlePD": "Pub NFT info",
-    "titleD": "NFT detail",
+    "titleSDS": "Purchase Detail",
+    "titlePDS": "Sell Detail",
     "titleS": "Sell NFT",
     "titleN": "New NFT",
     "name": "Name",
@@ -39,7 +40,7 @@
     "resetmessage": "      Please provide the username or email address that you used when you signed\n      up for your Evernote account."
   },
   "PROFILE":{
-    "username": "Nome utente",
+    "username": "Username",
     "title": "Profile",
     "titleP": "Public Profile",
     "titleE": "Update Profile",
