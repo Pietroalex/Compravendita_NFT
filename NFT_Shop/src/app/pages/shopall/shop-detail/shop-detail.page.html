@@ -43,6 +43,7 @@
     </div>
 
   </div>
-  <ion-button id="buy" (click)="buynft()">{{ "SHOP.buy" | translate }}</ion-button>
+    <ion-button id="buy" [ngClass]="[Buy]" (click)="buynft()">{{ "SHOP.buy" | translate }}</ion-button>
+    <ion-button id="cancel" [ngClass]="[cancel]" (click)="cancelnft()">{{ "SHOP.cancel" | translate }}</ion-button>
   </div>
 </ion-content>

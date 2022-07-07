@@ -76,6 +76,7 @@
     "dateold": "Older",
     "pricecheap": "Cheaper",
     "priceexpensive": "More expensive",
-    "buy": "Buy"
+    "buy": "Buy",
+    "cancel": "Cancel"
   }
 }

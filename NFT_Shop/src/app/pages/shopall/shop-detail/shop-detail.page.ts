@@ -41,6 +41,9 @@ export class ShopDetailPage implements OnInit {
   Sellerprofile = null;
   params: any;
 
+  Buy: string;
+  cancel: string;
+
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -52,6 +55,9 @@ export class ShopDetailPage implements OnInit {
     private notifyService: NotifyService
   ) {
     this.authService.getUserProfile().subscribe((data) => { this.profile = data ;});
+    this.profile =  JSON.parse(localStorage.getItem('profile'));
+    this.Buy = 'need';
+    this.cancel = 'need';
   }
 
   ngOnInit() {
@@ -71,6 +77,13 @@ export class ShopDetailPage implements OnInit {
       this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
       this.params = params;
     });
+
+    if(this.nameseller == this.profile.username) {
+      console.log("NFT messa in vendita da me");
+      this.Buy = 'no-need';
+    } else {
+      this.cancel = 'no-need';
+    }
 
   }
 
@@ -113,7 +126,7 @@ export class ShopDetailPage implements OnInit {
           cashart: Sellermoney,
         });
 
-        this.showAlert('Item successfully purchased', 'Your item is being added to your gallery')
+        this.showAlert('Item successfully purchased', 'Your item has been added to your gallery')
 
         await deleteDoc(doc(this.firestore, "OnSaleNFTs", this.nftcode));
         await this.nftpurchaseService.createHistory(this.profile, this.Sellerprofile, this.params);
@@ -126,6 +139,33 @@ export class ShopDetailPage implements OnInit {
 
     } else {
       this.showAlert('Purchase Failure', 'The price is too high for your Cashart amount')
+    }
+  }
+
+  async cancelnft() {
+
+    const user = this.profile?.uid;
+    const OnSaleRef = doc(this.firestore, "NFTs", this.nftcode);
+
+    await setDoc(OnSaleRef, {                                  //crea il documento del OnSaleNFT
+      nftcode: this.nftcode,
+      image: this.image,
+      name: this.name,
+      description: this.description,
+      author: this.author,
+    });
+
+    try {
+      const docRef = doc(this.firestore, `Users/${user}`);
+
+      await updateDoc(docRef, {
+        privateGallery: arrayUnion(this.nftcode)
+      });
+
+      this.showAlert('Cancelled Operation', 'Your item has been returned to your gallery')
+
+    }catch (e) {
+      return null;
     }
   }
 
