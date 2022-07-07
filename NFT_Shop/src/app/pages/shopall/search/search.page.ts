@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from "../../../services/DBop/search/search.service";
 import {arrayUnion, doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -31,7 +32,7 @@ export class SearchPage implements OnInit {
 
   constructor(
     private searchService: SearchService,
-
+    private router: Router
   ) {
     this.profile = 'need';
     this.public = 'need';
@@ -61,6 +62,10 @@ export class SearchPage implements OnInit {
         break;
     }
     this.hideother(this.type);
+  }
+
+  async back() {
+    await this.router.navigateByUrl('/shop', { replaceUrl: true });
   }
 
   selecttype(value: string) {

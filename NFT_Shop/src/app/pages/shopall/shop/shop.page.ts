@@ -40,14 +40,14 @@ export class ShopPage implements OnInit, OnDestroy {
 
   async ngOnInit() {
     switch (this.type = localStorage.getItem('order-field')) {
-      case "newer":
-        this.value = 'newer';
+      case "newest":
+        this.value = 'newest';
         break;
-      case "older":
-        this.value = 'older';
+      case "oldest":
+        this.value = 'oldest';
         break;
-      case "cheaper":
-        this.value = 'cheaper';
+      case "cheapest":
+        this.value = 'cheapest';
         break;
       case "expensive":
         this.value = 'expensive';
@@ -79,18 +79,18 @@ export class ShopPage implements OnInit, OnDestroy {
   selectorder(value: string) {
 
     switch (value) {
-      case "newer":
-        this.value = 'newer';
+      case "newest":
+        this.value = 'newest';
         this.type = value;
         break;
 
-      case "older":
-        this.value = 'older';
+      case "oldest":
+        this.value = 'oldest';
         this.type = value;
         break;
 
-      case "cheaper":
-        this.value = 'cheaper';
+      case "cheapest":
+        this.value = 'cheapest';
         this.type = value;
         break;
 

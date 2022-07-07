@@ -4,7 +4,17 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-row><ion-col><ion-title>{{ "SHOP.title" | translate }}</ion-title></ion-col><ion-col><ion-img id="cashart" src="./assets/images/cashart.png"></ion-img></ion-col><ion-col><ion-text id="currency">{{this.profile?.cashart}}</ion-text></ion-col></ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-title>{{ "SHOP.title" | translate }}</ion-title>
+      </ion-col>
+      <ion-col>
+        <div id="cash">
+          <ion-img id="cashart" src="./assets/images/cashart.png"></ion-img>
+          <ion-text id="currency">{{profile?.cashart}}</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
 
   </ion-toolbar>
 
@@ -29,19 +39,19 @@
               <ion-label>{{ "SHOP.orderby" | translate }}</ion-label>
             </ion-list-header>
 
-            <ion-item (click)="selectorder('newer')">
+            <ion-item (click)="selectorder('newest')">
               <ion-label>{{ "SHOP.datenew" | translate }}</ion-label>
-              <ion-radio slot="start" value="newer"></ion-radio>
+              <ion-radio slot="start" value="newest"></ion-radio>
             </ion-item>
 
-            <ion-item (click)="selectorder('older')">
+            <ion-item (click)="selectorder('oldest')">
               <ion-label>{{ "SHOP.dateold" | translate }}</ion-label>
-              <ion-radio slot="start" value="older"></ion-radio>
+              <ion-radio slot="start" value="oldest"></ion-radio>
             </ion-item>
 
-            <ion-item (click)="selectorder('cheaper')">
+            <ion-item (click)="selectorder('cheapest')">
               <ion-label>{{ "SHOP.pricecheap" | translate }}</ion-label>
-              <ion-radio slot="start" value="cheaper"></ion-radio>
+              <ion-radio slot="start" value="cheapest"></ion-radio>
             </ion-item>
 
             <ion-item (click)="selectorder('expensive')">

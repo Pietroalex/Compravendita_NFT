@@ -40,6 +40,7 @@ ion-button{
   width: 40%;
   margin_right:30%;
   margin-left: 30%;
+  margin-top: 18px;
 }
 .md ion-title{
   font-size: 15px;
@@ -63,4 +64,10 @@ ion-button{
 }
 #author, #seller{
   color: #4c8dff;
+}
+.need{
+  display:block;
+}
+.no-need{
+  display: none;
 }
