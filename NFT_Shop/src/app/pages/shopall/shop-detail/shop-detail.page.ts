@@ -56,8 +56,8 @@ export class ShopDetailPage implements OnInit {
   ) {
     this.authService.getUserProfile().subscribe((data) => { this.profile = data ;});
     this.profile =  JSON.parse(localStorage.getItem('profile'));
-    this.Buy = 'need';
-    this.cancel = 'need';
+    this.Buy = "need";
+    this.cancel = "need";
   }
 
   ngOnInit() {
@@ -81,8 +81,10 @@ export class ShopDetailPage implements OnInit {
     if(this.nameseller == this.profile.username) {
       console.log("NFT messa in vendita da me");
       this.Buy = 'no-need';
+      //document.getElementById("buy").style.display = "none";
     } else {
       this.cancel = 'no-need';
+      //document.getElementById("cancel").style.display = "none";
     }
 
   }
@@ -164,6 +166,9 @@ export class ShopDetailPage implements OnInit {
 
       this.showAlert('Cancelled Operation', 'Your item has been returned to your gallery')
 
+      await deleteDoc(doc(this.firestore, "OnSaleNFTs", this.nftcode));
+      await this.router.navigateByUrl('/gallery', {replaceUrl: true});
+      return true;
     }catch (e) {
       return null;
     }
