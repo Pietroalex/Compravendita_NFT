@@ -133,7 +133,9 @@ export class ShopDetailPage implements OnInit {
         await deleteDoc(doc(this.firestore, "OnSaleNFTs", this.nftcode));
         await this.nftpurchaseService.createHistory(this.profile, this.Sellerprofile, this.params);
         await this.notifyService.notify(this.profile, this.Sellerprofile, this.params);
-        await this.router.navigateByUrl('/gallery', {replaceUrl: true});
+        await localStorage.setItem('profile', JSON.stringify(this.profile));
+        await this.router.navigateByUrl('/purchase-detail', {replaceUrl: true});
+
         return true;
       } catch (e) {
         return null;

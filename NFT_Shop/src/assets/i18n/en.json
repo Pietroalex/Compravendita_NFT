@@ -73,10 +73,10 @@
     "titleS": "On Sale NFT",
     "orderby:": "Ordered By:",
     "orderby": "Order by",
-    "datenew": "Newer",
-    "dateold": "Older",
-    "pricecheap": "Cheaper",
-    "priceexpensive": "More expensive",
+    "datenew": "Newest",
+    "dateold": "Oldest",
+    "pricecheap": "Cheapest",
+    "priceexpensive": "Most expensive",
     "buy": "Buy",
     "cancel": "Cancel"
   }

@@ -32,7 +32,7 @@ export class MenuPage   {
         this.profile = data;
         localStorage.setItem('profile', JSON.stringify(this.profile));
         localStorage.setItem('search-field', "profile")
-        localStorage.setItem('order-field', "newer")
+        localStorage.setItem('order-field', "newest")
 
       });
 

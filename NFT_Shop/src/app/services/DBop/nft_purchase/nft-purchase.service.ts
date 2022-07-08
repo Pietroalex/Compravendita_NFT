@@ -59,7 +59,7 @@ export class NftPurchaseService {
     this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
     this.onsale_date = new Date(param.get('onsale_date'));
     this.price = Number(param.get('price'));
-
+    await localStorage.setItem('purchased', JSON.stringify({nft: this.nftcode, check: "nft"}));
     if( this.buyerprofile.uid != this.uidseller
        ){
       await this.createPurchaseHistory();

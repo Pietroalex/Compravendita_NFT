@@ -123,7 +123,7 @@
   <ion-button [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
 
   <ion-list [ngClass]="[shop]">
-    <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]" replaceUrl="true">
+    <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]">
       <div>
         <ion-avatar class="nft_image">
           <img [src]="onsalenft.image" alt=""/>

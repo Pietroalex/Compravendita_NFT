@@ -8,6 +8,7 @@ import {NftPurchaseService} from "../../../../services/DBop/nft_purchase/nft-pur
 import {timestamp} from "rxjs/operators";
 import firebase from "firebase/compat";
 import Timestamp = firebase.firestore.Timestamp;
+import {NotifyService} from "../../../../services/DBop/notification/notify.service";
 
 @Component({
   selector: 'app-purchase-detail',
@@ -40,14 +41,14 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
 
   Sellerprofile = null;
 
-  nft = null;
+  nft: any;
   constructor(
     private router: Router,
     private authService: AuthService,
     private route: ActivatedRoute,
     private firestore: Firestore,
     private infoService: InformationService,
-
+    private notifyService: NotifyService
   ) {
     this.sellerdiv = "need";
     this.buyerdiv = "need";
@@ -73,6 +74,14 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
   }
 
   async continue() {
+    let seconds
+    let nanoseconds
+    console.log(this.nft)
+    if(!(this.nft.check === undefined)){
+      this.nft = await this.notifyService.load1SoldNFTs(this.nft.nft)
+      console.log("funziona ",this.nft)
+    }
+
     this.nftcode = this.nft.nftcode;
     this.image = this.nft.image
     this.name = this.nft.name;
@@ -84,12 +93,11 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
     this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
     this.buyer = this.nft.buyer;
     this.namebuyer = this.buyer.substring(0, this.buyer.indexOf("-"));
-    this.uidbuyer = this.buyer.substring(this.seller.indexOf("-")+1);
+    this.uidbuyer = this.buyer.substring(this.buyer.indexOf("-")+1);
     this.price = Number(this.nft.price);
+    seconds = (this.nft.purchase_date.seconds)* 1000;
+    nanoseconds = (this.nft.purchase_date.nanoseconds)/ 1000000;
 
-
-    let seconds = (this.nft.purchase_date.seconds)* 1000;
-    let nanoseconds = (this.nft.purchase_date.nanoseconds)/ 1000000;
 
     this.purchase_date = seconds + nanoseconds;
     this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
