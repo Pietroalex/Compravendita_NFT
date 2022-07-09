@@ -14,10 +14,9 @@
     <form [formGroup]="registers" (ngSubmit)="register()">
       <ion-label>Username</ion-label>
       <ion-item-divider>
-        <ion-input type="text" required placeholder="Username" formControlName="username" ></ion-input>
-
+        <ion-input type="text" required placeholder="Username" formControlName="username" (click)="showMessage()"></ion-input>
       </ion-item-divider>
-
+      <p [ngClass]="[message]" (click)="hideMessage()">Warning: the username CAN NOT be changed once successfully signed up! Mind your choice :)</p>
       <ion-label position="floating">Bio</ion-label>
       <ion-item-divider>
         <ion-input type="text"  formControlName="bio"></ion-input>
@@ -34,7 +33,7 @@
         <ion-input type="password" required placeholder="Password" formControlName="password"></ion-input>
 
       </ion-item-divider>
-      <p>Warning: the username CAN NOT be changed once successfully signed up! Mind your choice :)</p>
+
       <ion-row>
         <ion-col>
           <ion-button type="submit" color="danger" expand="block" [disabled]="!registers.valid">Sign Up</ion-button>

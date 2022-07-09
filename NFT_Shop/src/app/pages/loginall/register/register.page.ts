@@ -16,7 +16,7 @@ import AuthProvider = firebase.auth.AuthProvider;
 })
 export class RegisterPage implements OnInit {
   registers: FormGroup;
-
+  message: string;
   constructor(
     private fb: FormBuilder,
     private loadingController: LoadingController,
@@ -26,6 +26,7 @@ export class RegisterPage implements OnInit {
     private db: Firestore,
 
   ) {
+    this.message = "no-need";
   }
 
 
@@ -111,5 +112,6 @@ export class RegisterPage implements OnInit {
      */
   }
 
-
+  async showMessage(){this.message = "need";}
+  async hideMessage(){this.message = "no-need";}
 }
