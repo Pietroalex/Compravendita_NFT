@@ -14,7 +14,7 @@ export class AppComponent {
     private platform: Platform,
     private languageService: LanguageService
   ) {
-
+  localStorage.setItem('language', 'default')
   this.inizializeApp();
   }
     inizializeApp(){

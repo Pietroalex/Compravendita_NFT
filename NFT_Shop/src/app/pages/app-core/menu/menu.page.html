@@ -4,7 +4,8 @@
     <ion-content>
 
       <ion-list id="inbox-list">
-        <ion-row><ion-col><ion-list-header id="user-username">{{profile?.username}}</ion-list-header></ion-col><ion-col><ion-icon id="language" name="language-outline"  (click)="openLangPop($event)"></ion-icon></ion-col></ion-row>
+        <ion-row><ion-col><ion-list-header id="user-username">{{profile?.username}}</ion-list-header></ion-col>
+          <ion-col><ion-icon id="language" name="language-outline"  (click)="openLangPop($event)"></ion-icon></ion-col></ion-row>
         <ion-note id="user-email">{{profile?.email}}</ion-note>
 
 

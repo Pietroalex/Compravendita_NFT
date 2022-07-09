@@ -22,11 +22,6 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 import {LanguagePopoverPageModule} from "./pages/app-core/language-popover/language-popover.module";
 
-
-
-
-
-
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

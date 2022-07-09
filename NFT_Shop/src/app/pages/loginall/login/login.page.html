@@ -1,14 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Log In</ion-title>
+    <ion-title>{{ "LOGIN.title" | translate }}</ion-title>
+
+    <ion-icon slot="end" id="language" name="language-outline"  (click)="openLangPop($event)"></ion-icon>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div id="container">
+
     <ion-img src="./assets/images/icon.png"></ion-img>
 
     <form [formGroup]="credentials"(ngSubmit)="login()">

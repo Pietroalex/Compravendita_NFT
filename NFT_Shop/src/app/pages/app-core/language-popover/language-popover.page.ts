@@ -11,6 +11,7 @@ export class LanguagePopoverPage implements OnInit {
 
   languages = [];
   selected = '';
+  check
 
   constructor(
     private popoverController: PopoverController,
@@ -18,12 +19,18 @@ export class LanguagePopoverPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.check = localStorage.getItem('language')
     this.languages = this.languageService.getLanguages();
     this.selected = this.languageService.selected;
   }
 
   select(lng){
-    this.languageService.setLanguage(lng);
-    this.popoverController.dismiss();
+    if(this.check != 'default') {
+      this.languageService.setLanguage(lng);
+    }
+    else{
+      this.languageService.setLanguageTemp(lng);
+    }
+      this.popoverController.dismiss();
   }
 }
