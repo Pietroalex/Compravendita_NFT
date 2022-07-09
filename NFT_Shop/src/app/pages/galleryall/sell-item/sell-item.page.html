@@ -20,20 +20,20 @@
         <p id="author">{{this.nameauthor}}</p>
         <ion-label>{{ "GALLERY.description" | translate }}</ion-label>
         <p id="descr">{{this.description}}</p>
+        <form [formGroup]="nftInfo" (ngSubmit)="sellItem()">
+          <ion-label>{{ "GALLERY.price" | translate }}</ion-label>
+          <ion-item-divider>
+            <ion-input id="item" type="text" required placeholder="{{ 'GALLERY.insertprice' | translate }}" formControlName="price"></ion-input>
+            <ion-note slot="error" *ngIf="(price.dirty || price.touched) && price.errors"></ion-note>
+          </ion-item-divider>
 
+          <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">{{ "GALLERY.sell" | translate }}</ion-button>
+          <ion-button type="reset" [routerLink]="['/', 'gallery-detail',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author }]" expand="block" color="danger">{{ "GALLERY.cancel" | translate }}</ion-button>
+        </form>
       </div>
 
 
-      <form [formGroup]="nftInfo" (ngSubmit)="sellItem()">
-        <ion-label>{{ "GALLERY.price" | translate }}</ion-label>
-        <ion-item-divider>
-          <ion-input id="item" type="text" required placeholder="{{ 'GALLERY.insertprice' | translate }}" formControlName="price"></ion-input>
-          <ion-note slot="error" *ngIf="(price.dirty || price.touched) && price.errors"></ion-note>
-        </ion-item-divider>
 
-        <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">{{ "GALLERY.sell" | translate }}</ion-button>
-        <ion-button type="reset" [routerLink]="['/', 'gallery-detail',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author }]" expand="block" color="danger">{{ "GALLERY.cancel" | translate }}</ion-button>
-      </form>
     </div>
 
 </ion-content>
