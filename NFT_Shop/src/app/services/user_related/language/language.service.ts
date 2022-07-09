@@ -24,6 +24,7 @@ export class LanguageService {
 
     let language = "en";
       this.translate.setDefaultLang(language);
+      this.selected = "en"
 
   }
   getLanguages(){
@@ -37,12 +38,14 @@ export class LanguageService {
     ];
 }
 
-    setLanguage(lng) {
+  setLanguage(lng) {
     this.translate.use(lng);
     this.selected = lng;
     this.updatelang(lng);
-
-
+  }
+  setLanguageTemp(lng) {
+    this.translate.use(lng);
+    this.selected = lng;
   }
   async updatelang(lng){
     const user = this.authService.getUserId();

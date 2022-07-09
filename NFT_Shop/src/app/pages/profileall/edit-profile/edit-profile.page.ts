@@ -7,7 +7,7 @@ import {Camera, CameraResultType, CameraSource} from "@capacitor/camera";
 import {deleteDoc, doc, Firestore, getDoc, updateDoc} from "@angular/fire/firestore";
 import {Auth} from "@angular/fire/auth";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {deleteUser, getAuth} from "firebase/auth";
+import {deleteUser, getAuth, signOut} from "firebase/auth";
 
 
 @Component({
@@ -151,15 +151,23 @@ ip: string;
     let privateGallery = this.profile?.privateGallery;
     let count = this.profile?.nft_created_count;
     let cashart = this.profile?.cashart;
-    deleteUser(user).then(() => {
-      this.router.navigateByUrl('/home', {replaceUrl: true});
-      alert("Succesfully deleted");
-
-      if ((privateGallery.length() == 0) && count == 0 && cashart == 5000){
-        deleteDoc(doc(this.firestore, "Users", user.uid));
-    }
+    this.start(user).then(res => this.continue(privateGallery, count, cashart, user));
+  }
+  async start(user) {
+    return new Promise<void>((resolve, reject) => {
+      deleteUser(user)
+        alert("Succesfully deleted");
+      resolve();
     });
   }
+
+  async continue(privateGallery, count, cashart, user) {
+    if ((privateGallery.length == 0) && count == 0 && cashart == 5000){
+      deleteDoc(doc(this.firestore, "Users", user.uid));
+    }
+    await this.router.navigateByUrl('/', {replaceUrl: true})
+  }
+
 }
 
 

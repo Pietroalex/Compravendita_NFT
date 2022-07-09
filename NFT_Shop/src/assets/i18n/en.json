@@ -38,7 +38,8 @@
 
   },
   "LOGIN": {
-    "resetmessage": "      Please provide the username or email address that you used when you signed\n      up for your Evernote account."
+    "resetmessage": "      Please provide the username or email address that you used when you signed\n      up for your Evernote account.",
+    "title": "login"
   },
   "PROFILE":{
     "username": "Username",

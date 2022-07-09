@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AlertController, LoadingController} from "@ionic/angular";
+import {AlertController, LoadingController, PopoverController} from "@ionic/angular";
 import {AuthService} from "../../../services/user_related/login/auth.service";
 import {Router} from "@angular/router";
 import {doc, Firestore, setDoc} from "@angular/fire/firestore";
 import {LanguageService} from "../../../services/user_related/language/language.service";
+import {LanguagePopoverPage} from "../../app-core/language-popover/language-popover.page";
 
 
 @Component({
@@ -23,7 +24,7 @@ export class LoginPage implements OnInit {
     private authService: AuthService,
     private router: Router,
     private db: Firestore,
-    private languageService: LanguageService
+    private popoverController: PopoverController
   ) { }
 
   get email(){
@@ -58,8 +59,6 @@ export class LoginPage implements OnInit {
 
   }
 
-
-
     async showAlert(header, message){
     const alert = await this.alertController.create({
         header,
@@ -70,5 +69,11 @@ export class LoginPage implements OnInit {
     }
 
 
-
+  async openLangPop($event) {
+    const popover = await this.popoverController.create({
+      component: LanguagePopoverPage,
+      event: $event
+    });
+    await popover.present();
+  }
 }

@@ -27,7 +27,9 @@ export class MenuPage   {
 
 
   ) {
+    localStorage.setItem('language', 'set')
     this.auth = getAuth();
+    console.log(this.auth)
     this.authService.getUserProfile().subscribe((data) => {
         this.profile = data;
         localStorage.setItem('profile', JSON.stringify(this.profile));
@@ -35,17 +37,24 @@ export class MenuPage   {
         localStorage.setItem('order-field', "newest")
 
       });
-
-
-
   }
 
   async logout() {
-
-    signOut(this.auth).then(() => this.router.navigateByUrl('/home', {replaceUrl: true}))
-
+    console.log("si esce")
+    this.start().then(res => this.continue());
+  }
+  async start() {
+    return new Promise<void>((resolve, reject) => {
+      localStorage.setItem('language', 'default')
+      signOut(this.auth)
+      resolve();
+    });
   }
 
+  async continue() {
+
+    await this.router.navigateByUrl('/', {replaceUrl: true})
+  }
   async openLangPop($event) {
     const popover = await this.popoverController.create({
       component: LanguagePopoverPage,

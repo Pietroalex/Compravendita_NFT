@@ -5,7 +5,7 @@ import {MenuPage} from "./menu.page";
 
 
 
-const redirectNotLogged = () => redirectUnauthorizedTo(['']);
+const redirectNotLogged = () => redirectUnauthorizedTo(['/']);
 
 const menuRoutes: Routes = [
 
@@ -17,6 +17,7 @@ const menuRoutes: Routes = [
   {
     path: '',
     component: MenuPage,
+    ...canActivate(redirectNotLogged),
   children : [
 
     {
