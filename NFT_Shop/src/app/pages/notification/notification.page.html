@@ -21,7 +21,7 @@
 
 
       <ion-list [ngClass]="[notify]">
-        <ion-item-sliding  *ngFor="let notification of notifications ; index as i  " >
+        <ion-item-sliding  *ngFor="let notification of notifications ; index as i  " detail='false'>
           <ion-item (click)="godetail(i)">
             <div></div>
             <ion-label>

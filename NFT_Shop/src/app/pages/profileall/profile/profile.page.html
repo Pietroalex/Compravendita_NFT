@@ -43,7 +43,7 @@
 
 
         <ion-list [ngClass]="[sold]">
-          <ion-item *ngFor="let soldnft of soldnfts; index as i " (click)="gotodetailsold(i)">
+          <ion-item *ngFor="let soldnft of soldnfts; index as i " (click)="gotodetailsold(i)" detail='false'>
             <div>
               <ion-avatar class="nft_image">
                 <img [src]="soldnft.image" alt=""/>
@@ -69,7 +69,7 @@
       <ion-button [routerLink]="['/','nft-sold', this.profilestring]">{{ "PROFILE.allsold" | translate }}</ion-button>
 
         <ion-list [ngClass]="[purchased]">
-          <ion-item *ngFor="let purchasednft of purchasednfts; index as i " (click)="gotodetailpurchased(i)">
+          <ion-item *ngFor="let purchasednft of purchasednfts; index as i " (click)="gotodetailpurchased(i)" detail='false'>
             <div>
               <ion-avatar class="nft_image">
                 <img [src]="purchasednft.image" alt=""/>
@@ -98,7 +98,7 @@
 <div [ngClass]="[public]">
 
   <ion-list [ngClass]="[gallery]">
-    <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]">
+    <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" detail='false'>
       <div>
         <ion-avatar class="nft_image">
           <img [src]="gallerynft.image" alt=""/>
@@ -123,7 +123,7 @@
   <ion-button [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
 
   <ion-list [ngClass]="[shop]">
-    <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]">
+    <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]" detail='false'>
       <div>
         <ion-avatar class="nft_image">
           <img [src]="onsalenft.image" alt=""/>

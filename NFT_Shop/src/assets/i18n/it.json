@@ -38,7 +38,7 @@
 },
   "LOGIN": {
     "resetmessage": "Si prega di fornire il nome utente o l'indirizzo e-mail che hai utilizzato al momento della firma\n       per il tuo account.",
-    "titleF": "Richiesta Nuova Password",
+    "titleF": "Richiesta Password",
     "reset": "Chiedi Nuova Password",
     "title": "Accedi",
     "forgot": "Password dimenticata?",
@@ -47,7 +47,8 @@
     "titleR": "Registrazione",
     "username": "Nome Utente",
     "bio": "Biografia",
-    "register": "Registrati"
+    "register": "Registrati",
+    "usernamemess": "Attenzione: Il nome utente è unico e quindi non potrà essere cambiato dopo la registrazione, ma potra essere reinserito dopo la cancellazione del profilo, ricreandolo da zero :)"
   },
   "PROFILE":{
     "username": "Nome Utente",

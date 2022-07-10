@@ -38,8 +38,17 @@
 
   },
   "LOGIN": {
-    "resetmessage": "      Please provide the username or email address that you used when you signed\n      up for your Evernote account.",
-    "title": "login"
+    "resetmessage": "  Please provide the username or email address that you used when you signed\n      up for your Evernote account.",
+    "title": "Login",
+    "titleF": "Asking New Password",
+    "reset": "Ask New Password",
+    "forgot": "Forgot Password?",
+    "signin": "Log In",
+    "titleR": "Registration",
+    "username": "Username",
+    "bio": "Biography",
+    "register": "Register",
+    "usernamemess": "Warning: the username CAN NOT be changed after registration, but after, the account can be deleted and remade new :)"
   },
   "PROFILE":{
     "username": "Username",

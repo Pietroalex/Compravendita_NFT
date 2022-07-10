@@ -12,7 +12,7 @@
 <ion-content id="container">
 
   <ion-list [ngClass]="[sold]">
-      <ion-item *ngFor="let nft of nfts; index as i " (click)="gotodetail(i)">
+      <ion-item *ngFor="let nft of nfts; index as i " (click)="gotodetail(i)" detail='false'>
         <div>
           <ion-avatar>
             <img [src]="nft.image" alt=""/>

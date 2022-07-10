@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Registation</ion-title>
+    <ion-title>{{ "LOGIN.titleR" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,12 +12,12 @@
     <ion-img id ="img" src="./assets/images/icon.png"></ion-img>
 
     <form [formGroup]="registers" (ngSubmit)="register()">
-      <ion-label>Username<span>*</span></ion-label>
+      <ion-label>{{ "LOGIN.username" | translate }}<span>*</span></ion-label>
       <ion-item-divider>
         <ion-input type="text" required placeholder="Username" formControlName="username" (click)="showMessage()"></ion-input>
       </ion-item-divider>
-      <p [ngClass]="[message]" (click)="hideMessage()">Warning: the username CAN NOT be changed once successfully signed up! Mind your choice :)</p>
-      <ion-label position="floating">Bio</ion-label>
+      <p [ngClass]="[message]" (click)="hideMessage()">{{ "LOGIN.usernamemess" | translate }}</p>
+      <ion-label position="floating">{{ "LOGIN.bio" | translate }}</ion-label>
       <ion-item-divider>
         <ion-input type="text"  formControlName="bio"></ion-input>
       </ion-item-divider>
@@ -36,7 +36,7 @@
 
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" expand="block" [disabled]="!registers.valid">Sign Up</ion-button>
+          <ion-button type="submit" color="danger" expand="block" [disabled]="!registers.valid">{{ "LOGIN.register" | translate }}</ion-button>
 
         </ion-col>
       </ion-row>
