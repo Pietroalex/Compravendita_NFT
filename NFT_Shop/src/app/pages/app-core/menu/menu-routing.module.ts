@@ -132,7 +132,16 @@ const menuRoutes: Routes = [
     loadChildren: () => import('../../profileall/nft_based/public-gallery/public-gallery.module').then(m => m.PublicuserGalleryPageModule),
 
   },
+    {
+      path: 'publicgallery-detail',
+      loadChildren: () => import('../../profileall/nft_based/publicgallery-detail/publicgallery-detail.module').then(m => m.PublicuseritemDetailPageModule),
 
+    },
+    {
+      path: 'publicgallery-detail/:nftcode',
+      loadChildren: () => import('../../profileall/nft_based/publicgallery-detail/publicgallery-detail.module').then(m => m.PublicuseritemDetailPageModule),
+
+    },
     {
       path: 'public-gallery/:profile',
       loadChildren: () => import('../../profileall/nft_based/public-gallery/public-gallery.module').then(m => m.PublicuserGalleryPageModule),
@@ -148,16 +157,7 @@ const menuRoutes: Routes = [
       loadChildren: () => import('../../profileall/publicuser-profile/publicuser-profile.module').then( m => m.PublicuserProfilePageModule),
 
     },
-    {
-      path: 'publicgallery-detail',
-      loadChildren: () => import('../../profileall/nft_based/publicgallery-detail/publicgallery-detail.module').then(m => m.PublicuseritemDetailPageModule),
 
-    },
-    {
-      path: 'publicgallery-detail/:nftcode',
-      loadChildren: () => import('../../profileall/nft_based/publicgallery-detail/publicgallery-detail.module').then(m => m.PublicuseritemDetailPageModule),
-
-    },
   ]
   },
 

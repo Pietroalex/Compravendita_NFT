@@ -59,9 +59,13 @@
     "bio": "Biography",
     "private": "Private",
     "public": "Public",
-    "allsold": "All Sold NFTs",
-    "allpurchased": "All Purchased NFTs",
-    "shop": "Private Shop"
+    "allsold": "All Sold",
+    "allpurchased": "All Purchased",
+    "shop": "Private Shop",
+    "sold": "Sold NFTs",
+    "purchased": "Purchased NFTs",
+    "gallery": "Public NFTs",
+    "usershop": "On Sale NFTs"
   },
   "NOTIFY": {
     "title": "Notifications",

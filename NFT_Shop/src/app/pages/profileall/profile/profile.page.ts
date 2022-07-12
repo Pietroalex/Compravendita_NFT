@@ -151,7 +151,7 @@ export class ProfilePage implements OnInit, OnDestroy {
   }
   async gotoshop() {
     localStorage.setItem('seller', this.profile.username + "-" + this.profile.uid)
-    await this.router.navigateByUrl('/shop', {replaceUrl: true});
+    await this.router.navigateByUrl('/shop');
   }
   async gotodetailsold(num: number) {
     await localStorage.setItem('purchased', JSON.stringify(this.soldnfts[num]) );

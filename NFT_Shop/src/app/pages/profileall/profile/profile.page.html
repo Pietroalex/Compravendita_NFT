@@ -41,6 +41,10 @@
 
     <div [ngClass]="[private]">
 
+  <ion-item-divider>
+      <ion-label>{{ "PROFILE.sold" | translate }}</ion-label>
+      <ion-button slot="end" [routerLink]="['/','nft-sold', this.profilestring]">{{ "PROFILE.allsold" | translate }}</ion-button>
+  </ion-item-divider>
 
         <ion-list [ngClass]="[sold]">
           <ion-item *ngFor="let soldnft of soldnfts; index as i " (click)="gotodetailsold(i)" detail='false'>
@@ -66,7 +70,11 @@
         </ion-item>
       </ion-list>
 
-      <ion-button [routerLink]="['/','nft-sold', this.profilestring]">{{ "PROFILE.allsold" | translate }}</ion-button>
+
+      <ion-item-divider>
+        <ion-label>{{ "PROFILE.purchased" | translate }}</ion-label>
+        <ion-button slot="end" [routerLink]="['/','nft-purchased', this.profilestring]">{{ "PROFILE.allpurchased" | translate }}</ion-button>
+      </ion-item-divider>
 
         <ion-list [ngClass]="[purchased]">
           <ion-item *ngFor="let purchasednft of purchasednfts; index as i " (click)="gotodetailpurchased(i)" detail='false'>
@@ -92,10 +100,15 @@
         </ion-item>
       </ion-list>
 
-      <ion-button [routerLink]="['/','nft-purchased', this.profilestring]">{{ "PROFILE.allpurchased" | translate }}</ion-button>
+
     </div>
 
 <div [ngClass]="[public]">
+
+  <ion-item-divider>
+    <ion-label>{{ "PROFILE.gallery" | translate }}</ion-label>
+    <ion-button slot="end" [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
+  </ion-item-divider>
 
   <ion-list [ngClass]="[gallery]">
     <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" detail='false'>
@@ -120,7 +133,11 @@
     </ion-item>
   </ion-list>
 
-  <ion-button [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
+  <ion-item-divider>
+    <ion-label>{{ "PROFILE.usershop" | translate }}</ion-label>
+    <ion-button slot="end" (click)="gotoshop()">{{ "PROFILE.shop" | translate }}</ion-button>
+  </ion-item-divider>
+
 
   <ion-list [ngClass]="[shop]">
     <ion-item *ngFor="let onsalenft of onsalenfts "  [routerLink]="['/', 'shop-detail', onsalenft ]" detail='false'>
@@ -146,7 +163,6 @@
     </ion-item>
   </ion-list>
 
-  <ion-button (click)="gotoshop()">{{ "PROFILE.shop" | translate }}</ion-button>
     </div>
 
   </div>

@@ -91,6 +91,6 @@ export class PublicuserProfilePage implements OnInit {
   }
 
   async gotoshop() {
-    await this.router.navigateByUrl('/shop', {replaceUrl: true});
+    await this.router.navigateByUrl('/shop');
   }
 }
