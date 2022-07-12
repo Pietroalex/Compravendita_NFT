@@ -10,8 +10,12 @@
 <ion-content>
   <div id="container">
 
+    <ion-card class="card" [ngClass]="[overlay]">
+      <img [src] = this.image (click)="hide()">
+    </ion-card>
+
     <ion-avatar id="nft_image">
-      <ion-img [src]="this.image"></ion-img>
+      <ion-img [src]="this.image" (click)="show()"></ion-img>
     </ion-avatar>
 
     <div id="text">

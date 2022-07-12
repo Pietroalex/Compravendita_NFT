@@ -15,10 +15,12 @@ export class PublicgalleryDetailPage implements OnInit {
   author: string;
   nameauthor: string;
 
+  overlay: string;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) { this.overlay = "hide";}
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -36,5 +38,12 @@ export class PublicgalleryDetailPage implements OnInit {
   async gotoauthor() {
     localStorage.setItem('author', this.author)
     await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
+  }
+
+  async show(){
+    this.overlay = "show";
+  }
+  async hide(){
+    this.overlay = "hide";
   }
 }

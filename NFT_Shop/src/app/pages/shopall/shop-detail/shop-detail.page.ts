@@ -44,6 +44,8 @@ export class ShopDetailPage implements OnInit {
   Buy: string;
   cancel: string;
 
+  overlay: string;
+
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -58,6 +60,7 @@ export class ShopDetailPage implements OnInit {
     this.profile =  JSON.parse(localStorage.getItem('profile'));
     this.Buy = "need";
     this.cancel = "need";
+    this.overlay = "no-need";
   }
 
   ngOnInit() {
@@ -192,5 +195,12 @@ export class ShopDetailPage implements OnInit {
   async gotoseller(){
     localStorage.setItem('author', this.uidseller)
     await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
+  }
+
+  async show(){
+    this.overlay = "need";
+  }
+  async hide(){
+    this.overlay = "no-need";
   }
 }

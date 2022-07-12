@@ -41,6 +41,8 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
 
   Sellerprofile = null;
 
+  overlay: string;
+
   nft: any;
   constructor(
     private router: Router,
@@ -54,6 +56,7 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
     this.buyerdiv = "need";
     this.sell = "need";
     this.purchase = "need";
+    this.overlay = "no-need";
     this.profile =  JSON.parse(localStorage.getItem('profile'));
     console.log(this.profile)
   }
@@ -124,5 +127,12 @@ export class PurchaseDetailPage implements OnInit, OnDestroy {
     await this.router.navigateByUrl('/publicuser-profile', {replaceUrl: true});
   }
   ngOnDestroy() {
+  }
+
+  async show(){
+    this.overlay = "need";
+  }
+  async hide(){
+    this.overlay = "no-need";
   }
 }

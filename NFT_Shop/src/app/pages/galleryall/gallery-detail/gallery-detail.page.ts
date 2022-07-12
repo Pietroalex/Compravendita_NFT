@@ -22,7 +22,7 @@ export class GalleryDetailPage implements OnInit {
   nameauthor: string;
 
   params: any;
-
+  overlay: string;
 
   constructor(
 
@@ -32,7 +32,7 @@ export class GalleryDetailPage implements OnInit {
     private alertController: AlertController
 
 
-  ) { }
+  ) { this.overlay = "hide"; }
 
   ngOnInit() {
 
@@ -110,4 +110,10 @@ export class GalleryDetailPage implements OnInit {
     alert.present();
   }
 
+  async show(){
+    this.overlay = "show";
+  }
+  async hide(){
+    this.overlay = "hide";
+  }
 }

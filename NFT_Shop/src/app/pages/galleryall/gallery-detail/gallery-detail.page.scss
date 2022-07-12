@@ -1,12 +1,13 @@
-#container {
+.container {
   height: auto;
   width: auto;
   text-align: left;
+  position: relative;
 }
 #text {
   margin: 5px 30px 0px 30px;
 }
-#container p{
+.container p{
   text-align: center;
   border-style: solid;
   border-color: #62ceff;
@@ -39,4 +40,15 @@ ion-fab-button{
 }
 #author{
   color: #4c8dff;
+}
+img{
+  height: 100%;
+  width: 100%;
+}
+.card{position: absolute;}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
 }

@@ -9,9 +9,14 @@
 
 <ion-content>
   <div id="container">
+
+    <ion-card class="card" [ngClass]="[overlay]">
+      <img id="fullimg" [src] = this.image (click)="hide()">
+    </ion-card>
+
     <div>
       <ion-avatar id="nft_image">
-        <ion-img [src]="this.image"></ion-img>
+        <ion-img [src]="this.image" (click)="show()"></ion-img>
       </ion-avatar>
       <div id="text">
         <ion-label>{{ "GALLERY.nftcode" | translate }}</ion-label><br>
