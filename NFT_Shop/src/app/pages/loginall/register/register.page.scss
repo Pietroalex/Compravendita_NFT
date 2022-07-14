@@ -1,3 +1,7 @@
+ion-back-button {
+  color: var(--ion-color-primary);
+}
+
 #img {
   width: 50%;
   margin-left: auto;
@@ -45,3 +49,7 @@ form {
   display: none;
 }
 span{ color: red; }
+
+ion-button{
+  --background: #FFB70D;
+}

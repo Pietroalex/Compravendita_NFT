@@ -1,3 +1,7 @@
+ion-back-button {
+  color: var(--ion-color-primary);
+}
+
 #container {
   height: auto;
   width: auto;
@@ -17,7 +21,7 @@
 }
 #currency{
   font-size: 8px;
-  color: #8c8c8c;
+  color: #FFFFFF;
   width: 10%;
   alignment: right;
 }

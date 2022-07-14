@@ -1,9 +1,12 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
 #container {
   height: auto;
   width: auto;
   text-align: center;
 }
-
 
 ion-item {
   width : 33%;
@@ -26,7 +29,11 @@ ion-item {
   margin-top: 2px;
 }
 ion-button{
+  color: #0973AE;
   border-radius: 5px;
+}
+ion-icon{
+
 }
 #nft_image {
   width: 50px;

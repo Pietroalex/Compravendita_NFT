@@ -28,7 +28,7 @@
       <ion-row><ion-button [routerLink]="['./forgot']" class="small-text">{{ "LOGIN.forgot" | translate }}</ion-button></ion-row>
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" expand="block" [disabled]="!credentials.valid">{{ "LOGIN.signin" | translate }}</ion-button>
+          <ion-button id="login_button" type="submit" expand="block" [disabled]="!credentials.valid">{{ "LOGIN.signin" | translate }}</ion-button>
           <ion-button [routerLink]="['./register']"  expand="block">{{ "LOGIN.register" | translate }}</ion-button>
 
         </ion-col>

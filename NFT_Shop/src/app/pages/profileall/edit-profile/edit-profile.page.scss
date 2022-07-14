@@ -1,3 +1,7 @@
+ion-back-button {
+  color: var(--ion-color-primary);
+}
+
 ion-img{
   width: 50%;
   margin-left: auto;
@@ -39,4 +43,8 @@ form {
 }
 ion-icon{
   margin-right: 20px;
+  color: #0973AE;
 }
+#update{
+    --background: #FFB70D;
+  }
