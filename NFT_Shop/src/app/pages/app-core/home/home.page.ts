@@ -1,9 +1,9 @@
-import {AfterContentChecked, AfterContentInit, Component, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../services/user_related/login/auth.service";
 import { AlertController } from "@ionic/angular";
 import {NftService} from "../../../services/DBop/nfts/nft.service";
 import {LanguageService} from "../../../services/user_related/language/language.service";
-import {NotifyService} from "../../../services/DBop/notification/notify.service";
+
 
 @Component({
   selector: 'app-home',
@@ -28,7 +28,7 @@ export class HomePage  implements OnInit {
     private authService: AuthService,
     private nftService: NftService,
     private languageService: LanguageService,
-  ) {
+  ) {                                                         //inizializza i dummy della home
     this.shop = 'need';
     this.shopdummy1 = 'no-need-copy';
     this.shopdummy2 = 'no-need-copy'
@@ -43,7 +43,7 @@ export class HomePage  implements OnInit {
     this.start().then(() => this.continue());
   }
 
-   start() {
+   start() {                                             //controlla e prepara i dummy secondo il numero di item ricevuti dalla funzione dopo aver preso il profilo utente
      return new Promise<void>((resolve, reject) => {
        this.authService.getUserProfile().subscribe(async (data) => {
          this.profile = data;
@@ -123,7 +123,7 @@ export class HomePage  implements OnInit {
   }
 
 
-  async refresh() {
+  async refresh() {                 //aggiorna la lista di item presenti senza ricaricare la pagina o navigare altrove
     this.nfts = [];
     this.nfts = await this.nftService.get6lastonsaleNFTs();
     switch(this.nfts.length){

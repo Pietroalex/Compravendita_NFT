@@ -59,9 +59,17 @@
     "bio": "Biografia",
     "private": "Privato",
     "public": "Pubblico",
-    "allsold": "NFT Venduti",
-    "allpurchased": "NFT Comprati",
-    "shop": "Negozio Privato"
+
+    "btnSold": "Altre Vendite",
+    "btnPurchased": "Altri Acquisti",
+    "btnGallery": "Galleria Pubblica",
+    "btnShop": "Negozio Privato",
+
+
+    "titleSold": "NFT Venduti",
+    "titlePurchased": "NFT Acquistati",
+    "titleGallery": "NFT Pubblici",
+    "titleShop": "NFT in Vendita"
   },
   "NOTIFY": {
     "title": "Notifiche",

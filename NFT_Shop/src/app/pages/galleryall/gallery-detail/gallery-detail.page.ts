@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {AlertController, ModalController} from "@ionic/angular";
-import {arrayUnion, deleteDoc, doc, setDoc} from "@angular/fire/firestore";
+import {ActivatedRoute, Router} from "@angular/router";
+import {AlertController} from "@ionic/angular";
+
 import {NftService} from "../../../services/DBop/nfts/nft.service";
-import {getAuth} from "firebase/auth";
+
 
 
 
@@ -35,7 +35,7 @@ export class GalleryDetailPage implements OnInit {
   ) { this.overlay = "hide"; }
 
   ngOnInit() {
-
+                                                              //estrae le informazione sul dettaglio dell'item su cui si è navigato
     this.route.paramMap.subscribe(params => {
          this.nftcode = params.get('nftcode');
          this.image = params.get('image');
@@ -43,7 +43,7 @@ export class GalleryDetailPage implements OnInit {
          this.description = params.get('description');
          this.author = params.get('author');
          this.nameauthor = this.nftcode.substring(0, this.nftcode.indexOf("-"));
-          this.params = params;
+         this.params = params;
     });
 
 }

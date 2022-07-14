@@ -42,8 +42,8 @@
     <div [ngClass]="[private]">
 
   <ion-item-divider>
-      <ion-label>{{ "PROFILE.sold" | translate }}</ion-label>
-      <ion-button slot="end" [routerLink]="['/','nft-sold', this.profilestring]">{{ "PROFILE.allsold" | translate }}</ion-button>
+      <ion-label>{{ "PROFILE.titleSold" | translate }}</ion-label>
+      <ion-button slot="end" [routerLink]="['/','nft-sold', this.profilestring]">{{ "PROFILE.btnSold" | translate }}</ion-button>
   </ion-item-divider>
 
         <ion-list [ngClass]="[sold]">
@@ -72,8 +72,8 @@
 
 
       <ion-item-divider>
-        <ion-label>{{ "PROFILE.purchased" | translate }}</ion-label>
-        <ion-button slot="end" [routerLink]="['/','nft-purchased', this.profilestring]">{{ "PROFILE.allpurchased" | translate }}</ion-button>
+        <ion-label>{{ "PROFILE.titlePurchased" | translate }}</ion-label>
+        <ion-button slot="end" [routerLink]="['/','nft-purchased', this.profilestring]">{{ "PROFILE.btnPurchased" | translate }}</ion-button>
       </ion-item-divider>
 
         <ion-list [ngClass]="[purchased]">
@@ -106,8 +106,8 @@
 <div [ngClass]="[public]">
 
   <ion-item-divider>
-    <ion-label>{{ "PROFILE.gallery" | translate }}</ion-label>
-    <ion-button slot="end" [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
+    <ion-label>{{ "PROFILE.titleGallery" | translate }}</ion-label>
+    <ion-button slot="end" [routerLink]="['/','public-gallery', this.profilestring]">{{ "PROFILE.btnGallery" | translate }}</ion-button>
   </ion-item-divider>
 
   <ion-list [ngClass]="[gallery]">
@@ -134,8 +134,8 @@
   </ion-list>
 
   <ion-item-divider>
-    <ion-label>{{ "PROFILE.usershop" | translate }}</ion-label>
-    <ion-button slot="end" (click)="gotoshop()">{{ "PROFILE.shop" | translate }}</ion-button>
+    <ion-label>{{ "PROFILE.titleShop" | translate }}</ion-label>
+    <ion-button slot="end" (click)="gotoshop()">{{ "PROFILE.btnShop" | translate }}</ion-button>
   </ion-item-divider>
 
 
