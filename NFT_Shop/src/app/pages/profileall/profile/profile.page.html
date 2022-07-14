@@ -30,8 +30,7 @@
     <div id="info">
     <ion-label>{{"PROFILE.username" | translate }}</ion-label><br>
     <p id="username" [routerLink]="['/edit-profile']">{{profile?.username}}</p>
-
-    <ion-label>{{ "PROFILE.bio" | translate }}</ion-label>
+    <ion-label>{{ "PROFILE.bio" | translate }}</ion-label><br>
     <p id="bio" [routerLink]="['/edit-profile']">{{profile?.bio}}</p>
     </div>
     <ion-segment value="private">
