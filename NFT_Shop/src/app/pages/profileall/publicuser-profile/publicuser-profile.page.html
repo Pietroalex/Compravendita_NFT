@@ -32,8 +32,8 @@
     <div>
 
       <ion-item-divider>
-        <ion-label>{{ "PROFILE.gallery" | translate }}</ion-label>
-        <ion-button slot="end" [routerLink]="['/','public-gallery', this.profilestring]">{{ "GALLERY.titleP" | translate }}</ion-button>
+        <ion-label>{{ "PROFILE.titleGallery" | translate }}</ion-label>
+        <ion-button slot="end" [routerLink]="['/','public-gallery', this.profilestring]">{{ "PROFILE.btnGallery" | translate }}</ion-button>
       </ion-item-divider>
 
       <ion-list [ngClass]="[gallery]">
@@ -61,8 +61,8 @@
 
 
       <ion-item-divider>
-        <ion-label>{{ "PROFILE.usershop" | translate }}</ion-label>
-        <ion-button slot="end" (click)="gotoshop()">{{ "PROFILE.shop" | translate }}</ion-button>
+        <ion-label>{{ "PROFILE.titleShop" | translate }}</ion-label>
+        <ion-button slot="end" (click)="gotoshop()">{{ "PROFILE.btnShop" | translate }}</ion-button>
       </ion-item-divider>
 
       <ion-list [ngClass]="[shop]">

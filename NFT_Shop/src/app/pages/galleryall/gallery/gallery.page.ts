@@ -1,15 +1,12 @@
-import {AfterContentInit, AfterViewChecked, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../../../services/user_related/login/auth.service";
-import {getDoc, Firestore, doc, docData} from "@angular/fire/firestore";
-import {Observable, Subscription} from "rxjs";
-import {NFT, NftService} from "../../../services/DBop/nfts/nft.service";
+import {Firestore} from "@angular/fire/firestore";
+
+import {NftService} from "../../../services/DBop/nfts/nft.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {toArray} from "rxjs/operators";
-import {AlertController, Gesture, GestureController} from "@ionic/angular";
 
+import {AlertController} from "@ionic/angular";
 
-
-selector: '[longPress]'
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.page.html',
@@ -37,22 +34,21 @@ selector: '[longPress]'
       private route: ActivatedRoute,
       private router: Router,
       private alertController: AlertController
-    ) {
+    ) {                                                   //inizializza i dummy e prende le informazioni sul profilo utente che si è loggato
       this.gallerydummy = 'no-need';
       this.gallery = 'need';
-      const result = JSON.parse(localStorage.getItem('profile'));
-      this.profile = result;
+      this.profile = JSON.parse(localStorage.getItem('profile'));
     }
 
     async ngOnInit() {
-
-      this.loadAllNFTs()
+                                                        //carica tutti gli item nella galleria
+      await this.loadAllNFTs()
 
     }
 
 
 
-    async deleteallpublic() {
+    async deleteallpublic() {                             //elimina tutti gli item pubblici che l'utente ha pubblicato
       let publicGallery = this.profile?.publicGallery
       console.log(publicGallery)
         let alert = await this.alertController.create({
@@ -77,10 +73,10 @@ selector: '[longPress]'
             }
           ]
         });
-        alert.present();
+        await alert.present();
       }
 
-    async loadAllNFTs() {
+    async loadAllNFTs() {                                           //carica tutti gli item posseduti dall'utente e li mostra
       let privateGallery = this.profile?.privateGallery;
       for (const nftcode of privateGallery) {
         this.tempo = await this.nftService.loadAllGalleryNFTs(nftcode);
@@ -100,7 +96,7 @@ selector: '[longPress]'
         this.profile = null;
       }
 
-    async create() {
+    async create() {                                        //naviga alla pagina di creazione di un nuovo item
       await this.router.navigateByUrl('/new-item', { replaceUrl: true });
     }
 
