@@ -1,6 +1,10 @@
-ion-menu-button {
-  color: var(--ion-color-primary);
-}
+    ion-menu-button {
+      color: var(--ion-color-primary);
+    }
+
+    h2{
+      color: #FFB70D;
+    }
     .unread {
       width: 10px;
       height: 10px;
@@ -24,4 +28,7 @@ ion-menu-button {
     }
     .no-need{
       display: none;
+    }
+    span{
+      color: #3684ff;
     }

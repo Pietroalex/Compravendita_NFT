@@ -27,7 +27,7 @@
             <ion-label>
               <h2>{{notification.nftcode }}</h2>
               <p>{{notification.name }}</p>
-              <p>{{ "NOTIFY.buyer" | translate }}: {{notification.buyer.substring(0, notification.buyer.indexOf("-"))}}</p><p><img class="logo" src="./assets/images/cashart.png"> {{notification.price}}</p>
+              <p>{{ "NOTIFY.buyer" | translate }}: <span>{{notification.buyer.substring(0, notification.buyer.indexOf("-"))}}</span></p><p><img class="logo" src="./assets/images/cashart.png"> {{notification.price}}</p>
             </ion-label>
             <ion-note slot="end">
               {{notification.purchase_date.toDate() | date:'dd/MM/yyyy'}}
