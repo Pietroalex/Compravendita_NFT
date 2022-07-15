@@ -31,3 +31,13 @@ ion-toolbar{
 ion-footer{
   color: #0973AE;
 }
+
+.buttonCss{
+  button.alert-button.confirm{
+    color: #FFB70D;
+  }
+
+  button.alert-button.cancel{
+    color: #0973AE;
+  }
+}

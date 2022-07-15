@@ -27,8 +27,8 @@
             <ion-note slot="error" *ngIf="(price.dirty || price.touched) && price.errors"></ion-note>
           </ion-item-divider>
 
-          <ion-button type="submit" color="secondary" expand="block" [disabled]="!nftInfo.valid">{{ "GALLERY.sell" | translate }}</ion-button>
-          <ion-button type="reset" [routerLink]="['/', 'gallery-detail',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author }]" expand="block" color="danger">{{ "GALLERY.cancel" | translate }}</ion-button>
+          <ion-button id="confirm" type="submit" expand="block" [disabled]="!nftInfo.valid">{{ "GALLERY.sell" | translate }}</ion-button>
+          <ion-button id="cancel" type="reset" [routerLink]="['/', 'gallery-detail',{ nftcode: this.nftcode, image: this.image, name: this.name, description: this.description, author: this.author }]" expand="block">{{ "GALLERY.cancel" | translate }}</ion-button>
         </form>
       </div>
 

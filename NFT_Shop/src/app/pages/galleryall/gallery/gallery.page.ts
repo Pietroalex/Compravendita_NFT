@@ -54,16 +54,19 @@ import {AlertController} from "@ionic/angular";
         let alert = await this.alertController.create({
           header: 'Empty your PublicGallery?',
           message: 'Do you want to empty your public NFT gallery?',
+          cssClass: 'buttonCss',
           buttons: [
             {
               text: 'Cancel',
               role: 'cancel',
+              cssClass: 'cancel',
               handler: () => {
 
               }
             },
             {
               text: 'Delete Public Gallery',
+              cssClass: 'confirm',
               handler: async () => {
                 for (const nftcode of publicGallery) {
                   await this.nftService.deletepublic(nftcode);

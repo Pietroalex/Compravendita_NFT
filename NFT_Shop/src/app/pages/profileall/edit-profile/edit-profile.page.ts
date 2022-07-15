@@ -103,16 +103,19 @@ ip: string;
       let alert = await this.alertController.create({
         header: 'Confirm deletion',
         message: 'Do you want to delete your profile? Chose wisely',
+        cssClass: 'buttonCss',
         buttons: [
           {
             text: 'Cancel',
             role: 'cancel',
+            cssClass: 'cancel',
             handler: () => {
               console.log('Cancel clicked');
             }
           },
           {
             text: 'Delete Profile',
+            cssClass: 'confirm',
             handler: () => {
               console.log('Buy clicked');
             this.presentConfirm();

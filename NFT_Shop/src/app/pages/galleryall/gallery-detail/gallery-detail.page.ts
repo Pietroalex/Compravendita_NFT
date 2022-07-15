@@ -64,16 +64,19 @@ export class GalleryDetailPage implements OnInit {
     let alert = await this.alertController.create({
       header: 'Confirm deletion',
       message: 'Do you want to delete your NFT? Chose wisely',
+      cssClass: 'buttonCss',
       buttons: [
         {
           text: 'Cancel',
           role: 'cancel',
+          cssClass: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
           }
         },
         {
           text: 'Delete NFT',
+          cssClass: 'confirm',
           handler: () => {
 
             this.presentConfirm();
@@ -87,16 +90,19 @@ export class GalleryDetailPage implements OnInit {
     let alert = await this.alertController.create({
       header: 'Are you sure?',
       message: 'After accepting, the NFT will be deleted forever and you will not be able to recover it in any way possible',
+      cssClass: 'buttonCss',
       buttons: [
         {
           text: 'Cancel',
           role: 'cancel',
+          cssClass: 'cancel',
           handler: () => {
 
           }
         },
         {
           text: 'I\'m Sure',
+          cssClass: 'confirm',
           handler: async () => {
 
             await this.nftService.deleteNft(this.nftcode);
