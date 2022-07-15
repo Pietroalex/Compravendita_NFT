@@ -14,7 +14,6 @@ ion-menu-button {
   color: #4c8dff;
   font-size: 10px;
 }
-
 #info p{
   text-align: center;
   border-style: solid;
@@ -60,6 +59,7 @@ ion-button{
   height: auto;
   width: auto;
   text-align: center;
+  position: relative;
 }
 
 #profileimg{
@@ -112,4 +112,16 @@ ion-col{
   }
   .mark{
     color: #FFB70D;
+  }
+  .over{
+    position: absolute;
+  }
+  .over ion-fab-button{
+
+  }
+  .show{
+    display: flex;
+  }
+  .hide{
+    display: none;
   }

@@ -4,7 +4,10 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-row><ion-col><ion-title>{{"PROFILE.title" | translate }}</ion-title></ion-col>
+    <ion-row>
+      <ion-col>
+          <ion-title>{{"PROFILE.title" | translate }}</ion-title>
+      </ion-col>
       <ion-col>
         <div id="cash">
           <ion-img id="cashart" src="./assets/images/cashart.png"></ion-img>
@@ -20,9 +23,20 @@
 <ion-content [fullscreen]="true">
 
   <div id="container">
+
+  <div class="over" [ngClass]="[overlay]">
+    <ion-card class="card">
+      <img [src] = profile?.image (click)="hide()">
+    </ion-card>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="goeditprofile()"><ion-icon name="pencil-outline"></ion-icon></ion-fab-button>
+    </ion-fab>
+  </div>
+
+
     <div class="preview">
       <ion-avatar id="profileimg">
-        <ion-img src="{{profile?.image}}" (click)="goeditprofile()"></ion-img>
+        <ion-img src="{{profile?.image}}" (click)="show()"></ion-img>
       </ion-avatar>
     </div>
 

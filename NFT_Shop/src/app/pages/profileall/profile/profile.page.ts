@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AvatarService} from "../../../services/user_related/profile_image/avatar.service";
 import {AuthService} from "../../../services/user_related/login/auth.service";
 import {NftPurchaseService} from "../../../services/DBop/nft_purchase/nft-purchase.service";
@@ -10,7 +10,7 @@ import {NftService} from "../../../services/DBop/nfts/nft.service";
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage implements OnInit, OnDestroy {
+export class ProfilePage implements OnInit {
 
   tempo = [];
 
@@ -37,7 +37,7 @@ export class ProfilePage implements OnInit, OnDestroy {
   sold: string;
   gallery: string;
   shop: string;
-
+  overlay: string;
 
 
 
@@ -55,7 +55,7 @@ export class ProfilePage implements OnInit, OnDestroy {
 
     this.private = 'default';
     this.public = 'hidden';
-
+    this.overlay = "hide";
     this.purchased = 'need';
     this.sold = 'need';
     this.gallery = 'need';
@@ -161,6 +161,10 @@ export class ProfilePage implements OnInit, OnDestroy {
     await localStorage.setItem('purchased', JSON.stringify(this.purchasednfts[num]) );
     this.router.navigateByUrl('/purchase-detail' );
   }
-  ngOnDestroy() {
+  async show(){
+    this.overlay = "show";
+  }
+  async hide(){
+    this.overlay = "hide";
   }
 }
