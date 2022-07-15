@@ -1,4 +1,4 @@
-ion-menu-button {
+ion-back-button {
   color: var(--ion-color-primary);
 }
 
@@ -6,6 +6,7 @@ ion-menu-button {
   height: auto;
   width: auto;
   text-align: center;
+  position: relative;
 }
 #info{
   text-align:left;
@@ -111,4 +112,13 @@ ion-col{
 }
 .mark{
   color: #FFB70D;
+}
+.card{
+  position: absolute;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
 }

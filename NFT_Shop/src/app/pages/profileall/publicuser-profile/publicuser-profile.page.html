@@ -13,12 +13,16 @@
 <ion-content [fullscreen]="true">
 
   <div id="container">
+
+    <ion-card class="card" [ngClass]="[overlay]">
+      <img [src] = profile?.image (click)="hide()">
+    </ion-card>
+
     <div class="preview">
       <ion-avatar id="profileimg">
-        <ion-img src="{{profile?.image}}"></ion-img>
+        <ion-img src="{{profile?.image}}" (click)="show()"></ion-img>
       </ion-avatar>
     </div>
-
 
     <div id="info">
       <ion-label>{{"PROFILE.username" | translate }}</ion-label><br>

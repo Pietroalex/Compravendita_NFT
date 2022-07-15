@@ -21,7 +21,7 @@ export class PublicuserProfilePage implements OnInit {
 
   gallery: string;
   shop: string;
-
+  overlay: string;
   shopdummy: string;
   gallerydummy: string;
 
@@ -34,7 +34,7 @@ export class PublicuserProfilePage implements OnInit {
 
     this.shopdummy = 'need';
     this.gallerydummy = 'need';
-
+    this.overlay = "hide";
     this.gallery = 'need';
     this.shop = 'need';
 
@@ -92,5 +92,12 @@ export class PublicuserProfilePage implements OnInit {
 
   async gotoshop() {
     await this.router.navigateByUrl('/shop');
+  }
+
+  async show(){
+    this.overlay = "show";
+  }
+  async hide(){
+    this.overlay = "hide";
   }
 }
