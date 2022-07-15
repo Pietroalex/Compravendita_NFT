@@ -15,29 +15,19 @@
 
     <div class="preview">
       <ion-avatar (click)="changeImage()">
-        <img *ngIf="profile?.image; else placeholder_avatar;" [src]="profile.image"/>
-        <ng-template #placeholder_avatar>
-          <div class="fallback">
-          </div>
-        </ng-template>
+        <img [src]="profile?.image"/>
       </ion-avatar>
     </div>
 
-      <ion-label>{{ "PROFILE.username" | translate }}</ion-label>
-      <ion-item-divider>
+      <div id="info">
+      <ion-label id="username">{{ "PROFILE.username" | translate }}</ion-label><br>
         <p>{{profile?.username}}</p>
-      </ion-item-divider>
+      <ion-label position="floating">{{ "PROFILE.bio" | translate }}</ion-label><br>
+        <ion-input type="text" required value="{{profile?.bio}}" formControlName="bio"></ion-input><br>
+      </div>
 
-      <ion-label position="floating">{{ "PROFILE.bio" | translate }}</ion-label>
-      <ion-item-divider>
-        <ion-input type="text" required value="{{profile?.bio}}" formControlName="bio"></ion-input>
-      </ion-item-divider>
+    <ion-button id="update"  type="submit" expand="block" [disabled]="!infos.valid">{{ "PROFILE.updateb" | translate }}</ion-button>
 
-      <ion-row>
-        <ion-col>
-          <ion-button id="update"  type="submit" expand="block" [disabled]="!infos.valid">{{ "PROFILE.updateb" | translate }}</ion-button>
-        </ion-col>
-      </ion-row>
     </form>
   </div>
 </ion-content>

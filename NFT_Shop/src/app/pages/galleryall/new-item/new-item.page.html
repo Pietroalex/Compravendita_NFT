@@ -16,21 +16,22 @@
 
 
   <form [formGroup]="nftInfo" (ngSubmit)="createNFT()">
-    <ion-label>{{ "GALLERY.name" | translate }}</ion-label>
-    <ion-item-divider>
-      <ion-input id="item" type="text" required placeholder="{{ 'GALLERY.nameI' | translate }}" formControlName="name"></ion-input>
-      <ion-note slot="error" *ngIf="(name.dirty || name.touched) && name.errors"></ion-note>
-    </ion-item-divider>
+    <div id="input">
+      <ion-label>{{ "GALLERY.name" | translate }}</ion-label>
+      <ion-item-divider>
+        <ion-input id="item" type="text" required placeholder="{{ 'GALLERY.nameI' | translate }}" formControlName="name"></ion-input>
+        <ion-note slot="error" *ngIf="(name.dirty || name.touched) && name.errors"></ion-note>
+      </ion-item-divider>
 
-    <ion-label>{{ "GALLERY.description" | translate }}</ion-label>
-    <ion-item-divider>
-      <ion-input type="text" required placeholder="{{ 'GALLERY.descI' | translate }}" formControlName="desc"></ion-input>
-      <ion-note slot="error" *ngIf="(name.dirty || desc.touched) && desc.errors"></ion-note>
-    </ion-item-divider>
+      <ion-label>{{ "GALLERY.description" | translate }}</ion-label>
+      <ion-item-divider>
+        <ion-input type="text" required placeholder="{{ 'GALLERY.descI' | translate }}" formControlName="desc"></ion-input>
+        <ion-note slot="error" *ngIf="(name.dirty || desc.touched) && desc.errors"></ion-note>
+      </ion-item-divider>
 
-    <ion-button id="create" type="submit" expand="block" [disabled]="!nftInfo.valid">{{ "GALLERY.create" | translate }}</ion-button>
+      <ion-button id="create" type="submit" expand="block" [disabled]="!nftInfo.valid">{{ "GALLERY.create" | translate }}</ion-button>
 
-
+    </div>
   </form>
 </div>
 </ion-content>

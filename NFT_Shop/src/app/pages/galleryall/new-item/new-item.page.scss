@@ -1,9 +1,24 @@
+#container {
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+#input{
+  margin-top: 15px;
+  text-align:left;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 ion-img {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
   display: block;
   margin-top: 8px;
+}
+ion-item-divider{
+  margin-bottom: 5px;
 }
 ion-title{
   align-content: center;
@@ -14,4 +29,5 @@ ion-buttons{
 }
 #create{
   --background: #FFB70D;
+  margin-top: 10px;
 }

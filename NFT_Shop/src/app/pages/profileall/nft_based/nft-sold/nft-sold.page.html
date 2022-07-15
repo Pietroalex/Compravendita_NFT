@@ -14,12 +14,10 @@
   <ion-list [ngClass]="[sold]">
       <ion-item *ngFor="let nft of nfts; index as i " (click)="gotodetail(i)" detail='false'>
         <div>
-          <ion-avatar>
+          <ion-avatar id="nft_image">
             <img [src]="nft.image" alt=""/>
           </ion-avatar>
           <p>{{nft.name}}</p>
-          <p><img class="logo" src="./assets/images/cashart.png"> {{nft.price}}</p>
-          <p>{{nft.buyer.substring(0, nft.buyer.indexOf("-"))}}</p>
           <p>{{nft.purchase_date.toDate() | date:'dd/MM/yyyy'}}</p>
         </div>
       </ion-item>
