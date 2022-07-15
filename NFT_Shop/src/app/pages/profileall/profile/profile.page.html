@@ -41,7 +41,7 @@
     <div [ngClass]="[private]">
 
   <ion-item-divider>
-      <ion-label>{{ "PROFILE.titleSold" | translate }}</ion-label>
+      <ion-label class="mark">{{ "PROFILE.titleSold" | translate }}</ion-label>
       <ion-button slot="end" [routerLink]="['/','nft-sold', this.profilestring]">{{ "PROFILE.btnSold" | translate }}</ion-button>
   </ion-item-divider>
 
@@ -71,7 +71,7 @@
 
 
       <ion-item-divider>
-        <ion-label>{{ "PROFILE.titlePurchased" | translate }}</ion-label>
+        <ion-label class="mark">{{ "PROFILE.titlePurchased" | translate }}</ion-label>
         <ion-button slot="end" [routerLink]="['/','nft-purchased', this.profilestring]">{{ "PROFILE.btnPurchased" | translate }}</ion-button>
       </ion-item-divider>
 
@@ -105,7 +105,7 @@
 <div [ngClass]="[public]">
 
   <ion-item-divider>
-    <ion-label>{{ "PROFILE.titleGallery" | translate }}</ion-label>
+    <ion-label class="mark">{{ "PROFILE.titleGallery" | translate }}</ion-label>
     <ion-button slot="end" [routerLink]="['/','public-gallery', this.profilestring]">{{ "PROFILE.btnGallery" | translate }}</ion-button>
   </ion-item-divider>
 
@@ -133,7 +133,7 @@
   </ion-list>
 
   <ion-item-divider>
-    <ion-label>{{ "PROFILE.titleShop" | translate }}</ion-label>
+    <ion-label class="mark">{{ "PROFILE.titleShop" | translate }}</ion-label>
     <ion-button slot="end" (click)="gotoshop()">{{ "PROFILE.btnShop" | translate }}</ion-button>
   </ion-item-divider>
 
