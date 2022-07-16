@@ -145,7 +145,10 @@ const menuRoutes: Routes = [
     {
       path: 'public-gallery/:profile',
       loadChildren: () => import('../../profileall/nft_based/public-gallery/public-gallery.module').then(m => m.PublicuserGalleryPageModule),
-
+    },
+    {
+      path: 'public-gallery',
+      loadChildren: () => import('../../profileall/nft_based/public-gallery/public-gallery.module').then(m => m.PublicuserGalleryPageModule),
     },
   {
     path: 'publicuser-profile',

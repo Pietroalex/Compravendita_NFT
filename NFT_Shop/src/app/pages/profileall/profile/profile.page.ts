@@ -60,6 +60,7 @@ export class ProfilePage implements OnInit {
     this.sold = 'need';
     this.gallery = 'need';
     this.shop = 'need';
+    localStorage.setItem('state', 'profile')
 
     this.authService.getUserProfile().subscribe((data) => {
       this.publicgallerynfts = [];
@@ -74,6 +75,7 @@ export class ProfilePage implements OnInit {
   }
 
    ngOnInit() {
+     console.log(this.router.url)
   }
    start() {
     return new Promise<void>((resolve, reject) => {
@@ -166,5 +168,9 @@ export class ProfilePage implements OnInit {
   }
   async hide(){
     this.overlay = "hide";
+  }
+
+  commProfileState() {
+    localStorage.setItem('state', 'detail')
   }
 }

@@ -26,18 +26,23 @@ ion-item {
 ion-button{
   border-radius: 5px;
 }
-.need{
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.no-need{
-  display: none;
-}
 .nft_image {
   width: 50px;
   height: 50px;
   justify-content: center;
+}
+
+
+.needs{
+  display: block;
+}
+.need{
+   height: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+ }
+.no-need{
+  display: none;
 }

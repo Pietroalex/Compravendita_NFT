@@ -37,7 +37,7 @@ export class PublicuserProfilePage implements OnInit {
     this.overlay = "hide";
     this.gallery = 'need';
     this.shop = 'need';
-
+    localStorage.setItem('state', 'public')
   }
 
   async ngOnInit() {
@@ -45,7 +45,7 @@ export class PublicuserProfilePage implements OnInit {
 
     await this.infoService.getUserProfile(this.author).subscribe((data) => {
       this.profile = data;
-      localStorage.setItem('seller', this.profile.username + "-" + this.author)
+
       this.start().then(res => this.continue());
 
     });
@@ -91,6 +91,7 @@ export class PublicuserProfilePage implements OnInit {
   }
 
   async gotoshop() {
+    localStorage.setItem('seller', this.profile.username + "-" + this.author)
     await this.router.navigateByUrl('/shop');
   }
 

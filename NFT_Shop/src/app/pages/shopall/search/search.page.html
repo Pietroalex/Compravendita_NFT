@@ -116,7 +116,7 @@
   <div [ngClass]="[profilediv]">
 
     <ion-list [ngClass]="[profile]">
-      <ion-item *ngFor="let profile of profiles " (click)="goprofile(profile.uid)" [routerLink]="['/publicuser-profile']" replaceUrl="true" detail='false'>
+      <ion-item *ngFor="let profile of profiles " (click)="goprofile(profile.uid)" detail='false'>
         <div>
           <ion-avatar class="nft_image">
             <img [src]="profile.image" alt=""/>

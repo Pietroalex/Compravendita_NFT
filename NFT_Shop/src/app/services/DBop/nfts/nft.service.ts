@@ -291,5 +291,49 @@ export class NftService {
       this.profile = data;
       localStorage.setItem('profile', JSON.stringify(this.profile));
     })
+
+  }
+  async deleteAllpublic(nftcode: any) {
+
+    const user = this.profile.uid;
+    const docRef = doc(this.firestore, `Users/${user}`);
+
+    await updateDoc(docRef, {
+      publicGallery: arrayRemove(nftcode)               //rimuovere l'item dal privateGallery dentro il profilo utente corrente
+    });
+    await deleteDoc(doc(this.firestore, "PublicNFTs", nftcode));
+
+  return 1;
+  }
+
+  async copyAlltopublic(nft: any) {
+    let nftcode = nft.nftcode;
+    let image = nft.image;
+    let name = nft.name;
+    let description = nft.description;
+    let author = nft.author;
+    try{
+      await setDoc(doc(this.firestore, "PublicNFTs", nftcode), {                                  //crea il documento del NFT
+        nftcode: nftcode,
+        image: image,
+        name: name,
+        description: description,
+        author: author,
+      });
+
+      const user = this.profile.uid;
+      const docRef = doc(this.firestore, `Users/${user}`);
+      await updateDoc(docRef, {
+        publicGallery: arrayUnion(nftcode)               //aggiunge l'nftcode all'array privateGallery dentro il profilo utente corrente
+      });
+
+      console.log("agiunto")
+
+      return true;
+    }catch (e) {
+
+      console.log("non aggiunto")
+      return null;
+    }
   }
 }

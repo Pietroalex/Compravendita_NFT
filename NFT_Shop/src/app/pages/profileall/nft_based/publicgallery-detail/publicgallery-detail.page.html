@@ -1,7 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button [ngClass]="[back]"></ion-back-button>
+
+        <ion-button [ngClass]="[backprofile]" [routerLink]="['/profile']" replaceUrl="true" style="color:red">
+          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
     </ion-buttons>
         <ion-title>{{ "GALLERY.titlePD" | translate }}</ion-title>
   </ion-toolbar>
@@ -29,6 +33,8 @@
       <p id="descr">{{this.description}}</p>
 
     </div>
-
+    <ion-fab horizontal="end" slot="fixed">
+      <ion-fab-button [ngClass]="[deleteitem]" size="small" (click)="toUNpublic()"><ion-icon name="share"></ion-icon></ion-fab-button>
+    </ion-fab>
   </div>
 </ion-content>

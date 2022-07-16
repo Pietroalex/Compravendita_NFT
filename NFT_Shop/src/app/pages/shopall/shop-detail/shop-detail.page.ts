@@ -56,7 +56,7 @@ export class ShopDetailPage implements OnInit {
     private nftpurchaseService: NftPurchaseService,
     private notifyService: NotifyService
   ) {
-    this.authService.getUserProfile().subscribe((data) => { this.profile = data ;});
+
     this.profile =  JSON.parse(localStorage.getItem('profile'));
     this.Buy = "need";
     this.cancel = "need";
@@ -74,7 +74,7 @@ export class ShopDetailPage implements OnInit {
       this.seller = params.get('seller');
       this.nameseller = this.seller.substring(0, this.seller.indexOf("-"));
       this.uidseller = this.seller.substring(this.seller.indexOf("-")+1);
-      localStorage.setItem('seller',this.seller);
+
       this.onsale_date = new Date(params.get('onsale_date'));
       this.price = Number(params.get('price'));
       this.infoService.getUserProfile(this.uidseller).subscribe((data) => { this.Sellerprofile = data;});
@@ -82,12 +82,10 @@ export class ShopDetailPage implements OnInit {
     });
 
     if(this.nameseller == this.profile.username) {
-      console.log("NFT messa in vendita da me");
       this.Buy = 'no-need';
-      //document.getElementById("buy").style.display = "none";
     } else {
       this.cancel = 'no-need';
-      //document.getElementById("cancel").style.display = "none";
+
     }
 
   }

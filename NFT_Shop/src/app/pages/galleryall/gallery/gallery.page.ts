@@ -34,6 +34,7 @@ import {AlertController} from "@ionic/angular";
       private route: ActivatedRoute,
       private router: Router,
       private alertController: AlertController
+
     ) {                                                   //inizializza i dummy e prende le informazioni sul profilo utente che si è loggato
       this.gallerydummy = 'no-need';
       this.gallery = 'need';
@@ -45,39 +46,6 @@ import {AlertController} from "@ionic/angular";
       await this.loadAllNFTs()
 
     }
-
-
-
-    async deleteallpublic() {                             //elimina tutti gli item pubblici che l'utente ha pubblicato
-      let publicGallery = this.profile?.publicGallery
-      console.log(publicGallery)
-        let alert = await this.alertController.create({
-          header: 'Empty your PublicGallery?',
-          message: 'Do you want to empty your public NFT gallery?',
-          cssClass: 'buttonCss',
-          buttons: [
-            {
-              text: 'Cancel',
-              role: 'cancel',
-              cssClass: 'cancel',
-              handler: () => {
-
-              }
-            },
-            {
-              text: 'Delete Public Gallery',
-              cssClass: 'confirm',
-              handler: async () => {
-                for (const nftcode of publicGallery) {
-                  await this.nftService.deletepublic(nftcode);
-
-                }
-              }
-            }
-          ]
-        });
-        await alert.present();
-      }
 
     async loadAllNFTs() {                                           //carica tutti gli item posseduti dall'utente e li mostra
       let privateGallery = this.profile?.privateGallery;
@@ -103,7 +71,52 @@ import {AlertController} from "@ionic/angular";
       await this.router.navigateByUrl('/new-item', { replaceUrl: true });
     }
 
+  async addallpublic() {                             //Aggiunge tutti gli item dell'utente alla galleria pubblica
+    let alert = await this.alertController.create({
+      header: 'Share All NFTs',
+      message: 'Do you want to share all of your NFTs?',
+      cssClass: 'buttonCss',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Yes',
+          cssClass: 'confirm',
+          handler: async () => {
+
+            for (let i = 0; i < this.nfts.length; i++) {
+              await this.nftService.copyAlltopublic(this.nfts[i]);
+
+            }
+
+
+            this.presentConfirm();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
+
+    async presentConfirm(){
+      const alert = await this.alertController.create({
+        header: 'Successfully published',
+        message: 'All users can now admire your pieces of art!',
+        buttons: ['OK'],
+      });
+      await alert.present();
+
+      await this.router.navigateByUrl('/profile', {replaceUrl: true});
+      await this.router.navigateByUrl('/public-gallery', {replaceUrl: true});
+
+  }
+}
 
 
 

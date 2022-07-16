@@ -49,7 +49,7 @@ export class SearchPage implements OnInit {
   }
 
   ngOnInit() {
-
+    localStorage.setItem('public', 'not-current')
     switch(this.type = localStorage.getItem('search-field')){
       case "profile":
         this.value = 'Profile';
@@ -119,6 +119,7 @@ export class SearchPage implements OnInit {
         this.NFTs = await this.searchService.searchpublic(value);
         if (this.NFTs.length > 0) {
           this.publicdummy = 'no-need';
+            localStorage.setItem('state', 'search')
         }else{
           this.public = 'no-need';
         }
@@ -127,7 +128,6 @@ export class SearchPage implements OnInit {
     }
   }
   hideSearch() {
-
   }
   hideother(value: string) {
     switch (this.type) {
@@ -152,7 +152,8 @@ export class SearchPage implements OnInit {
     }
   }
 
-  goprofile(uid) {
+  async goprofile(uid) {
     localStorage.setItem('author', uid);
+    await this.router.navigateByUrl('/publicuser-profile');
   }
 }

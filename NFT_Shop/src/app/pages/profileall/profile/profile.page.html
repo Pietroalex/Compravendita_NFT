@@ -120,11 +120,11 @@
 
   <ion-item-divider>
     <ion-label class="mark">{{ "PROFILE.titleGallery" | translate }}</ion-label>
-    <ion-button slot="end" [routerLink]="['/','public-gallery', this.profilestring]">{{ "PROFILE.btnGallery" | translate }}</ion-button>
+    <ion-button slot="end" [routerLink]="['/','public-gallery', this.profilestring]" replaceUrl="true">{{ "PROFILE.btnGallery" | translate }}</ion-button>
   </ion-item-divider>
 
   <ion-list [ngClass]="[gallery]">
-    <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" detail='false'>
+    <ion-item *ngFor="let gallerynft of publicgallerynfts " (click)="commProfileState()" [routerLink]="['/', 'publicgallery-detail', gallerynft ]" detail='false' replaceUrl="true">
       <div>
         <ion-avatar class="nft_image">
           <img [src]="gallerynft.image" alt=""/>

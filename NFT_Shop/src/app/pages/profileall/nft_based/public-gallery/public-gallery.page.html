@@ -2,12 +2,19 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button [ngClass]="[back]"></ion-back-button>
+
+       <ion-button [ngClass]="[backemergency]" [routerLink]="['/profile']" replaceUrl="true" style="color:red">
+          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
     </ion-buttons>
+
     <ion-title>{{ "GALLERY.titleP" | translate }}</ion-title>
-
-
-
+    <ion-buttons slot="end">
+      <ion-button [ngClass]="[deleteall]" (click)="deleteallpublic()">
+        <ion-icon slot="icon-only" name="trash-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 
 </ion-header>
@@ -15,7 +22,7 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <ion-list [ngClass]="[gallery]">
-      <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" detail='false'>
+      <ion-item *ngFor="let gallerynft of publicgallerynfts "  [routerLink]="['/', 'publicgallery-detail', gallerynft ]" detail='false' >
         <div>
           <ion-avatar class="nft_image">
             <img [src]="gallerynft.image" alt=""/>
