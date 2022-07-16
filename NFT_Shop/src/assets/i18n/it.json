@@ -97,5 +97,23 @@
     "priceexpensive": "Più Costosi",
     "buy": "Compra",
     "cancel": "Annulla"
+  },
+  "ALERT": {
+    "Gallery": {
+      "title1": "Pubblica Tutte Le NFT",
+      "message1": "Vuoi pubblicare tutte le tue NFT?",
+      "confirm1": "SI",
+      "title2": "Pubblicazione avvenuta",
+      "message2": "Tutti gli utenti possono adesso ammirare le tue opere d'arte!"
+    },
+    "GalleryDetail": {
+      "title1": "Conferma cancellazione",
+      "message1": "Vuoi davvero cancellare questa NFT? Rifletti attentamente",
+      "confirm1": "Cancella NFT",
+      "cancel1": "Annulla",
+      "title2": "Sei sicuro?",
+      "message2": "Dopo aver confermato, la NFT sarà cancellata per sempre e non sarai più in grado di recuperarla in alcun modo",
+      "confirm2": "Sono sicuro"
+    }
   }
 }
