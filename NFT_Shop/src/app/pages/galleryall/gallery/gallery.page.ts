@@ -89,14 +89,11 @@ import {AlertController} from "@ionic/angular";
           text: 'Yes',
           cssClass: 'confirm',
           handler: async () => {
-
-            for (let i = 0; i < this.nfts.length; i++) {
-              await this.nftService.copyAlltopublic(this.nfts[i]);
-
-            }
+            this.start().then((val) => this.continue(val));
 
 
-            this.presentConfirm();
+
+
           }
         }
       ]
@@ -104,6 +101,22 @@ import {AlertController} from "@ionic/angular";
     alert.present();
   }
 
+start() {
+  return new Promise<string>(async (resolve, reject) => {
+    let count = 0;
+    for (let i = 0; i < this.nfts.length; i++) {
+      await this.nftService.copyAlltopublic(this.nfts[i]);
+      count = count + 1;
+    }
+    resolve(count.toString());
+  });
+}
+
+async continue(val) {
+  console.log(val)
+  this.presentConfirm();
+
+}
     async presentConfirm(){
       const alert = await this.alertController.create({
         header: 'Successfully published',

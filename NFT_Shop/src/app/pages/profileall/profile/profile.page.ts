@@ -75,7 +75,6 @@ export class ProfilePage implements OnInit {
   }
 
    ngOnInit() {
-     console.log(this.router.url)
   }
    start() {
     return new Promise<void>((resolve, reject) => {
