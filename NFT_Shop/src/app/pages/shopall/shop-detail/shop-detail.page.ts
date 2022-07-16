@@ -119,7 +119,6 @@ export class ShopDetailPage implements OnInit {
 
         const docRef = doc(this.firestore, `Users/${user}`);
 
-
         await updateDoc(docRef, {
           privateGallery: arrayUnion(this.nftcode),
           cashart: this.money,
