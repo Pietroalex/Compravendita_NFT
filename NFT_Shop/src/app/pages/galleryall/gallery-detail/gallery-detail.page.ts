@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AlertController} from "@ionic/angular";
 
 import {NftService} from "../../../services/DBop/nfts/nft.service";
+import {TranslateService} from "@ngx-translate/core";
 
 
 
@@ -29,8 +30,8 @@ export class GalleryDetailPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private nftService: NftService,
-    private alertController: AlertController
-
+    private alertController: AlertController,
+    private translateService: TranslateService
 
   ) { this.overlay = "hide"; }
 
@@ -61,13 +62,18 @@ export class GalleryDetailPage implements OnInit {
 
 
   async deletenft(){
+    let a: any = {};
+    this.translateService.get('ALERT.GalleryDetail.title1').subscribe(t => { a.title = t; })
+    this.translateService.get('ALERT.GalleryDetail.message1').subscribe(t =>{ a.message = t; })
+    this.translateService.get('ALERT.GalleryDetail.confirm1').subscribe(t =>{ a.confirm = t; })
+    this.translateService.get('ALERT.GalleryDetail.cancel1').subscribe(t =>{ a.cancel = t; })
     let alert = await this.alertController.create({
-      header: 'Confirm deletion',
-      message: 'Do you want to delete your NFT? Chose wisely',
+      header: a.title,
+      message: a.message,
       cssClass: 'buttonCss',
       buttons: [
         {
-          text: 'Cancel',
+          text: a.cancel,
           role: 'cancel',
           cssClass: 'cancel',
           handler: () => {
@@ -75,7 +81,7 @@ export class GalleryDetailPage implements OnInit {
           }
         },
         {
-          text: 'Delete NFT',
+          text: a.confirm,
           cssClass: 'confirm',
           handler: () => {
 
@@ -87,13 +93,18 @@ export class GalleryDetailPage implements OnInit {
     alert.present();
   }
   async presentConfirm() {
+    let a: any = {};
+    this.translateService.get('ALERT.GalleryDetail.title2').subscribe(t => { a.title = t; })
+    this.translateService.get('ALERT.GalleryDetail.message2').subscribe(t =>{ a.message = t; })
+    this.translateService.get('ALERT.GalleryDetail.confirm2').subscribe(t =>{ a.confirm = t; })
+    this.translateService.get('ALERT.GalleryDetail.cancel1').subscribe(t =>{ a.cancel = t; })
     let alert = await this.alertController.create({
-      header: 'Are you sure?',
-      message: 'After accepting, the NFT will be deleted forever and you will not be able to recover it in any way possible',
+      header: a.title,
+      message: a.message,
       cssClass: 'buttonCss',
       buttons: [
         {
-          text: 'Cancel',
+          text: a.cancel,
           role: 'cancel',
           cssClass: 'cancel',
           handler: () => {
@@ -101,7 +112,7 @@ export class GalleryDetailPage implements OnInit {
           }
         },
         {
-          text: 'I\'m Sure',
+          text: a.confirm,
           cssClass: 'confirm',
           handler: async () => {
 

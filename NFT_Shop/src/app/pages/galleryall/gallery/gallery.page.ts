@@ -6,6 +6,7 @@ import {NftService} from "../../../services/DBop/nfts/nft.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 import {AlertController} from "@ionic/angular";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-gallery',
@@ -33,7 +34,8 @@ import {AlertController} from "@ionic/angular";
       private nftService: NftService,
       private route: ActivatedRoute,
       private router: Router,
-      private alertController: AlertController
+      private alertController: AlertController,
+      private translateService: TranslateService
 
     ) {                                                   //inizializza i dummy e prende le informazioni sul profilo utente che si è loggato
       this.gallerydummy = 'no-need';
@@ -71,14 +73,18 @@ import {AlertController} from "@ionic/angular";
       await this.router.navigateByUrl('/new-item', { replaceUrl: true });
     }
 
-  async addallpublic() {                             //Aggiunge tutti gli item dell'utente alla galleria pubblica
+  async addallpublic() {  //Aggiunge tutti gli item dell'utente alla galleria pubblica
+    let a: any = {};
+    this.translateService.get('ALERT.Gallery.title1').subscribe(t => { a.title = t; })
+    this.translateService.get('ALERT.Gallery.message1').subscribe(t =>{ a.message = t; })
+    this.translateService.get('ALERT.Gallery.confirm1').subscribe(t =>{ a.confirm = t; })
     let alert = await this.alertController.create({
-      header: 'Share All NFTs',
-      message: 'Do you want to share all of your NFTs?',
+      header: a.title,
+      message: a.message,
       cssClass: 'buttonCss',
       buttons: [
         {
-          text: 'No',
+          text: 'NO',
           role: 'cancel',
           cssClass: 'cancel',
           handler: () => {
@@ -86,7 +92,7 @@ import {AlertController} from "@ionic/angular";
           }
         },
         {
-          text: 'Yes',
+          text: a.confirm,
           cssClass: 'confirm',
           handler: async () => {
             this.start().then((val) => this.continue(val));
@@ -118,9 +124,12 @@ async continue(val) {
 
 }
     async presentConfirm(){
+      let a: any = {};
+      this.translateService.get('ALERT.Gallery.title2').subscribe(t => { a.title = t; })
+      this.translateService.get('ALERT.Gallery.message2').subscribe(t =>{ a.message = t; })
       const alert = await this.alertController.create({
-        header: 'Successfully published',
-        message: 'All users can now admire your pieces of art!',
+        header: a.title,
+        message: a.message,
         buttons: ['OK'],
       });
       await alert.present();
