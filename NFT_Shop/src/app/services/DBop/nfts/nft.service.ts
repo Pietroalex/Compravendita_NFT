@@ -21,13 +21,14 @@ import {
 
 import {Auth} from "@angular/fire/auth";
 import {Photo} from "@capacitor/camera";
-import {getDownloadURL, ref, uploadString, Storage} from "@angular/fire/storage";
+import {getDownloadURL, ref, uploadString, Storage, getStorage, deleteObject} from "@angular/fire/storage";
 import {Observable} from "rxjs";
 
 import {AuthService} from "../../user_related/login/auth.service";
 import {AlertController} from "@ionic/angular";
 import {getAuth} from "firebase/auth";
 import {Router} from "@angular/router";
+import {TranslateService} from "@ngx-translate/core";
 
 export interface NFT {
   nftcode?: string;
@@ -62,7 +63,7 @@ export class NftService {
     private storage: Storage,
     private authService: AuthService,
     private alertController: AlertController,
-    private router: Router
+    private translateService: TranslateService
   ) {
     this.authService.getUserProfile().subscribe((data) => {
       this.profile = data;
@@ -270,6 +271,41 @@ export class NftService {
 
       await deleteDoc(doc(this.firestore, "NFTs", nftcode));
       await deleteDoc(doc(this.firestore, "PublicNFTs", nftcode));
+
+      const storage = getStorage();
+      const path = ref(storage,`uploads/nft_images/${nftcode}/nftimage.png`);
+
+
+        // Delete the file
+      deleteObject(path).then(async () => {
+        let a: any = {};
+        this.translateService.get('ALERT.GalleryDetail.titleDel').subscribe(t => {
+          a.title = t;
+        })
+        this.translateService.get('ALERT.GalleryDetail.messageDel').subscribe(t => {
+          a.message = t;
+        })
+        const alert = await this.alertController.create({
+          header: a.title,
+          message: a.message,
+          buttons: ['OK'],
+        });
+        await alert.present();
+      }).catch(async (error) => {
+        let a: any = {};
+        this.translateService.get('ALERT.GalleryDetail.titleDelNot').subscribe(t => {
+          a.title = t;
+        })
+        this.translateService.get('ALERT.GalleryDetail.messageDelNot').subscribe(t => {
+          a.message = t;
+        })
+        const alert = await this.alertController.create({
+          header: a.title,
+          message: a.message,
+          buttons: ['OK'],
+        });
+        await alert.present();
+      });
       this.authService.getUserProfile().subscribe((data) => {
         this.profile = data;
         localStorage.setItem('profile', JSON.stringify(this.profile));

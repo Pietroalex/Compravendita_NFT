@@ -102,6 +102,11 @@
     "cancel": "Annulla",
     "confirm": "Si",
 
+    "Forgot": {
+      "title": "Hai Dimenticato La Password?",
+      "message": "Ti abbiamo inviato un'email contenente un link per ripristinare la password"
+    },
+
     "Gallery": {
       "title1": "Pubblica Tutte Le NFT",
       "message1": "Vuoi pubblicare tutte le tue NFT?",
@@ -114,7 +119,11 @@
       "confirm1": "Cancella NFT",
       "title2": "Sei sicuro?",
       "message2": "Dopo aver confermato, la NFT sarà cancellata per sempre e non sarai più in grado di recuperarla in alcun modo",
-      "confirm2": "Sono sicuro"
+      "confirm2": "Sono sicuro",
+      "titleDel": "NFT Cancellato",
+      "messageDel": "L'NFT è stato cancellato e rimosso dalla piattaforma",
+      "titleDelNot": "Errore Cancellazione NFT",
+      "messageDelNot": "L'NFT non è stato cancellato dalla piattaforma"
     },
     "NewItem": {
       "title": "Caricamento fallito",

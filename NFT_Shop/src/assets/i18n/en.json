@@ -101,6 +101,11 @@
     "cancel": "Cancel",
     "confirm": "Yes",
 
+    "Forgot": {
+      "title": "Forgot Your Password?",
+      "message": "We’ve sent you an email with a link to reset your password"
+    },
+
     "Gallery": {
       "title1": "Post All NFTs",
       "message1": "Do you want to post all of your NFTs?",
@@ -113,7 +118,11 @@
       "confirm1": "Delete NFT",
       "title2": "Are you sure?",
       "message2": "After accepting, the NFT will be deleted forever and you will not be able to recover it in any way possible",
-      "confirm2": "I'm Sure"
+      "confirm2": "I'm Sure",
+      "titleDel": "NFT Deleted",
+      "messageDel": "The item has been deleted and removed from the platform",
+      "titleDelNot": "NFT Not Deleted",
+      "messageDelNot": "The item has not been deleted"
     },
     "NewItem": {
       "title": "Upload failed",

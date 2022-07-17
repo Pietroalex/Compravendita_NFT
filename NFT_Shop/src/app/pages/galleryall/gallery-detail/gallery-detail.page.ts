@@ -66,7 +66,7 @@ export class GalleryDetailPage implements OnInit {
     this.translateService.get('ALERT.GalleryDetail.title1').subscribe(t => { a.title = t; })
     this.translateService.get('ALERT.GalleryDetail.message1').subscribe(t =>{ a.message = t; })
     this.translateService.get('ALERT.GalleryDetail.confirm1').subscribe(t =>{ a.confirm = t; })
-    this.translateService.get('ALERT.GalleryDetail.cancel1').subscribe(t =>{ a.cancel = t; })
+    this.translateService.get('ALERT.cancel').subscribe(t =>{ a.cancel = t; })
     let alert = await this.alertController.create({
       header: a.title,
       message: a.message,

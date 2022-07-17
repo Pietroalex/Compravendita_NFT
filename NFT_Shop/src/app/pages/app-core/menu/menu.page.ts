@@ -26,6 +26,7 @@ export class MenuPage   {
 
   ) {    //prepara alcune variabili che necessitano essere impostate dopo che è stato effettuato il login con successo, prende dal DB il profilo dell'utente collegato
     localStorage.setItem('language', 'set')
+
     this.auth = getAuth();
     this.authService.getUserProfile().subscribe((data) => {
         this.profile = data;
