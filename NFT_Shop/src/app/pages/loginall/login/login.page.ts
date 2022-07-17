@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {doc, Firestore, setDoc} from "@angular/fire/firestore";
 import {LanguageService} from "../../../services/user_related/language/language.service";
 import {LanguagePopoverPage} from "../../app-core/language-popover/language-popover.page";
+import {TranslateService} from "@ngx-translate/core";
 
 
 @Component({
@@ -24,7 +25,8 @@ export class LoginPage implements OnInit {
     private authService: AuthService,
     private router: Router,
     private db: Firestore,
-    private popoverController: PopoverController
+    private popoverController: PopoverController,
+    private translateService: TranslateService
   ) { }
 
   get email(){
@@ -50,11 +52,15 @@ export class LoginPage implements OnInit {
     const user = await this.authService.login(this.credentials.value);
     await loading.dismiss();
 
+    let a: any = {};
+    this.translateService.get('ALERT.Login.title').subscribe(t => { a.title = t; })
+    this.translateService.get('ALERT.Login.message').subscribe(t =>{ a.message = t; })
+
     if (user) {
 
       this.router.navigateByUrl('/menu/home', {replaceUrl: true});
     } else {
-        this.showAlert('Login failed', '<b>Email</b> or <b>Password</b> must be wrong, please try again or <b>create a new account</b> if you\'re not registered yet!');
+        this.showAlert(a.title, a.message);
     }
 
   }

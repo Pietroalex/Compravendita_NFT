@@ -15,6 +15,7 @@ import {
 import firebase from "firebase/compat";
 import {AlertController, IonDatetime} from "@ionic/angular";
 import {ActivatedRoute, Router} from "@angular/router";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-sell-item',
@@ -44,7 +45,8 @@ export class SellItemPage implements OnInit {
     private firestore: Firestore,
     private route: ActivatedRoute,
     private router: Router,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private translateService: TranslateService
   )
   {
     this.authService.getUserProfile().subscribe((data) => { this.profile = data; });
@@ -73,6 +75,12 @@ export class SellItemPage implements OnInit {
       //creare il documento nftOnSale
       //cancellare profilo nft
       let price = this.nftInfo.controls['price'].value;
+      let a: any = {};
+      this.translateService.get('ALERT.SellItem.title1').subscribe(t => { a.title1 = t; })
+      this.translateService.get('ALERT.SellItem.message1').subscribe(t =>{ a.message1 = t; })
+      this.translateService.get('ALERT.SellItem.title2').subscribe(t => { a.title2 = t; })
+      this.translateService.get('ALERT.SellItem.message2').subscribe(t =>{ a.message2 = t; })
+
       if (/^[0-9]*$/.test(price)) {
         const OnSaleRef = doc(this.firestore, "OnSaleNFTs", this.nftcode);
         await setDoc(OnSaleRef, {                                  //crea il documento del OnSaleNFT
@@ -93,7 +101,7 @@ export class SellItemPage implements OnInit {
             privateGallery: arrayRemove(this.nftcode),
             publicGallery: arrayRemove(this.nftcode)
           });
-          this.showAlert('Item On Sale', 'Your item is being published on the shop')
+          this.showAlert(a.title1, a.message1)
           await deleteDoc(doc(this.firestore, "NFTs", this.nftcode));
           await deleteDoc(doc(this.firestore, "PublicNFTs", this.nftcode));
           await this.router.navigateByUrl('/home', {replaceUrl: true});
@@ -104,7 +112,7 @@ export class SellItemPage implements OnInit {
         }
 
       } else {
-        this.showAlert('On Sale Failure', 'The price can be numeric only')
+        this.showAlert(a.title2, a.message2)
       }
 
 

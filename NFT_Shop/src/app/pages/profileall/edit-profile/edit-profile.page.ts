@@ -8,6 +8,7 @@ import {deleteDoc, doc, Firestore, getDoc, updateDoc} from "@angular/fire/firest
 import {Auth} from "@angular/fire/auth";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {deleteUser, getAuth, signOut} from "firebase/auth";
+import {TranslateService} from "@ngx-translate/core";
 
 
 @Component({
@@ -16,9 +17,11 @@ import {deleteUser, getAuth, signOut} from "firebase/auth";
   styleUrls: ['./edit-profile.page.scss'],
 })
 export class EditProfilePage implements OnInit {
-profile = null;
+  profile = null;
   infos: FormGroup;
-ip: string;
+  ip: string;
+  a: any = {};
+
   constructor(
   private avatarService: AvatarService,
   private authService: AuthService,
@@ -28,9 +31,23 @@ ip: string;
   private firestore: Firestore,
   private auth: Auth,
   private fb: FormBuilder,
-
+  private translateService: TranslateService
   ) {
-  this.authService.getUserProfile().subscribe((data) => { this.profile = data; });      //ritirare i dati già presenti sul database
+    this.authService.getUserProfile().subscribe((data) => { this.profile = data; });      //ritirare i dati già presenti sul database
+    this.translateService.get('ALERT.EditProfile.title1').subscribe(t => { this.a.title1 = t; })
+    this.translateService.get('ALERT.EditProfile.message1').subscribe(t =>{ this.a.message1 = t; })
+    this.translateService.get('ALERT.EditProfile.title2').subscribe(t => { this.a.title2 = t; })
+    this.translateService.get('ALERT.EditProfile.message2').subscribe(t =>{ this.a.message2 = t; })
+    this.translateService.get('ALERT.EditProfile.title3').subscribe(t => { this.a.title3 = t; })
+    this.translateService.get('ALERT.EditProfile.message3').subscribe(t =>{ this.a.message3 = t; })
+    this.translateService.get('ALERT.EditProfile.title4').subscribe(t => { this.a.title4 = t; })
+    this.translateService.get('ALERT.EditProfile.message4').subscribe(t =>{ this.a.message4 = t; })
+    this.translateService.get('ALERT.EditProfile.confirm1').subscribe(t => { this.a.confirm1 = t; })
+    this.translateService.get('ALERT.EditProfile.title5').subscribe(t => { this.a.title5 = t; })
+    this.translateService.get('ALERT.EditProfile.message5').subscribe(t =>{ this.a.message5 = t; })
+    this.translateService.get('ALERT.EditProfile.confirm2').subscribe(t => { this.a.confirm2 = t; })
+    this.translateService.get('ALERT.EditProfile.message6').subscribe(t =>{ this.a.message6 = t; })
+    this.translateService.get('ALERT.EditProfile.cancel').subscribe(t =>{ this.a.cancel = t; })
   }
 
   async back() {
@@ -63,8 +80,8 @@ ip: string;
 
         if(!result){
           const alert = await this.alertController.create({
-            header: 'Upload failed',
-            message: 'There was a problem uploading your avatar.',
+            header: this.a.title1,
+            message: this.a.message1,
             buttons: ['OK'],
           });
           await alert.present();
@@ -85,15 +102,15 @@ ip: string;
 
     if(!result){
       const alert = await this.alertController.create({
-        header: 'Update failed',
-        message: 'There was a problem uploading your infos.',
+        header: this.a.title2,
+        message: this.a.message2,
         buttons: ['OK'],
       });
       await alert.present();
     }else{
       const alert = await this.alertController.create({
-        header: 'Great!',
-        message: 'Profile info successfully updated.',
+        header: this.a.title3,
+        message: this.a.message3,
         buttons: ['OK']
       });
       await alert.present();
@@ -101,12 +118,12 @@ ip: string;
   }
   async delete(){
       let alert = await this.alertController.create({
-        header: 'Confirm deletion',
-        message: 'Do you want to delete your profile? Chose wisely',
+        header: this.a.title4,
+        message: this.a.message4,
         cssClass: 'buttonCss',
         buttons: [
           {
-            text: 'Cancel',
+            text: this.a.cancel,
             role: 'cancel',
             cssClass: 'cancel',
             handler: () => {
@@ -114,10 +131,10 @@ ip: string;
             }
           },
           {
-            text: 'Delete Profile',
+            text: this.a.confirm1,
             cssClass: 'confirm',
             handler: () => {
-              console.log('Buy clicked');
+              console.log('Delete clicked');
             this.presentConfirm();
             }
           }
@@ -127,20 +144,23 @@ ip: string;
     }
   async presentConfirm() {
     let alert = await this.alertController.create({
-      header: 'Are you sure?',
-      message: 'After accepting, the profile will stay untouched but your credentials will be deleted forever and you will not be able to access your profile anymore',
+      header: this.a.title5,
+      message: this.a.message5,
+      cssClass: 'buttonCss',
       buttons: [
         {
-          text: 'Cancel',
+          text: this.a.cancel,
           role: 'cancel',
+          cssClass: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
           }
         },
         {
-          text: 'I\'m Sure',
+          text: this.a.confirm2,
+          cssClass: 'confirm',
           handler: () => {
-            console.log('sure clicked');
+            console.log('Sure clicked');
             this.deleteUser();
           }
         }
@@ -159,7 +179,7 @@ ip: string;
   async start(user) {
     return new Promise<void>((resolve, reject) => {
       deleteUser(user)
-        alert("Succesfully deleted");
+        alert(this.a.message6);
       resolve();
     });
   }

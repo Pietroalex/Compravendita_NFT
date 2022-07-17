@@ -17,6 +17,7 @@ import {
 import {AuthService} from "../../../services/user_related/login/auth.service";
 
 import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-new-item',
@@ -45,8 +46,8 @@ export class NewItemPage implements OnInit {
     private authService: AuthService,
     private firestore: Firestore,
     private router: Router,
-    private route: ActivatedRoute
-
+    private route: ActivatedRoute,
+    private translateService: TranslateService
 
 
   ) {
@@ -86,9 +87,12 @@ export class NewItemPage implements OnInit {
       loading.dismiss();
 
       if(!result){
+        let a: any = {};
+        this.translateService.get('ALERT.NewItem.title').subscribe(t => { a.title = t; })
+        this.translateService.get('ALERT.NewItem.message').subscribe(t =>{ a.message = t; })
         const alert = await this.alertController.create({
-          header: 'Upload failed',
-          message: 'There was a problem uploading your avatar.',
+          header: a.title,
+          message: a.message,
           buttons: ['OK'],
         });
         await alert.present();

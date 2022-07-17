@@ -7,6 +7,7 @@ import {collection, doc, Firestore, getDocs, query, setDoc, where} from "@angula
 import {Auth, createUserWithEmailAndPassword, getAuth, signInWithRedirect, signOut} from "@angular/fire/auth";
 import firebase from "firebase/compat";
 import AuthProvider = firebase.auth.AuthProvider;
+import {TranslateService} from "@ngx-translate/core";
 
 
 @Component({
@@ -24,6 +25,7 @@ export class RegisterPage implements OnInit {
     private authService: AuthService,
     private router: Router,
     private db: Firestore,
+    private translateService: TranslateService
 
   ) {
     this.message = "no-need";
@@ -49,6 +51,11 @@ export class RegisterPage implements OnInit {
     let password = this.registers.controls['password'].value;
     let username = this.registers.controls['username'].value;
     let bio = this.registers.controls['bio'].value;
+    let a: any = {};
+    this.translateService.get('ALERT.Register.title').subscribe(t => { a.title = t; })
+    this.translateService.get('ALERT.Register.message1').subscribe(t =>{ a.message1 = t; })
+    this.translateService.get('ALERT.Register.message2').subscribe(t =>{ a.message2 = t; })
+    this.translateService.get('ALERT.Register.message3').subscribe(t =>{ a.message3 = t; })
 
     if(/^[A-Za-z0-9]*$/.test(username)) {
       const result = await this.checkUsername(username);
@@ -76,14 +83,14 @@ export class RegisterPage implements OnInit {
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            this.showAlert('Registration failed', 'Please check if you have typed a <b>valid email</b> (ex: <b>example@email.com</b>) and/or a <b>valid password</b> (<b>it requires a minimum length of 6</b>) and try again!');
+            this.showAlert(a.title, a.message1);
 
           });
       } else {
-        this.showAlert('Registration failed', 'The username you typed in is already taken, please pick one different')
+        this.showAlert(a.title, a.message2)
       }
     } else {
-      this.showAlert('Registration failed', 'The username field cannot accept any other characters other than digits and uppercase and lowercase letters')
+      this.showAlert(a.title, a.message3)
     }
   }
 

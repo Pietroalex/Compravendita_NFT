@@ -113,6 +113,46 @@
       "title2": "Are you sure?",
       "message2": "After accepting, the NFT will be deleted forever and you will not be able to recover it in any way possible",
       "confirm2": "I'm Sure"
+    },
+    "NewItem": {
+      "title": "Upload failed",
+      "message": "There was a problem uploading your avatar"
+    },
+    "SellItem": {
+      "title1": "Item On Sale",
+      "message1": "Your item is being published on the shop",
+      "title2": "On Sale Failure",
+      "message2": "The price can be numeric only"
+    },
+    "Login": {
+      "title": "Login failed",
+      "message": "<b>Email</b> or <b>Password</b> must be wrong, please try again or <b>create a new account</b> if you're not registered yet!"
+    },
+    "Register": {
+      "title": "Registration failed",
+      "message1": "Please check if you have typed a <b>valid email</b> (ex: <b>example@email.com</b>) and/or a <b>valid password</b> (<b>it requires a minimum length of 6</b>) and try again!",
+      "message2": "The username you typed in is already taken, please pick a different one",
+      "message3": "The username field cannot accept any other characters other than digits and uppercase and lowercase letters"
+    },
+    "EditProfile": {
+      "title1": "Upload failed",
+      "message1": "There was a problem uploading your avatar",
+      "title2": "Update failed",
+      "message2": "There was a problem uploading your infos",
+      "title3": "Great!",
+      "message3": "Profile info successfully updated!",
+      "title4": "Confirm deletion",
+      "message4": "Do you want to delete your profile? Chose wisely",
+      "confirm1": "Delete Profile",
+      "title5": "Are you sure?",
+      "message5": "After accepting, this profile will stay untouched but your credentials will be deleted forever and you will not be able to access your profile anymore",
+      "confirm2": "I'm Sure",
+      "message6": "Succesfully deleted",
+      "cancel": "Cancel"
     }
+  },
+  "DUMMY": {
+    "text1": "No",
+    "text2": "Items"
   }
 }
