@@ -47,7 +47,7 @@ export class EditProfilePage implements OnInit {
     this.translateService.get('ALERT.EditProfile.message5').subscribe(t =>{ this.a.message5 = t; })
     this.translateService.get('ALERT.EditProfile.confirm2').subscribe(t => { this.a.confirm2 = t; })
     this.translateService.get('ALERT.EditProfile.message6').subscribe(t =>{ this.a.message6 = t; })
-    this.translateService.get('ALERT.EditProfile.cancel').subscribe(t =>{ this.a.cancel = t; })
+    this.translateService.get('ALERT.cancel').subscribe(t =>{ this.a.cancel = t; })
   }
 
   async back() {

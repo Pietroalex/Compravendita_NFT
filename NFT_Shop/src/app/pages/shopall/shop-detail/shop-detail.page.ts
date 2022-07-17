@@ -15,6 +15,7 @@ import {InformationService} from "../../../services/user_related/check_user/info
 import {AlertController} from "@ionic/angular";
 import {NftPurchaseService} from "../../../services/DBop/nft_purchase/nft-purchase.service";
 import {NotifyService} from "../../../services/DBop/notification/notify.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-shop-detail',
@@ -45,6 +46,7 @@ export class ShopDetailPage implements OnInit {
   cancel: string;
 
   overlay: string;
+  a: any = {};
 
   constructor(
     private router: Router,
@@ -54,13 +56,20 @@ export class ShopDetailPage implements OnInit {
     private infoService: InformationService,
     private alertController: AlertController,
     private nftpurchaseService: NftPurchaseService,
-    private notifyService: NotifyService
+    private notifyService: NotifyService,
+    private translateService: TranslateService
   ) {
 
     this.profile =  JSON.parse(localStorage.getItem('profile'));
     this.Buy = "need";
     this.cancel = "need";
     this.overlay = "no-need";
+    this.translateService.get('ALERT.ShopDetail.title1').subscribe(t => { this.a.title1 = t; })
+    this.translateService.get('ALERT.ShopDetail.message1').subscribe(t =>{ this.a.message1 = t; })
+    this.translateService.get('ALERT.ShopDetail.title2').subscribe(t => { this.a.title2 = t; })
+    this.translateService.get('ALERT.ShopDetail.message2').subscribe(t =>{ this.a.message2 = t; })
+    this.translateService.get('ALERT.ShopDetail.title3').subscribe(t => { this.a.title3 = t; })
+    this.translateService.get('ALERT.ShopDetail.message3').subscribe(t =>{ this.a.message3 = t; })
   }
 
   ngOnInit() {
@@ -128,7 +137,7 @@ export class ShopDetailPage implements OnInit {
           cashart: Sellermoney,
         });
 
-        this.showAlert('Item successfully purchased', 'Your item has been added to your gallery')
+        this.showAlert(this.a.title1, this.a.message1)
 
         await deleteDoc(doc(this.firestore, "OnSaleNFTs", this.nftcode));
         await this.nftpurchaseService.createHistory(this.profile, this.Sellerprofile, this.params);
@@ -142,7 +151,7 @@ export class ShopDetailPage implements OnInit {
       }
 
     } else {
-      this.showAlert('Purchase Failure', 'The price is too high for your Cashart amount')
+      this.showAlert(this.a.title2, this.a.message2)
     }
   }
 
@@ -166,7 +175,7 @@ export class ShopDetailPage implements OnInit {
         privateGallery: arrayUnion(this.nftcode)
       });
 
-      this.showAlert('Cancelled Operation', 'Your item has been returned to your gallery')
+      this.showAlert(this.a.title3, this.a.message3)
 
       await deleteDoc(doc(this.firestore, "OnSaleNFTs", this.nftcode));
       await this.router.navigateByUrl('/gallery', {replaceUrl: true});

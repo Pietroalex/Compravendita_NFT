@@ -77,7 +77,7 @@ import {TranslateService} from "@ngx-translate/core";
     let a: any = {};
     this.translateService.get('ALERT.Gallery.title1').subscribe(t => { a.title = t; })
     this.translateService.get('ALERT.Gallery.message1').subscribe(t =>{ a.message = t; })
-    this.translateService.get('ALERT.Gallery.confirm1').subscribe(t =>{ a.confirm = t; })
+    this.translateService.get('ALERT.confirm').subscribe(t =>{ a.confirm = t; })
     let alert = await this.alertController.create({
       header: a.title,
       message: a.message,

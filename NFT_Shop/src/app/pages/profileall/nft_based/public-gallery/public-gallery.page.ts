@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {NftService} from "../../../../services/DBop/nfts/nft.service";
 import {AlertController} from "@ionic/angular";
 import {AuthService} from "../../../../services/user_related/login/auth.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-public-gallery',
@@ -30,7 +31,8 @@ export class PublicGalleryPage implements OnInit {
     private route: ActivatedRoute,
     private nftService: NftService,
     private alertController: AlertController,
-    private router: Router
+    private router: Router,
+    private translateService: TranslateService
   ) {
     this.gallerydummy = 'need';
     this.gallery = 'need';
@@ -93,14 +95,19 @@ export class PublicGalleryPage implements OnInit {
   }
 
   async deleteallpublic() {                             //elimina tutti gli item pubblici che l'utente ha pubblicato
+    let a: any = {};
+    this.translateService.get('ALERT.PublicGallery.title').subscribe(t => { a.title = t; })
+    this.translateService.get('ALERT.PublicGallery.message').subscribe(t =>{ a.message = t; })
+    this.translateService.get('ALERT.confirm').subscribe(t => { a.confirm = t; })
+    this.translateService.get('ALERT.cancel').subscribe(t =>{ a.cancel = t; })
     let publicGallery = this.profile?.publicGallery
     let alert = await this.alertController.create({
-      header: 'Empty your PublicGallery?',
-      message: 'Do you want to empty your public NFT gallery?',
+      header: a.title,
+      message: a.message,
       cssClass: 'buttonCss',
       buttons: [
         {
-          text: 'Cancel',
+          text: a.cancel,
           role: 'cancel',
           cssClass: 'cancel',
           handler: () => {
@@ -108,7 +115,7 @@ export class PublicGalleryPage implements OnInit {
           }
         },
         {
-          text: 'Delete Public Gallery',
+          text: a.confirm,
           cssClass: 'confirm',
           handler: async () => {
 

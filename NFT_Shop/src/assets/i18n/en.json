@@ -98,10 +98,12 @@
     "cancel": "Retire"
   },
   "ALERT": {
+    "cancel": "Cancel",
+    "confirm": "Yes",
+
     "Gallery": {
       "title1": "Post All NFTs",
       "message1": "Do you want to post all of your NFTs?",
-      "confirm1": "YES",
       "title2": "Successfully posted",
       "message2": "All users can now admire your pieces of art!"
     },
@@ -109,7 +111,6 @@
       "title1": "Confirm deletion",
       "message1": "Do you want to delete your NFT? Choose wisely",
       "confirm1": "Delete NFT",
-      "cancel1": "Cancel",
       "title2": "Are you sure?",
       "message2": "After accepting, the NFT will be deleted forever and you will not be able to recover it in any way possible",
       "confirm2": "I'm Sure"
@@ -147,8 +148,23 @@
       "title5": "Are you sure?",
       "message5": "After accepting, this profile will stay untouched but your credentials will be deleted forever and you will not be able to access your profile anymore",
       "confirm2": "I'm Sure",
-      "message6": "Succesfully deleted",
-      "cancel": "Cancel"
+      "message6": "Succesfully deleted"
+    },
+    "PublicGallery": {
+      "title": "Empty your PublicGallery?",
+      "message": "Do you want to empty your public NFT gallery?"
+    },
+    "PublicGalleryDetail": {
+      "title": "Remove Item?",
+      "message": "Do you want to remove this item from your public NFT gallery?"
+    },
+    "ShopDetail": {
+      "title1": "Item successfully purchased",
+      "message1": "The item has been added to your gallery",
+      "title2": "Purchase Failure",
+      "message2": "The price is too high for your Cashart amount",
+      "title3": "Cancelled Operation",
+      "message3": "Your item has been returned to your gallery"
     }
   },
   "DUMMY": {

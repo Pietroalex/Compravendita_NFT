@@ -99,10 +99,12 @@
     "cancel": "Ritira"
   },
   "ALERT": {
+    "cancel": "Annulla",
+    "confirm": "Si",
+
     "Gallery": {
       "title1": "Pubblica Tutte Le NFT",
       "message1": "Vuoi pubblicare tutte le tue NFT?",
-      "confirm1": "SI",
       "title2": "Pubblicazione avvenuta",
       "message2": "Tutti gli utenti possono adesso ammirare le tue opere d'arte!"
     },
@@ -110,7 +112,6 @@
       "title1": "Conferma cancellazione",
       "message1": "Vuoi davvero cancellare questa NFT? Rifletti attentamente",
       "confirm1": "Cancella NFT",
-      "cancel1": "Annulla",
       "title2": "Sei sicuro?",
       "message2": "Dopo aver confermato, la NFT sarà cancellata per sempre e non sarai più in grado di recuperarla in alcun modo",
       "confirm2": "Sono sicuro"
@@ -148,8 +149,23 @@
       "title5": "Sei sicuro?",
       "message5": "Confermando, questo profilo verrà sospeso e le tue credenziali saranno cancellate per sempre e non potrai più accedere a questo profilo",
       "confirm2": "Sono sicuro",
-      "message6": "Eliminato con successo",
-      "cancel": "Annulla"
+      "message6": "Eliminato con successo"
+    },
+    "PublicGallery": {
+      "title": "Svuotare la Galleria Pubblica?",
+      "message": "Vuoi svuotare la tua galleria di NFT pubblici?"
+    },
+    "PublicGalleryDetail": {
+      "title": "Rimuovere l'NFT?",
+      "message": "Vuoi rimuovere questa NFT dalla tua Galleria Pubblica?"
+    },
+    "ShopDetail": {
+      "title1": "NFT acquistata",
+      "message1": "L'NFT è stata aggiunta alla tua galleria",
+      "title2": "Acquuisto fallito",
+      "message2": "Non hai abbastanza Cashart per l'acquisto",
+      "title3": "Operazione Annullata",
+      "message3": "La tua NFT ritorna nella galleria"
     }
   },
   "DUMMY": {
