@@ -48,7 +48,7 @@ export class PublicGalleryPage implements OnInit {
       this.publicuser = this.profile;
     }
     this.check = localStorage.getItem('state');
-    console.log(this.check)
+
     if (
       this.publicuser.username == this.profile.username && (this.check == 'profile' || this.check == 'gallery')
     ) {
@@ -94,7 +94,6 @@ export class PublicGalleryPage implements OnInit {
 
   async deleteallpublic() {                             //elimina tutti gli item pubblici che l'utente ha pubblicato
     let publicGallery = this.profile?.publicGallery
-    console.log(publicGallery)
     let alert = await this.alertController.create({
       header: 'Empty your PublicGallery?',
       message: 'Do you want to empty your public NFT gallery?',
@@ -115,14 +114,6 @@ export class PublicGalleryPage implements OnInit {
 
             this.start(publicGallery).then((val) => this.continue(val));
 
-
-
-
-            /*
-            await this.router.navigateByUrl('/profile', { replaceUrl: true });
-            await this.router.navigateByUrl('/public-gallery', {replaceUrl: true});
-
-             */
           }
         }
       ]

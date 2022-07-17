@@ -95,14 +95,11 @@ import {TranslateService} from "@ngx-translate/core";
           text: a.confirm,
           cssClass: 'confirm',
           handler: async () => {
-
-            for (let i = 0; i < this.nfts.length; i++) {
-              await this.nftService.copyAlltopublic(this.nfts[i]);
-
-            }
+            this.start().then((val) => this.continue(val));
 
 
-            this.presentConfirm();
+
+
           }
         }
       ]
@@ -110,6 +107,22 @@ import {TranslateService} from "@ngx-translate/core";
     alert.present();
   }
 
+start() {
+  return new Promise<string>(async (resolve, reject) => {
+    let count = 0;
+    for (let i = 0; i < this.nfts.length; i++) {
+      await this.nftService.copyAlltopublic(this.nfts[i]);
+      count = count + 1;
+    }
+    resolve(count.toString());
+  });
+}
+
+async continue(val) {
+  console.log(val)
+  this.presentConfirm();
+
+}
     async presentConfirm(){
       let a: any = {};
       this.translateService.get('ALERT.Gallery.title2').subscribe(t => { a.title = t; })
