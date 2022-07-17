@@ -38,7 +38,7 @@ export class MenuPage   {
   }
 
   async logout() {      //effettua il logout dalla sessione impostando la lingua alla lingua di default e naviga alla pagina di login
-    console.log("si esce")
+
     this.start().then(res => this.continue());
   }
   async start() {
