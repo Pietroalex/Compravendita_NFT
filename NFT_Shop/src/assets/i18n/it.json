@@ -123,7 +123,11 @@
       "titleDel": "NFT Cancellato",
       "messageDel": "L'NFT è stato cancellato e rimosso dalla piattaforma",
       "titleDelNot": "Errore Cancellazione NFT",
-      "messageDelNot": "L'NFT non è stato cancellato dalla piattaforma"
+      "messageDelNot": "L'NFT non è stato cancellato dalla piattaforma",
+      "titlePub": "Pubblicazione avvenuta",
+      "messagePub": "Tutti gli utenti possono adesso ammirare la tua opera d'arte!",
+      "titlePubNot": "Pubblicazione non avvenuta",
+      "messagePubNot": "C'è stato un errore nella publicazione della tua opera"
     },
     "NewItem": {
       "title": "Caricamento fallito",

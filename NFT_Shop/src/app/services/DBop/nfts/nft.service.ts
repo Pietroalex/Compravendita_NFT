@@ -70,46 +70,7 @@ export class NftService {
     });
   }
 
-  async copytopublic(params) {
-    let nftcode = params.get('nftcode');
-    let image = params.get('image');
-    let name = params.get('name');
-    let description = params.get('description');
-    let author = params.get('author');
-    try{
-      await setDoc(doc(this.firestore, "PublicNFTs", nftcode), {                                  //crea il documento del NFT
-        nftcode: nftcode,
-        image: image,
-        name: name,
-        description: description,
-        author: author,
-      });
 
-        const user = this.profile.uid;
-        const docRef = doc(this.firestore, `Users/${user}`);
-        await updateDoc(docRef, {
-          publicGallery: arrayUnion(nftcode)               //aggiunge l'nftcode all'array privateGallery dentro il profilo utente corrente
-        });
-
-
-      const alert = await this.alertController.create({
-        header: 'Successfully publicised',
-        message: 'All users can now admire your piece of art!.',
-        buttons: ['OK'],
-      });
-      await alert.present();
-
-      return true;
-    }catch (e) {
-      const alert = await this.alertController.create({
-        header: 'Unsuccessful publication',
-        message: 'There was a problem in the publication of your item.',
-        buttons: ['OK'],
-      });
-      await alert.present();
-      return null;
-    }
-  }
 
   async uploadNFTImage(cameraFile: Photo, nftcode: string) {
 
@@ -369,6 +330,59 @@ export class NftService {
     }catch (e) {
 
       console.log("non aggiunto")
+      return null;
+    }
+  }
+  async copytopublic(params) {
+    let nftcode = params.get('nftcode');
+    let image = params.get('image');
+    let name = params.get('name');
+    let description = params.get('description');
+    let author = params.get('author');
+    try{
+      await setDoc(doc(this.firestore, "PublicNFTs", nftcode), {                                  //crea il documento del NFT
+        nftcode: nftcode,
+        image: image,
+        name: name,
+        description: description,
+        author: author,
+      });
+
+      const user = this.profile.uid;
+      const docRef = doc(this.firestore, `Users/${user}`);
+      await updateDoc(docRef, {
+        publicGallery: arrayUnion(nftcode)               //aggiunge l'nftcode all'array privateGallery dentro il profilo utente corrente
+      });
+
+      let a: any = {};
+      this.translateService.get('ALERT.GalleryDetail.titlePub').subscribe(t => {
+        a.title = t;
+      })
+      this.translateService.get('ALERT.GalleryDetail.messagePub').subscribe(t => {
+        a.message = t;
+      })
+      const alert = await this.alertController.create({
+        header:  a.title,
+        message: a.message,
+        buttons: ['OK'],
+      });
+      await alert.present();
+
+      return true;
+    }catch (e) {
+      let a: any = {};
+      this.translateService.get('ALERT.GalleryDetail.titlePubNot').subscribe(t => {
+        a.title = t;
+      })
+      this.translateService.get('ALERT.GalleryDetail.messagePubNot').subscribe(t => {
+        a.message = t;
+      })
+      const alert = await this.alertController.create({
+        header:  a.title,
+        message: a.message,
+        buttons: ['OK'],
+      });
+      await alert.present();
       return null;
     }
   }

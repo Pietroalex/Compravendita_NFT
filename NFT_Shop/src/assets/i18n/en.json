@@ -110,7 +110,11 @@
       "title1": "Post All NFTs",
       "message1": "Do you want to post all of your NFTs?",
       "title2": "Successfully posted",
-      "message2": "All users can now admire your pieces of art!"
+      "message2": "All users can now admire your pieces of art!",
+      "titlePub": "Successfully publicised",
+      "messagePub": "All users can now admire your piece of art!",
+      "titlePubNot": "Unsuccessful publication",
+      "messagePubNot": "There was a problem in the publication of your item"
     },
     "GalleryDetail": {
       "title1": "Confirm deletion",
