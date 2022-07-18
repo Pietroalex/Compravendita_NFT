@@ -51,12 +51,20 @@ export class RegisterPage implements OnInit {
     let password = this.registers.controls['password'].value;
     let username = this.registers.controls['username'].value;
     let bio = this.registers.controls['bio'].value;
+
+    if(bio == '' ){
+      bio = "Hi there, I'm using NFT-Shop!";
+    }
+
     let a: any = {};
     this.translateService.get('ALERT.Register.title').subscribe(t => { a.title = t; })
+    this.translateService.get('ALERT.Register.button1').subscribe(t => { a.button1 = t; })
+    this.translateService.get('ALERT.Register.button2').subscribe(t => { a.button2 = t; })
     this.translateService.get('ALERT.Register.message1').subscribe(t =>{ a.message1 = t; })
     this.translateService.get('ALERT.Register.message2').subscribe(t =>{ a.message2 = t; })
     this.translateService.get('ALERT.Register.message3').subscribe(t =>{ a.message3 = t; })
-
+    this.translateService.get('ALERT.Register.title2').subscribe(t =>{ a.title2 = t; })
+    this.translateService.get('ALERT.Register.message4').subscribe(t =>{ a.message3 = t; })
     if(/^[A-Za-z0-9]*$/.test(username)) {
       const result = await this.checkUsername(username);
       if (result) {
@@ -76,30 +84,30 @@ export class RegisterPage implements OnInit {
               publicGallery: [],
               language : "en"
             });
-
+            this.showAlert(a.title2, a.message3, a.button1)
             signOut(auth).then(() => this.router.navigateByUrl('/home', {replaceUrl: true}))
 
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            this.showAlert(a.title, a.message1);
+            this.showAlert(a.title, a.message1, a.button2);
 
           });
       } else {
-        this.showAlert(a.title, a.message2)
+        this.showAlert(a.title, a.message2, a.button2)
       }
     } else {
-      this.showAlert(a.title, a.message3)
+      this.showAlert(a.title, a.message3, a.button2)
     }
   }
 
 
-  async showAlert(header, message) {
+  async showAlert(header, message, button) {
     const alert = await this.alertController.create({
       header,
       message,
-      buttons: ['OK'],
+      buttons: [button],
     });
     await alert.present();
   }
@@ -110,13 +118,6 @@ export class RegisterPage implements OnInit {
     const querySnapshot = await getDocs(q);
     return(querySnapshot.empty);
 
-    /*
-    querySnapshot.forEach((doc) => {                                        per trovare documenti con username uguale a quello inserito
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-    });
-
-     */
   }
 
   async showMessage(){this.message = "need";}

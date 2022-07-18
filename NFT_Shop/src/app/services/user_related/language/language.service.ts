@@ -46,6 +46,7 @@ export class LanguageService {
   setLanguageTemp(lng) {
     this.translate.use(lng);
     this.selected = lng;
+    localStorage.setItem('language', 'set')
   }
   async updatelang(lng){
     const user = this.authService.getUserId();

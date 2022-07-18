@@ -115,11 +115,6 @@ export class HomePage  implements OnInit {
   }
 
    continue() {
-
-     const profile = JSON.parse(localStorage.getItem('profile'));
-     this.languageService.setLanguage(profile?.language);
-
-
   }
 
 

@@ -147,7 +147,11 @@
       "title": "Registrazione fallita",
       "message1": "Controlla se hai inserito una <b>email valida</b> (ex: <b>example@email.com</b>) e/o una <b>password valida</b> (<b>minimo 6 caratteri alfanumerici</b>) e prova nuovamente!",
       "message2": "L'username inserita è già stata usata, inseriscine una nuova",
-      "message3": "Il campo username non acccetta caratteri diversi da numeri e lettere maiuscole e minuscole"
+      "message3": "Il campo username non acccetta caratteri diversi da numeri e lettere maiuscole e minuscole",
+      "button1": "Fantastico!",
+      "button2": "OK",
+      "title2": "Benvenuto",
+      "message4": "Grazie per esserti registrato e ti diamo il benvenuto sulla nostra app.<br>Ti sono stati assegnati 5000 Cashart di credito<br>Effettua l'accesso per iniziare la tua avventura nel mondo dell'arte e degli NFT! <br><br> Il team di <b>NFT-SHOP</b>"
     },
     "EditProfile": {
       "title1": "Caricamento fallito",

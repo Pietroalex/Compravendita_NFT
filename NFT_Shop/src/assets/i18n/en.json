@@ -146,7 +146,12 @@
       "title": "Registration failed",
       "message1": "Please check if you have typed a <b>valid email</b> (ex: <b>example@email.com</b>) and/or a <b>valid password</b> (<b>it requires a minimum length of 6</b>) and try again!",
       "message2": "The username you typed in is already taken, please pick a different one",
-      "message3": "The username field cannot accept any other characters other than digits and uppercase and lowercase letters"
+      "message3": "The username field cannot accept any other characters other than digits and uppercase and lowercase letters",
+      "button1": "Great!",
+      "button2": "OK",
+      "title2": "Welcome",
+      "message4": "Thank you for your registration and welcome to our app.<br>It has been sent to your profile 5000 Casharts of credit<br>Login to begin your adventure in the world of ART and NFTs! <br><br><b>NFT-SHOP</b> Team"
+
     },
     "EditProfile": {
       "title1": "Upload failed",

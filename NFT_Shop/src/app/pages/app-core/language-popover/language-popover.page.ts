@@ -11,25 +11,26 @@ export class LanguagePopoverPage implements OnInit {
 
   languages = [];
   selected = '';
-  check
+  check: string;
 
   constructor(
     private popoverController: PopoverController,
     private languageService: LanguageService,
   ) { }
 
-  ngOnInit() {           //controlla il linguaggio inserito, chiama il servizio di traduzione per cambiare il linguaggio
-    this.check = localStorage.getItem('language')
+  ngOnInit() {                        //controlla il linguaggio inserito, chiama il servizio di traduzione per cambiare il linguaggio
+    this.check = localStorage.getItem('view')
+
     this.languages = this.languageService.getLanguages();
     this.selected = this.languageService.selected;
   }
 
   select(lng){                        //controlla se si è loggati oppure no tramite una variabile nella pagina di login che cambia valore se si entra nella sessione
-    if(this.check != 'default') {
-      this.languageService.setLanguage(lng);
+    if(this.check == 'login') {
+      this.languageService.setLanguageTemp(lng);
     }
     else{
-      this.languageService.setLanguageTemp(lng);
+      this.languageService.setLanguage(lng);
     }
       this.popoverController.dismiss();
   }

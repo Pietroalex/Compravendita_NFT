@@ -4,7 +4,6 @@ import {AlertController, LoadingController, PopoverController} from "@ionic/angu
 import {AuthService} from "../../../services/user_related/login/auth.service";
 import {Router} from "@angular/router";
 import {doc, Firestore, setDoc} from "@angular/fire/firestore";
-import {LanguageService} from "../../../services/user_related/language/language.service";
 import {LanguagePopoverPage} from "../../app-core/language-popover/language-popover.page";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -37,6 +36,8 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+
+    localStorage.setItem('view', 'login')
 
     this.credentials = this.fb.group({
       email: ['',[Validators.required, Validators.email]],

@@ -14,7 +14,8 @@ export class AppComponent {
     private platform: Platform,
     private languageService: LanguageService
   ) {
-  localStorage.setItem('language', 'default')
+    localStorage.setItem('language', 'default')
+    localStorage.setItem('view', 'not-login')
   this.inizializeApp();
   }
     inizializeApp(){
