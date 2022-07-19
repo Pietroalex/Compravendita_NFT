@@ -17,9 +17,9 @@ export class MenuPage   {
   auth: any
   check1: string;
   check2: string;
-  val: number;
 
-  //localStorage.setItem('language', 'set')
+
+
   constructor(
     private alertController: AlertController,
     private authService: AuthService,
@@ -31,28 +31,24 @@ export class MenuPage   {
   ) {    //prepara alcune variabili che necessitano essere impostate dopo che è stato effettuato il login con successo, prende dal DB il profilo dell'utente collegato
 
 
-
-    this.val = 0;
-
     this.auth = getAuth();
     this.authService.getUserProfile().subscribe((data) => {
       this.profile = data;
       localStorage.setItem('profile', JSON.stringify(this.profile));
       localStorage.setItem('search-field', "profile")
       localStorage.setItem('order-field', "newest")
-      console.log(this.profile?.language)
-      this.start1().then((val) => this.continue1(val));
+
+      this.start1().then((val) => this.continue1());
     });
 
   }
   start1() {                                             //controlla e prepara i dummy secondo il numero di item ricevuti dalla funzione dopo aver preso il profilo utente
-    return new Promise<number>((resolve, reject) => {
-      this.val += 1;
-      resolve(this.val);
+    return new Promise<void>((resolve, reject) => {
+      resolve();
     });
   }
-  continue1(val){
-    console.log(val)
+  continue1(){
+
     this.check2 = localStorage.getItem('language')
     this.check1 = localStorage.getItem('view')
 
@@ -65,7 +61,6 @@ export class MenuPage   {
         this.languageService.setLanguageTemp(this.profile?.language);
       }
     }else{
-      console.log(this.profile?.language)
       this.languageService.setLanguageTemp(this.profile?.language);
     }
   }
