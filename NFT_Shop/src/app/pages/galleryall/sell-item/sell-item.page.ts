@@ -91,7 +91,7 @@ export class SellItemPage implements OnInit {
           author: this.author,
           seller: this.profile?.username + "-" + this.profile?.uid,
           onSale_date: serverTimestamp(),
-          price: price,
+          price: parseInt(price),
         });
         try {
           const user = this.profile?.uid;
