@@ -24,7 +24,7 @@
     "name": "Nome",
     "nftcode": "Codice NFT",
     "description": "Descrizione",
-    "sell": "Vendi Oggetto",
+    "sell": "Vendi NFT",
     "create": "Crea NFT",
     "author": "Autore",
     "seller": "Venditore",
@@ -37,18 +37,17 @@
     "date": "Data Acquisto"
 },
   "LOGIN": {
-    "resetmessage": "Si prega di fornire il nome utente o l'indirizzo e-mail che hai utilizzato al momento della firma\n       per il tuo account.",
+    "resetmessage": "Si prega di fornire il nome utente o l'indirizzo e-mail che hai utilizzato al momento della registrazione per il tuo account",
     "titleF": "Richiesta Password",
     "reset": "Chiedi Nuova Password",
     "title": "Accedi",
     "forgot": "Password dimenticata?",
     "signin": "Accedi",
-    "newuser": "Nuovo Utente?",
     "titleR": "Registrazione",
     "username": "Nome Utente",
     "bio": "Biografia",
     "register": "Registrati",
-    "usernamemess": "Attenzione: Il nome utente è unico e quindi non potrà essere cambiato dopo la registrazione, ma potra essere reinserito dopo la cancellazione del profilo, ricreandolo da zero :)"
+    "usernamemess": "Attenzione: Il nome utente è unico e quindi non potrà essere cambiato dopo la registrazione, ma potrà essere reinserito dopo la cancellazione del profilo, ricreandolo da capo :)"
   },
   "PROFILE":{
     "username": "Nome Utente",
@@ -80,7 +79,6 @@
     "titleS": "Vendite"
   },
   "SEARCH": {
-    "searchby": "Cerca in",
     "searchby:": "Cercato in:",
     "profile": "Profili",
     "onsale": "NFT In Vendita",
@@ -90,7 +88,6 @@
     "title": "Negozio",
     "titleS": "NFT in Vendita",
     "orderby:": "Ordinato Per:",
-    "orderby": "Ordinar Per",
     "datenew": "Ultimi Arrivati",
     "dateold": "Meno Recenti",
     "pricecheap": "Meno Costosi",
