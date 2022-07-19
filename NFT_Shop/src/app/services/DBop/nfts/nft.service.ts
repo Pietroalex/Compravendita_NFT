@@ -115,14 +115,14 @@ export class NftService {
     let q = query(collRef, orderBy("onSale_date", "desc"));
     let input = localStorage.getItem('order-field')
     switch (input) {
-      case "newer":
+      case "newest":
          q = query(collRef, orderBy("onSale_date", "desc"));
         break;
-      case "older":
+      case "oldest":
          q = query(collRef, orderBy("onSale_date", "asc"));
         break;
 
-      case "cheaper":
+      case "cheapest":
          q = query(collRef, orderBy("price", "asc"));
         break;
       case "expensive":
@@ -178,14 +178,14 @@ export class NftService {
     let q = query(onsalesRef, orderBy("onSale_date", "desc"), where('seller', '==', seller));
     let input = localStorage.getItem('order-field')
     switch (input) {
-      case "newer":
+      case "newest":
         q = query(onsalesRef, orderBy("onSale_date", "desc"), where('seller', '==', seller));
         break;
-      case "older":
+      case "oldest":
         q = query(onsalesRef, orderBy("onSale_date", "asc"), where('seller', '==', seller));
         break;
 
-      case "cheaper":
+      case "cheapest":
         q = query(onsalesRef, orderBy("price", "asc"), where('seller', '==', seller));
         break;
       case "expensive":
