@@ -104,34 +104,34 @@
 
     "Forgot": {
       "title": "Hai Dimenticato La Password?",
-      "message": "Ti abbiamo inviato un'email contenente un link per ripristinare la password"
+      "message": "Ti abbiamo inviato un'email contenente un link per reimpostare la tua password"
     },
 
     "Gallery": {
-      "title1": "Pubblica Tutte Le NFT",
-      "message1": "Vuoi pubblicare tutte le tue NFT?",
+      "title1": "Pubblica Tutti Gli NFT",
+      "message1": "Vuoi pubblicare tutti i tuoi NFT?",
       "title2": "Pubblicazione avvenuta",
       "message2": "Tutti gli utenti possono adesso ammirare le tue opere d'arte!"
     },
     "GalleryDetail": {
       "title1": "Conferma cancellazione",
-      "message1": "Vuoi davvero cancellare questa NFT? Rifletti attentamente",
+      "message1": "Vuoi davvero cancellare questo NFT? Rifletti attentamente",
       "confirm1": "Cancella NFT",
       "title2": "Sei sicuro?",
-      "message2": "Dopo aver confermato, la NFT sarà cancellata per sempre e non sarai più in grado di recuperarla in alcun modo",
+      "message2": "Dopo aver confermato, l'NFT sarà cancellato per sempre e non sarai più in grado di recuperarlo in alcun modo",
       "confirm2": "Sono sicuro",
       "titleDel": "NFT Cancellato",
       "messageDel": "L'NFT è stato cancellato e rimosso dalla piattaforma",
       "titleDelNot": "Errore Cancellazione NFT",
-      "messageDelNot": "L'NFT non è stato cancellato dalla piattaforma",
+      "messageDelNot": "L'NFT non è stato cancellato dalla piattaforma a causa di un problema con la richiesta del server",
       "titlePub": "Pubblicazione avvenuta",
       "messagePub": "Tutti gli utenti possono adesso ammirare la tua opera d'arte!",
       "titlePubNot": "Pubblicazione non avvenuta",
-      "messagePubNot": "C'è stato un errore nella publicazione della tua opera"
+      "messagePubNot": "C'è stato un errore nella publicazione della tua opera, riprova tra qualche minuto"
     },
     "NewItem": {
       "title": "Caricamento fallito",
-      "message": "C'è stato un problema nel caricamento dell'immagine"
+      "message": "C'è stato un problema nel caricamento dell'immagine, riprova tra qualche minuto"
     },
     "SellItem": {
       "title1": "NFT In Vendita",
@@ -146,7 +146,7 @@
     "Register": {
       "title": "Registrazione fallita",
       "message1": "Controlla se hai inserito una <b>email valida</b> (ex: <b>example@email.com</b>) e/o una <b>password valida</b> (<b>minimo 6 caratteri alfanumerici</b>) e prova nuovamente!",
-      "message2": "L'username inserita è già stata usata, inseriscine una nuova",
+      "message2": "L'username inserito è già stato usato, prova con un altro",
       "message3": "Il campo username non acccetta caratteri diversi da numeri e lettere maiuscole e minuscole",
       "button1": "Fantastico!",
       "button2": "OK",
@@ -155,16 +155,16 @@
     },
     "EditProfile": {
       "title1": "Caricamento fallito",
-      "message1": "C'è stato un problema nel caricamento dell'immagine",
+      "message1": "C'è stato un problema nel caricamento dell'immagine, riprova tra qualche minuto",
       "title2": "Modifica fallita",
-      "message2": "C'è stato un problema nella modifica delle informazioni",
+      "message2": "C'è stato un problema con la richiesta al server nella modifica delle informazioni, riprova tra qualche minuto",
       "title3": "Successo!",
       "message3": "Modifica delle informazioni avvenuta con successo!",
       "title4": "Conferma cancellazione",
       "message4": "Vuoi cancellare questo profilo? Rifletti attentamente",
       "confirm1": "Cancella profilo",
       "title5": "Sei sicuro?",
-      "message5": "Confermando, questo profilo verrà sospeso e le tue credenziali saranno cancellate per sempre e non potrai più accedere a questo profilo",
+      "message5": "Confermando, questo profilo verrà bloccato e le tue credenziali saranno cancellate per sempre e non potrai più accedere a questo profilo",
       "confirm2": "Sono sicuro",
       "message6": "Eliminato con successo"
     },
@@ -174,15 +174,15 @@
     },
     "PublicGalleryDetail": {
       "title": "Rimuovere l'NFT?",
-      "message": "Vuoi rimuovere questa NFT dalla tua Galleria Pubblica?"
+      "message": "Vuoi rimuovere questo NFT dalla tua Galleria Pubblica?"
     },
     "ShopDetail": {
       "title1": "NFT acquistata",
-      "message1": "L'NFT è stata aggiunta alla tua galleria",
-      "title2": "Acquuisto fallito",
+      "message1": "L'NFT è stato aggiunto alla tua galleria",
+      "title2": "Acquisto fallito",
       "message2": "Non hai abbastanza Cashart per l'acquisto",
       "title3": "Operazione Annullata",
-      "message3": "La tua NFT ritorna nella galleria"
+      "message3": "Il tuo NFT è stato riportato nella galleria"
     }
   },
   "DUMMY": {

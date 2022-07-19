@@ -110,15 +110,11 @@
       "title1": "Post All NFTs",
       "message1": "Do you want to post all of your NFTs?",
       "title2": "Successfully posted",
-      "message2": "All users can now admire your pieces of art!",
-      "titlePub": "Successfully publicised",
-      "messagePub": "All users can now admire your piece of art!",
-      "titlePubNot": "Unsuccessful publication",
-      "messagePubNot": "There was a problem in the publication of your item"
+      "message2": "All users can now admire your pieces of art!"
     },
     "GalleryDetail": {
       "title1": "Confirm deletion",
-      "message1": "Do you want to delete your NFT? Choose wisely",
+      "message1": "Do you want to delete this NFT? Choose wisely",
       "confirm1": "Delete NFT",
       "title2": "Are you sure?",
       "message2": "After accepting, the NFT will be deleted forever and you will not be able to recover it in any way possible",
@@ -126,17 +122,21 @@
       "titleDel": "NFT Deleted",
       "messageDel": "The item has been deleted and removed from the platform",
       "titleDelNot": "NFT Not Deleted",
-      "messageDelNot": "The item has not been deleted"
+      "messageDelNot": "The item has not been deleted, there was a server error",
+      "titlePub": "Successfully posted",
+      "messagePub": "All users can now admire your piece of art!",
+      "titlePubNot": "Unsuccessful publication",
+      "messagePubNot": "There was a problem in the publication of your item, please retry in a few minutes"
     },
     "NewItem": {
       "title": "Upload failed",
-      "message": "There was a problem uploading your avatar"
+      "message": "There was a problem uploading your avatar, please retry in a few minutes"
     },
     "SellItem": {
       "title1": "Item On Sale",
-      "message1": "Your item is being published on the shop",
+      "message1": "Your item has been published on the shop",
       "title2": "On Sale Failure",
-      "message2": "The price can be numeric only"
+      "message2": "The price can only be numeric"
     },
     "Login": {
       "title": "Login failed",
@@ -155,13 +155,13 @@
     },
     "EditProfile": {
       "title1": "Upload failed",
-      "message1": "There was a problem uploading your avatar",
+      "message1": "There was a problem uploading your avatar, please retry in a few minutes",
       "title2": "Update failed",
-      "message2": "There was a problem uploading your infos",
+      "message2": "There was a problem on uploading your infos on the server, please retry in a few minutes",
       "title3": "Great!",
-      "message3": "Profile info successfully updated!",
+      "message3": "Profile infos successfully updated!",
       "title4": "Confirm deletion",
-      "message4": "Do you want to delete your profile? Chose wisely",
+      "message4": "Do you want to delete your profile? Choose wisely",
       "confirm1": "Delete Profile",
       "title5": "Are you sure?",
       "message5": "After accepting, this profile will stay untouched but your credentials will be deleted forever and you will not be able to access your profile anymore",
@@ -179,7 +179,7 @@
     "ShopDetail": {
       "title1": "Item successfully purchased",
       "message1": "The item has been added to your gallery",
-      "title2": "Purchase Failure",
+      "title2": "Purchase Failed",
       "message2": "The price is too high for your Cashart amount",
       "title3": "Cancelled Operation",
       "message3": "Your item has been returned to your gallery"
