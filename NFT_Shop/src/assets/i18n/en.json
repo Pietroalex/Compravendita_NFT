@@ -80,6 +80,7 @@
   },
   "SEARCH": {
     "searchby:": "Searched By:",
+    "searchby": "Search By:",
     "profile": "Profiles",
     "onsale": "On Sale NFTs",
     "public": "Public NFTs"
@@ -88,6 +89,7 @@
     "title": "Shop",
     "titleS": "On Sale NFT",
     "orderby:": "Ordered By:",
+    "orderby": "Order By:",
     "datenew": "Newest",
     "dateold": "Oldest",
     "pricecheap": "Cheapest",

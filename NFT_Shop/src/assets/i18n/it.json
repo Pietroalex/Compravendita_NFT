@@ -80,6 +80,7 @@
   },
   "SEARCH": {
     "searchby:": "Cercato in:",
+    "searchby": "Cerca in:",
     "profile": "Profili",
     "onsale": "NFT In Vendita",
     "public": "NFT Pubblici"
@@ -88,6 +89,7 @@
     "title": "Negozio",
     "titleS": "NFT in Vendita",
     "orderby:": "Ordinato Per:",
+    "orderby": "Ordina Per:",
     "datenew": "Ultimi Arrivati",
     "dateold": "Meno Recenti",
     "pricecheap": "Meno Costosi",
@@ -184,6 +186,6 @@
   },
   "DUMMY": {
     "text1": "Vuoto",
-    "text2": ""
+    "text2": " "
   }
 }
