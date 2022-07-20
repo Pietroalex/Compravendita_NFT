@@ -52,7 +52,8 @@ export class SearchService {
     const q = query(searchRef, where("name", '>=', value),
       where("name", '<=', value + '\uf8ff'));
     const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {                                       // per trovare tutti gli nft in vendita
+    querySnapshot.forEach((doc) => {
+      console.log(doc.data())// per trovare tutti gli nft in vendita
       this.tempo.push(doc.data());
 
     });

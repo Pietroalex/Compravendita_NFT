@@ -95,7 +95,6 @@ export class SearchPage implements OnInit {
 
 
   async loadsearch(value) {
-    console.log(value)
     switch (this.type) {
       case "profile":
         this.profiles = await this.searchService.searchprofile(value);
@@ -127,10 +126,9 @@ export class SearchPage implements OnInit {
 
     }
   }
-  hideSearch() {
-  }
-  hideother(value: string) {
-    switch (this.type) {
+
+  hideother(value) {
+    switch (value) {
       case "profile":
         this.profilediv = 'need';
         this.publicdiv = 'no-need';
