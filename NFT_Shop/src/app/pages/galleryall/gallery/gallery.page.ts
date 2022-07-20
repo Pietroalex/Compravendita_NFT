@@ -84,7 +84,7 @@ import {TranslateService} from "@ngx-translate/core";
       cssClass: 'buttonCss',
       buttons: [
         {
-          text: 'NO',
+          text: 'No',
           role: 'cancel',
           cssClass: 'cancel',
           handler: () => {
