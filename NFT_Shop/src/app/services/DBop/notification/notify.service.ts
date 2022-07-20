@@ -12,6 +12,7 @@ import {
   where
 } from "@angular/fire/firestore";
 import {AlertController} from "@ionic/angular";
+import {AuthService} from "../../user_related/login/auth.service";
 
 
 @Injectable({
@@ -38,6 +39,7 @@ export class NotifyService {
 
   constructor(
     private firestore: Firestore,
+    private authService: AuthService
   ) { }
 
 
@@ -54,6 +56,10 @@ export class NotifyService {
       this.buyerprofile.uid != this.sellerprofile.uid
     ){
       await this.createnotify();
+      this.authService.getUserProfile().subscribe((data) => {
+        let profile = data;
+        localStorage.setItem('profile', JSON.stringify(profile));
+      });
     }
   }
 

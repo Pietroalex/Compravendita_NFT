@@ -224,21 +224,15 @@ export class NftService {
     async deleteNft(nftcode: any){
       const user = this.profile.uid;
       const docRef = doc(this.firestore, `Users/${user}`);
-
+      try{
       await updateDoc(docRef, {
         publicGallery: arrayRemove(nftcode),          //aggiunge l'nftcode all'array privateGallery dentro il profilo utente corrente
         privateGallery: arrayRemove(nftcode),
       });
 
       await deleteDoc(doc(this.firestore, "NFTs", nftcode));
-      await deleteDoc(doc(this.firestore, "PublicNFTs", nftcode));
+      await deleteDoc(doc(this.firestore, "PublicNFTs", nftcode))
 
-      const storage = getStorage();
-      const path = ref(storage,`uploads/nft_images/${nftcode}/nftimage.png`);
-
-
-        // Delete the file
-      deleteObject(path).then(async () => {
         let a: any = {};
         this.translateService.get('ALERT.GalleryDetail.titleDel').subscribe(t => {
           a.title = t;
@@ -252,7 +246,7 @@ export class NftService {
           buttons: ['OK'],
         });
         await alert.present();
-      }).catch(async (error) => {
+      }catch (error){
         let a: any = {};
         this.translateService.get('ALERT.GalleryDetail.titleDelNot').subscribe(t => {
           a.title = t;
@@ -266,7 +260,7 @@ export class NftService {
           buttons: ['OK'],
         });
         await alert.present();
-      });
+      };
       this.authService.getUserProfile().subscribe((data) => {
         this.profile = data;
         localStorage.setItem('profile', JSON.stringify(this.profile));
