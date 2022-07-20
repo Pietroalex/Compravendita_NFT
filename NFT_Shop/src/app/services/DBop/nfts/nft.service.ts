@@ -81,12 +81,8 @@ export class NftService {
       await uploadString(storageRef, cameraFile.base64String, 'base64');
 
       const imageUrl = await getDownloadURL(storageRef);
+      localStorage.setItem('image', imageUrl)
 
-      const docRef = doc(this.firestore, `NFTs/${nftcode}`);
-
-      await updateDoc(docRef, {
-        image: imageUrl,
-      });
       return true;
     } catch (e) {
       return null;

@@ -5,8 +5,9 @@ import {Firestore} from "@angular/fire/firestore";
 import {NftService} from "../../../services/DBop/nfts/nft.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
-import {AlertController} from "@ionic/angular";
+import {AlertController, LoadingController} from "@ionic/angular";
 import {TranslateService} from "@ngx-translate/core";
+import {CameraResultType, CameraSource, Camera} from "@capacitor/camera";
 
 @Component({
   selector: 'app-gallery',
@@ -35,12 +36,14 @@ import {TranslateService} from "@ngx-translate/core";
       private route: ActivatedRoute,
       private router: Router,
       private alertController: AlertController,
-      private translateService: TranslateService
+      private translateService: TranslateService,
+      private loadingController: LoadingController
 
     ) {                                                   //inizializza i dummy e prende le informazioni sul profilo utente che si è loggato
       this.gallerydummy = 'no-need';
       this.gallery = 'need';
       this.profile = JSON.parse(localStorage.getItem('profile'));
+      console.log(this.profile)
     }
 
     async ngOnInit() {
@@ -69,9 +72,7 @@ import {TranslateService} from "@ngx-translate/core";
         this.profile = null;
       }
 
-    async create() {                                        //naviga alla pagina di creazione di un nuovo item
-      await this.router.navigateByUrl('/new-item', { replaceUrl: true });
-    }
+
 
   async addallpublic() {  //Aggiunge tutti gli item dell'utente alla galleria pubblica
     let a: any = {};
@@ -96,10 +97,6 @@ import {TranslateService} from "@ngx-translate/core";
           cssClass: 'confirm',
           handler: async () => {
             this.start().then((val) => this.continue(val));
-
-
-
-
           }
         }
       ]
@@ -138,6 +135,37 @@ async continue(val) {
       await this.router.navigateByUrl('/public-gallery', {replaceUrl: true});
 
   }
+
+  async create() {
+    let author = this.profile?.username;
+    let itemcount = 1 + this.profile?.nft_created_count;
+    let nftcode = author +"-"+ itemcount;
+
+      const image = await Camera.getPhoto({
+        quality: 90,
+        allowEditing: false,
+        resultType: CameraResultType.Base64,
+        source: CameraSource.Photos,
+      });
+
+      if(image) {
+        const loading = await this.loadingController.create();
+        await loading.present();
+
+        const result = await this.nftService.uploadNFTImage(image, nftcode);
+        loading.dismiss();
+
+        if (!result) {
+          console.log("no-image")
+          return;
+        }else{
+          localStorage.setItem('nftcode', nftcode)
+          await this.router.navigateByUrl('/new-item', { replaceUrl: true });
+        }
+      }
+
+  }
+
 }
 
 

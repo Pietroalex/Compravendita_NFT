@@ -130,7 +130,7 @@
     },
     "NewItem": {
       "title": "Upload failed",
-      "message": "There was a problem uploading your avatar, please retry in a few minutes"
+      "message": "There was a problem uploading your NFT"
     },
     "SellItem": {
       "title1": "Item On Sale",

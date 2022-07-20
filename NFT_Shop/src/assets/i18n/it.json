@@ -130,7 +130,7 @@
     },
     "NewItem": {
       "title": "Caricamento fallito",
-      "message": "C'è stato un problema nel caricamento dell'immagine, riprova tra qualche minuto"
+      "message": "C'è stato un problema nel caricamento del NFT"
     },
     "SellItem": {
       "title1": "NFT In Vendita",
