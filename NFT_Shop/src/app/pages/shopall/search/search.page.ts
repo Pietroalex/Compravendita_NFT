@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from "../../../services/DBop/search/search.service";
-import {arrayUnion, doc, Firestore, setDoc, updateDoc} from "@angular/fire/firestore";
 import {Router} from "@angular/router";
 
 
